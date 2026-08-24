@@ -20,7 +20,9 @@
     --inner-width: 1440px;
 
     /* spacing */
+
     /* border */
+
     /* transition */
 }
 
@@ -31,11 +33,11 @@ body {
     color: #171717;
 }
 
-
 .inner {
     max-width: var(--inner-width);
+    /* background-color: rgba(255, 0, 0, 0.1); */
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 2em;
 }
 
 
@@ -46,11 +48,12 @@ body {
     display: none;
 }
 
-
 /* header */
 header {
     position: fixed;
+    /* background-color: rgba(0, 0, 255, 0.2); */
     width: 100%;
+    /* padding: 18px 0 0; */
     z-index: 10000;
 }
 
@@ -76,14 +79,18 @@ header:hover .logo {
     display: flex;
     gap: 50px;
     align-items: center;
+    
 }
-
 
 .main-menu {
     display: flex;
     align-items: center;
     gap: 24px;
     position: relative;
+}
+
+.main-menu>li {
+    /* background: pink; */
 }
 
 .main-menu>li>a {
@@ -101,7 +108,6 @@ header:hover .main-menu>li>a {
     display: flex;
 }
 
-
 .depth2 {
     display: none;
     background: #fff;
@@ -111,6 +117,7 @@ header:hover .main-menu>li>a {
     top: 77px;
     line-height: 2;
     padding: 1.13em 0;
+    /* display: flex; */
 }
 
 .depth2>li {
@@ -126,18 +133,17 @@ header:hover .main-menu>li>a {
     font-size: 0.88em;
 }
 
-
 .gnb-list {
     display: flex;
     gap: 2em;
     font-size: 14px;
 }
 
-
 header:hover .gnb-list>li>a {
     color: var(--Neutral-900);
 }
 
+header:hover .gnb-list>li>a>span {}
 
 .lang-btn {
     position: relative;
@@ -153,7 +159,7 @@ header:hover .gnb-list>li>a {
     display: block;
     width: 20px;
     height: 20px;
-    background: url(../images/Icon/Chevron/Down/20.png);
+    background: url(../images/icon/chev_down_bk.svg);
     position: absolute;
     top: 50%;
     right: 0;
@@ -170,6 +176,10 @@ header:hover .lang-btn>a::after {
     filter: invert(0);
 }
 
+.lang-btn>a span {
+    /* color: #000; */
+}
+
 .lang-btn .lang-list {
     position: absolute;
     background: #fff;
@@ -179,30 +189,34 @@ header:hover .lang-btn>a::after {
     display: none;
 }
 
+
 .lang-btn .lang-list>li a {
     display: block;
     padding: 4px 0;
 }
+
 
 .lang-btn .lang-list>li a:hover {
     background: var(--Primary-color);
     color: #fff;
 }
 
+
 .lang-btn:hover .lang-list {
     display: block;
 }
 
 
+.lang-btn:hover>a {}
+
 .re-right>button {
+    /* display: none; */
     background: var(--Primary-color);
     color: #fff;
     padding: 8px clamp(12px, 3vw, 64px);
     font-size: 1.25em;
 }
 
-
-/* sub visual */
 .sub-bg {
     background: #fff;
     width: 100%;
@@ -219,8 +233,9 @@ header:hover .lang-btn>a::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: pink; */
 }
-
+ 
 .sub-visual img {
     position: absolute;
     inset: 0;
@@ -229,7 +244,7 @@ header:hover .lang-btn>a::after {
     object-fit: cover;
     z-index: -2;
 }
-
+ 
 .sub-visual::before {
     content: "";
     position: absolute;
@@ -237,7 +252,9 @@ header:hover .lang-btn>a::after {
     background: rgba(0, 0, 0, 0.25);
     z-index: -1;
 }
+ 
 
+ 
 .sub-visual h1 {
     font-family: "MinionPro", serif;
     font-weight: 800;
@@ -246,8 +263,8 @@ header:hover .lang-btn>a::after {
     color: #fff;
     text-transform: uppercase;
 }
-
-.sub-visual .text-box {
+ 
+/* .sub-visual .text-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -256,16 +273,16 @@ header:hover .lang-btn>a::after {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.sub-visual .text-box h2 {
+} */
+ 
+/* .sub-visual .text-box h2 {
     color: #fff;
     font-size: 42px;
     letter-spacing: 4px;
-    font-family: "MinionPro", serif;
-}
-
-
+    font-weight: 500;
+    font-family: "MinionPro-Regular", serif;
+} */
+ 
 /* 객실 소개 공통 섹션 */
 .room-overview-wrap {
     padding: 120px 0 80px;
@@ -273,7 +290,6 @@ header:hover .lang-btn>a::after {
 
 .room-overview-wrap .title-box {
     margin-bottom: 40px;
-
 }
 
 .room-overview-wrap .title-box .section-title {
@@ -296,14 +312,15 @@ header:hover .lang-btn>a::after {
     color: var(--Neutral-900);
 }
 
+ 
 
-.room-overview-wrap.suite-rooms,
-.room-overview-wrap.special-suite-room {
+.room-overview-wrap.special-suite-room,
+.room-overview-wrap.premium-suites {
     position: relative;
 }
 
-.room-overview-wrap.suite-rooms::before,
-.room-overview-wrap.special-suite-room::before {
+.room-overview-wrap.special-suite-room::before,
+.room-overview-wrap.premium-suites::before {
     content: "";
     position: absolute;
     top: 0;
@@ -316,6 +333,7 @@ header:hover .lang-btn>a::after {
 }
 
 
+ 
 /* 객실 리스트 */
 .room-overview-list {
     display: grid;
@@ -374,6 +392,9 @@ header:hover .lang-btn>a::after {
     line-height: 1.6;
     color: var(--Neutral-900);
 }
+.room-overview-list.one-col {
+    margin-top: 60px;
+}
 
 .room-overview-list > li .img-box {
     overflow: hidden;
@@ -390,7 +411,6 @@ header:hover .lang-btn>a::after {
 .room-overview-list > li:hover .img-box img {
     transform: scale(1.05);
 }
-
 
 /* footer */
 footer {
@@ -420,18 +440,18 @@ footer {
     display: flex;
     align-items: center;
     gap: 1em;
+
 }
 
 .address-wrap .address-left>p img {
     filter: invert();
 }
 
+
 .address-wrap .address-right {
     text-align: end;
 }
 
-
-/* 인증마크 */
 .ks-family-wrap {
     display: flex;
     justify-content: space-between;
@@ -440,7 +460,10 @@ footer {
 
 .ks-family-wrap .family-site {
     display: flex;
+
 }
+
+.ks-family-wrap .family-site>li {}
 
 .ks-family-wrap .family-site>li>a {
     display: block;
@@ -464,7 +487,7 @@ footer {
 }
 
 
-/* copyright / sns */
+
 .copy-sns-wrap {
     display: flex;
     justify-content: space-between;
@@ -472,16 +495,15 @@ footer {
     font-size: 11px;
 }
 
+.copy-sns-wrap>p {}
+
 .copy-sns-wrap>.sns-list {
     display: flex;
     gap: 12px;
 }
+ 
 
-
-/* ================================================= */
 /* 아이패드 */
-/* ================================================= */
-
 @media screen and (max-width:1279px) {
 
     body {
@@ -593,17 +615,14 @@ footer {
         width: 2em;
     }
 
-
-    /* 태블릿 이하에서는 본문 br 제거 */
     .title-box p br {
         display: none;
     }
-}
+
+} 
 
 
-/* ================================================= */
-/* 모바일 */
-/* ================================================= */
+/*모바일*/
 
 @media screen and (max-width:767px) {
 
@@ -622,11 +641,15 @@ footer {
         font-size: 2em;
     }
 
-
-    .btn>a {
-        padding: 4px 0 4px 12px;
+    
+    .title-box p br {
+        display: none;
     }
 
+
+    .btn>a {
+        padding: 4px 0px 4px 12px;
+    }
 
     .main-slider-list>li .img-box {
         height: 100vh;
@@ -636,14 +659,12 @@ footer {
         height: 100%;
         object-fit: cover;
     }
-
-
-    /* 인증마크 모바일 */
     .ks-family-wrap {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 10px;
     }
+    }
 
-}
+
