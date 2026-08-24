@@ -315,7 +315,7 @@ iframe {
 /* header */
 header {
     position: fixed;
-    background-color: rgba(0, 0, 255, 0.2);
+    /* background-color: rgba(0, 0, 255, 0.2); */
     width: 100%;
     /* padding: 18px 0 0; */
     z-index: 10000;
