@@ -1,0 +1,483 @@
+/* 변수 선언하기 */
+:root {
+    /* color */
+    --Primary-color: #1A5FA1;
+    --Primary-Hover-color: #13578F;
+    --Primary-Pressed-color: #104876;
+    --Primary-Subtle-color: #DCECF8;
+
+    --Neutral-100: #f2f2f2;
+    --Neutral-200: #e5e5e5;
+    --Neutral-300: #d4d4d4;
+    --Neutral-400: #a3a3a3;
+    --Neutral-500: #737373;
+    --Neutral-600: #525252;
+    --Neutral-700: #404040;
+    --Neutral-800: #262626;
+    --Neutral-900: #171717;
+
+    /* layout */
+    --inner-width: 1440px;
+
+    /* spacing */
+
+    /* border */
+
+    /* transition */
+}
+
+
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    color: #171717;
+}
+
+.inner {
+    max-width: var(--inner-width);
+    /* background-color: rgba(255, 0, 0, 0.1); */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+
+/* pc 에서 숨기기 */
+.ham-btn,
+.m-header,
+.m-gnb-list {
+    display: none;
+}
+
+/* header */
+header {
+    position: fixed;
+    /* background-color: rgba(0, 0, 255, 0.2); */
+    width: 100%;
+    /* padding: 18px 0 0; */
+    z-index: 10000;
+}
+
+header:hover {
+    background: #fff;
+}
+
+.header-inner {
+    max-width: 1720px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 0 1em;
+}
+
+header:hover .logo {
+    filter: invert();
+}
+
+.header-inner>div {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    
+}
+
+.main-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+}
+
+.main-menu>li {
+    /* background: pink; */
+}
+
+.main-menu>li>a {
+    display: block;
+    padding: 28px 8px;
+    font-size: 1.13em;
+    font-weight: 500;
+}
+
+header:hover .main-menu>li>a {
+    color: var(--Neutral-900);
+}
+
+.main-menu>li:hover .depth2 {
+    display: flex;
+}
+
+.depth2 {
+    display: none;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 77px;
+    line-height: 2;
+    padding: 1.13em 0;
+    /* display: flex; */
+}
+
+.depth2>li {
+    width: 25%;
+}
+
+.depth2>li>a {
+    color: var(--Neutral-900);
+}
+
+.depth3>li>a {
+    color: var(--Neutral-400);
+    font-size: 0.88em;
+}
+
+.gnb-list {
+    display: flex;
+    gap: 2em;
+    font-size: 14px;
+}
+
+header:hover .gnb-list>li>a {
+    color: var(--Neutral-900);
+}
+
+header:hover .gnb-list>li>a>span {}
+
+.lang-btn {
+    position: relative;
+}
+
+.lang-btn>a {
+    display: block;
+    padding-right: 24px;
+}
+
+.lang-btn>a::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/Icon/Chevron/Down/20.png);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    filter: invert(1);
+}
+
+.lang-btn:hover>a::after {
+    filter: invert(0);
+    transform: rotate(180deg) translateY(50%);
+}
+
+header:hover .lang-btn>a::after {
+    filter: invert(0);
+}
+
+.lang-btn>a span {
+    /* color: #000; */
+}
+
+.lang-btn .lang-list {
+    position: absolute;
+    background: #fff;
+    color: var(--Neutral-900);
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+
+.lang-btn .lang-list>li a {
+    display: block;
+    padding: 4px 0;
+}
+
+
+.lang-btn .lang-list>li a:hover {
+    background: var(--Primary-color);
+    color: #fff;
+}
+
+
+.lang-btn:hover .lang-list {
+    display: block;
+}
+
+
+.lang-btn:hover>a {}
+
+.re-right>button {
+    /* display: none; */
+    background: var(--Primary-color);
+    color: #fff;
+    padding: 8px clamp(12px, 3vw, 64px);
+    font-size: 1.25em;
+}
+
+.sub-bg {
+    background: #fff;
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 77px;
+    display: none;
+}
+
+.sub-visual {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.sub-visual img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+ 
+.sub-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+ 
+.sub-visual .inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+ 
+.sub-visual h1 {
+    font-family: "MinionPro-Bold", serif;
+    font-weight: 400;
+    font-size: 3.5em;
+    letter-spacing: 0.1em;
+    color: #fff;
+    text-transform: uppercase;
+}
+ 
+.sub-visual .text-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.sub-visual .text-box h2 {
+    color: #fff;
+    font-size: 42px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-family: "MinionPro", serif;
+}
+ 
+/* 객실 소개 공통 섹션 */
+.room-overview-wrap {
+    padding: 80px 0;
+}
+ 
+.room-overview-wrap .title-box {
+    margin-bottom: 40px;
+}
+ 
+.room-overview-wrap .title-box .section-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    font-family: "MinionPro", serif;
+}
+ 
+.room-overview-wrap .title-box p {
+    font-size: 15px;
+    color: var(--Neutral-900);
+}
+ 
+
+ 
+
+.room-overview-wrap.suite-rooms,
+.room-overview-wrap.special-suite-room {
+    position: relative;
+}
+ 
+.room-overview-wrap.suite-rooms::before,
+.room-overview-wrap.special-suite-room::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-color: #f3f6fa;
+    z-index: -1;
+}
+ 
+/* 객실 리스트 (2단 그리드) */
+.room-overview-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 40px;
+}
+ 
+.room-overview-list.one-col {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+}
+ 
+.room-overview-list.one-col li .img-box {
+    aspect-ratio: 1200 / 500;
+}
+ 
+.room-overview-list li .img-box {
+    width: 100%;
+    aspect-ratio: 720 / 480;
+    overflow: hidden;
+}
+ 
+.room-overview-list li .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.room-overview-list li .text-box {
+    margin-top: 20px;
+}
+ 
+.room-overview-list li .text-box h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+ 
+.room-overview-list li .text-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--Neutral-900)
+}
+/* footer */
+footer {
+    background: var(--Neutral-700);
+    color: #fff;
+    padding: 60px 0;
+}
+
+.footer-logo {
+    width: 155px;
+}
+
+.footer-menu {
+    display: flex;
+    gap: 1.5em;
+    margin: 1.5em 0 2em;
+}
+
+.address-wrap {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2.2;
+    font-size: 0.88em;
+}
+
+.address-wrap .address-left>p {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+}
+
+.address-wrap .address-left>p img {
+    filter: invert();
+}
+
+
+.address-wrap .address-right {
+    text-align: end;
+}
+
+.ks-family-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.ks-family-wrap .family-site {
+    display: flex;
+
+}
+
+.ks-family-wrap .family-site>li {}
+
+.ks-family-wrap .family-site>li>a {
+    display: block;
+    width: 110px;
+    height: 34px;
+    background-image: url(../images/branches/Branches.png);
+    background-position-y: center;
+    text-indent: -9999px;
+}
+
+.ks-family-wrap .family-site>li:nth-child(2)>a {
+    background-position-x: -110px;
+}
+
+.ks-family-wrap .family-site>li:nth-child(3)>a {
+    background-position-x: -220px;
+}
+
+.ks-family-wrap .family-site>li:nth-child(4)>a {
+    background-position-x: -330px;
+}
+
+
+
+.copy-sns-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+}
+
+.copy-sns-wrap>p {}
+
+.copy-sns-wrap>.sns-list {
+    display: flex;
+    gap: 12px;
+}
+ 
+/* 모바일 */
+@media (max-width: 768px) {
+    .sub-visual {
+        height: 200px;
+    }
+ 
+    .sub-visual .text-box h2 {
+        font-size: 26px;
+        letter-spacing: 2px;
+    }
+ 
+    .room-overview-wrap {
+        padding: 50px 0;
+    }
+ 
+    .room-overview-list {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
