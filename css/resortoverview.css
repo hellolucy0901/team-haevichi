@@ -275,17 +275,11 @@ header:hover .lang-btn>a::after {
     justify-content: center;
 } */
  
-/* .sub-visual .text-box h2 {
-    color: #fff;
-    font-size: 42px;
-    letter-spacing: 4px;
-    font-weight: 500;
-    font-family: "MinionPro-Regular", serif;
-} */
+
  
 /* 객실 소개 공통 섹션 */
 .room-overview-wrap {
-    padding: 120px 0 80px;
+    padding-top: 200px;
 }
 
 .room-overview-wrap .title-box {
@@ -293,11 +287,12 @@ header:hover .lang-btn>a::after {
 }
 
 .room-overview-wrap .title-box .section-title {
-    font-size: 36px;
-    font-weight: 800;
+    font-size: 42px;
+    font-weight: 500;
     margin-bottom: 12px;
-    font-family: "MinionPro", serif;
+    font-family: "Minion Pro", serif;
 }
+
 
 .room-overview-wrap .title-box p {
     font-size: 18px;
@@ -317,13 +312,17 @@ header:hover .lang-btn>a::after {
 .room-overview-wrap.special-suite-room,
 .room-overview-wrap.premium-suites {
     position: relative;
+    z-index: 0;
 }
 
-.room-overview-wrap.special-suite-room::before,
-.room-overview-wrap.premium-suites::before {
+.room-overview-wrap.special-suite-room {
+    padding-bottom: 100px;
+}
+
+.room-overview-wrap.special-suite-room::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 100px;
     bottom: 0;
     left: 50%;
     width: 100vw;
@@ -332,6 +331,17 @@ header:hover .lang-btn>a::after {
     z-index: -1;
 }
 
+.room-overview-wrap.premium-suites::before {
+    content: "";
+    position: absolute;
+    top: 100px;
+    bottom: -100px;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-color: #f3f6fa;
+    z-index: -1;
+}
 
  
 /* 객실 리스트 */
@@ -417,6 +427,11 @@ footer {
     background: var(--Neutral-700);
     color: #fff;
     padding: 60px 0;
+
+    position: relative;
+    z-index: 1;
+   
+
 }
 
 .footer-logo {
