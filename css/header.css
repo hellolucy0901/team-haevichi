@@ -1,5 +1,6 @@
 /* header */
 .site-header {
+    /* 스티키헤더 아님 javascript 수업 후 수정 예정 */
     position: sticky;
     top: 0;
 
@@ -21,6 +22,7 @@
     border-bottom: 0.5px solid transparent;
 }
 
+/* 호버시 헤더 하단 구분선 */
 .site-header:has(.main-menu-item:hover > .mega-menu) .header-bar,
 .site-header:has(.main-menu-item:focus-within > .mega-menu) .header-bar {
     border-bottom-color: #d4d4d4;
@@ -66,10 +68,12 @@
     gap: 24px;
 }
 
+/* 텍스트 영역보다 넓었으면 좋겠어서 100% 잡음 */
 .main-menu-item {
     height: 100%;
 }
 
+/* 커서 이탈, 탭으로 서브메뉴까지 내려가도 고정되게 */
 .main-menu-item:hover>.mega-menu,
 .main-menu-item:focus-within>.mega-menu {
     display: block;
@@ -100,16 +104,16 @@
     color: #a3a3a3;
 }
 
-
-
 /* mega-menu */
+/* min height 값 회의 필요 */
 .mega-menu {
     position: absolute;
     top: 88px;
     left: 0;
 
     width: 100%;
-    height: 221px;
+    min-height: 68px;
+    height: auto;
 
     padding-top: 30px;
     padding-left: max(282px,
@@ -129,6 +133,7 @@
     gap: 21px;
 }
 
+/* 부모 mega-menu-list 공간 부족해도 줄어들지 않게 flex-shrink값 0 지정*/
 .mega-menu-group {
     width: 150px;
     flex-shrink: 0;
@@ -147,6 +152,8 @@
     white-space: nowrap;
 }
 
+/* 수업시간에 탭 눌러서 이동/선택 접근 가능해야 한다는 내용 기억나서 
+근데 그게 앵커, 버튼 내용이었는지 정확히 기억 안남  */
 .mega-menu-title:hover,
 .mega-menu-title:focus-visible {
     color: #a3a3a3;
@@ -174,7 +181,6 @@
 }
 
 /* header-right */
-
 .header-right {
     display: flex;
     align-items: center;
@@ -199,6 +205,7 @@
     letter-spacing: 0;
     color: #171717;
     white-space: nowrap;
+    /* 화면 좁아져도 텍스트 깨지지 않게 */
 }
 
 .utility-menu a:hover,
@@ -254,6 +261,11 @@
     position: fixed;
     position-anchor: --language-trigger;
 
+    /* Popover 기본 위치값 초기화 */
+    inset: auto;
+    margin: 0;
+
+    /* language-button 기준으로 위치 지정 */
     top: anchor(bottom);
     left: anchor(left);
     right: auto;
@@ -262,11 +274,9 @@
     width: 76px;
     height: 52px;
 
-    margin: 0;
     padding: 0;
 
     background: #fff;
-
     border: 0;
     outline: 1px solid #d4d4d4;
 
@@ -308,13 +318,13 @@
 }
 
 /* language selected */
-.language-selector:not(:has(.language-menu:popover-open))
-.language-button:hover {
+/* language-menu열려있지 않을 때만,
+language-button에 호버 했을 때만 글자색 회색으로, chevrone아이콘도 동일하게*/
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover {
     color: #a3a3a3;
 }
 
-.language-selector:not(:has(.language-menu:popover-open))
-.language-button:hover .language-chevron {
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover .language-chevron {
     background-image: url("../images/icon/chev_down_gr.svg");
 }
 
@@ -325,7 +335,6 @@
 .language-selector:has(.language-menu:popover-open) .language-chevron {
     background-image: url("../images/icon/chev_up_bk.svg");
 }
-
 
 /* reservation button */
 .reservation-button {
