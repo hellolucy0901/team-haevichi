@@ -256,13 +256,14 @@
 
     top: anchor(bottom);
     left: anchor(left);
+    right: auto;
+    bottom: auto;
 
     width: 76px;
     height: 52px;
 
     margin: 0;
     padding: 0;
-    inset: auto;
 
     background: #fff;
 
@@ -307,13 +308,11 @@
 }
 
 /* language selected */
-.language-selector:not(:has(.language-menu:popover-open))
-.language-button:hover {
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover {
     color: #a3a3a3;
 }
 
-.language-selector:not(:has(.language-menu:popover-open))
-.language-button:hover .language-chevron {
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover .language-chevron {
     background-image: url("../images/icon/chev_down_gr.svg");
 }
 
@@ -500,105 +499,13 @@
 }
 
 /* footer */
-.site-footer {
-    width: 100%;
-    height: 456px;
-    padding: 48px 0 20px;
-
-    background: #404040;
-    color: #fff;
-}
-
-.footer-inner {
-    width: 1440px;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 41px;
-}
-
-.footer-top {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-}
-
-.footer-logo {
-    display: block;
-    width: 154px;
-}
-
-.footer-logo img {
-    width: 154px;
-    height: 32px;
-}
-
-.footer-menu {
-    display: flex;
-    align-items: center;
-    gap: 36px;
-}
-
-.footer-menu a {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20px;
-    color: #fff;
-    white-space: nowrap;
-}
-
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
+body {
+    font-family: "Pretendard", sans-serif;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    color: #fff;
+    color: #171717;
 }
 
-.footer-contact p {
-    display: flex;
-    align-items: center;
-}
-
-.footer-contact img {
-    flex-shrink: 0;
-    margin-right: 12px;
-}
-
-.footer-certifications {
-    display: flex;
-    align-items: center;
-    gap: 63px;
-}
-
-.certification-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 6px;
-}
-
-.certification-item>img {
-    flex-shrink: 0;
-}
-
-.certification-item>p {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-.footer-copyright {
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 20px;
-    color: #fff;
-}
-
+/* 회사 정보 */
 .footer-company-info {
     display: flex;
     flex-direction: column;
@@ -618,19 +525,468 @@
     justify-content: space-between;
 }
 
+/* sns 위치 */
 .footer-bottom-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.sns-list {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* footer 배경*/
+.site-footer {
+    width: 100%;
+    padding: 48px 0 20px;
+    background: #404040;
+    color: #fff;
 }
 
-.sns-list img {
-    width: 24px;
-    height: 24px;
+/* footer inner 위치 */
+.footer-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+}
+
+/* footer 로고를 기준으로 위치 변경*/
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+
+/* footer logo */
+.footer-logo {
+    display: block;
+    width: 154px;
+}
+
+.footer-logo img {
+    width: 154px;
+    height: 32px;
+}
+
+
+/* footer menu */
+.footer-menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.footer-menu a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #fff;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.footer-menu a:hover {
+    opacity: 0.6;
+}
+
+
+/* footer contact */
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #fff;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+}
+
+/* contact와 icon의 간격 */
+.footer-contact img {
+    margin-right: 12px;
+}
+
+.footer-cert {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 63px;
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cert-item>p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.sns-list {
+    display: flex;
+    gap: 6px;
+}
+
+.sns-list a:hover {
+    opacity: 0.6;
+}
+
+/* copyright */
+.footer-copyright {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #fff;
+}
+
+
+/* =========================
+   footer 반응형
+========================= */
+
+/* 태블릿 */
+@media screen and (max-width: 1279px) {
+
+    .footer-inner {
+        padding: 0 1.5em;
+    }
+
+    .footer-info-row {
+        gap: 2em;
+    }
+
+    .footer-company-info {
+        font-size: 13px;
+    }
+
+    .footer-menu {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+}
+
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+
+    .site-footer {
+        height: auto;
+        padding: 40px 0 20px;
+    }
+
+    .footer-inner {
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    /* footer 메뉴 */
+    .footer-menu {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .footer-menu a {
+        font-size: 14px;
+    }
+
+    /* 연락처 + 회사정보 */
+    .footer-info-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-company-info {
+        text-align: left;
+        font-size: 12px;
+        line-height: 18px;
+        gap: 6px;
+    }
+
+    .footer-contact {
+        font-size: 12px;
+    }
+
+    /* 인증 + SNS */
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footer-cert {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .sns-list {
+        gap: 10px;
+    }
+
+    /* copyright */
+    .footer-copyright {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+}
+
+
+/* 작은 모바일 */
+@media screen and (max-width: 480px) {
+
+    .footer-logo {
+        width: 120px;
+    }
+
+    .footer-logo img {
+        width: 120px;
+        height: auto;
+    }
+
+    .footer-menu {
+        column-gap: 14px;
+        row-gap: 10px;
+    }
+
+    .footer-menu a {
+        font-size: 12px;
+    }
+
+    .footer-contact {
+        font-size: 11px;
+    }
+
+    .footer-contact p {
+        align-items: flex-start;
+    }
+
+    .footer-contact img {
+        width: 16px;
+        margin-right: 8px;
+    }
+
+    .footer-company-info {
+        font-size: 11px;
+    }
+
+    .cert-item {
+        font-size: 10px;
+    }
+
+    .cert-item img {
+        width: 50px;
+    }
+
+    .footer-copyright {
+        font-size: 9px;
+    }
+
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 1440px) {
+
+    .offers-container {
+        width: auto;
+        margin: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .offers-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 24px;
+    }
+
+    .offers-card {
+        width: 100%;
+
+    }
+
+    .offers-card>img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 708 / 400;
+        object-fit: cover;
+    }
+}
+
+
+/* tablet */
+@media screen and (max-width: 1279px) {
+
+    .offers-container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .offers-section {
+        margin-top: 120px;
+    }
+
+    .wellness-section {
+        margin-bottom: 120px;
+    }
+
+    .offers-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 24px;
+    }
+
+    .event-section .offers-list {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    .event-section .offers-card {
+        width: 100%;
+    }
+
+    .wellness-section .offers-list {
+        grid-template-columns: 1fr;
+    }
+
+    .wellness-section .offers-card {
+        width: 100%;
+    }
+
+    /* typo */
+    .offers-section h2 {
+        font-size: 46px;
+    }
+
+    .offers-card h3 {
+        font-size: 22px;
+    }
+
+    .offers-card>p {
+        font-size: 16px;
+    }
+
+    .offers-hero {
+        height: 500px;
+    }
+
+    .offers-hero h1 {
+        font-size: 60px;
+    }
+}
+
+
+/* mobile */
+@media screen and (max-width: 767px) {
+
+    .offers-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Hotel / Resort : 데스크톱처럼 2열 유지 */
+    .hotel-section .offers-list,
+    .resort-section .offers-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 16px;
+        row-gap: 0;
+    }
+
+    .offers-list {
+        row-gap: 48px;
+    }
+
+    .dining-section .offers-list,
+    .event-section .offers-list {
+        row-gap: 48px;
+    }
+
+    .offers-section {
+        margin-top: 88px;
+    }
+
+    .wellness-section {
+        margin-bottom: 88px;
+    }
+
+    /* typo */
+    .offers-section h2 {
+        margin-bottom: 28px;
+        font-size: 38px;
+    }
+
+    .hotel-section .offers-card h3,
+    .resort-section .offers-card h3 {
+        margin-top: 16px;
+        font-size: 16px;
+    }
+
+    .hotel-section .offers-card>p,
+    .resort-section .offers-card>p {
+        margin-top: 8px;
+        font-size: 13px;
+        min-height: 21px;
+    }
+
+    /* more-button */
+    .offers-more {
+        margin-top: 28px;
+    }
+
+    /* hero */
+    .offers-hero {
+        height: 380px;
+    }
+
+    .offers-hero h1 {
+        font-size: 48px;
+    }
+}
+
+/* small ver. mobile */
+@media screen and (max-width: 480px) {
+
+    .offers-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .offers-section {
+        margin-top: 72px;
+    }
+
+    .wellness-section {
+        margin-bottom: 72px;
+    }
+
+    .offers-hero {
+        height: 320px;
+    }
+
+    .offers-hero h1 {
+        font-size: 42px;
+    }
+
+    .offers-section h2 {
+        font-size: 34px;
+    }
+
+    .offers-card h3 {
+        font-size: 19px;
+    }
+
+    .offers-card>p {
+        font-size: 14px;
+    }
+
 }
