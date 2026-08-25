@@ -498,15 +498,18 @@ section{
 }
 .more-btn>a{
     display: flex;
-    gap: 4px;
+    /* gap: 4px; */
 
 }
 .more-btn>a::after{
     content: "";
     display: block;
-    width: 8px;
+    width: 16px;
     height: 19px;
-    background: url(../images/icon/arrow_wh.svg);
+    background-image: url(../images/icon/chev_right_pri.svg);
+    background-repeat: no-repeat;
+    background-size: contain;    /* 박스 크기에 맞춰 이미지 비율 조정 */
+    background-position: center;
 }
 
 /* offer */
