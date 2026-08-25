@@ -1,6 +1,5 @@
 /* header */
 .site-header {
-    /* 스티키헤더 아님 javascript 수업 후 수정 예정 */
     position: sticky;
     top: 0;
 
@@ -8,11 +7,13 @@
     height: 88px;
 
     background: #fff;
+
     z-index: 1000;
 }
 
 .header-bar {
     position: relative;
+
     width: 100%;
     height: 88px;
 
@@ -22,7 +23,7 @@
     border-bottom: 0.5px solid transparent;
 }
 
-/* 호버시 헤더 하단 구분선 */
+/* mega menu가 열려 있을 때 header bottom line */
 .site-header:has(.main-menu-item:hover > .mega-menu) .header-bar,
 .site-header:has(.main-menu-item:focus-within > .mega-menu) .header-bar {
     border-bottom-color: #d4d4d4;
@@ -32,6 +33,7 @@
     width: calc(100% - 160px);
     max-width: 1760px;
     height: 52px;
+
     margin: 0 auto;
     padding: 0;
 
@@ -40,9 +42,12 @@
     justify-content: space-between;
 }
 
+
+/* header-left */
 .header-left {
     display: flex;
     align-items: center;
+
     gap: 48px;
 }
 
@@ -56,31 +61,31 @@
     height: 32px;
 }
 
-/* main-nav */
 .main-nav {
     height: 88px;
 }
 
 .main-menu {
     height: 100%;
+
     display: flex;
     align-items: center;
+
     gap: 24px;
 }
 
-/* 텍스트 영역보다 넓었으면 좋겠어서 100% 잡음 */
 .main-menu-item {
     height: 100%;
 }
 
-/* 커서 이탈, 탭으로 서브메뉴까지 내려가도 고정되게 */
-.main-menu-item:hover>.mega-menu,
-.main-menu-item:focus-within>.mega-menu {
+.main-menu-item:hover > .mega-menu,
+.main-menu-item:focus-within > .mega-menu {
     display: block;
 }
 
-.main-menu-item>a {
+.main-menu-item > a {
     height: 100%;
+
     display: flex;
     align-items: center;
 
@@ -88,58 +93,64 @@
     font-weight: 600;
     line-height: 24px;
     letter-spacing: 0;
+
     color: #171717;
+
     white-space: nowrap;
 }
 
-.main-menu-item:hover>a {
+.main-menu-item:hover > a,
+.main-menu-item > a:hover,
+.main-menu-item > a:focus-within,
+.main-menu-item:focus-within > a {
     font-weight: 700;
     color: #a3a3a3;
 }
 
-.main-menu-item>a:hover,
-.main-menu-item>a:focus-within,
-.main-menu-item:focus-within>a {
-    font-weight: 700;
-    color: #a3a3a3;
-}
-
-/* mega-menu */
-/* min height 값 회의 필요 */
 .mega-menu {
     position: absolute;
+
     top: 88px;
     left: 0;
 
     width: 100%;
+
     min-height: 68px;
     height: auto;
 
     padding-top: 30px;
-    padding-left: max(282px,
-            calc((100% - 1760px) / 2 + 202px));
+
+    padding-left: max(
+        282px,
+        calc((100% - 1760px) / 2 + 202px)
+    );
+
     padding-right: 0;
     padding-bottom: 30px;
 
     background: #fff;
+
     z-index: 1001;
 
     display: none;
 }
 
+
 .mega-menu-list {
     display: flex;
     align-items: flex-start;
+
     gap: 21px;
 }
 
-/* 부모 mega-menu-list 공간 부족해도 줄어들지 않게 flex-shrink값 0 지정*/
 .mega-menu-group {
     width: 150px;
+
     flex-shrink: 0;
 
     display: flex;
     flex-direction: column;
+
     gap: 19px;
 }
 
@@ -148,21 +159,21 @@
     font-weight: 500;
     line-height: 16.5px;
     letter-spacing: 0;
+
     color: #171717;
+
     white-space: nowrap;
 }
 
-/* 수업시간에 탭 눌러서 이동/선택 접근 가능해야 한다는 내용 기억나서 
-근데 그게 앵커, 버튼 내용이었는지 정확히 기억 안남  */
 .mega-menu-title:hover,
 .mega-menu-title:focus-visible {
     color: #a3a3a3;
 }
 
-/* mega-submenu */
 .mega-submenu {
     display: flex;
     flex-direction: column;
+
     gap: 19px;
 }
 
@@ -171,7 +182,9 @@
     font-weight: 400;
     line-height: 16.5px;
     letter-spacing: 0;
+
     color: #a3a3a3;
+
     white-space: nowrap;
 }
 
@@ -186,10 +199,10 @@
     align-items: center;
 }
 
-/* utility-menu */
 .utility-menu {
     display: flex;
     align-items: center;
+
     gap: 8px;
 }
 
@@ -203,9 +216,10 @@
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0;
+
     color: #171717;
+
     white-space: nowrap;
-    /* 화면 좁아져도 텍스트 깨지지 않게 */
 }
 
 .utility-menu a:hover,
@@ -214,23 +228,26 @@
     color: #a3a3a3;
 }
 
-/* language selector */
+/* lang-sel */
 .language-selector {
     position: relative;
+
     width: 76px;
     height: 36px;
+
     margin-left: 16px;
 }
 
-/* language button */
 .language-button {
     width: 76px;
     height: 36px;
+
     padding: 8px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 4px;
 
     cursor: pointer;
@@ -239,15 +256,16 @@
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0.01em;
+
     color: #171717;
 
     anchor-name: --language-trigger;
 }
 
-/* default chevron */
 .language-chevron {
     width: 20px;
     height: 20px;
+
     flex-shrink: 0;
 
     background-image: url("../images/icon/chev_down_bk.svg");
@@ -256,18 +274,17 @@
     background-size: contain;
 }
 
-/* dropdown */
 .language-menu {
     position: fixed;
+
     position-anchor: --language-trigger;
 
-    /* Popover 기본 위치값 초기화 */
     inset: auto;
     margin: 0;
 
-    /* language-button 기준으로 위치 지정 */
     top: anchor(bottom);
     left: anchor(left);
+
     right: auto;
     bottom: auto;
 
@@ -277,22 +294,23 @@
     padding: 0;
 
     background: #fff;
+
     border: 0;
     outline: 1px solid #d4d4d4;
 
     overflow: hidden;
 }
 
-/* 각각의 KR / EN 영역 */
+/* KR / EN  */
 .language-menu li {
-    width: 100%px;
+    width: 100%;
     height: 26px;
 }
 
-/* option */
 .language-option {
     width: 100%;
     height: 100%;
+
     padding: 0;
 
     display: flex;
@@ -300,6 +318,7 @@
     justify-content: center;
 
     background: #fff;
+
     color: #171717;
 
     font-size: 14px;
@@ -310,36 +329,45 @@
     cursor: pointer;
 }
 
-/* option hover */
 .language-option:hover,
 .language-option:focus-visible {
     background: #1a5fa1;
     color: #fff;
 }
 
-/* language selected */
-/* language-menu열려있지 않을 때만,
-language-button에 호버 했을 때만 글자색 회색으로, chevrone아이콘도 동일하게*/
-.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover {
+
+/* closed hover */
+.language-selector:not(:has(.language-menu:popover-open))
+.language-button:hover {
     color: #a3a3a3;
 }
 
-.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover .language-chevron {
+
+.language-selector:not(:has(.language-menu:popover-open))
+.language-button:hover .language-chevron {
     background-image: url("../images/icon/chev_down_gr.svg");
 }
 
-.language-selector:has(.language-menu:popover-open) .language-button {
+
+/* open */
+.language-selector:has(.language-menu:popover-open)
+.language-button {
     color: #171717;
 }
 
-.language-selector:has(.language-menu:popover-open) .language-chevron {
+
+.language-selector:has(.language-menu:popover-open)
+.language-chevron {
     background-image: url("../images/icon/chev_up_bk.svg");
 }
 
-/* reservation button */
+
+
+/* reserve-btn */
 .reservation-button {
     width: 200px;
     height: 50px;
+
     margin-left: 12px;
 
     display: flex;
@@ -347,18 +375,135 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     justify-content: center;
 
     background: #1a5fa1;
+
     color: #fff;
 
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: 0;
+
     white-space: nowrap;
 }
 
 .reservation-button:hover,
 .reservation-button:focus-visible {
-    background: #13578F;
+    background: #13578f;
 }
 
 
+/* mobile header */
+/* Desktop에서는 숨김 */
+.mobile-header {
+    display: none;
+}
+
+/* tablet */
+@media screen and (max-width: 1279px) {
+
+    /* Header를 Hero 위에 배치 */
+    .site-header {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 88px;
+
+        background: transparent;
+
+        z-index: 1000;
+    }
+
+    .header-bar {
+        width: 100%;
+        height: 88px;
+
+        border-bottom: 0;
+    }
+
+    .header-inner {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+
+        margin: 0;
+
+        padding: 0 30px;
+    }
+
+    /* Desktop Header 숨김 */
+    .header-left,
+    .header-right {
+        display: none;
+    }
+
+    /* Mobile Header 표시 */
+    .mobile-header {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-header-logo {
+        display: block;
+
+        flex-shrink: 0;
+    }
+
+    .mobile-header-logo img {
+        width: 154px;
+        height: 32px;
+    }
+
+    /*menu, reserve-btn*/
+    .mobile-header-actions {
+        display: flex;
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    .mobile-reservation-button {
+        width: 112px;
+        height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #1a5fa1;
+
+        color: #fff;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        white-space: nowrap;
+    }
+
+    .mobile-menu-button {
+        width: 32px;
+        height: 32px;
+
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: transparent;
+    }
+
+    .mobile-menu-icon {
+        width: 28px;
+        height: 28px;
+
+        object-fit: contain;
+    }
+
+}

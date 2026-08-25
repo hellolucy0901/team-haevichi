@@ -285,7 +285,7 @@
 
 /* 각각의 KR / EN 영역 */
 .language-menu li {
-    width: 100%px;
+    width: 100%;
     height: 26px;
 }
 
@@ -737,9 +737,112 @@ body {
 }
 
 
+/* * mobile header - desktop에서는 숨김 */
+.mobile-header {
+    display: none;
+}
+
 /* tablet */
 @media screen and (max-width: 1279px) {
+    /* header */
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
 
+        width: 100%;
+        height: 88px;
+
+        background: transparent;
+
+        z-index: 1000;
+    }
+
+    .header-bar {
+        width: 100%;
+        height: 88px;
+
+        border-bottom: 0;
+    }
+
+    .header-inner {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+
+        margin: 0;
+        padding: 0 30px;
+    }
+
+    /* desktop header 숨김 */
+    .header-left,
+    .header-right {
+        display: none;
+    }
+
+    /* mobile header 표시 */
+    .mobile-header {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-header-logo {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .mobile-header-logo img {
+        width: 154px;
+        height: 32px;
+    }
+
+    .mobile-header-actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .mobile-reservation-button {
+        width: 112px;
+        height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #1a5fa1;
+        color: #fff;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        white-space: nowrap;
+    }
+
+    .mobile-menu-button {
+        width: 32px;
+        height: 32px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0;
+        background: transparent;
+    }
+
+    .mobile-menu-icon {
+        width: 28px;
+        height: 28px;
+
+        object-fit: contain;
+    }
+
+    /* main */
     .content-container {
         width: calc(100% - 60px);
     }
@@ -793,7 +896,6 @@ body {
         flex-wrap: wrap;
         gap: 20px;
     }
-
 }
 
 
