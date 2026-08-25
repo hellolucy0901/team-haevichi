@@ -328,8 +328,8 @@
 
 /* reservation button */
 .reservation-button {
-    width: 206px;
-    height: 52px;
+    width: 200px;
+    height: 50px;
     margin-left: 12px;
 
     display: flex;
