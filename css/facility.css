@@ -315,7 +315,7 @@ iframe {
 /* header */
 header {
     position: fixed;
-    background-color: rgba(0, 0, 255, 0.2);
+    /* background-color: rgba(0, 0, 255, 0.2); */
     width: 100%;
     /* padding: 18px 0 0; */
     z-index: 10000;
@@ -589,57 +589,6 @@ padding 위아래20 좌우 32*/
 }
 
 
-
-/* 자식요소 옆으로 붙이기 48  */
-.reservation-wrap>.re-left {
-    display: flex;
-    gap: 3em;
-    line-height: 1.5em;
-    font-size: 0.94em;
-
-}
-
-/* 글자 흰색 15px */
-.reservation-wrap>.re-left .re-item-title {
-    color: #fff;
-}
-
-/* 글자색 Ne 400 15px,아래 선 */
-.reservation-wrap>.re-left .re-data {
-    color: var(--Neutral-400);
-    border-bottom: 1px solid var(--Neutral-200);
-}
-
-.reservation-wrap>.re-left .select-hotel,
-.reservation-wrap>.re-left .select-date {
-    width: 220px;
-}
-
-
-/* 자식을 옆으로 붙이기 간격20 */
-.reservation-wrap>.re-left>.count-set-wrap {
-    display: flex;
-    gap: 20px;
-}
-
-.reservation-wrap>.re-left>.count-set-wrap .re-data {
-    width: 78px;
-}
-
-.reservation-wrap>.re-left .re-data input {
-    background: none;
-    border: none;
-}
-
-.reservation-wrap>.re-left .re-data input::placeholder {
-    color: var()
-}
-
-.reservation-popup-wrap {
-    display: none;
-}
-
-/*  */
 /* main */
 /* main 공통영역 */
 section {
@@ -815,7 +764,7 @@ section {
 .hero__title{
     position: absolute;
     font-size: 3.5em;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -842,17 +791,6 @@ section {
 .facility {
     width: 100%;
 }
-
-.facility-section:first-of-type {
-    margin-top: 204px;
-    margin: 200px;
-}
-
-.facility-section+.facility-section {
-    margin-top: 204px;
-    margin: 200px;
-}
-
 .section-head {
     text-align: left;
 }
