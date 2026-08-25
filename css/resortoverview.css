@@ -316,7 +316,7 @@ header:hover .lang-btn>a::after {
 }
 
 .room-overview-wrap.special-suite-room {
-    padding-bottom: 100px;
+    padding-bottom: 150px;
 }
 
 .room-overview-wrap.special-suite-room::before {
@@ -371,6 +371,8 @@ header:hover .lang-btn>a::after {
     height: 100%;
     object-fit: cover;
 }
+
+
 
 
 /* 이미지 비율 수정 */

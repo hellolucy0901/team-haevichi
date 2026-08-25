@@ -318,7 +318,7 @@ header:hover .lang-btn>a::after {
 }
 
 .room-overview-wrap.special-suite-room {
-    padding-bottom: 100px;
+    padding-bottom: 150px;
 }
 
 .room-overview-wrap.special-suite-room::before {
@@ -395,7 +395,7 @@ header:hover .lang-btn>a::after {
 
 .room-overview-list li .text-box h3 {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
