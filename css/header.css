@@ -1,12 +1,8 @@
-/* header */
 .site-header {
     /* 스티키헤더 아님 javascript 수업 후 수정 예정 */
-    position: sticky;
-    top: 0;
-
+    position: relative;
     width: 100%;
     height: 88px;
-
     background: #fff;
     z-index: 1000;
 }
@@ -38,24 +34,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.mobile-menu-button {
-    width: 32px;
-    height: 32px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-    background: transparent;
-}
-
-.mobile-menu-icon {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
 }
 
 .header-left {
@@ -110,13 +88,7 @@
     white-space: nowrap;
 }
 
-.main-menu-item:hover>a {
-    font-weight: 700;
-    color: #a3a3a3;
-}
-
-.main-menu-item>a:hover,
-.main-menu-item>a:focus-within,
+.main-menu-item>:hover>a,
 .main-menu-item:focus-within>a {
     font-weight: 700;
     color: #a3a3a3;
@@ -198,13 +170,12 @@
     color: #262626;
 }
 
-/* header-right */
 .header-right {
     display: flex;
     align-items: center;
 }
 
-/* utility-menu */
+/* utility */
 .utility-menu {
     display: flex;
     align-items: center;
@@ -232,7 +203,7 @@
     color: #a3a3a3;
 }
 
-/* language selector */
+/* language selector*/
 .language-selector {
     position: relative;
     width: 76px;
@@ -240,7 +211,6 @@
     margin-left: 16px;
 }
 
-/* language button */
 .language-button {
     width: 76px;
     height: 36px;
@@ -279,7 +249,7 @@
     position: fixed;
     position-anchor: --language-trigger;
 
-    /* Popover 기본 위치값 초기화 */
+    /* popover 기본 위치값 */
     inset: auto;
     margin: 0;
 
@@ -301,13 +271,13 @@
     overflow: hidden;
 }
 
-/* 각각의 KR / EN 영역 */
+/* KR / EN 영역 */
 .language-menu li {
-    width: 100%px;
+    width: 100%;
     height: 26px;
 }
 
-/* option */
+/* language option */
 .language-option {
     width: 100%;
     height: 100%;
@@ -380,15 +350,16 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 }
 
 
-/* Desktop에서는 숨김 */
+/* desktop */
+/* Desktop에서는 mobile header 숨김 */
 .mobile-header {
     display: none;
 }
 
-/* responsive */
-@media screen and (max-width: 1440px) {
+/* tablet */
+@media screen and (max-width: 1279px) {
 
-    /* header */
+  /* header */
     .site-header {
         position: absolute;
         top: 0;
@@ -418,11 +389,13 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
         padding: 0 30px;
     }
 
+
     /* desktop header 숨김 */
     .header-left,
     .header-right {
         display: none;
     }
+
 
     /* mobile header 표시 */
     .mobile-header {
@@ -487,81 +460,3 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
         object-fit: contain;
     }
 }
-
-
-/* desktop header 숨김 */
-    .header-left,
-    .header-right {
-        display: none;
-    }
-
-
-    /* mobile header 표시 */
-    .mobile-header {
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-
-    /* mobile logo */
-    .mobile-header-logo {
-        display: block;
-        flex-shrink: 0;
-    }
-
-    .mobile-header-logo img {
-        width: 120px;
-        height: auto;
-    }
-
-
-    /* 오른쪽 예약하기 + 햄버거 */
-    .mobile-header-actions {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-
-    /* 예약하기 */
-    .mobile-reservation-button {
-        width: 100px;
-        height: 40px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        background: #1a5fa1;
-        color: #fff;
-
-        font-size: 16px;
-        font-weight: 600;
-
-        white-space: nowrap;
-    }
-
-
-    /* hamburger */
-    .mobile-menu-button {
-        width: 32px;
-        height: 32px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        padding: 0;
-        background: transparent;
-    }
-
-    .mobile-menu-icon {
-        width: 28px;
-        height: 28px;
-
-        object-fit: contain;
-    }
