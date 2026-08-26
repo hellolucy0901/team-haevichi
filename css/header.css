@@ -7,11 +7,13 @@
     height: 88px;
 
     background: #fff;
+
     z-index: 1000;
 }
 
 .header-bar {
     position: relative;
+
     width: 100%;
     height: 88px;
 
@@ -21,6 +23,7 @@
     border-bottom: 0.5px solid transparent;
 }
 
+/* mega menu가 열려 있을 때 header bottom line */
 .site-header:has(.main-menu-item:hover > .mega-menu) .header-bar,
 .site-header:has(.main-menu-item:focus-within > .mega-menu) .header-bar {
     border-bottom-color: #d4d4d4;
@@ -30,6 +33,7 @@
     width: calc(100% - 160px);
     max-width: 1760px;
     height: 52px;
+
     margin: 0 auto;
     padding: 0;
 
@@ -38,9 +42,12 @@
     justify-content: space-between;
 }
 
+
+/* header-left */
 .header-left {
     display: flex;
     align-items: center;
+
     gap: 48px;
 }
 
@@ -54,15 +61,16 @@
     height: 32px;
 }
 
-/* main-nav */
 .main-nav {
     height: 88px;
 }
 
 .main-menu {
     height: 100%;
+
     display: flex;
     align-items: center;
+
     gap: 24px;
 }
 
@@ -70,13 +78,14 @@
     height: 100%;
 }
 
-.main-menu-item:hover>.mega-menu,
-.main-menu-item:focus-within>.mega-menu {
+.main-menu-item:hover > .mega-menu,
+.main-menu-item:focus-within > .mega-menu {
     display: block;
 }
 
-.main-menu-item>a {
+.main-menu-item > a {
     height: 100%;
+
     display: flex;
     align-items: center;
 
@@ -84,57 +93,64 @@
     font-weight: 600;
     line-height: 24px;
     letter-spacing: 0;
+
     color: #171717;
+
     white-space: nowrap;
 }
 
-.main-menu-item:hover>a {
+.main-menu-item:hover > a,
+.main-menu-item > a:hover,
+.main-menu-item > a:focus-within,
+.main-menu-item:focus-within > a {
     font-weight: 700;
     color: #a3a3a3;
 }
 
-.main-menu-item>a:hover,
-.main-menu-item>a:focus-within,
-.main-menu-item:focus-within>a {
-    font-weight: 700;
-    color: #a3a3a3;
-}
-
-
-
-/* mega-menu */
 .mega-menu {
     position: absolute;
+
     top: 88px;
     left: 0;
 
     width: 100%;
-    height: 221px;
+
+    min-height: 68px;
+    height: auto;
 
     padding-top: 30px;
-    padding-left: max(282px,
-            calc((100% - 1760px) / 2 + 202px));
+
+    padding-left: max(
+        282px,
+        calc((100% - 1760px) / 2 + 202px)
+    );
+
     padding-right: 0;
     padding-bottom: 30px;
 
     background: #fff;
+
     z-index: 1001;
 
     display: none;
 }
 
+
 .mega-menu-list {
     display: flex;
     align-items: flex-start;
+
     gap: 21px;
 }
 
 .mega-menu-group {
     width: 150px;
+
     flex-shrink: 0;
 
     display: flex;
     flex-direction: column;
+
     gap: 19px;
 }
 
@@ -143,7 +159,9 @@
     font-weight: 500;
     line-height: 16.5px;
     letter-spacing: 0;
+
     color: #171717;
+
     white-space: nowrap;
 }
 
@@ -152,10 +170,10 @@
     color: #a3a3a3;
 }
 
-/* mega-submenu */
 .mega-submenu {
     display: flex;
     flex-direction: column;
+
     gap: 19px;
 }
 
@@ -164,7 +182,9 @@
     font-weight: 400;
     line-height: 16.5px;
     letter-spacing: 0;
+
     color: #a3a3a3;
+
     white-space: nowrap;
 }
 
@@ -174,16 +194,15 @@
 }
 
 /* header-right */
-
 .header-right {
     display: flex;
     align-items: center;
 }
 
-/* utility-menu */
 .utility-menu {
     display: flex;
     align-items: center;
+
     gap: 8px;
 }
 
@@ -197,7 +216,9 @@
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0;
+
     color: #171717;
+
     white-space: nowrap;
 }
 
@@ -207,23 +228,26 @@
     color: #a3a3a3;
 }
 
-/* language selector */
+/* lang-sel */
 .language-selector {
     position: relative;
+
     width: 76px;
     height: 36px;
+
     margin-left: 16px;
 }
 
-/* language button */
 .language-button {
     width: 76px;
     height: 36px;
+
     padding: 8px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 4px;
 
     cursor: pointer;
@@ -232,15 +256,16 @@
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0.01em;
+
     color: #171717;
 
     anchor-name: --language-trigger;
 }
 
-/* default chevron */
 .language-chevron {
     width: 20px;
     height: 20px;
+
     flex-shrink: 0;
 
     background-image: url("../images/icon/chev_down_bk.svg");
@@ -249,20 +274,23 @@
     background-size: contain;
 }
 
-/* dropdown */
 .language-menu {
     position: fixed;
+
     position-anchor: --language-trigger;
+
+    inset: auto;
+    margin: 0;
 
     top: anchor(bottom);
     left: anchor(left);
+
     right: auto;
     bottom: auto;
 
     width: 76px;
     height: 52px;
 
-    margin: 0;
     padding: 0;
 
     background: #fff;
@@ -273,16 +301,16 @@
     overflow: hidden;
 }
 
-/* 각각의 KR / EN 영역 */
+/* KR / EN  */
 .language-menu li {
-    width: 100%px;
+    width: 100%;
     height: 26px;
 }
 
-/* option */
 .language-option {
     width: 100%;
     height: 100%;
+
     padding: 0;
 
     display: flex;
@@ -290,6 +318,7 @@
     justify-content: center;
 
     background: #fff;
+
     color: #171717;
 
     font-size: 14px;
@@ -300,37 +329,45 @@
     cursor: pointer;
 }
 
-/* option hover */
 .language-option:hover,
 .language-option:focus-visible {
     background: #1a5fa1;
     color: #fff;
 }
 
-/* language selected */
+
+/* closed hover */
 .language-selector:not(:has(.language-menu:popover-open))
 .language-button:hover {
     color: #a3a3a3;
 }
+
 
 .language-selector:not(:has(.language-menu:popover-open))
 .language-button:hover .language-chevron {
     background-image: url("../images/icon/chev_down_gr.svg");
 }
 
-.language-selector:has(.language-menu:popover-open) .language-button {
+
+/* open */
+.language-selector:has(.language-menu:popover-open)
+.language-button {
     color: #171717;
 }
 
-.language-selector:has(.language-menu:popover-open) .language-chevron {
+
+.language-selector:has(.language-menu:popover-open)
+.language-chevron {
     background-image: url("../images/icon/chev_up_bk.svg");
 }
 
 
-/* reservation button */
+
+/* reserve-btn */
 .reservation-button {
     width: 200px;
     height: 50px;
+
     margin-left: 12px;
 
     display: flex;
@@ -338,18 +375,135 @@
     justify-content: center;
 
     background: #1a5fa1;
+
     color: #fff;
 
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: 0;
+
     white-space: nowrap;
 }
 
 .reservation-button:hover,
 .reservation-button:focus-visible {
-    background: #13578F;
+    background: #13578f;
 }
 
 
+/* mobile header */
+/* Desktop에서는 숨김 */
+.mobile-header {
+    display: none;
+}
+
+/* tablet */
+@media screen and (max-width: 1279px) {
+
+    /* Header를 Hero 위에 배치 */
+    .site-header {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 88px;
+
+        background: transparent;
+
+        z-index: 1000;
+    }
+
+    .header-bar {
+        width: 100%;
+        height: 88px;
+
+        border-bottom: 0;
+    }
+
+    .header-inner {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+
+        margin: 0;
+
+        padding: 0 30px;
+    }
+
+    /* Desktop Header 숨김 */
+    .header-left,
+    .header-right {
+        display: none;
+    }
+
+    /* Mobile Header 표시 */
+    .mobile-header {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-header-logo {
+        display: block;
+
+        flex-shrink: 0;
+    }
+
+    .mobile-header-logo img {
+        width: 154px;
+        height: 32px;
+    }
+
+    /*menu, reserve-btn*/
+    .mobile-header-actions {
+        display: flex;
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    .mobile-reservation-button {
+        width: 112px;
+        height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #1a5fa1;
+
+        color: #fff;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        white-space: nowrap;
+    }
+
+    .mobile-menu-button {
+        width: 32px;
+        height: 32px;
+
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: transparent;
+    }
+
+    .mobile-menu-icon {
+        width: 28px;
+        height: 28px;
+
+        object-fit: contain;
+    }
+
+}
