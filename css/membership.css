@@ -40,10 +40,10 @@
 }
 
 main{
-    padding-top : px;
+    padding-top :200 px;
 }
 .membership-detail-wrap{
-padding-bottom:160px;
+padding-bottom:200px;
 }
 
 .membership-detail-wrap .title-box{
@@ -51,9 +51,16 @@ padding-bottom:160px;
     margin-bottom:56px;
 }
 
+
 .membership-detail-wrap .title-box p{
     color:var(--Neutral-700);
     line-height: 1.6;
+}
+
+.membership-detail-wrap .section-title{
+    font-size: 42px;
+    text-transform: capitalize;
+
 }
 
 .membership-list{
@@ -139,7 +146,7 @@ padding-bottom:160px;
 
 }
 
-@media(max-width:767px){
+@media(max-width:1023px){
     .sub-visual{
         height: 240px;
     }
@@ -154,12 +161,26 @@ padding-bottom:160px;
         gap:40px;
     }
     .membership-list>li{
-        flex-direction: column;
-        align-items: flex-start;
+        /* flex-direction: column;
+        align-items: flex-start; */
         gap:16px;
     }
     .membership-list .img-box{
-        flex:0 0 auto;
-        width:100%;
+        flex:0 0 120px;
     }
+    .membership-list .h3{
+        font-size:1.1em;
+        margin-bottom: 8px;
+    }
+    .membership-list .detail{
+        font-size: 0.85em;
+    }
+    .price-wrap{
+        margin-top:12px;
+        padding-top:12px;
+    }
+    .price-wrap .price-strong{
+        font-size: 1.1em;
+    }
+
 }
