@@ -938,6 +938,26 @@ body {
         min-height: 21px;
     }
 
+      .dining-section .offers-card > p {
+        /* 최대 3줄로 */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+
+        line-clamp: 3;
+
+        overflow: hidden;
+
+        /* 기본 높이 */
+        min-height: 31px;
+
+        margin-top: 12px;
+    }
+
+    .dining-section .offers-more {
+        margin-top: 28px;
+    }
+
     /* more-button */
     .offers-more {
         margin-top: 28px;
