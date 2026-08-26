@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <!-- header -->
     <header class="site-header">
         <div class="header-bar">
             <div class="header-inner">
@@ -252,9 +251,9 @@
                         </ul>
                     </nav>
                 </div>
+
                 <!-- header-right -->
                 <div class="header-right">
-
                     <nav class="utility-nav" aria-label="사용자 메뉴">
                         <ul class="utility-menu">
                             <li><a href="#">로그인</a></li>
@@ -263,10 +262,10 @@
                         </ul>
                     </nav>
 
-
-                    <!-- language selector -->
                     <div class="language-selector">
-
+                        <!-- popvoertarget : 어떤 메뉴 제어할지 지정 -->
+                        <!-- popovertargetaction : 그 메뉴를 어떻게 열고 닫을지 지정 -->
+                        <!-- popovertargetaction="toggle" : popover 클릭할 때마다 열기/닫기 가능하게 -->
                         <button type="button" class="language-button" popovertarget="language-menu"
                             popovertargetaction="toggle">
                             <span class="current-language">KR</span>
@@ -274,8 +273,8 @@
                         </button>
 
                         <ul class="language-menu" id="language-menu" popover>
-
                             <li>
+                                <!-- popovertargetaction="hide" : 옵션 클릭 후 드롭다운 닫게 만들기  -->
                                 <button type="button" class="language-option" popovertarget="language-menu"
                                     popovertargetaction="hide">
                                     KR
@@ -288,16 +287,11 @@
                                     EN
                                 </button>
                             </li>
-
                         </ul>
 
                     </div>
 
-
-                    <a href="#" class="reservation-button">
-                        예약하기
-                    </a>
-
+                    <a href="#" class="reservation-button">예약하기</a>
                 </div>
 
 
@@ -305,7 +299,7 @@
                 <div class="mobile-header">
 
                     <a href="#" class="mobile-header-logo">
-                        <img src="./images/logo/white.png" alt="Haevichi">
+                        <img src="./images/logo/black.png" alt="Haevichi">
                     </a>
 
                     <div class="mobile-header-actions">
@@ -322,8 +316,9 @@
 
                 </div>
 
-            </div> <!-- header-inner -->
-        </div> <!-- header-bar -->
+            </div>
+        </div>
+
     </header>
 
 
@@ -400,7 +395,6 @@
 
                 <div class="section-heading">
                     <h2>Business</h2>
-
                     <p>다양한 공간과 모던한 인테리어, 국내외 행사로 다져진 해비치만의 세심한 서비스로 성공적인 연회를 약속합니다.
                     </p>
                 </div>
@@ -410,9 +404,7 @@
 
                     <!-- Business Card 01 -->
                     <li class="business-card" id="grand-ballroom">
-
                         <img src="./images/weddingnbusiness_section/business1.jpg" alt="그랜드볼룸 이미지">
-
                         <h3>그랜드볼룸</h3>
 
                         <p>제주 단일 호텔 연회장 중 가장 큰 규모로 1,000명 이상 수용 및 연회장 분할이 가능합니다.
@@ -422,15 +414,11 @@
                             자세히 보기
                             <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
                         </a>
-
                     </li>
-
 
                     <!-- Business Card 02 -->
                     <li class="business-card" id="crystal-hall">
-
                         <img src="./images/weddingnbusiness_section/business2.jpg" alt="크리스탈홀 이미지">
-
                         <h3>크리스탈홀</h3>
 
                         <p>호텔과 리조트 중간의 지하 1층에 위치한 편리한 동선과 함께 약 440명 까지 좌석 배치가 가능한 연회장입니다.
@@ -440,15 +428,11 @@
                             자세히 보기
                             <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
                         </a>
-
                     </li>
-
 
                     <!-- Business Card 03 -->
                     <li class="business-card" id="diamond-hall">
-
                         <img src="./images/weddingnbusiness_section/business3.jpg" alt="다이아몬드홀 이미지">
-
                         <h3>다이아몬드홀</h3>
 
                         <p>약 264명의 좌석 배치와 2개의 연회장으로 분할이 가능합니다.
@@ -458,25 +442,20 @@
                             자세히 보기
                             <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
                         </a>
-
                     </li>
-
 
                     <!-- Business Card 04 -->
                     <li class="business-card" id="small-meeting">
-
                         <img src="./images/weddingnbusiness_section/business4.jpg" alt="소규모 미팅 공간 이미지">
-
                         <h3>소규모 미팅</h3>
 
-                        <p>약 264명의 좌석 배치와 2개의 연회장으로 분할이 가능합니다.약 264명의 좌석 배치와 2개의 연회장으로 분할이 가능합니다.
+                        <p>약 10명의 좌석 배치가 가능하며 소규모 회의나 미팅에 적합합니다.
                         </p>
 
                         <a href="#" class="more-link">
                             자세히 보기
                             <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
                         </a>
-
                     </li>
 
                 </ul>
@@ -491,16 +470,13 @@
 
                 <div class="section-heading">
                     <h2>Catering</h2>
-
                     <p>야외 잔디 정원, 수영장 등 야외 공간을 활용한 맞춤 연회를 제공합니다.</p>
                 </div>
-
 
                 <div class="catering-content">
 
                     <div class="catering-images">
                         <img src="./images/weddingnbusiness_section/catering1.jpg" alt="케이터링 테이블 세팅 이미지">
-
                         <img src="./images/weddingnbusiness_section/catering2.jpg" alt="야외 케이터링 테이블 이미지">
                     </div>
 
@@ -519,122 +495,115 @@
             </div>
         </section>
 
-        <!-- footer -->
-        <footer class="site-footer">
-            <div class="footer-inner">
+    </main>
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
 
-                <!-- Footer Top -->
-                <div class="footer-top">
-                    <a href="#" class="footer-logo">
-                        <img src="./images/logo/white.png" alt="해비치">
-                    </a>
+            <div class="footer-top">
+                <a href="#" class="footer-logo">
+                    <img src="./images/logo/white.png" alt="해비치">
+                </a>
+                <nav class="footer-nav" aria-label="푸터 메뉴">
+                    <ul class="footer-menu">
+                        <li><a href="#">해비치소개</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                        <li><a href="#">해비치약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이메일무단수집금지</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-                    <nav class="footer-nav" aria-label="푸터 메뉴">
-                        <ul class="footer-menu">
-                            <li><a href="#">해비치소개</a></li>
-                            <li><a href="#">고객센터</a></li>
-                            <li><a href="#">오시는 길</a></li>
-                            <li><a href="#">해비치약관</a></li>
-                            <li><a href="#">개인정보처리방침</a></li>
-                            <li><a href="#">이메일무단수집금지</a></li>
-                        </ul>
-                    </nav>
+            <!-- Contact + Company Info -->
+            <div class="footer-info-row">
+                <address class="footer-contact">
+
+                    <!-- 장식용 아이콘이므로 대체 텍스트를 비움 -->
+                    <!-- | 디자인용 구분자를 접근성을 고려해 사용하면 스크린리더가 읽지 않음 -->
+                    <p>
+                        <img src="./images/icon/location_wh.svg" alt="">
+                        <a href="#">제주특별자치도 서귀포시 성산읍 해비치로 136</a>
+                    </p>
+
+                    <p>
+                        <img src="./images/icon/phone_wh.svg" alt="">
+                        <a href="tel:0647808000">064-780-8000</a>
+                        <span aria-hidden="true">|</span>
+                        <span>예약</span>
+                        <a href="tel:15881234">1588-1234</a>
+                    </p>
+
+                    <p>
+                        <img src="./images/icon/envelope_wh.svg" alt="">
+                        <a href="mailto:info@haevichi.com">
+                            info@haevichi.com
+                        </a>
+                    </p>
+
+                </address>
+
+                <div class="footer-company-info">
+                    <p>해비치호텔앤드리조트 주식회사</p>
+                    <p>사업자등록번호 : 616-81-27929</p>
+                    <p>통신판매신고번호 : 제주남원 00040호 대표이사 황규석</p>
                 </div>
-
-
-                <!-- Contact + Company Info -->
-                <div class="footer-info-row">
-                    <address class="footer-contact">
-                        <!-- 장식용 아이콘이므로 대체 텍스트를 비움 -->
-                        <!-- | 디자인용 구분자를 접근성을 고려해 사용하면 스크린리더가 읽지 않음 -->
-                        <p>
-                            <img src="./images/icon/location_wh.svg" alt="">
-                            <a href="#">제주특별자치도 서귀포시 성산읍 해비치로 136</a>
-                        </p>
-
-                        <p>
-                            <img src="./images/icon/phone_wh.svg" alt="">
-                            <a href="tel:0647808000">064-780-8000</a>
-                            <span aria-hidden="true">|</span>
-                            <span>예약</span>
-                            <a href="tel:15881234">1588-1234</a>
-                        </p>
-
-                        <p>
-                            <img src="./images/icon/envelope_wh.svg" alt="">
-                            <a href="mailto:info@haevichi.com">
-                                info@haevichi.com
-                            </a>
-                        </p>
-                    </address>
-
-                    <div class="footer-company-info">
-                        <p>해비치호텔앤드리조트 주식회사</p>
-                        <p>사업자등록번호 : 616-81-27929</p>
-                        <p>통신판매신고번호 : 제주남원 00040호 대표이사 황규석</p>
-                    </div>
-
-                </div>
-
-
-                <!-- Certification + SNS -->
-                <div class="footer-bottom-row">
-
-                    <div class="footer-cert">
-
-                        <div class="cert-item">
-                            <img src="./images/footer/ks_sqi.jpg" alt="">
-                            <p><span>한국 서비스 품질 지수</span>
-                                <span>(KS-SQI) 수상</span>
-                            </p>
-                        </div>
-
-                        <div class="cert-item">
-                            <img src="./images/footer/greenkey.jpg" alt="">
-                            <p>
-                                <span>국제 친환경 인증 프로그램</span>
-                                <span>그린 키 (Green Key) 획득</span>
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <nav class="sns" aria-label="소셜 미디어">
-                        <ul class="sns-list">
-                            <!-- target="_blank" 새 창 만들때 사용하는 보안코드 -->
-
-                            <li>
-                                <a href="#" target="_blank" rel="noopener noreferrer">
-                                    <img src="./images/icon/insta_wh.svg" alt="인스타그램">
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" target="_blank" rel="noopener noreferrer">
-                                    <img src="./images/icon/facebook_wh.svg" alt="페이스북">
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" target="_blank" rel="noopener noreferrer">
-                                    <img src="./images/icon/youtube_wh.svg" alt="유튜브">
-                                </a>
-                            </li>
-
-                        </ul>
-                    </nav>
-
-                </div>
-
-
-                <p class="footer-copyright">
-                    COPYRIGHT 2018 Haevichi hotels &amp; resorts Co. LTD. All Right Reserved
-                </p>
 
             </div>
-        </footer>
 
+            <!-- Certification + SNS -->
+            <div class="footer-bottom-row">
+                <div class="footer-cert">
 
+                    <div class="cert-item">
+                        <img src="./images/footer/ks_sqi.jpg" alt="">
+                        <p><span>한국 서비스 품질 지수</span>
+                            <span>(KS-SQI) 수상</span>
+                        </p>
+                    </div>
+
+                    <div class="cert-item">
+                        <img src="./images/footer/greenkey.jpg" alt="">
+                        <p>
+                            <span>국제 친환경 인증 프로그램</span>
+                            <span>그린 키 (Green Key) 획득</span>
+                        </p>
+                    </div>
+
+                </div>
+
+                <nav class="sns" aria-label="소셜 미디어">
+                    <ul class="sns-list">
+                        <!-- target="_blank" 새 창 만들때 사용하는 보안코드 -->
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./images/icon/insta_wh.svg" alt="인스타그램">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./images/icon/facebook_wh.svg" alt="페이스북">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./images/icon/youtube_wh.svg" alt="유튜브">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <p class="footer-copyright">
+                COPYRIGHT 2018 Haevichi hotels &amp; resorts Co. LTD. All Right Reserved
+            </p>
+
+        </div>
+    </footer>
 </body>
 
 </html>

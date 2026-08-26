@@ -638,6 +638,8 @@ body {
     color: #fff;
 }
 
+
+
 /* desktop */
 /* Desktop에서는 mobile header 숨김 */
 .mobile-header {
@@ -737,11 +739,11 @@ body {
     .mobile-header-actions {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 20px;
     }
 
     .mobile-reservation-button {
-        width: 80px;
+        width: 180px;
         height: 46px;
 
         display: flex;
@@ -785,8 +787,7 @@ body {
 
     .offers-hero h1 {
         top: calc(50% + 44px);
-
-        font-size: 60px;
+        font-size: 54px;
     }
 
 
