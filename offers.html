@@ -264,7 +264,9 @@
                     </nav>
 
                     <div class="language-selector">
-
+                        <!-- popvoertarget : 어떤 메뉴 제어할지 지정 -->
+                        <!-- popovertargetaction : 그 메뉴를 어떻게 열고 닫을지 지정 -->
+                        <!-- popovertargetaction="toggle" : popover 클릭할 때마다 열기/닫기 가능하게 -->
                         <button type="button" class="language-button" popovertarget="language-menu"
                             popovertargetaction="toggle">
                             <span class="current-language">KR</span>
@@ -273,6 +275,7 @@
 
                         <ul class="language-menu" id="language-menu" popover>
                             <li>
+                                <!-- popovertargetaction="hide" : 옵션 클릭 후 드롭다운 닫게 만들기  -->
                                 <button type="button" class="language-option" popovertarget="language-menu"
                                     popovertargetaction="hide">
                                     KR
@@ -292,9 +295,33 @@
                     <a href="#" class="reservation-button">예약하기</a>
                 </div>
 
+
+                <!-- mobile header -->
+                <div class="mobile-header">
+
+                    <a href="#" class="mobile-header-logo">
+                        <img src="./images/logo/white.png" alt="Haevichi">
+                    </a>
+
+                    <div class="mobile-header-actions">
+
+                        <a href="#" class="mobile-reservation-button">
+                            예약하기
+                        </a>
+
+                        <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기">
+                            <img src="./images/icon/menu.svg" alt="" class="mobile-menu-icon">
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
+
     </header>
+
 
     <!-- main -->
     <main>
@@ -481,7 +508,7 @@
             <div class="footer-info-row">
                 <address class="footer-contact">
                     <!-- 장식용 아이콘이므로 대체 텍스트를 비움 -->
-                     <!-- | 디자인용 구분자를 접근성을 고려해 사용하면 스크린리더가 읽지 않음 -->
+                    <!-- | 디자인용 구분자를 접근성을 고려해 사용하면 스크린리더가 읽지 않음 -->
                     <p>
                         <img src="./images/icon/location_wh.svg" alt="">
                         <a href="#">제주특별자치도 서귀포시 성산읍 해비치로 136</a>

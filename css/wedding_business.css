@@ -1,5 +1,6 @@
 /* header */
 .site-header {
+    /* 스티키헤더 아님 javascript 수업 후 수정 예정 */
     position: sticky;
     top: 0;
 
@@ -21,6 +22,7 @@
     border-bottom: 0.5px solid transparent;
 }
 
+/* 호버시 헤더 하단 구분선 */
 .site-header:has(.main-menu-item:hover > .mega-menu) .header-bar,
 .site-header:has(.main-menu-item:focus-within > .mega-menu) .header-bar {
     border-bottom-color: #d4d4d4;
@@ -66,10 +68,12 @@
     gap: 24px;
 }
 
+/* 텍스트 영역보다 넓었으면 좋겠어서 100% 잡음 */
 .main-menu-item {
     height: 100%;
 }
 
+/* 커서 이탈, 탭으로 서브메뉴까지 내려가도 고정되게 */
 .main-menu-item:hover>.mega-menu,
 .main-menu-item:focus-within>.mega-menu {
     display: block;
@@ -100,16 +104,16 @@
     color: #a3a3a3;
 }
 
-
-
 /* mega-menu */
+/* min height 값 회의 필요 */
 .mega-menu {
     position: absolute;
     top: 88px;
     left: 0;
 
     width: 100%;
-    height: 221px;
+    min-height: 68px;
+    height: auto;
 
     padding-top: 30px;
     padding-left: max(282px,
@@ -129,6 +133,7 @@
     gap: 21px;
 }
 
+/* 부모 mega-menu-list 공간 부족해도 줄어들지 않게 flex-shrink값 0 지정*/
 .mega-menu-group {
     width: 150px;
     flex-shrink: 0;
@@ -147,6 +152,8 @@
     white-space: nowrap;
 }
 
+/* 수업시간에 탭 눌러서 이동/선택 접근 가능해야 한다는 내용 기억나서 
+근데 그게 앵커, 버튼 내용이었는지 정확히 기억 안남  */
 .mega-menu-title:hover,
 .mega-menu-title:focus-visible {
     color: #a3a3a3;
@@ -198,6 +205,7 @@
     letter-spacing: 0;
     color: #171717;
     white-space: nowrap;
+    /* 화면 좁아져도 텍스트 깨지지 않게 */
 }
 
 .utility-menu a:hover,
@@ -253,6 +261,11 @@
     position: fixed;
     position-anchor: --language-trigger;
 
+    /* Popover 기본 위치값 초기화 */
+    inset: auto;
+    margin: 0;
+
+    /* language-button 기준으로 위치 지정 */
     top: anchor(bottom);
     left: anchor(left);
     right: auto;
@@ -261,20 +274,18 @@
     width: 76px;
     height: 52px;
 
-    margin: 0;
     padding: 0;
 
     background: #fff;
-
     border: 0;
     outline: 1px solid #d4d4d4;
 
     overflow: hidden;
 }
 
-/* KR / EN */
+/* 각각의 KR / EN 영역 */
 .language-menu li {
-    width: 100%px;
+    width: 100%;
     height: 26px;
 }
 
@@ -307,13 +318,13 @@
 }
 
 /* language selected */
-.language-selector:not(:has(.language-menu:popover-open))
-.language-button:hover {
+/* language-menu열려있지 않을 때만,
+language-button에 호버 했을 때만 글자색 회색으로, chevrone아이콘도 동일하게*/
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover {
     color: #a3a3a3;
 }
 
-.language-selector:not(:has(.language-menu:popover-open))
-.language-button:hover .language-chevron {
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover .language-chevron {
     background-image: url("../images/icon/chev_down_gr.svg");
 }
 
@@ -324,7 +335,6 @@
 .language-selector:has(.language-menu:popover-open) .language-chevron {
     background-image: url("../images/icon/chev_up_bk.svg");
 }
-
 
 /* reservation button */
 .reservation-button {
@@ -352,46 +362,13 @@
 }
 
 
-/* 아.... 집가고싶다...아아아.......피고냉 */
-/* main */
-/* hero */
-.wedding-business-hero {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-}
-
-.wedding-business-hero > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.wedding-business-hero h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    font-family: 'Minion Pro', serif;
-    font-size: 70px;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.01em;
-    color: #fff;
-
-    white-space: nowrap;
-}
-
-
 /* common section */
 .content-section {
     margin-top: 200px;
 }
 
 .content-container {
-    width: 1440px;
+    width: min(1440px, calc(100% - 80px));
     margin: 0 auto;
 }
 
@@ -407,7 +384,7 @@
     margin-bottom: 34px;
 }
 
-.section-heading > p {
+.section-heading>p {
     font-size: 18px;
     font-weight: 400;
     line-height: normal;
@@ -420,11 +397,12 @@
 .section-heading h2 {
     font-family: 'Minion Pro', serif;
     font-size: 54px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
     letter-spacing: 0.01em;
     color: #171717;
 }
+
 .wedding-item h3,
 .business-card h3 {
     font-size: 24px;
@@ -433,6 +411,7 @@
     letter-spacing: 0.01em;
     color: #171717;
 }
+
 .wedding-item-content>p,
 .business-card>p,
 .catering-description {
@@ -441,6 +420,38 @@
     line-height: normal;
     letter-spacing: 0.01em;
     color: #171717;
+}
+
+/* 아.... 집가고싶다...아아아.......배고프고피고냉 */
+/* main */
+/* hero */
+.wedding-business-hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.wedding-business-hero>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wedding-business-hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Minion Pro', serif;
+    font-size: 70px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: #fff;
+
+    white-space: nowrap;
 }
 
 
@@ -452,16 +463,21 @@
 }
 
 .wedding-item {
-    width: 1440px;
+    width: 100%;
 
     display: grid;
-    grid-template-columns: 1074px 342px;
+
+    /* 기존 1074 : 342 비율 유지 */
+    grid-template-columns: minmax(0, 3.14fr) minmax(0, 1fr);
+
     column-gap: 24px;
 }
 
 .wedding-item>img {
-    width: 1074px;
-    height: 492px;
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1074 / 492;
     object-fit: cover;
 }
 
@@ -477,17 +493,20 @@
     align-self: end;
 }
 
+
 /* business */
 .business-card {
-    width: 342px;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
 }
 
 .business-card>img {
-    width: 342px;
-    height: 342px;
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1;
     object-fit: cover;
 
     margin-bottom: 24px;
@@ -517,37 +536,32 @@
 
 .business-list {
     display: grid;
-    grid-template-columns: repeat(4, 342px);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 24px;
-    align-items: stretch;
 }
 
 
 /* catering */
 .catering-images {
     display: grid;
-    grid-template-columns: repeat(2, 708px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 24px;
 }
 
 .catering-images img {
-    width: 708px;
-    height: 368px;
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 708 / 368;
     object-fit: cover;
 }
 
 .catering-description {
-    width: 824px;
+    width: min(824px, 100%);
     margin-top: 26px;
-
-    font-size: 16px;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.01em;
-    color: #171717;
 }
 
-.catering-content > .more-link {
+.catering-content>.more-link {
     margin-top: 38px;
 }
 
@@ -590,7 +604,6 @@ body {
     color: #171717;
 }
 
-/* 회사 정보 */
 .footer-company-info {
     display: flex;
     flex-direction: column;
@@ -610,14 +623,13 @@ body {
     justify-content: space-between;
 }
 
-/* sns 위치 */
+/* sns */
 .footer-bottom-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* footer 배경*/
 .site-footer {
     width: 100%;
     padding: 48px 0 20px;
@@ -625,7 +637,6 @@ body {
     color: #fff;
 }
 
-/* footer inner 위치 */
 .footer-inner {
     max-width: 1440px;
     margin: 0 auto;
@@ -641,8 +652,6 @@ body {
     gap: 28px;
 }
 
-
-/* footer logo */
 .footer-logo {
     display: block;
     width: 154px;
@@ -653,8 +662,6 @@ body {
     height: 32px;
 }
 
-
-/* footer menu */
 .footer-menu {
     display: flex;
     align-items: center;
@@ -674,9 +681,6 @@ body {
     opacity: 0.6;
 }
 
-
-/* footer contact */
-
 .footer-contact {
     display: flex;
     flex-direction: column;
@@ -691,6 +695,7 @@ body {
     display: flex;
     align-items: center;
 }
+
 /* contact와 icon의 간격 */
 .footer-contact img {
     margin-right: 12px;
@@ -724,7 +729,6 @@ body {
     opacity: 0.6;
 }
 
-/* copyright */
 .footer-copyright {
     font-size: 12px;
     font-weight: 400;
@@ -733,13 +737,149 @@ body {
 }
 
 
-/* =========================
-   footer 반응형
-========================= */
+/* * mobile header - desktop에서는 숨김 */
+.mobile-header {
+    display: none;
+}
 
-/* 태블릿 */
+/* tablet */
 @media screen and (max-width: 1279px) {
+    /* header */
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
 
+        width: 100%;
+        height: 88px;
+
+        background: transparent;
+
+        z-index: 1000;
+    }
+
+    .header-bar {
+        width: 100%;
+        height: 88px;
+
+        border-bottom: 0;
+    }
+
+    .header-inner {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+
+        margin: 0;
+        padding: 0 30px;
+    }
+
+    /* desktop header 숨김 */
+    .header-left,
+    .header-right {
+        display: none;
+    }
+
+    /* mobile header 표시 */
+    .mobile-header {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-header-logo {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .mobile-header-logo img {
+        width: 154px;
+        height: 32px;
+    }
+
+    .mobile-header-actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .mobile-reservation-button {
+        width: 112px;
+        height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #1a5fa1;
+        color: #fff;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        white-space: nowrap;
+    }
+
+    .mobile-menu-button {
+        width: 32px;
+        height: 32px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0;
+        background: transparent;
+    }
+
+    .mobile-menu-icon {
+        width: 28px;
+        height: 28px;
+
+        object-fit: contain;
+    }
+
+    /* main */
+    .content-container {
+        width: calc(100% - 60px);
+    }
+
+    .wedding-business-hero {
+        height: 330px;
+    }
+
+    .wedding-business-hero h1 {
+        font-size: 54px;
+    }
+
+    .content-section {
+        margin-top: 145px;
+    }
+
+    .catering-section {
+        margin-bottom: 145px;
+    }
+
+    .section-heading h2 {
+        font-size: 42px;
+    }
+
+    .wedding-item {
+        column-gap: 20px;
+    }
+
+    .business-list {
+        column-gap: 20px;
+    }
+
+    .catering-images {
+        column-gap: 20px;
+    }
+
+    /* footer */
     .footer-inner {
         padding: 0 1.5em;
     }
@@ -756,13 +896,90 @@ body {
         flex-wrap: wrap;
         gap: 20px;
     }
-
 }
 
 
-/* 모바일 */
+/* mobile */
 @media screen and (max-width: 767px) {
+    .content-container {
+        width: calc(100% - 40px);
+    }
 
+    .wedding-business-hero {
+        height: 250px;
+    }
+
+    .wedding-business-hero h1 {
+        font-size: 40px;
+    }
+
+    .content-section {
+        margin-top: 115px;
+    }
+
+    .catering-section {
+        margin-bottom: 115px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .section-heading>p {
+        font-size: 16px;
+    }
+
+    .wedding-item {
+        grid-template-columns: minmax(0, 3.14fr) minmax(0, 1fr);
+
+        column-gap: 16px;
+    }
+
+    .wedding-item h3 {
+        margin-bottom: 8px;
+
+        font-size: 18px;
+    }
+
+    .wedding-item-content>p {
+        margin-bottom: 16px;
+
+        font-size: 13px;
+    }
+
+    .business-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 16px;
+        row-gap: 48px;
+    }
+
+    .business-card>img {
+        margin-bottom: 18px;
+    }
+
+    .business-card h3 {
+        font-size: 20px;
+    }
+
+    .business-card>p {
+        font-size: 14px;
+    }
+
+    .catering-images {
+        grid-template-columns: 1fr;
+    }
+
+    .catering-images img:nth-child(2) {
+        display: none;
+    }
+
+    .catering-description {
+        width: 100%;
+        margin-top: 26px;
+    }
+
+    /* footer */
     .site-footer {
         height: auto;
         padding: 40px 0 20px;
@@ -773,7 +990,6 @@ body {
         padding: 0 20px;
     }
 
-    /* footer 메뉴 */
     .footer-menu {
         flex-wrap: wrap;
         gap: 12px 20px;
@@ -783,7 +999,7 @@ body {
         font-size: 14px;
     }
 
-    /* 연락처 + 회사정보 */
+    /* contacts, company info */
     .footer-info-row {
         flex-direction: column;
         gap: 24px;
@@ -800,7 +1016,7 @@ body {
         font-size: 12px;
     }
 
-    /* 인증 + SNS */
+    /* certi, sns */
     .footer-bottom-row {
         flex-direction: column;
         align-items: flex-start;
@@ -817,18 +1033,118 @@ body {
         gap: 10px;
     }
 
-    /* copyright */
     .footer-copyright {
         font-size: 10px;
         line-height: 16px;
     }
 
+    /* typo */
+    .offers-section h2 {
+        margin-bottom: 28px;
+        font-size: 38px;
+    }
+
+    .hotel-section .offers-card h3,
+    .resort-section .offers-card h3 {
+        margin-top: 16px;
+        font-size: 16px;
+    }
+
+    .hotel-section .offers-card>p,
+    .resort-section .offers-card>p {
+        margin-top: 8px;
+        font-size: 13px;
+        min-height: 21px;
+    }
+
+    /* more-button */
+    .offers-more {
+        margin-top: 28px;
+    }
+
+    /* hero */
+    .w-hero {
+        height: 380px;
+    }
+
+    .offers-hero h1 {
+        font-size: 48px;
+    }
 }
 
 
-/* 작은 모바일 */
+/* small ver. mobile */
 @media screen and (max-width: 480px) {
+    .content-container {
+        width: calc(100% - 32px);
+    }
 
+    /* hero */
+    .wedding-business-hero {
+        height: 220px;
+    }
+
+    .wedding-business-hero h1 {
+        font-size: 32px;
+    }
+
+    /* section */
+    .content-section {
+        margin-top: 85px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .section-heading>p {
+        font-size: 14px;
+    }
+
+    .wedding-item {
+        column-gap: 12px;
+    }
+
+    .wedding-list {
+        gap: 28px;
+    }
+
+    .wedding-item h3 {
+        font-size: 16px;
+    }
+
+    .wedding-item-content>p {
+        font-size: 12px;
+    }
+
+    .business-list {
+        column-gap: 12px;
+        row-gap: 40px;
+    }
+
+    .business-card>img {
+        margin-bottom: 16px;
+    }
+
+    .business-card h3 {
+        margin-bottom: 6px;
+
+        font-size: 18px;
+    }
+
+    .business-card>p {
+        font-size: 13px;
+    }
+
+    .catering-section {
+        margin-bottom: 85px;
+    }
+
+    .catering-description {
+        font-size: 14px;
+    }
+
+    /* footer */
     .footer-logo {
         width: 120px;
     }
@@ -875,5 +1191,4 @@ body {
     .footer-copyright {
         font-size: 9px;
     }
-
 }
