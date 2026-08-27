@@ -244,7 +244,7 @@
                         <!-- popvoertarget : 어떤 메뉴 제어할지 지정 -->
                         <!-- popovertargetaction : 그 메뉴를 어떻게 열고 닫을지 지정 -->
                         <!-- popovertargetaction="toggle" : popover 클릭할 때마다 열기/닫기 가능하게 -->
-                        <button type="button" class="language-button" popovertarget="language-menu"
+                        <button type="button" class="language-button" aria-label="언어 선택" popovertarget="language-menu"
                             popovertargetaction="toggle">
                             <span class="current-language">KR</span>
                             <span class="language-chevron" aria-hidden="true"></span>
@@ -286,7 +286,8 @@
                             예약하기
                         </a>
 
-                        <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기">
+                        <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기"
+                            aria-controls="mobile-navigation" aria-expanded="false">
                             <img src="./images/icon/menu.svg" alt="" class="mobile-menu-icon">
                         </button>
 
