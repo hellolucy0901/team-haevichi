@@ -88,14 +88,12 @@
     white-space: nowrap;
 }
 
-.main-menu-item>:hover>a,
+.main-menu-item:hover>a,
 .main-menu-item:focus-within>a {
     font-weight: 700;
     color: #a3a3a3;
 }
 
-/* mega-menu */
-/* min height 값 회의 필요 */
 .mega-menu {
     position: absolute;
     top: 88px;
@@ -175,7 +173,6 @@
     align-items: center;
 }
 
-/* utility */
 .utility-menu {
     display: flex;
     align-items: center;
@@ -203,7 +200,6 @@
     color: #a3a3a3;
 }
 
-/* language selector*/
 .language-selector {
     position: relative;
     width: 76px;
@@ -350,7 +346,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 }
 
 
-
 /* common */
 .content-section {
     margin-top: 200px;
@@ -413,7 +408,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 
 
 /* main */
-/* hero */
 .wedding-business-hero {
     position: relative;
     width: 100%;
@@ -442,7 +436,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 
     white-space: nowrap;
 }
-
 
 /* wedding */
 .wedding-list {
@@ -481,7 +474,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 .wedding-item-content {
     align-self: end;
 }
-
 
 /* business */
 .business-card {
@@ -529,7 +521,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     column-gap: 24px;
 }
 
-
 /* catering */
 .catering-images {
     display: grid;
@@ -553,7 +544,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 .catering-content>.more-link {
     margin-top: 38px;
 }
-
 
 /* more button */
 .more-link {
@@ -584,7 +574,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 .more-link:focus-visible .more-link-icon {
     transform: translateX(4px);
 }
-
 
 /* footer */
 body {
@@ -731,34 +720,6 @@ body {
     display: none;
 }
 
-/* narrow desktop */
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
-
-    .offers-container {
-        width: auto;
-        margin: 0;
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-
-    .offers-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 24px;
-    }
-
-    .offers-card {
-        width: 100%;
-    }
-
-    .offers-card>img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 708 / 400;
-        object-fit: cover;
-    }
-}
-
-
 /* tablet */
 @media screen and (max-width: 1279px) {
 
@@ -781,6 +742,8 @@ body {
     }
 
     .header-inner {
+        box-sizing: border-box;
+
         width: 100%;
         max-width: none;
         height: 100%;
@@ -795,7 +758,6 @@ body {
     .header-right {
         display: none;
     }
-
 
     /* mobile header 표시 */
     .mobile-header {
@@ -860,7 +822,6 @@ body {
         object-fit: contain;
     }
 
-
     /* main */
     .content-container {
         width: calc(100% - 60px);
@@ -917,7 +878,6 @@ body {
         gap: 20px;
     }
 }
-
 /* mobile */
 @media screen and (max-width: 767px) {
 
@@ -1070,213 +1030,204 @@ body {
         font-size: 10px;
         line-height: 16px;
     }
-
-    /* typo */
-    .offers-section h2 {
-        margin-bottom: 28px;
-        font-size: 38px;
-    }
-
-    .hotel-section .offers-card h3,
-    .resort-section .offers-card h3 {
-        margin-top: 16px;
-        font-size: 16px;
-    }
-
-    .hotel-section .offers-card>p,
-    .resort-section .offers-card>p {
-        margin-top: 8px;
-        font-size: 13px;
-        min-height: 21px;
-    }
-
-    /* more-button */
-    .offers-more {
-        margin-top: 28px;
-    }
-
-    /* hero */
-    .w-hero {
-        height: 380px;
-    }
-
-    .offers-hero h1 {
-        font-size: 48px;
-    }
 }
 
+    @media screen and (max-width: 480px) {
 
-/* small ver. mobile */
-@media screen and (max-width: 480px) {
+        /* Header: 480px에서 360px까지 유동적으로 축소 */
+        .header-inner {
+            box-sizing: border-box;
+            padding-inline: clamp(20px, 6.25vw, 30px);
+        }
 
-    .content-container {
-        width: calc(100% - 32px);
+        .mobile-header-logo img {
+            width: clamp(84px, 25vw, 120px);
+            height: auto;
+        }
+
+        .mobile-header-actions {
+            flex-shrink: 0;
+            gap: clamp(12px, 4.167vw, 20px);
+        }
+
+        .mobile-reservation-button {
+            width: clamp(128px, 37.5vw, 180px);
+            height: clamp(44px, calc(38px + 1.667vw), 46px);
+            flex-shrink: 0;
+
+            font-size: clamp(14px, calc(8px + 1.667vw), 16px);
+        }
+
+        /* 터치 영역은 유지하고 아이콘만 축소 */
+        .mobile-menu-button {
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
+        }
+
+        .mobile-menu-icon {
+            width: clamp(24px, calc(12px + 3.333vw), 28px);
+            height: auto;
+        }
+
+        .content-container {
+            width: calc(100% - 32px);
+        }
+
+        .wedding-business-hero {
+            height: clamp(280px, calc(160px + 33.333vw), 320px);
+        }
+
+        .wedding-business-hero h1 {
+            font-size: clamp(28px, calc(16px + 3.333vw), 32px);
+        }
+
+        .content-section {
+            margin-top: 85px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(24px, calc(12px + 3.333vw), 28px);
+        }
+
+        .section-heading>p {
+            font-size: 14px;
+        }
+
+        .wedding-item {
+            grid-template-columns: minmax(0, 1fr) 104px;
+            column-gap: 12px;
+        }
+
+        .wedding-list {
+            gap: 28px;
+        }
+
+        .wedding-item h3 {
+            font-size: 16px;
+        }
+
+        .business-list {
+            column-gap: 12px;
+            row-gap: 40px;
+        }
+
+        .business-card>img {
+            margin-bottom: 16px;
+        }
+
+        .business-card h3 {
+            margin-bottom: 6px;
+
+            font-size: 18px;
+        }
+
+        .business-card>p {
+            font-size: 13px;
+        }
+
+        .catering-section {
+            margin-bottom: 85px;
+        }
+
+        .catering-description {
+            font-size: 14px;
+        }
+
+        /* footer */
+        .footer-logo {
+            width: 120px;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            height: auto;
+        }
+
+        .footer-menu {
+            column-gap: 14px;
+            row-gap: 10px;
+        }
+
+        .footer-menu a {
+            font-size: 12px;
+        }
+
+        .footer-contact {
+            font-size: 11px;
+        }
+
+        .footer-contact p {
+            align-items: flex-start;
+        }
+
+        .footer-contact img {
+            width: 16px;
+            margin-right: 8px;
+        }
+
+        .footer-company-info {
+            font-size: 11px;
+        }
+
+        .cert-item {
+            font-size: 10px;
+        }
+
+        .cert-item img {
+            width: 50px;
+        }
+
+        .footer-copyright {
+            font-size: 9px;
+        }
     }
 
-    /* hero */
-    .wedding-business-hero {
-        height: 320px;
+    @media screen and (max-width: 480px) {
+
+        /* wedding */
+        .wedding-item-content {
+            align-self: end;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wedding-item-content h3 {
+            margin-bottom: 8px;
+        }
+
+        .wedding-item-content>p {
+            margin-bottom: 10px;
+
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+
+            overflow: hidden;
+
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .wedding-item .more-link {
+            width: 100%;
+            height: 32px;
+
+            margin-top: 0;
+
+            padding: 4px;
+            gap: 4px;
+
+            font-size: 11px;
+        }
+
+        .wedding-item .more-link-icon {
+            width: 13px;
+            height: 13px;
+        }
+
+
+
     }
-
-    .wedding-business-hero h1 {
-        font-size: 32px;
-    }
-
-    /* section */
-    .content-section {
-        margin-top: 85px;
-    }
-
-    .section-heading h2 {
-        font-size: 28px;
-    }
-
-    .section-heading>p {
-        font-size: 14px;
-    }
-
-    .wedding-item {
-        column-gap: 12px;
-    }
-
-    .wedding-list {
-        gap: 28px;
-    }
-
-    .wedding-item h3 {
-        font-size: 16px;
-    }
-
-    .wedding-item-content>p {
-        font-size: 12px;
-    }
-
-    .business-list {
-        column-gap: 12px;
-        row-gap: 40px;
-    }
-
-    .business-card>img {
-        margin-bottom: 16px;
-    }
-
-    .business-card h3 {
-        margin-bottom: 6px;
-
-        font-size: 18px;
-    }
-
-    .business-card>p {
-        font-size: 13px;
-    }
-
-    .catering-section {
-        margin-bottom: 85px;
-    }
-
-    .catering-description {
-        font-size: 14px;
-    }
-
-    /* footer */
-    .footer-logo {
-        width: 120px;
-    }
-
-    .footer-logo img {
-        width: 120px;
-        height: auto;
-    }
-
-    .footer-menu {
-        column-gap: 14px;
-        row-gap: 10px;
-    }
-
-    .footer-menu a {
-        font-size: 12px;
-    }
-
-    .footer-contact {
-        font-size: 11px;
-    }
-
-    .footer-contact p {
-        align-items: flex-start;
-    }
-
-    .footer-contact img {
-        width: 16px;
-        margin-right: 8px;
-    }
-
-    .footer-company-info {
-        font-size: 11px;
-    }
-
-    .cert-item {
-        font-size: 10px;
-    }
-
-    .cert-item img {
-        width: 50px;
-    }
-
-    .footer-copyright {
-        font-size: 9px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-
-    /* wedding */
-   .wedding-item-content {
-        align-self: end;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    .wedding-item-content h3 {
-        margin-bottom: 8px;
-    }
-
-    .wedding-item-content {
-        display: flex;
-        flex-direction: column;
-    }
-
-     .wedding-item-content > p {
-        margin-bottom: 10px;
-
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-
-        overflow: hidden;
-
-        font-size: 11px;
-        line-height: 1.4;
-    }
-
-     .wedding-item .more-link {
-        width: 100%;
-        height: 32px;
-
-        margin-top: 0;
-
-        padding: 4px;
-        gap: 4px;
-
-        font-size: 11px;
-    }
-
-    .wedding-item .more-link-icon {
-        width: 13px;
-        height: 13px;
-    }
-
-  
-
-}
