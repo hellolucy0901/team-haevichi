@@ -24,6 +24,7 @@
 
     /* transition */
 }
+
 body {
     font-family: "Pretendard", sans-serif;
     font-size: 16px;
@@ -42,7 +43,7 @@ body {
 .ham-btn,
 .m-header,
 .m-gnb-list {
-    display: none; 
+    display: none;
 }
 
 
@@ -140,7 +141,7 @@ section {
 .hero {
     position: relative;
     width: 100%;
-    height: 600px;
+    /* height: 600px; */
     overflow: hidden;
 }
 
@@ -214,16 +215,10 @@ section {
 .section-head__desc {
     margin: 0;
     font-family: "pretendard";
-    font-size: 18px;
+    font-size: 1.13em;
     line-height: 1.6;
     color: var(--Neutral-900);
 }
-
-
-
-
-
-
 
 
 
@@ -322,6 +317,7 @@ section {
 .facility-card__btn:hover .facility-card__arrow {
     transform: translateX(3px);
 }
+
 /* 아이패드 */
 @media screen and (max-width:1279px) {
     body {
@@ -435,9 +431,9 @@ section {
 
 
 
-  .facility-section {
-    padding-top: 200px;
-}
+    .facility-section {
+        padding-top: 50px;
+    }
 
 
 
@@ -448,10 +444,11 @@ section {
 @media screen and (max-width:767px) {
     .image-group {
         margin-top: 40px;
-        margin-bottom: 200px;
         gap: 12px;
     }
 
+
+    
     .image-row {
         gap: 12px;
     }
@@ -469,7 +466,7 @@ section {
     }
 
     .facility-card__title {
-        font-size: 15px;
+        font-size: 14px;
         margin-bottom: 8px;
     }
 
@@ -484,19 +481,33 @@ section {
         font-size: 11px;
 
     }
-    .facility-card__desc {
-    font-size: 11px;
-    max-width: 260px;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;        /* 몇 줄까지 보여줄지 */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+    .facility-card__desc {
+        font-size: 11px;
+        max-width: 260px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* 몇 줄까지 보여줄지 */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
     body {
         font-size: 12px;
+    }
+
+    .hero img{
+        .sub-visual {
+        height: 320px;
+    }
+
+    .sub-visual h1 {
+        font-size: 32px;
+        letter-spacing: 0.04em;
+    }
+
     }
 
     /* 공통사항 */
@@ -504,6 +515,7 @@ section {
         padding: 4px 0px 4px 12px;
     }
 }
+
 @media screen and (max-width:480px) {
 
     /* header */
