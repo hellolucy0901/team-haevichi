@@ -35,7 +35,7 @@ body {
     max-width: var(--inner-width);
     /* background-color: rgba(255, 0, 0, 0.1); */
     margin: 0 auto;
-    padding: 0 2em;
+    padding: 0 1em;
 }
 
 
@@ -432,7 +432,7 @@ body {
 
 .sub-visual {
     position: relative;
-    height: 480px;
+    height: 600px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -456,6 +456,10 @@ body {
     z-index: -1;
 }
 
+.sub-visual .inner h1 {
+    transform: translateY(50px);
+}
+
 .sub-visual h1 {
     font-family: "MinionPro", serif;
     font-weight: 800;
@@ -463,12 +467,14 @@ body {
     letter-spacing: 0.06em;
     color: #fff;
     text-transform: uppercase;
+    
 }
+
+
 
 .sub-visual .text-box {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -476,12 +482,15 @@ body {
     justify-content: center;
 }
 
-.sub-visual .text-box h2 {
+
+
+.sub-visual .inner h2 {
     color: #fff;
     font-size: 42px;
     letter-spacing: 4px;
     font-family: "MinionPro", serif;
 }
+
 
 
 /* 객실 소개 공통 섹션 */
@@ -785,6 +794,16 @@ body {
 @media screen and (max-width: 1440px) {
 
     /* header */
+
+    
+    body {
+        font-size: 14px;
+    }
+
+    .inner {
+        padding: 0 1em;
+    }
+
     .site-header {
         position: absolute;
         top: 0;
@@ -1068,17 +1087,19 @@ body {
     }
 
 }
- /* 작은 모바일 */
+  /* 작은 모바일 */
+/* 작은 모바일 - 두 페이지 동일 적용 */
 @media screen and (max-width: 480px) {
 
-    footer {
+    .site-footer {
         padding: 45px 0 35px;
     }
 
-    footer .inner {
+    .footer-inner {
         padding: 0 20px;
+        gap: 20px;
+        box-sizing: border-box;
     }
-
 
     /* footer logo */
     .footer-logo {
@@ -1091,20 +1112,13 @@ body {
         height: auto;
     }
 
-
     /* footer menu */
     .footer-menu {
         display: flex;
         flex-wrap: wrap;
-
         column-gap: 12px;
         row-gap: 9px;
-
         margin: 0 0 30px;
-    }
-
-    .footer-menu li {
-        line-height: 1.4;
     }
 
     .footer-menu a {
@@ -1112,126 +1126,70 @@ body {
         white-space: nowrap;
     }
 
-
-    /* address */
-    .address-wrap {
+    /* 주소 + 회사 정보 */
+    .footer-info-row {
         display: flex;
         flex-direction: column;
-
         gap: 16px;
+    }
 
+    .footer-contact {
+        width: 100%;
         font-size: 10px;
         line-height: 1.7;
     }
 
-
-    /* 주소 */
-    .address-wrap .address-left {
+    .footer-company-info {
         width: 100%;
-    }
-
-    .address-wrap .address-left > p {
-        display: flex;
-        align-items: flex-start;
-
-        gap: 7px;
-
-        margin-bottom: 5px;
-    }
-
-    .address-wrap .address-left > p img {
-        width: 14px;
-        height: 14px;
-
-        flex-shrink: 0;
-
-        margin-top: 3px;
-    }
-
-    .address-wrap .address-left > p span {
-        min-width: 0;
-
-        word-break: keep-all;
-    }
-
-
-    /* 회사 정보 */
-    .address-wrap .address-right {
-        width: 100%;
-
+        font-size: 10px;
+        line-height: 1.7;
         text-align: left;
-
-        font-size: 10px;
-        line-height: 1.7;
     }
 
-    .address-wrap .address-right p {
-        white-space: normal;
-        word-break: keep-all;
-    }
-
-
-    /* family site */
-   
-
-    .ks-family-wrap {
+    /* 인증 + SNS */
+    .footer-bottom-row {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 14px;
     }
 
-    .ks-family-wrap > p {
+    .footer-cert {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .cert-item {
         display: flex;
         align-items: center;
         gap: 10px;
-
-        width: 100%;
-
-        font-size: 10px;
-        line-height: 1.5;
     }
 
-    .ks-family-wrap > p img {
+    .cert-item img {
         width: 45px;
         height: auto;
         flex-shrink: 0;
     }
 
-    .ks-family-wrap .family-site {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0;
-        width: 100%;
-    }
-
-
-
-    /* copyright + sns */
-    .copy-sns-wrap {
+    .cert-item > p {
         display: flex;
         flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 14px;
-
-        font-size: 9px;
-    }
-
-    .copy-sns-wrap > p {
-        width: 100%;
-
+        margin: 0;
+        font-size: 10px;
         line-height: 1.5;
-
-        word-break: keep-all;
     }
 
-    .copy-sns-wrap > .sns-list {
+    .sns-list {
         display: flex;
         gap: 12px;
     }
 
-}
-    
+    /* copyright */
+    .footer-copyright {
+        font-size: 9px;
+        line-height: 1.5;
+    }
 
+}
