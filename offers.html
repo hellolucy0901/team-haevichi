@@ -22,12 +22,20 @@
                     <a href="#" class="header-logo"><img src="./images/logo/black.png" alt="Haevichi">
                     </a>
 
-                    <nav class="main-nav" aria-label="주요 메뉴">
+                    <!-- 수정 후 -->
+                    <nav class="main-nav" id="mobile-navigation" aria-label="주요 메뉴">
                         <ul class="main-menu">
 
                             <li class="main-menu-item">
-                                <a href="#">스페셜 오퍼</a>
-                                <div class="mega-menu offers-mega-menu">
+                                <a href="#" class="desktop-main-menu-link">스페셜 오퍼</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="offers-submenu">
+                                    <span>스페셜 오퍼</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu offers-mega-menu" id="offers-submenu">
                                     <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">패키지</a>
@@ -46,8 +54,15 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="#">호텔</a>
-                                <div class="mega-menu hotel-mega-menu">
+                                <a href="#" class="desktop-main-menu-link">호텔</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="hotel-submenu">
+                                    <span>호텔</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu hotel-mega-menu" id="hotel-submenu">
                                     <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">스탠다드</a>
@@ -85,8 +100,15 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="#">리조트</a>
-                                <div class="mega-menu resort-mega-menu">
+                                <a href="#" class="desktop-main-menu-link">리조트</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="resort-submenu">
+                                    <span>리조트</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu resort-mega-menu" id="resort-submenu">
                                     <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">스위트</a>
@@ -123,8 +145,15 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="#">다이닝</a>
-                                <div class="mega-menu dining-mega-menu">
+                                <a href="#" class="desktop-main-menu-link">다이닝</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="dining-submenu">
+                                    <span>다이닝</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu dining-mega-menu" id="dining-submenu">
                                     <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">레스토랑</a>
@@ -154,8 +183,17 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="#">연회</a>
-                                <div class="mega-menu wedding-business-mega-menu">
+                                <a href="#" class="desktop-main-menu-link">연회</a>
+
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="wedding-business-submenu">
+                                    <span>연회</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+
+                                <div class="mega-menu wedding-business-mega-menu" id="wedding-business-submenu">
                                     <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">웨딩</a>
@@ -184,8 +222,16 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="#">부대시설</a>
-                                <div class="mega-menu facility-mega-menu">
+                                <a href="#" class="desktop-main-menu-link">부대시설</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="facility-submenu">
+                                    <span>부대시설</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+
+                                <div class="mega-menu facility-mega-menu" id="facility-submenu">
                                     <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">스파&amp;피트니스</a>
@@ -224,9 +270,37 @@
                                 </div>
                             </li>
 
-                            <li class="main-menu-item"><a href="#">멤버십</a></li>
+                            <li class="main-menu-item main-menu-item--direct">
+                                <a href="#">멤버십</a>
+                            </li>
 
                         </ul>
+
+                        <!-- 모바일 사용자 메뉴 -->
+                        <ul class="mobile-utility-menu" aria-label="사용자 메뉴">
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/person.svg" alt="">
+                                    <span>로그인</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/calendar.svg" alt="">
+                                    <span>마이페이지</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/calendar.svg" alt="">
+                                    <span>예약조회</span>
+                                </a>
+                            </li>
+                        </ul>
+
+
                     </nav>
                 </div>
 
@@ -270,33 +344,26 @@
                     </div>
 
                     <a href="#" class="reservation-button">예약하기</a>
-                </div>
 
+                    <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기"
+                        aria-controls="mobile-navigation" aria-expanded="false">
+                        <img src="./images/icon/menu.svg" alt="" class="mobile-menu-icon mobile-menu-open-icon">
 
-                <!-- mobile header -->
-                <div class="mobile-header">
-
-                    <a href="#" class="mobile-header-logo">
-                        <img src="./images/logo/black.png" alt="Haevichi">
-                    </a>
-
-                    <div class="mobile-header-actions">
-
-                        <a href="#" class="mobile-reservation-button">
-                            예약하기
-                        </a>
-
-                        <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기"
-                            aria-controls="mobile-navigation" aria-expanded="false">
-                            <img src="./images/icon/menu.svg" alt="" class="mobile-menu-icon">
-                        </button>
-
-                    </div>
+                        <img src="./images/icon/close.svg" alt="" class="mobile-menu-icon mobile-menu-close-icon">
+                    </button>
 
                 </div>
 
             </div>
         </div>
+
+        </div>
+        </div>
+
+        <!-- 모바일 메뉴 바깥 배경 -->
+        <button type="button" class="mobile-menu-backdrop" aria-label="메뉴 닫기" tabindex="-1">
+
+        </button>
 
     </header>
 
@@ -563,6 +630,89 @@
 
         </div>
     </footer>
+
+    <script>
+        const menuButton = document.querySelector(".mobile-menu-button");
+        const mobileNavigation = document.querySelector("#mobile-navigation");
+        const submenuButtons = document.querySelectorAll(".mobile-submenu-toggle");
+        const mobileMenuBackdrop = document.querySelector(".mobile-menu-backdrop");
+        const desktopMedia = window.matchMedia("(min-width: 1280px)");
+
+        /* 열려 있는 모든 서브메뉴 닫기 */
+        function closeAllSubmenus() {
+            submenuButtons.forEach(function (button) {
+                const menuItem = button.closest(".main-menu-item");
+
+                button.setAttribute("aria-expanded", "false");
+                menuItem.classList.remove("is-expanded");
+            });
+        }
+
+        /* 전체 모바일 메뉴 열기·닫기 */
+        function setMobileMenu(open) {
+            mobileNavigation.classList.toggle("is-open", open);
+            document.body.classList.toggle("menu-open", open);
+
+            menuButton.setAttribute("aria-expanded", String(open));
+            menuButton.setAttribute(
+                "aria-label",
+                open ? "전체 메뉴 닫기" : "전체 메뉴 열기"
+            );
+
+            /* 전체 메뉴를 닫으면 열려 있던 서브메뉴도 초기화 */
+            if (!open) {
+                closeAllSubmenus();
+            }
+        }
+
+        /* 햄버거·닫기 버튼 */
+        menuButton.addEventListener("click", function () {
+            const isOpen = mobileNavigation.classList.contains("is-open");
+
+            setMobileMenu(!isOpen);
+        });
+
+        /* 메뉴 바깥 배경을 클릭하면 전체 메뉴 닫기 */
+        mobileMenuBackdrop.addEventListener("click", function () {
+            setMobileMenu(false);
+        });
+
+        /* 메인메뉴 아코디언 */
+        submenuButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const menuItem = button.closest(".main-menu-item");
+                const isExpanded =
+                    button.getAttribute("aria-expanded") === "true";
+
+                /* 먼저 다른 서브메뉴를 모두 닫음 */
+                closeAllSubmenus();
+
+                /* 클릭한 메뉴가 닫혀 있었을 때만 열기 */
+                if (!isExpanded) {
+                    button.setAttribute("aria-expanded", "true");
+                    menuItem.classList.add("is-expanded");
+                }
+            });
+        });
+
+        /* Escape 키로 전체 메뉴 닫기 */
+        document.addEventListener("keydown", function (event) {
+            const isMenuOpen =
+                mobileNavigation.classList.contains("is-open");
+
+            if (event.key === "Escape" && isMenuOpen) {
+                setMobileMenu(false);
+                menuButton.focus();
+            }
+        });
+
+        /* 데스크톱 화면으로 전환되면 모바일 메뉴 초기화 */
+        desktopMedia.addEventListener("change", function (event) {
+            if (event.matches) {
+                setMobileMenu(false);
+            }
+        });
+    </script>
 
 </body>
 

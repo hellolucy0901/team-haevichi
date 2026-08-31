@@ -1,9 +1,29 @@
+:root {
+    /* color */
+    --Primary-color: #1A5FA1;
+    --Primary-Hover-color: #13578F;
+    --Primary-Pressed-color: #104876;
+    --Primary-Subtle-color: #DCECF8;
+
+    --Neutral-100: #f2f2f2;
+    --Neutral-200: #e5e5e5;
+    --Neutral-300: #d4d4d4;
+    --Neutral-400: #a3a3a3;
+    --Neutral-500: #737373;
+    --Neutral-600: #525252;
+    --Neutral-700: #404040;
+    --Neutral-800: #262626;
+    --Neutral-900: #171717;
+}
+
 .site-header {
-    /* 스티키헤더 아님 javascript 수업 후 수정 예정 */
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 88px;
-    background: #fff;
+    background: var(--Neutral-100);
     z-index: 1000;
 }
 
@@ -21,10 +41,12 @@
 /* 호버시 헤더 하단 구분선 */
 .site-header:has(.main-menu-item:hover > .mega-menu) .header-bar,
 .site-header:has(.main-menu-item:focus-within > .mega-menu) .header-bar {
-    border-bottom-color: #d4d4d4;
+    border-bottom-color: var(--Neutral-400);
 }
 
 .header-inner {
+    box-sizing: border-box;
+
     width: calc(100% - 160px);
     max-width: 1760px;
     height: 52px;
@@ -64,12 +86,10 @@
     gap: 32px;
 }
 
-/* 텍스트 영역보다 넓었으면 좋겠어서 100% 잡음 */
 .main-menu-item {
     height: 100%;
 }
 
-/* 커서 이탈, 탭으로 서브메뉴까지 내려가도 고정되게 */
 .main-menu-item:hover>.mega-menu,
 .main-menu-item:focus-within>.mega-menu {
     display: block;
@@ -84,18 +104,16 @@
     font-weight: 600;
     line-height: 24px;
     letter-spacing: 0;
-    color: #171717;
+    color: var(--Neutral-900);
     white-space: nowrap;
 }
 
 .main-menu-item:hover>a,
 .main-menu-item:focus-within>a {
     font-weight: 700;
-    color: #a3a3a3;
+    color: var(--Neutral-400);
 }
 
-/* mega-menu */
-/* min height 값 회의 필요 */
 .mega-menu {
     position: absolute;
     top: 88px;
@@ -111,7 +129,7 @@
     padding-right: 0;
     padding-bottom: 30px;
 
-    background: #fff;
+    background: var(--Neutral-100);
     z-index: 1001;
 
     display: none;
@@ -123,7 +141,6 @@
     gap: 21px;
 }
 
-/* 부모 mega-menu-list 공간 부족해도 줄어들지 않게 flex-shrink값 0 지정*/
 .mega-menu-group {
     width: 150px;
     flex-shrink: 0;
@@ -138,18 +155,15 @@
     font-weight: 500;
     line-height: 16.5px;
     letter-spacing: 0;
-    color: #171717;
+    color: var(--Neutral-900);
     white-space: nowrap;
 }
 
-/* 수업시간에 탭 눌러서 이동/선택 접근 가능해야 한다는 내용 기억나서 
-근데 그게 앵커, 버튼 내용이었는지 정확히 기억 안남  */
 .mega-menu-title:hover,
 .mega-menu-title:focus-visible {
-    color: #a3a3a3;
+    color: var(--Neutral-400);
 }
 
-/* mega-submenu */
 .mega-submenu {
     display: flex;
     flex-direction: column;
@@ -167,7 +181,7 @@
 
 .mega-submenu a:hover,
 .mega-submenu a:focus-visible {
-    color: #262626;
+    color: var(--Neutral-800);
 }
 
 .header-right {
@@ -175,7 +189,6 @@
     align-items: center;
 }
 
-/* utility */
 .utility-menu {
     display: flex;
     align-items: center;
@@ -192,18 +205,16 @@
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0;
-    color: #171717;
+    color: var(--Neutral-900);
     white-space: nowrap;
-    /* 화면 좁아져도 텍스트 깨지지 않게 */
 }
 
 .utility-menu a:hover,
 .utility-menu a:focus-visible {
     font-weight: 600;
-    color: #a3a3a3;
+    color: var(--Neutral-400);
 }
 
-/* language selector*/
 .language-selector {
     position: relative;
     width: 76px;
@@ -227,12 +238,11 @@
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0.01em;
-    color: #171717;
+    color: var(--Neutral-900);
 
     anchor-name: --language-trigger;
 }
 
-/* default chevron */
 .language-chevron {
     width: 20px;
     height: 20px;
@@ -264,9 +274,9 @@
 
     padding: 0;
 
-    background: #fff;
+    background: var(--Neutral-100);
     border: 0;
-    outline: 1px solid #d4d4d4;
+    outline: 1px solid var(--Neutral-300);
 
     overflow: hidden;
 }
@@ -277,7 +287,6 @@
     height: 26px;
 }
 
-/* language option */
 .language-option {
     width: 100%;
     height: 100%;
@@ -287,8 +296,8 @@
     align-items: center;
     justify-content: center;
 
-    background: #fff;
-    color: #171717;
+    background: var(--Neutral-100);
+    color: var(--Neutral-900);
 
     font-size: 14px;
     font-weight: 500;
@@ -301,15 +310,15 @@
 /* option hover */
 .language-option:hover,
 .language-option:focus-visible {
-    background: #1a5fa1;
-    color: #fff;
+    background: var(--Primary-color);
+    color: var(--Neutral-100);
 }
 
 /* language selected */
 /* language-menu열려있지 않을 때만,
 language-button에 호버 했을 때만 글자색 회색으로, chevrone아이콘도 동일하게*/
 .language-selector:not(:has(.language-menu:popover-open)) .language-button:hover {
-    color: #a3a3a3;
+    color: var(--Neutral-400);
 }
 
 .language-selector:not(:has(.language-menu:popover-open)) .language-button:hover .language-chevron {
@@ -317,14 +326,13 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 }
 
 .language-selector:has(.language-menu:popover-open) .language-button {
-    color: #171717;
+    color: var(--Neutral-900);
 }
 
 .language-selector:has(.language-menu:popover-open) .language-chevron {
     background-image: url("../images/icon/chev_up_bk.svg");
 }
 
-/* reservation button */
 .reservation-button {
     width: 200px;
     height: 50px;
@@ -334,8 +342,8 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     align-items: center;
     justify-content: center;
 
-    background: #1a5fa1;
-    color: #fff;
+    background: var(--Primary-color);
+    color: var(--Neutral-100);
 
     font-size: 20px;
     font-weight: 700;
@@ -346,17 +354,9 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 
 .reservation-button:hover,
 .reservation-button:focus-visible {
-    background: #13578F;
+    background: var(--Primary-Hover-color);
 }
 
-/* accessibility */
-
-/* display:none, visibility:hidden => 스크린리더에서도 대체로 읽히지 않음 */
-/* sr-only =>  화면에서는 숨기지만 접근성 트리에는 내용 남길 수 있음 */
-/* .blind{
-    position: absolute;
-    top: -9999px;
-} 또는 */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -387,7 +387,7 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 
 .offers-hero h1 {
     position: absolute;
-    top: 50%;
+    top: calc(50% + 44px);
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -396,7 +396,7 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     font-weight: 800;
     line-height: normal;
     letter-spacing: 0.01em;
-    color: #fff;
+    color: var(--Neutral-100);
 }
 
 /* offers */
@@ -417,7 +417,7 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.01em;
-    color: #171717;
+    color: var(--Neutral-900);
 }
 
 .offers-list {
@@ -443,7 +443,7 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.01em;
-    color: #171717;
+    color: var(--Neutral-900);
 }
 
 .offers-card>p {
@@ -454,7 +454,7 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.01em;
-    color: #171717;
+    color: var(--Neutral-900);
 }
 
 .offers-more {
@@ -468,13 +468,13 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     justify-content: center;
     gap: 12px;
 
-    border: 1px solid #1a5fa1;
+    border: 1px solid var(--Primary-color);
 
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
     letter-spacing: 0;
-    color: #1a5fa1;
+    color: var(--Primary-color);
 }
 
 .offers-more-icon {
@@ -503,7 +503,7 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 body {
     font-family: "Pretendard", sans-serif;
     font-size: 14px;
-    color: #171717;
+    color: var(--Neutral-900);
 }
 
 .footer-company-info {
@@ -516,7 +516,7 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
-    color: #fff;
+    color: var(--Neutral-100);
 }
 
 .footer-info-row {
@@ -535,8 +535,8 @@ body {
 .site-footer {
     width: 100%;
     padding: 48px 0 20px;
-    background: #404040;
-    color: #fff;
+    background: var(--Neutral-700);
+    color: var(--Neutral-100);
 }
 
 .footer-inner {
@@ -574,7 +574,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
-    color: #fff;
+    color: var(--Neutral-100);
     white-space: nowrap;
     transition: opacity 0.2s ease;
 }
@@ -590,7 +590,7 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
-    color: #fff;
+    color: var(--Neutral-100);
 }
 
 .footer-contact p {
@@ -635,20 +635,81 @@ body {
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    color: #fff;
+    color: var(--Neutral-100);
 }
 
-
-
-/* desktop */
-/* Desktop에서는 mobile header 숨김 */
-.mobile-header {
+/* 데스크톱에서 햄버거 버튼 숨김 */
+.mobile-menu-button {
     display: none;
+}
+
+.mobile-submenu-toggle,
+.mobile-utility-menu,
+.mobile-menu-close-icon {
+    display: none;
+}
+
+.mobile-menu-backdrop {
+    display: none;
+}
+
+/* 메뉴가 열리면 햄버거 아이콘 숨김 */
+.mobile-menu-button[aria-expanded="true"] .mobile-menu-open-icon {
+    display: none;
+}
+
+/* 메뉴가 열리면 닫기 아이콘 표시 */
+.mobile-menu-button[aria-expanded="true"] .mobile-menu-close-icon {
+    display: block;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 
 /* narrow desktop */
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
+
+    .header-inner {
+        width: calc(100% - 80px);
+    }
+
+    .header-left {
+        gap: 24px;
+    }
+
+    .mega-menu {
+        padding-left: 218px;
+    }
+
+    .main-menu {
+        gap: 16px;
+    }
+
+    .main-menu-item>a {
+        font-size: 16px;
+    }
+
+    .utility-menu {
+        gap: 0;
+    }
+
+    .utility-menu a {
+        padding: 4px;
+    }
+
+    .language-selector {
+        margin-left: 8px;
+    }
+
+    .reservation-button {
+        width: 160px;
+        height: 48px;
+        margin-left: 8px;
+
+        font-size: 18px;
+    }
 
     .offers-container {
         width: auto;
@@ -678,107 +739,304 @@ body {
 /* tablet */
 @media screen and (max-width: 1279px) {
 
-    /* header */
     .site-header {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 88px;
-
-        background: #fff;
-
-        z-index: 1000;
+        height: 60px;
     }
 
     .header-bar {
         width: 100%;
-        height: 88px;
-
+        height: 60px;
         border-bottom: 0;
     }
 
     .header-inner {
-        box-sizing: border-box;
-        
+
         width: 100%;
         max-width: none;
         height: 100%;
 
         margin: 0;
-        padding: 0 30px;
+        padding-inline: 32px;
     }
 
-
-    /* desktop header off */
-    .header-left,
-    .header-right {
-        display: none;
-    }
-
-
-    /* mobile header on */
-    .mobile-header {
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .mobile-header-logo {
-        display: block;
-        flex-shrink: 0;
-    }
-
-    .mobile-header-logo img {
+    .header-logo img {
         width: 120px;
         height: auto;
     }
 
-    .mobile-header-actions {
+    .utility-nav,
+    .language-selector {
+        display: none;
+    }
+
+    /* 예약 버튼과 햄버거 버튼 영역 */
+    .header-right {
         display: flex;
         align-items: center;
+        flex-shrink: 0;
         gap: 20px;
     }
 
-    .mobile-reservation-button {
+    .reservation-button {
         width: 180px;
         height: 46px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        background: #1a5fa1;
-        color: #fff;
+        margin-left: 0;
 
         font-size: 16px;
         font-weight: 600;
-
-        white-space: nowrap;
     }
 
     .mobile-menu-button {
-        width: 32px;
-        height: 32px;
-
+        width: 44px;
+        height: 44px;
         padding: 0;
 
         display: flex;
         align-items: center;
         justify-content: center;
+        flex: 0 0 44px;
 
         background: transparent;
+        border: 0;
+        cursor: pointer;
     }
 
     .mobile-menu-icon {
         width: 28px;
         height: 28px;
-
         object-fit: contain;
+    }
+
+    /* 기존 데스크톱 내비게이션을 모바일 메뉴로 전환 */
+    .main-nav {
+        box-sizing: border-box;
+
+        position: fixed;
+        top: 60px;
+        right: 0;
+
+        width: min(560px, 100%);
+        height: calc(100dvh - 60px);
+        padding: 24px 32px 32px;
+
+        display: flex;
+        flex-direction: column;
+
+        background: var(--Neutral-100);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        transform: translateX(100%);
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 999;
+    }
+
+    .main-nav.is-open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* 모바일 메뉴 뒤의 반투명 배경 */
+    .mobile-menu-backdrop {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+
+        background: rgb(0 0 0 / 35%);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 998;
+    }
+
+    /* 전체 메뉴가 열렸을 때 백드롭 표시 */
+    body.menu-open .mobile-menu-backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .main-menu {
+        display: block;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .main-menu-item {
+        height: auto;
+    }
+
+    /* 모바일에서는 데스크톱용 메인메뉴 링크 숨김 */
+    .main-menu-item>.desktop-main-menu-link {
+        display: none;
+    }
+
+    /* 모바일 메인메뉴 토글 버튼 */
+    .mobile-submenu-toggle {
+        width: 100%;
+        min-height: 64px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--Neutral-300);
+
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--Neutral-900);
+
+        cursor: pointer;
+    }
+
+    /* 서브메뉴가 없는 멤버십 */
+    .main-menu-item--direct>a {
+        width: 100%;
+        height: auto;
+        min-height: 64px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+
+        border-bottom: 1px solid var(--Neutral-300);
+
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--Neutral-900);
+    }
+
+    /* 메인메뉴 오른쪽 화살표 */
+    .mobile-submenu-chevron {
+        width: 8px;
+        height: 8px;
+        margin-right: 4px;
+        flex-shrink: 0;
+
+        border-right: 1.5px solid var(--Neutral-900);
+        border-bottom: 1.5px solid var(--Neutral-900);
+
+        transform: rotate(45deg);
+        transition: transform 0.2s ease;
+    }
+
+    .mobile-submenu-toggle[aria-expanded="true"] .mobile-submenu-chevron {
+        transform: rotate(225deg);
+    }
+
+    /* 모바일에서는 hover로 서브메뉴가 열리지 않게 함 */
+    .main-menu-item:hover>.mega-menu,
+    .main-menu-item:focus-within>.mega-menu {
+        display: none;
+    }
+
+    /* JavaScript로 선택된 메뉴는 항상 표시 */
+    .main-menu-item.is-expanded>.mega-menu,
+    .main-menu-item.is-expanded:hover>.mega-menu,
+    .main-menu-item.is-expanded:focus-within>.mega-menu {
+        display: block;
+    }
+
+    /* 모바일 서브메뉴 */
+    .mega-menu {
+        box-sizing: border-box;
+        position: static;
+
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        padding: 20px 24px;
+
+        background: var(--Neutral-100);
+        box-shadow: none;
+    }
+
+    .mega-menu-list {
+        display: block;
+    }
+
+    .mega-menu-group {
+        width: 100%;
+        margin-bottom: 24px;
+        gap: 12px;
+    }
+
+    .mega-menu-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .mega-menu-title {
+        display: block;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--Neutral-900);
+        white-space: normal;
+    }
+
+    .mega-submenu {
+        gap: 12px;
+        padding-left: 20px;
+    }
+
+    .mega-submenu a {
+        font-size: 14px;
+        line-height: 22px;
+        white-space: normal;
+    }
+
+    /* 모바일 메뉴 하단 사용자 메뉴 */
+    .mobile-utility-menu {
+        margin-top: auto;
+        padding-top: 48px;
+        flex-shrink: 0;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .mobile-utility-menu a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--Neutral-900);
+        white-space: nowrap;
+    }
+
+    .mobile-utility-menu img {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
     }
 
     /* hero */
@@ -787,7 +1045,7 @@ body {
     }
 
     .offers-hero h1 {
-        top: calc(50% + 44px);
+        top: calc(50% + 30px);
         font-size: 54px;
     }
 
@@ -873,6 +1131,65 @@ body {
 /* mobile */
 @media screen and (max-width: 767px) {
 
+    .site-header,
+    .header-bar {
+        height: 50px;
+    }
+
+    .header-inner {
+        padding-inline: 20px;
+    }
+
+    .reservation-button {
+        width: 80px;
+    }
+
+    .header-right {
+        gap: 16px;
+    }
+
+    .main-nav {
+        top: 50px;
+        height: calc(100dvh - 50px);
+        padding-inline: 20px;
+    }
+
+    .mobile-menu-backdrop {
+        top: 50px;
+    }
+
+    /* 모바일 메인메뉴 크기 */
+    .mobile-submenu-toggle,
+    .main-menu-item--direct>a {
+        min-height: 56px;
+        padding: 16px 0;
+
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* 모바일 서브메뉴 안쪽 여백 */
+    .mega-menu {
+        padding: 18px 20px;
+    }
+
+    /* 모바일 하단 사용자 메뉴 */
+    .mobile-utility-menu {
+        padding-top: 40px;
+    }
+
+    .mobile-utility-menu a {
+        gap: 6px;
+
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .mobile-utility-menu img {
+        width: 20px;
+        height: 20px;
+    }
+
     .offers-container {
         padding-left: 20px;
         padding-right: 20px;
@@ -893,6 +1210,10 @@ body {
 
     .offers-section {
         margin-top: 88px;
+    }
+
+    .offers-hero+.offers-section {
+        margin-top: 50px;
     }
 
     .wellness-section {
@@ -916,17 +1237,13 @@ body {
     .event-section .offers-card>p,
     .wellness-section .offers-card>p {
         min-height: auto;
-        /* 기존 2lh 해제 */
         margin-top: 12px;
-        /* 타이틀과 설명 간격 */
         margin-bottom: 28px;
-        /* 설명과 버튼 간격 */
     }
 
     .event-section .offers-more,
     .wellness-section .offers-more {
         margin-top: 0;
-        /* auto 해제 */
     }
 
     /* footer */
@@ -1028,11 +1345,13 @@ body {
 
     /* hero */
     .offers-hero {
-        height: 380px;
+        height: 200px;
     }
 
     .offers-hero h1 {
-        font-size: 48px;
+        top: calc(50% + 35px);
+        font-size: 49px;
+        font-weight: 700;
     }
 }
 
@@ -1040,31 +1359,21 @@ body {
 /* small ver. mobile */
 @media screen and (max-width: 480px) {
 
-    /* Header: 480px에서 360px까지 자연스럽게 축소 */
     .header-inner {
-        box-sizing: border-box;
-        padding-inline: clamp(20px, 6.25vw, 30px);
+        padding-inline: 16px;
     }
 
-    .mobile-header-logo img {
+    .header-logo img {
         width: clamp(84px, 25vw, 120px);
         height: auto;
     }
 
-    .mobile-header-actions {
+    .reservation-button {
+        height: 44px;
         flex-shrink: 0;
-        gap: clamp(12px, 4.167vw, 20px);
-    }
-
-    .mobile-reservation-button {
-        width: clamp(128px, 37.5vw, 180px);
-        height: clamp(44px, calc(38px + 1.667vw), 46px);
-        flex-shrink: 0;
-
         font-size: clamp(14px, calc(8px + 1.667vw), 16px);
     }
 
-    /* 클릭 영역은 44px을 유지하고 아이콘만 축소 */
     .mobile-menu-button {
         width: 44px;
         height: 44px;
@@ -1074,6 +1383,10 @@ body {
     .mobile-menu-icon {
         width: clamp(24px, calc(12px + 3.333vw), 28px);
         height: auto;
+    }
+
+    .main-nav {
+        padding-inline: 16px;
     }
 
     .offers-container {
@@ -1087,14 +1400,6 @@ body {
 
     .wellness-section {
         margin-bottom: 72px;
-    }
-
-    .offers-hero {
-        height: 320px;
-    }
-
-    .offers-hero h1 {
-        font-size: clamp(36px, calc(18px + 5vw), 42px);
     }
 
     .offers-section h2 {
