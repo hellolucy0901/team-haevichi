@@ -6,21 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>해비치 호텔 &amp; 리조트 제주</title>
 
-    <link rel="stylesheet" href="./css/fontello.css">
+     <link rel="stylesheet" href="./css/fontello.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/resortoverview.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./font/font.css">
-
 </head>
 
 <body>
-    <div class="skip-nav">
-        <a href="#main">본문 바로가기</a>
-    </div>
-     <!-- 1. header -->
-
     <header class="site-header">
         <div class="header-bar">
             <div class="header-inner">
@@ -34,7 +30,7 @@
                         <ul class="main-menu">
 
                             <li class="main-menu-item">
-                                <a href="offers.html">스페셜 오퍼</a>
+                                <a href="#">스페셜 오퍼</a>
                                 <div class="mega-menu offers-mega-menu">
                                     <ul class="mega-menu-list">
 
@@ -59,7 +55,7 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="hoteloverview.html">호텔</a>
+                                <a href="#">호텔</a>
                                 <!-- div.mega-menu>ul.mega-menu-list>(li.mega-menu-group>a[href="#"].mega-menu-title+ul.mega-submenu>li*4>a[href="#"])*3 -->
                                 <div class="mega-menu hotel-mega-menu">
                                     <ul class="mega-menu-list">
@@ -104,7 +100,7 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="resortoverview.html">리조트</a>
+                                <a href="#">리조트</a>
                                 <div class="mega-menu resort-mega-menu">
                                     <ul class="mega-menu-list">
 
@@ -147,7 +143,7 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="dining.html">다이닝</a>
+                                <a href="#">다이닝</a>
                                 <div class="mega-menu dining-mega-menu">
                                     <ul class="mega-menu-list">
 
@@ -181,7 +177,7 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="wedding_business.html">연회</a>
+                                <a href="#">연회</a>
 
                                 <div class="mega-menu wedding-business-mega-menu">
                                     <ul class="mega-menu-list">
@@ -213,7 +209,7 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="facility.html">부대시설</a>
+                                <a href="#">부대시설</a>
                                 <!-- div.mega-menu>ul.mega-menu-list>(li.mega-menu-group>a[href="#"].mega-menu-title+ul.mega-submenu>li*7>a[href="#"])*4 -->
                                 <div class="mega-menu facility-mega-menu">
                                     <ul class="mega-menu-list">
@@ -255,7 +251,7 @@
                                 </div>
                             </li>
 
-                            <li class="main-menu-item"><a href="membership.html">멤버십</a></li>
+                            <li class="main-menu-item"><a href="#">멤버십</a></li>
 
                         </ul>
                     </nav>
@@ -272,8 +268,10 @@
                     </nav>
 
                     <div class="language-selector">
-                        
-                        <button type="button" class="language-button" popovertarget="language-menu"
+                        <!-- popovertarget : 어떤 메뉴를 제어할지 지정 -->
+                        <!-- popovertargetaction : 그 메뉴를 어떻게 열고 닫을지 지정 -->
+                        <!-- popovertargetaction="toggle" : popover 클릭할 때마다 열기/닫기 가능하게 -->
+                        <button type="button" class="language-button" aria-label="언어 선택" popovertarget="language-menu"
                             popovertargetaction="toggle">
                             <span class="current-language">KR</span>
                             <span class="language-chevron" aria-hidden="true"></span>
@@ -306,7 +304,7 @@
                 <div class="mobile-header">
 
                     <a href="#" class="mobile-header-logo">
-                        <img src="./images/logo/white.png" alt="Haevichi">
+                        <img src="./images/logo/black.png" alt="Haevichi">
                     </a>
 
                     <div class="mobile-header-actions">
@@ -315,13 +313,18 @@
                             예약하기
                         </a>
 
-                        <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기">
+                        <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기"
+                            aria-controls="mobile-navigation" aria-expanded="false">
                             <img src="./images/icon/menu.svg" alt="" class="mobile-menu-icon">
                         </button>
+
+                    </div>
+
                 </div>
+
+            </div>
         </div>
-        </div>
-        </div>
+
     </header>
     <hr>
 
@@ -562,13 +565,12 @@
 
                 <nav class="footer-nav" aria-label="푸터 메뉴">
                     <ul class="footer-menu">
-                        <li><a href="https://www.haevichi.com/corp/ko">해비치소개</a></li>
-                        <li><a href="https://www.haevichi.com/rollinghills/ko/customer/faq">고객센터</a></li>
-                        <li><a href="https://www.haevichi.com/rollinghills/ko/location">오시는 길</a></li>
-                        <li><a href="https://www.haevichi.com/hub/ko/common/policy/20000">해비치약관</a></li>
-                        <li><a href="https://www.haevichi.com/hub/ko/common/privacy/20000">개인정보처리방침</a></li>
-                        <li><a href="https://www.haevichi.com/hub/ko/common/policy/50000">이메일무단수집금지</a></li>
-                    </ul>
+                        <li><a href="#">해비치소개</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                        <li><a href="#">해비치약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이메일무단수집금지</a></li>
                     </ul>
                 </nav>
             </div>
