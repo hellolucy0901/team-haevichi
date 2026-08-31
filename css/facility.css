@@ -442,13 +442,14 @@ section {
 
 /* 모바일 */
 @media screen and (max-width:767px) {
+
     .image-group {
         margin-top: 40px;
         gap: 12px;
     }
 
 
-    
+
     .image-row {
         gap: 12px;
     }
@@ -498,44 +499,81 @@ section {
         font-size: 12px;
     }
 
-    .hero img{
+    .hero img {
         .sub-visual {
-        height: 320px;
+            height: 320px;
+        }
+
+        .sub-visual h1 {
+            font-size: 32px;
+            letter-spacing: 0.04em;
+        }
+
+
+        /* 공통사항 */
+        .btn>a {
+            padding: 4px 0px 4px 12px;
+        }
+
+        .hero__title {
+            position: absolute;
+            font-size: 3.5em;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            white-space: nowrap;
+            color: var(--Neutral-100);
+            font-family: "Minion Pro";
+        }
+
+        .section-head__title {
+            font-size: 36px;
+            font-weight: 600;
+            margin: 0 0 12px;
+            font-family: "Minion Pro", serif;
+        }
     }
 
-    .sub-visual h1 {
-        font-size: 32px;
-        letter-spacing: 0.04em;
+    @media screen and (max-width:480px) {
+
+        /* header */
+        .logo {
+            width: 100px;
+        }
+
+        /* main */
+
+        .address-wrap .address-right {
+            text-align: left;
+        }
+
+        .ks-family-wrap>p img {
+            width: 80%;
+            height: auto;
+        }
+
+        .copy-sns-wrap>.sns-list {
+            display: none;
+        }
+
+        .hero__title {
+            position: absolute;
+            font-size: 3.5em;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            white-space: nowrap;
+            color: var(--Neutral-100);
+            font-family: "Minion Pro";
+        }
+
+        .section-head__title {
+            font-size: 36px;
+            font-weight: 600;
+            margin: 0 0 12px;
+            font-family: "Minion Pro", serif;
+        }
     }
-
-    }
-
-    /* 공통사항 */
-    .btn>a {
-        padding: 4px 0px 4px 12px;
-    }
-}
-
-@media screen and (max-width:480px) {
-
-    /* header */
-    .logo {
-        width: 100px;
-    }
-
-    /* main */
-
-    .address-wrap .address-right {
-        text-align: left;
-    }
-
-    .ks-family-wrap>p img {
-        width: 80%;
-        height: auto;
-    }
-
-    .copy-sns-wrap>.sns-list {
-        display: none;
-    }
-
 }
