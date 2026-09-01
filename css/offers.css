@@ -26,7 +26,7 @@
     overflow: hidden;
 }
 
-.offers-hero > img {
+.offers-hero>img {
     display: block;
     width: 100%;
     height: 100%;
@@ -40,12 +40,13 @@
     transform: translate(-50%, -50%);
 
     font-family: 'Minion Pro', serif;
-    font-size: 70px;
+    font-size: 56px;
     font-weight: 800;
     line-height: normal;
     letter-spacing: 0.01em;
     color: var(--Neutral-100);
 }
+
 .offers-section {
     margin-top: 200px;
 }
@@ -59,7 +60,7 @@
     margin-bottom: 34px;
 
     font-family: 'Minion Pro', serif;
-    font-size: 54px;
+    font-size: 48px;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.01em;
@@ -170,6 +171,10 @@
         aspect-ratio: 708 / 400;
         object-fit: cover;
     }
+
+    .offers-hero h1 {
+        font-size: 49px;
+    }
 }
 
 
@@ -183,7 +188,7 @@
 
     .offers-hero h1 {
         top: calc(50% + 30px);
-        font-size: 54px;
+        font-size: 49px;
     }
 
 
@@ -251,7 +256,7 @@
 /* mobile */
 @media screen and (max-width: 767px) {
 
-   
+
     .offers-container {
         padding-left: 20px;
         padding-right: 20px;
@@ -308,7 +313,7 @@
         margin-top: 0;
     }
 
-   
+
 
     /* typo */
     .offers-section h2 {
@@ -355,7 +360,7 @@
 
     .offers-hero h1 {
         top: calc(50% + 35px);
-        font-size: 49px;
+        font-size: 32px;
         font-weight: 700;
     }
 }
