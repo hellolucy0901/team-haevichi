@@ -1,43 +1,41 @@
-.sub-visual{
-    position:relative;
-    height:480px;
-    overflow:hidden;
+.sub-visual {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
-    padding-top: 200px;
 }
 
-.sub-visual img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
+.sub-visual img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -2;
 }
-
-.sub-visual::before{
+.sub-visual::before {
     content: "";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.25);
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
     z-index: -1;
 }
 
-.sub-visual h1{
-    position: absolute;
-    font-size: 3.5em;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    white-space: nowrap;
-    color: var(--Neutral-100);
-    font-family: "Minion Pro";
-    /* text-transform:upppercase; */
+.sub-visual .inner h1 {
+    transform: translateY(50px);
 }
 
+.sub-visual h1 {
+    font-family: "MinionPro", serif;
+    font-weight: 800;
+    font-size: 3.5em;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-transform: uppercase;
+    
+}
 body {
     font-family: "Pretendard", sans-serif;
     font-size: 16px;
@@ -142,8 +140,23 @@ body {
     margin-left : 4px;
 }
 
+.btn>a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--Primary-color);
+    color: var(--Primary-color);
+    padding: 8px 20px;
+    transition: 0.3s;
+}
+
+.btn-blue>a {
+    color: var(--Neutral-900);
+    border-color: var(--Primary-color);
+}
+
 @media (max-width:1279px){
-    .body{
+    body{
         font-size:14px;
     }
     .sub-visual{
@@ -166,20 +179,24 @@ body {
 }
 
 @media(max-width:1023px){
-    .body{
+    body{
         font-size:14px;
     }    
     .sub-visual{
         height: 240px;
     }
 
+    .membership-list li{
+    container-type: inline-size;   
+    }
+
     .membership-list>li{
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         gap:16px;
     }
     .membership-list .img-box{
-        flex:0 0 120px;
+        width: 100%;
     }
     .membership-list .h3{
         font-size:1.1em;
@@ -189,10 +206,10 @@ body {
         font-size: 0.85em;
     }
     .price-wrap{
-        margin-top:12px;
-        padding-top:12px;
+        margin-top: clamp(12px, 3cqw, 32px);
+        padding-top: clamp(12px,2.5cqw, 24px);
     }
-    .price-wrap .price-strong{
+    .price-wrap .price strong{
         font-size: 1.1em;
     }
 
@@ -202,4 +219,5 @@ body {
     body{
         font-size:12px;
     }
+ 
 }
