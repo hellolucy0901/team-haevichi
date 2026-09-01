@@ -175,6 +175,10 @@
     .offers-hero h1 {
         font-size: 49px;
     }
+
+    .offers-section h2 {
+        font-size: 40px;
+    }
 }
 
 
@@ -189,6 +193,10 @@
     .offers-hero h1 {
         top: calc(50% + 30px);
         font-size: 49px;
+    }
+
+    .offers-section h2 {
+        font-size: 40px;
     }
 
 
@@ -318,7 +326,7 @@
     /* typo */
     .offers-section h2 {
         margin-bottom: 28px;
-        font-size: 38px;
+        font-size: 28px;
     }
 
     /* 모든 섹션 카드 제목 크기 통일 */
@@ -360,7 +368,7 @@
 
     .offers-hero h1 {
         top: calc(50% + 35px);
-        font-size: 32px;
+        font-size: 38px;
         font-weight: 700;
     }
 }
