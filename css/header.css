@@ -21,8 +21,6 @@
 
 }
 
-
-
 .site-header {
     position: fixed;
     top: 0;
@@ -376,8 +374,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     border: 0;
     /* 아직 적용된 요소 없음 */
 }
-
-
 
 /* 데스크톱에서 햄버거 버튼 숨김 */
 .mobile-menu-button {
