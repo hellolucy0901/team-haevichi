@@ -5,7 +5,7 @@
     --Primary-Pressed-color: #104876;
     --Primary-Subtle-color: #DCECF8;
 
-    --Neutral-100: #f2f2f2;
+    --Neutral-100: #fff;
     --Neutral-200: #e5e5e5;
     --Neutral-300: #d4d4d4;
     --Neutral-400: #a3a3a3;
@@ -21,10 +21,13 @@
     position: relative;
     width: 100%;
     height: 600px;
+    max-width: none;
+    margin: 0;
     overflow: hidden;
 }
 
 .offers-hero > img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
