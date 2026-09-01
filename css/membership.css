@@ -197,6 +197,7 @@ body {
     }
     .membership-list .img-box{
         width: 100%;
+        flex: 0 0 auto;
     }
     .membership-list .h3{
         font-size:1.1em;
