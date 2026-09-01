@@ -6,7 +6,7 @@
     --Primary-Pressed-color: #104876;
     --Primary-Subtle-color: #DCECF8;
 
-    --Neutral-100: #f2f2f2;
+    --Neutral-100: #fff;
     --Neutral-200: #e5e5e5;
     --Neutral-300: #d4d4d4;
     --Neutral-400: #a3a3a3;
@@ -43,7 +43,7 @@ body {
 
 .sub-visual {
     position: relative;
-    height: 250px;
+    height: 600px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -73,6 +73,8 @@ body {
     letter-spacing: 0.06em;
     color: #fff;
     text-transform: uppercase;
+    position: relative;
+    top: 30px;
 }
 
 
@@ -112,7 +114,7 @@ body {
     font-size: 48px;
     font-weight: 600;
     margin-bottom: 12px;
-     font-family: "Minion Pro", serif;
+    font-family: "Minion Pro", serif;
 }
 
 .dining-wrap .title-box p {
@@ -158,11 +160,11 @@ body {
     right: 0;
     width: 50%;
     height: 100%;
-     background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     z-index: 2;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(8px);
-     z-index: 2;
+    z-index: 2;
 }
 
 /* 다랑쉬 / 하노루 */
@@ -252,10 +254,9 @@ body {
 
  
 /* 아이패드 */
- @media screen and (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
 
-
-     body {
+    body {
         font-size: 14px;
     }
 
@@ -263,17 +264,13 @@ body {
         padding: 1.5em;
     }
 
-    
-
-    
-   .dining-list > li .img-box img {
+    .dining-list > li .img-box img {
         width: 100%;
         height: 100%;
         display: block;
         object-fit: cover;
         transition: transform 0.6s ease;
     }
-
 
 } 
 
@@ -320,7 +317,7 @@ body {
 .sub-visual {
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -330,13 +327,13 @@ body {
     left: 0;
 
     width: 100%;
-    height: 150px;
+    height: 200px;
 
     object-fit: cover;
     display: block;
 }
 
-.sub-visual .inner {
+/* .sub-visual .inner {
     position: absolute;
     top: 0;
     left: 0;
@@ -354,80 +351,81 @@ body {
     justify-content: center;
 
     z-index: 2;
+} */
+
+.sub-visual .inner h1 { 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    font-size: 32px; 
+    line-height: 1.2; 
+    letter-spacing: 0.04em; 
+    
+    position: relative;
+    top: 30px;
 }
 
-.sub-visual .inner h1 {
-    margin: 0;
-    padding: 0;
 
-    text-align: center;
+.dining-wrap {
+    padding: 100px 0 100px;
+}
 
+.dining-wrap .title-box .section-title {
     font-size: 32px;
-    line-height: 1.2;
-    letter-spacing: 0.04em;
-
-    transform: none;
+    font-weight: 500;
 }
-    .dining-wrap {
-        padding: 100px 0 100px;
-    }
 
-     .dining-wrap .title-box .section-title {
-        font-size: 32px;
-        font-weight: 500;
-    }
-
-    .bakery-bar-wrap {
+.bakery-bar-wrap {
     padding-top: 10px;
 }
 
-    .dining-list {
-        gap: 20px;
-    }
+.dining-list {
+    gap: 20px;
+}
 
-    /* 카드 = 사진 영역 */
-    .dining-list > li {
-        width: 100%;
-        max-width: 460px;
-        aspect-ratio: 20 / 10;
-        position: relative;
-        overflow: hidden;
-    }
+/* 카드 = 사진 영역 */
+.dining-list > li {
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 20 / 10;
+    position: relative;
+    overflow: hidden;
+}
 
+
+
+/* 사진 */
+.dining-list > li .img-box {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dining-list > li .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
    
+}
 
-    /* 사진 */
-    .dining-list > li .img-box {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-    }
+/* 모바일에서는 확대 없음 */
+.dining-list > li:hover .img-box img {
+    transform: none;
+}
 
-    .dining-list > li .img-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: none;
-       
-    }
+/* 사진 위 딤드 */
+.dining-list > li::before {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 
-    /* 모바일에서는 확대 없음 */
-    .dining-list > li:hover .img-box img {
-        transform: none;
-    }
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 
-    /* 사진 위 딤드 */
-    .dining-list > li::before {
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-
-        z-index: 2;
-    }
+    z-index: 2;
+}
 
 .dining-list > li:nth-child(5)::before,
 .dining-list > li:nth-child(6)::before {
@@ -435,49 +433,49 @@ body {
 }
 
 
-    /* 딤드 위에 텍스트 */
-    .dining-list > li .text-box {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
+/* 딤드 위에 텍스트 */
+.dining-list > li .text-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-        width: 100%;
-        height: auto;
+    width: 100%;
+    height: auto;
 
-        padding: 20px;
-        z-index: 3;
+    padding: 20px;
+    z-index: 3;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
-        color: #fff;
-    }
+    color: #fff;
+}
 
-    .dining-list > li .text-box .category {
-        margin-bottom: 8px;
-        gap: 8px;
-    }
+.dining-list > li .text-box .category {
+    margin-bottom: 8px;
+    gap: 8px;
+}
 
-    .dining-list > li .text-box .category span {
-        font-size: 11px;
-        padding: 4px 8px;
-    }
+.dining-list > li .text-box .category span {
+    font-size: 11px;
+    padding: 4px 8px;
+}
 
-    .dining-list > li .text-box h3 {
-        font-size: 22px;
-        margin-bottom: 8px;
-    }
+.dining-list > li .text-box h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
 
-    .dining-list > li .text-box p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
+.dining-list > li .text-box p {
+    font-size: 14px;
+    line-height: 1.5;
+}
 
-     .bakery-bar-wrap .dining-list {
-        padding-bottom: 50px;
-    }
+.bakery-bar-wrap .dining-list {
+    padding-bottom: 50px;
+}
 }
 
 
