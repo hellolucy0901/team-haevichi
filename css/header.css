@@ -21,7 +21,10 @@
 
 }
 
-
+/* pc 에서 숨기기 */
+.mobile-header {
+    display: none;
+}
 
 .site-header {
     position: fixed;
