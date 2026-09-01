@@ -6,7 +6,7 @@
     --Primary-Pressed-color: #104876;
     --Primary-Subtle-color: #DCECF8;
 
-    --Neutral-100: #f2f2f2;
+    --Neutral-100: #fff;
     --Neutral-200: #e5e5e5;
     --Neutral-300: #d4d4d4;
     --Neutral-400: #a3a3a3;
@@ -379,8 +379,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     border: 0;
     /* 아직 적용된 요소 없음 */
 }
-
-
 
 /* 데스크톱에서 햄버거 버튼 숨김 */
 .mobile-menu-button {
