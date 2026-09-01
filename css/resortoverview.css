@@ -149,7 +149,7 @@ body {
     top: 100px;
     bottom: 0;
     left: 50%;
-    width: 100vw;
+    width: 100%;
     transform: translateX(-50%);
     background-color: #f3f6fa;
     z-index: -1;
@@ -161,7 +161,7 @@ body {
     top: 100px;
     bottom: -100px;
     left: 50%;
-    width: 100vw;
+    width: 100%;
     transform: translateX(-50%);
     background-color: #f3f6fa;
     z-index: -1;
@@ -292,7 +292,7 @@ body {
 
 
     .main-slider-list>li .img-box {
-        height: 100vh;
+        height: 100%;
     }
 
     .main-slider-list>li .img-box>img {
@@ -302,7 +302,7 @@ body {
 
      /* 전체 여백 */
     .room-overview-wrap .inner {
-        /* padding: 0 20px; */
+        padding: 0 20px;
     }
 
   /* 서브 비주얼 */
