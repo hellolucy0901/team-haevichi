@@ -21,10 +21,10 @@
 
                 <!-- header-left -->
                 <div class="header-left">
-                    <h1><a href="./index.html" class="header-logo"><img src="./images/logo/black.png" alt="Haevichi">
-                    </a></h1>
+                    <h1><a href="./index.html" class="header-logo">
+                            <img src="./images/logo/black.png" alt="Haevichi"></a>
+                    </h1>
 
-                    <!-- 수정 후 -->
                     <nav class="main-nav" id="mobile-navigation" aria-label="주요 메뉴">
                         <ul class="main-menu">
 
@@ -198,25 +198,26 @@
                                 <div class="mega-menu wedding-business-mega-menu" id="wedding-business-submenu">
                                     <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
-                                            <a href="#" class="mega-menu-title">웨딩</a>
+                                            <a href="./wedding_business.html#wedding" class="mega-menu-title">웨딩</a>
                                             <ul class="mega-submenu">
-                                                <li><a href="#">실내 웨딩</a></li>
-                                                <li><a href="#">실외 웨딩</a></li>
+                                                <li><a href="./wedding_business.html#indoor-wedding">실내 웨딩</a></li>
+                                                <li><a href="./wedding_business.html#outdoor-wedding">실외 웨딩</a></li>
                                             </ul>
                                         </li>
                                         <li class="mega-menu-group">
-                                            <a href="#" class="mega-menu-title">비즈니스</a>
+                                            <a href="./wedding_business.html#business" class="mega-menu-title">비즈니스</a>
                                             <ul class="mega-submenu">
-                                                <li><a href="#">그랜드볼룸</a></li>
-                                                <li><a href="#">크리스탈홀</a></li>
-                                                <li><a href="#">다이아몬드홀</a></li>
-                                                <li><a href="#">소규모 미팅</a></li>
+                                                <li><a href="./wedding_business.html#grand-ballroom">그랜드볼룸</a></li>
+                                                <li><a href="./wedding_business.html#crystal-hall">크리스탈홀</a></li>
+                                                <li><a href="./wedding_business.html#diamond-hall">다이아몬드홀</a></li>
+                                                <li><a href="./wedding_business.html#small-meeting">소규모 미팅</a></li>
                                             </ul>
                                         </li>
                                         <li class="mega-menu-group">
-                                            <a href="#" class="mega-menu-title">케이터링</a>
+                                            <a href="./wedding_business.html#catering-service"
+                                                class="mega-menu-title">케이터링</a>
                                             <ul class="mega-submenu">
-                                                <li><a href="#">케이터링 서비스</a></li>
+                                                <li><a href="./wedding_business.html#catering-service">케이터링 서비스</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -400,7 +401,7 @@
             </div>
         </section>
 
-        <section class="offers-section resort-section" id="package">
+        <section class="offers-section resort-section">
             <div class="offers-container">
                 <h2>Resort Package</h2>
                 <ul class="offers-list">
@@ -634,6 +635,8 @@
         const menuButton = document.querySelector(".mobile-menu-button");
         const mobileNavigation = document.querySelector("#mobile-navigation");
         const submenuButtons = document.querySelectorAll(".mobile-submenu-toggle");
+        const mobileMenuLinks = mobileNavigation.querySelectorAll(
+            'a[href]:not([href="#"])');
         const mobileMenuBackdrop = document.querySelector(".mobile-menu-backdrop");
         const desktopMedia = window.matchMedia("(min-width: 1280px)");
 
@@ -690,6 +693,15 @@
                 if (!isExpanded) {
                     button.setAttribute("aria-expanded", "true");
                     menuItem.classList.add("is-expanded");
+                }
+            });
+        });
+
+        /* 모바일 메뉴 링크를 선택하면 전체 메뉴 닫기 */
+        mobileMenuLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (!desktopMedia.matches) {
+                    setMobileMenu(false);
                 }
             });
         });
