@@ -118,7 +118,7 @@ body {
    DINING
 ================================================== */
 
-.dining-wrap {
+.dining-section,.dining-wrap {
     padding-top: 200px;
 }
 
@@ -126,11 +126,11 @@ body {
     margin-bottom: 40px;
 }
 
+.dining-section .title-box .section-title,
 .dining-wrap .title-box .section-title {
     font-size: 48px;
     font-weight: 600;
     margin-bottom: 12px;
-
     font-family: "Minion Pro", serif;
 }
 
@@ -371,6 +371,8 @@ body {
         font-size: 36px;
     }
 
+    
+
 
     /* DINING */
 
@@ -382,9 +384,16 @@ body {
         margin-bottom: 30px;
     }
 
-    .dining-wrap .title-box .section-title {
+.dining-section .title-box .section-title {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-family: "Minion Pro", serif;
+}
+
+    /* .dining-wrap .title-box .section-title {
         font-size: 42px;
-    }
+    } */
 
     .dining-wrap .title-box p {
         font-size: 15px;
