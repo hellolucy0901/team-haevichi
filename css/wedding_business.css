@@ -1,23 +1,11 @@
-:root {
-    /* color */
-    --Primary-color: #1A5FA1;
-    --Primary-Hover-color: #13578F;
-    --Primary-Pressed-color: #104876;
-    --Primary-Subtle-color: #DCECF8;
-
-    --Neutral-100: #f2f2f2;
-    --Neutral-200: #e5e5e5;
-    --Neutral-300: #d4d4d4;
-    --Neutral-400: #a3a3a3;
-    --Neutral-500: #737373;
-    --Neutral-600: #525252;
-    --Neutral-700: #404040;
-    --Neutral-800: #262626;
-    --Neutral-900: #171717;
-}
-
 .content-section {
     margin-top: 200px;
+}
+
+.content-section,
+.wedding-item,
+.business-card {
+    scroll-margin-top: 108px;
 }
 
 .content-container {
@@ -46,9 +34,14 @@
 }
 
 /* typo */
+
+.wedding-business-hero h1 {
+    font-size: 49px;
+}
+
 .section-heading h2 {
     font-family: 'Minion Pro', serif;
-    font-size: 54px;
+    font-size: 48px;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.01em;
@@ -95,7 +88,7 @@
     transform: translate(-50%, -50%);
 
     font-family: 'Minion Pro', serif;
-    font-size: 70px;
+    font-size: 56px;
     font-weight: 800;
     line-height: normal;
     letter-spacing: 0.01em;
@@ -241,6 +234,12 @@
     transform: translateX(4px);
 }
 
+@media screen and (max-width: 1440px) {
+    .wedding-business-hero h1 {
+        font-size: 49px;
+    }
+}
+
 /* tablet */
 @media screen and (max-width: 1279px) {
 
@@ -258,12 +257,17 @@
 
     .wedding-business-hero h1 {
         top: calc(50% + 30px);
-        font-size: 54px;
+        font-size: 49px;
     }
-
 
     .content-section {
         margin-top: 145px;
+    }
+
+    .content-section,
+    .wedding-item,
+    .business-card {
+        scroll-margin-top: 80px;
     }
 
     .catering-section {
@@ -304,11 +308,17 @@
 
     .wedding-business-hero h1 {
         top: calc(50% + 25px);
-        font-size: 48px;
+        font-size: 32px;
     }
 
     .content-section {
         margin-top: 115px;
+    }
+
+    .content-section,
+    .wedding-item,
+    .business-card {
+        scroll-margin-top: 80px;
     }
 
     .catering-section {
@@ -391,10 +401,6 @@
         width: calc(100% - 32px);
     }
 
-    .wedding-business-hero h1 {
-        font-size: clamp(28px, calc(16px + 3.333vw), 32px);
-    }
-
     .content-section {
         margin-top: 85px;
     }
@@ -446,9 +452,6 @@
     .catering-description {
         font-size: 14px;
     }
-}
-
-@media screen and (max-width: 480px) {
 
     /* wedding */
     .wedding-item-content {
