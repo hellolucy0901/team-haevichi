@@ -1,27 +1,3 @@
-/* 변수 선언하기 */
-:root {
-    /* color */
-    --Primary-color: #1A5FA1;
-    --Primary-Hover-color: #13578F;
-    --Primary-Pressed-color: #104876;
-    --Primary-Subtle-color: #DCECF8;
-
-    --Neutral-100: #fff;
-    --Neutral-200: #e5e5e5;
-    --Neutral-300: #d4d4d4;
-    --Neutral-400: #a3a3a3;
-    --Neutral-500: #737373;
-    --Neutral-600: #525252;
-    --Neutral-700: #404040;
-    --Neutral-800: #262626;
-    --Neutral-900: #171717;
-
-    /* layout */
-    --inner-width: 1440px;
-
-}
-
-
 .site-header {
     position: fixed;
     top: 0;
@@ -362,21 +338,6 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
 .reservation-button:focus-visible {
     background: var(--Primary-Hover-color);
 }
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-    /* 아직 적용된 요소 없음 */
-}
-
-
 
 /* 데스크톱에서 햄버거 버튼 숨김 */
 .mobile-menu-button {
