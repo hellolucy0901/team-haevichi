@@ -445,7 +445,8 @@
         /* 햄버거·닫기 버튼 */
         menuButton.addEventListener("click", function () {
             const isOpen = mobileNavigation.classList.contains("is-open");
-
+            mobileNavigation.classList.add("is-animated");
+            mobileNavigation.classList.add("is-animated");
             setMobileMenu(!isOpen);
         });
 
@@ -495,11 +496,12 @@
         /* 데스크톱 화면으로 전환되면 모바일 메뉴 초기화 */
         desktopMedia.addEventListener("change", function (event) {
             if (event.matches) {
+                mobileNavigation.classList.remove("is-animated");
                 setMobileMenu(false);
             }
         });
     </script>
 
-    </body>
-    
-    </html>
+</body>
+
+</html>

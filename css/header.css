@@ -339,6 +339,7 @@ language-button에 호버 했을 때만 글자색 회색으로, chevrone아이�
     background: var(--Primary-Hover-color);
 }
 
+
 /* 데스크톱에서 햄버거 버튼 숨김 */
 .mobile-menu-button {
     display: none;
@@ -370,7 +371,7 @@ body.menu-open {
 
 
 /* narrow desktop */
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
+@media screen and (min-width: 1279px) and (max-width: 1442px) {
 
     .header-inner {
         width: calc(100% - 80px);
@@ -385,7 +386,7 @@ body.menu-open {
     }
 
     .main-menu {
-        gap: 16px;
+        gap: 20px;
     }
 
     .main-menu-item>a {
@@ -393,7 +394,7 @@ body.menu-open {
     }
 
     .utility-menu {
-        gap: 0;
+        gap: 4px;
     }
 
     .utility-menu a {
@@ -509,10 +510,7 @@ body.menu-open {
         visibility: hidden;
         pointer-events: none;
 
-        transition:
-            transform 0.3s ease,
-            visibility 0.3s ease;
-
+        transition: none;
         z-index: 999;
     }
 
@@ -520,6 +518,20 @@ body.menu-open {
         transform: translateX(0);
         visibility: visible;
         pointer-events: auto;
+    }
+
+    /* 사용자가 메뉴를 조작했을 때만 애니메이션 활성화 */
+    .main-nav.is-animated {
+        transition:
+            transform 0.3s ease,
+            visibility 0s linear 0.3s;
+    }
+
+    /* 메뉴가 열릴 때 visibility는 즉시 활성화 */
+    .main-nav.is-animated.is-open {
+        transition:
+            transform 0.3s ease,
+            visibility 0s;
     }
 
     /* 모바일 메뉴 뒤의 반투명 배경 */
@@ -819,9 +831,3 @@ body.menu-open {
         padding-inline: 16px;
     }
 }
-
-
-
-
-
-

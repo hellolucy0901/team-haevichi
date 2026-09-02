@@ -57,11 +57,6 @@
     column-gap: 24px;
 }
 
-/* card */
-.offers-card {
-    width: 100%;
-}
-
 .offers-card>img {
     display: block;
     width: 100%;
@@ -138,7 +133,7 @@
 
 
 /* narrow desktop */
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
+@media screen and (min-width: 1279px) and (max-width: 1442px) {
 
     .offers-hero h1 {
         font-size: 49px;
@@ -151,7 +146,7 @@
 
 
 /* tablet */
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1278.98px) {
 
     /* hero */
     .offers-hero {
@@ -207,7 +202,7 @@
 
 
 /* mobile */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
 
     /* hero */
     .offers-hero {
@@ -248,7 +243,6 @@
     .hotel-section .offers-list,
     .resort-section .offers-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 16px;
         row-gap: 0;
     }
 
@@ -269,11 +263,15 @@
         font-size: 16px;
     }
 
-    .offers-card p {
-        font-size: 13px;
+    /* Hotel / Resort 2열 카드 제목 영역을 2줄 기준으로 통일 */
+    .hotel-section .offers-card h3,
+    .resort-section .offers-card h3 {
+        line-height: 1.35;
+        min-height: 2.7em;
     }
 
     .offers-card>p {
+        font-size: 13px;
         margin-bottom: 28px;
     }
 
@@ -293,15 +291,16 @@
 
         min-height: 31px;
         margin-top: 12px;
-
-        /* 설명의 길이에 따른 간격 조정 */
-        .event-section .offers-card>p,
-        .wellness-section .offers-card>p {
-            min-height: auto;
-            margin-top: 12px;
-            margin-bottom: 28px;
-        }
     }
+
+    /* 설명의 길이에 따른 간격 조정 */
+    .event-section .offers-card>p,
+    .wellness-section .offers-card>p {
+        min-height: auto;
+        margin-top: 12px;
+        margin-bottom: 28px;
+    }
+
 
     /* button */
     .offers-more {
@@ -314,10 +313,8 @@
     }
 }
 
-
 /* small ver. mobile */
-@media screen and (max-width: 480px) {
-
+@media screen and (max-width: 480.98px) {
 
     .offers-container {
         padding-left: 16px;
@@ -332,15 +329,7 @@
         margin-bottom: 72px;
     }
 
-    /* 2열로 표시되는 카드만 타이틀 두 줄 높이 확보 */
-    .hotel-section .offers-card h3,
-    .resort-section .offers-card h3 {
-        line-height: 1.35;
-        min-height: 2.7em;
-    }
-
     .offers-more {
         width: min(146px, 100%);
     }
-
 }
