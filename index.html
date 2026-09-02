@@ -20,7 +20,6 @@
         <a href="#main">본문 바로가기</a>
     </div>
     <!-- 1. header -->
-
     <header>
         <div class="sub-bg"></div>
         <div class="header-inner">
@@ -833,7 +832,7 @@
 
 
 
-        <section>
+        <section class="dining-wrap">
             <div class="inner">
                 <div class="title-box" data-aos="fade-up">
                     <h2 class="section-title">DINING</h2>
@@ -1487,6 +1486,81 @@
             duration: 1400,
         });
     </script>
+
+    <!-- GPT가 만들어준 탭 이동 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Facility
+            const facilityTabs = document.querySelectorAll(".facility-wrap .tab-menu li");
+            const facilityContents = document.querySelectorAll(".facility-list-wrap > div");
+
+            facilityTabs.forEach((tab, index) => {
+                tab.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    facilityTabs.forEach(item => {
+                        item.classList.remove("active");
+                    });
+
+                    facilityContents.forEach(content => {
+                        content.classList.remove("active");
+                    });
+
+                    tab.classList.add("active");
+                    facilityContents[index].classList.add("active");
+                });
+            });
+
+
+            // Concierge
+            const conciergeTabs = document.querySelectorAll(".concierge-wrap .tab-menu li");
+            const conciergeContents = document.querySelectorAll(".concierge-list-wrap > div");
+
+            conciergeTabs.forEach((tab, index) => {
+                tab.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    conciergeTabs.forEach(item => {
+                        item.classList.remove("active");
+                    });
+
+                    conciergeContents.forEach(content => {
+                        content.classList.remove("on");
+                    });
+
+                    tab.classList.add("active");
+                    conciergeContents[index].classList.add("on");
+                });
+            });
+
+        });
+
+        const roomTabs = document.querySelectorAll(".rooms-wrap .room-tab-menu li");
+        const roomContents = document.querySelectorAll(".room-type-wrap > div");
+
+        roomTabs.forEach((tab, index) => {
+
+            tab.addEventListener("click", function (e) {
+                e.preventDefault();
+                // 모든 탭 active 제거
+                roomTabs.forEach((item) => {
+                    item.classList.remove("active");
+                });
+                // 클릭한 탭 active
+                tab.classList.add("active");
+                roomContents.forEach((content) => {
+                    content.classList.remove("on");
+                });
+                // 클릭한 탭과 같은 순서의 콘텐츠 보여주기
+                roomContents[index].classList.add("on");
+            });
+        });
+
+
+    </script>
+
+</body>
 </body>
 
 </html>
