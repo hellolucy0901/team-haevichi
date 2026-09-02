@@ -609,6 +609,7 @@ section{
 .room-type-wrap{}
 .room-type-wrap>div{
     display: none;
+    position:relative;
 }
 .room-type-wrap>.on{
     display: block;
@@ -658,12 +659,49 @@ section{
 
 }
 
+/* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용 */
+.swiper-hotelbutton-prev,
+.swiper-hotelbutton-next{
+    position:absolute;
+    width: 58px;
+    height: 58px;
+    z-index: 1000;
+    top:30%;
 
+}
 
+.swiper-hotelbutton-prev{
+    left: 24px;
+    background-image: url(../images/icon/mainslider-left.svg);
+}
+
+.swiper-hotelbutton-next{
+    right: 24px;
+    background-image: url(../images/icon/mainslider-right.svg);
+}
+
+/* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용 */
+.swiper-resortbutton-prev,
+.swiper-resortbutton-next{
+    position:absolute;
+    width: 58px;
+    height: 58px;
+    z-index: 1000;
+    top:30%;
+
+}
+
+.swiper-resortbutton-prev{
+    left: 24px;
+    background-image: url(../images/icon/mainslider-left.svg);
+}
+
+.swiper-resortbutton-next{
+    right: 24px;
+    background-image: url(../images/icon/mainslider-right.svg);
+}
 
 /* dining */
-
-
 .dining-list-wrap{
     /* padding: 1em; */
     overflow: hidden;
