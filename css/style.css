@@ -420,7 +420,7 @@ section{
     line-height: 1.5;
     font-size: 12px;
     letter-spacing: 0.02em;
-    padding-right: 300px;
+    /* padding-right: 300px; */
 }
 
 /* tab-menu */
