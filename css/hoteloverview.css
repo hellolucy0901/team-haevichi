@@ -6,7 +6,7 @@
     --Primary-Pressed-color: #104876;
     --Primary-Subtle-color: #DCECF8;
 
-    --Neutral-100: #f2f2f2;
+    --Neutral-100: #fff;
     --Neutral-200: #e5e5e5;
     --Neutral-300: #d4d4d4;
     --Neutral-400: #a3a3a3;
@@ -39,397 +39,6 @@ body {
 }
 
 
-/* pc 에서 숨기기 */
-.mobile-header {
-    display: none;
-}
-
-/* header */
-
-.site-header {
-    position: sticky;
-    top: 0;
-
-    width: 100%;
-    height: 88px;
-
-    background: #fff;
-
-    z-index: 1000;
-}
-
-.header-bar {
-    position: relative;
-
-    width: 100%;
-    height: 88px;
-
-    display: flex;
-    align-items: center;
-
-    border-bottom: 0.5px solid transparent;
-}
-
-/* mega menu가 열려 있을 때 header bottom line */
-.site-header:has(.main-menu-item:hover > .mega-menu) .header-bar,
-.site-header:has(.main-menu-item:focus-within > .mega-menu) .header-bar {
-    border-bottom-color: #d4d4d4;
-}
-
-.header-inner {
-    width: calc(100% - 160px);
-    max-width: 1760px;
-    height: 52px;
-
-    margin: 0 auto;
-    padding: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-/* header-left */
-.header-left {
-    display: flex;
-    align-items: center;
-
-    gap: 48px;
-}
-
-.header-logo {
-    display: block;
-    flex-shrink: 0;
-}
-
-.header-logo img {
-    width: 154px;
-    height: 32px;
-}
-
-.main-nav {
-    height: 88px;
-}
-
-.main-menu {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
-.main-menu-item {
-    height: 100%;
-}
-
-.main-menu-item:hover>.mega-menu,
-.main-menu-item:focus-within>.mega-menu {
-    display: block;
-}
-
-.main-menu-item>a {
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 24px;
-    letter-spacing: 0;
-
-    color: #171717;
-
-    white-space: nowrap;
-}
-
-.main-menu-item:hover>a,
-.main-menu-item>a:hover,
-.main-menu-item>a:focus-within,
-.main-menu-item:focus-within>a {
-    font-weight: 700;
-    color: #a3a3a3;
-}
-
-.mega-menu {
-    position: absolute;
-
-    top: 88px;
-    left: 0;
-
-    width: 100%;
-
-    min-height: 68px;
-    height: auto;
-
-    padding-top: 30px;
-
-    padding-left: max(282px,
-            calc((100% - 1760px) / 2 + 202px));
-
-    padding-right: 0;
-    padding-bottom: 30px;
-
-    background: #fff;
-
-    z-index: 1001;
-
-    display: none;
-}
-
-
-.mega-menu-list {
-    display: flex;
-    align-items: flex-start;
-
-    gap: 21px;
-}
-
-.mega-menu-group {
-    width: 150px;
-
-    flex-shrink: 0;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 19px;
-}
-
-.mega-menu-title {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 16.5px;
-    letter-spacing: 0;
-
-    color: #171717;
-
-    white-space: nowrap;
-}
-
-.mega-menu-title:hover,
-.mega-menu-title:focus-visible {
-    color: #a3a3a3;
-}
-
-.mega-submenu {
-    display: flex;
-    flex-direction: column;
-
-    gap: 19px;
-}
-
-.mega-submenu a {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.5px;
-    letter-spacing: 0;
-
-    color: #a3a3a3;
-
-    white-space: nowrap;
-}
-
-.mega-submenu a:hover,
-.mega-submenu a:focus-visible {
-    color: #262626;
-}
-
-/* header-right */
-.header-right {
-    display: flex;
-    align-items: center;
-}
-
-.utility-menu {
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
-}
-
-.utility-menu a {
-    display: flex;
-    align-items: center;
-
-    padding: 8px;
-
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    letter-spacing: 0;
-
-    color: #171717;
-
-    white-space: nowrap;
-}
-
-.utility-menu a:hover,
-.utility-menu a:focus-visible {
-    font-weight: 600;
-    color: #a3a3a3;
-}
-
-/* lang-sel */
-.language-selector {
-    position: relative;
-
-    width: 76px;
-    height: 36px;
-
-    margin-left: 16px;
-}
-
-.language-button {
-    width: 76px;
-    height: 36px;
-
-    padding: 8px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 4px;
-
-    cursor: pointer;
-
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    letter-spacing: 0.01em;
-
-    color: #171717;
-
-    anchor-name: --language-trigger;
-}
-
-.language-chevron {
-    width: 20px;
-    height: 20px;
-
-    flex-shrink: 0;
-
-    background-image: url("../images/icon/chev_down_bk.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-.language-menu {
-    position: fixed;
-
-    position-anchor: --language-trigger;
-
-    inset: auto;
-    margin: 0;
-
-    top: anchor(bottom);
-    left: anchor(left);
-
-    right: auto;
-    bottom: auto;
-
-    width: 76px;
-    height: 52px;
-
-    padding: 0;
-
-    background: #fff;
-
-    border: 0;
-    outline: 1px solid #d4d4d4;
-
-    overflow: hidden;
-}
-
-/* KR / EN  */
-.language-menu li {
-    width: 100%;
-    height: 26px;
-}
-
-.language-option {
-    width: 100%;
-    height: 100%;
-
-    padding: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #fff;
-
-    color: #171717;
-
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    letter-spacing: 0.01em;
-
-    cursor: pointer;
-}
-
-.language-option:hover,
-.language-option:focus-visible {
-    background: #1a5fa1;
-    color: #fff;
-}
-
-
-/* closed hover */
-.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover {
-    color: #a3a3a3;
-}
-
-
-.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover .language-chevron {
-    background-image: url("../images/icon/chev_down_gr.svg");
-}
-
-
-/* open */
-.language-selector:has(.language-menu:popover-open) .language-button {
-    color: #171717;
-}
-
-
-.language-selector:has(.language-menu:popover-open) .language-chevron {
-    background-image: url("../images/icon/chev_up_bk.svg");
-}
-
-
-
-/* reserve-btn */
-.reservation-button {
-    width: 200px;
-    height: 50px;
-
-    margin-left: 12px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #1a5fa1;
-
-    color: #fff;
-
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 0;
-
-    white-space: nowrap;
-}
-
-.reservation-button:hover,
-.reservation-button:focus-visible {
-    background: #13578f;
-}
-
 .sub-visual {
     position: relative;
     height: 600px;
@@ -456,18 +65,15 @@ body {
     z-index: -1;
 }
 
-.sub-visual .inner h1 {
-    transform: translateY(50px);
-}
 
 .sub-visual h1 {
-    font-family: "MinionPro", serif;
-    font-weight: 800;
+    font-family: "Minion Pro Bold Condensed", serif;
     font-size: 3.5em;
     letter-spacing: 0.06em;
     color: #fff;
     text-transform: uppercase;
-    
+    position: relative;
+    top: 30px;
 }
 
 
@@ -540,7 +146,7 @@ body {
     top: 100px;
     bottom: 0;
     left: 50%;
-    width: 100vw;
+    width: 100%;
     transform: translateX(-50%);
     background-color: #f3f6fa;
     z-index: -1;
@@ -552,7 +158,7 @@ body {
     top: 100px;
     bottom: -100px;
     left: 50%;
-    width: 100vw;
+    width: 100%;
     transform: translateX(-50%);
     background-color: #f3f6fa;
     z-index: -1;
@@ -635,162 +241,8 @@ body {
 }
 
 
-/* footer */
-body {
-    font-family: "Pretendard", sans-serif;
-    font-size: 14px;
-    color: #171717;
-}
 
-/* 회사 정보 */
-.footer-company-info {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    text-align: right;
-
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    color: #fff;
-}
-
-.footer-info-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-/* sns 위치 */
-.footer-bottom-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* footer 배경*/
-.site-footer {
-    width: 100%;
-    padding: 48px 0 20px;
-    background: #404040;
-    color: #fff;
-}
-
-/* footer inner 위치 */
-.footer-inner {
-    max-width: 1440px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 41px;
-}
-
-/* footer 로고를 기준으로 위치 변경*/
-.footer-top {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-}
-
-
-/* footer logo */
-.footer-logo {
-    display: block;
-    width: 154px;
-}
-
-.footer-logo img {
-    width: 154px;
-    height: 32px;
-}
-
-
-/* footer menu */
-.footer-menu {
-    display: flex;
-    align-items: center;
-    gap: 36px;
-}
-
-.footer-menu a {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20px;
-    color: #fff;
-    white-space: nowrap;
-    transition: opacity 0.2s ease;
-}
-
-.footer-menu a:hover {
-    opacity: 0.6;
-}
-
-
-/* footer contact */
-
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    color: #fff;
-}
-
-.footer-contact p {
-    display: flex;
-    align-items: center;
-}
-/* contact와 icon의 간격 */
-.footer-contact img {
-    margin-right: 12px;
-}
-
-.footer-cert {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 63px;
-}
-
-.cert-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.cert-item>p {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-.sns-list {
-    display: flex;
-    gap: 6px;
-}
-
-.sns-list a:hover {
-    opacity: 0.6;
-}
-
-/* copyright */
-.footer-copyright {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
-    color: #fff;
-}
-
-
-
-/* ================================================= */
 /* 아이패드 */
-/* ================================================= */
-
-/* responsive */
 @media screen and (max-width: 1440px) {
 
     /* header */
@@ -803,232 +255,17 @@ body {
     .inner {
         padding: 0 1em;
     }
-
-    .site-header {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 88px;
-
-        background: #fff;
-
-        z-index: 1000;
-    }
-
-    .header-bar {
-        width: 100%;
-        height: 88px;
-
-        border-bottom: 0;
-        
-    }
-
-    .header-inner {
-        width: 100%;
-        max-width: none;
-        height: 100%;
-
-        margin: 0;
-        padding: 0 30px;
-    }
-
-    /* desktop header 숨김 */
-    .header-left,
-    .header-right {
-        
-    }
-
-    /* mobile header 표시 */
-    /* .mobile-header {
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .mobile-header-logo {
-        display: block;
-        flex-shrink: 0;
-    }
-
-    .mobile-header-logo img {
-        width: 120px;
-        height: auto;
-        filter: invert();
-    }
-
-    .mobile-header-actions {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .mobile-reservation-button {
-        width: 80px;
-        height: 46px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        background: #1a5fa1;
-        color: #fff;
-
-        font-size: 16px;
-        font-weight: 600;
-
-        white-space: nowrap;
-    }
-
-    .mobile-menu-button {
-        width: 32px;
-        height: 32px;
-
-        padding: 0;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        background: transparent;
-    }
-
-    .mobile-menu-icon {
-        width: 28px;
-        height: 28px;
-
-        object-fit: contain;
-    } */
-
     
 }
-@media screen and (max-width: 1279px) {
-
-    .footer-inner {
-        padding: 0 1.5em;
-    }
-
-    .footer-info-row {
-        gap: 2em;
-    }
-
-    .footer-company-info {
-        font-size: 13px;
-    }
-
-    .footer-menu {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-}
 
 
-/* ================================================= */
 /* 모바일 */
-/* ================================================= */
-
-
-
- @media screen and (max-width:767px) {
+@media screen and (max-width:767px) {
 
     body {
         font-size: 12px;
     }
 
-    .site-header {
-        position: sticky;
-        top: 0;
-
-        width: 100%;
-        height: 50px;
-
-        background: #fff;
-        z-index: 1000;
-    }
-
-    .header-bar {
-        width: 100%;
-        height: 50px;
-
-        display: flex;
-        align-items: center;
-    }
-
-/* 
- desktop header */
-    .header-left,
-    .header-right {
-        display: none;
-    }
-
-    /* mobile header 표시 */ 
-     .mobile-header {
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    } 
-
-    .mobile-header-logo {
-        display: block;
-        flex-shrink: 0;
-    }
-
-    .mobile-header-logo img {
-        width: 120px;
-        height: auto;
-        filter: invert();
-    }
-
-    .mobile-header-actions {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .mobile-reservation-button {
-        width: 80px;
-        height: 46px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        background: #1a5fa1;
-        color: #fff;
-
-        font-size: 16px;
-        font-weight: 600;
-
-        white-space: nowrap;
-    }
-
-    .mobile-menu-button {
-        width: 32px;
-        height: 32px;
-
-        padding: 0;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        background: transparent;
-    }
-
-    .mobile-menu-icon {
-        width: 28px;
-        height: 28px;
-
-        object-fit: contain;
-    }
 
     .title-box {
         flex-direction: column;
@@ -1048,7 +285,7 @@ body {
 
 
     .main-slider-list>li .img-box {
-        height: 100vh;
+        height: 100%;
     }
 
     .main-slider-list>li .img-box>img {
@@ -1060,17 +297,18 @@ body {
 
  
     /* 전체 여백 */
-    .room-overview-wrap .inner {
-        padding: 0 20px;
+  .room-overview-wrap .inner {
+         padding: 0 1em;
     }
 
+    
 
 
 /* 서브 비주얼 */
 .sub-visual {
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -1080,13 +318,13 @@ body {
     left: 0;
 
     width: 100%;
-    height: 150px;
+    height: 200px;
 
     object-fit: cover;
     display: block;
 }
 
-.sub-visual .inner {
+/* .sub-visual .inner {
     position: absolute;
     top: 0;
     left: 0;
@@ -1104,19 +342,18 @@ body {
     justify-content: center;
 
     z-index: 2;
-}
+} */
 
-.sub-visual .inner h1 {
-    margin: 0;
-    padding: 0;
-
-    text-align: center;
-
-    font-size: 32px;
-    line-height: 1.2;
-    letter-spacing: 0.04em;
-
-    transform: none;
+.sub-visual .inner h1 { 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    font-size: 32px; 
+    line-height: 1.2; 
+    letter-spacing: 0.04em; 
+    
+    position: relative;
+    top: 30px;
 }
 
 
@@ -1207,109 +444,9 @@ body {
 }
 
 
-  /* 작은 모바일 */
+
 /* 작은 모바일 - 두 페이지 동일 적용 */
 @media screen and (max-width: 480px) {
 
-    .site-footer {
-        padding: 45px 0 35px;
-    }
-
-    .footer-inner {
-        padding: 0 20px;
-        gap: 20px;
-        box-sizing: border-box;
-    }
-
-    /* footer logo */
-    .footer-logo {
-        width: 110px;
-        margin-bottom: 26px;
-    }
-
-    .footer-logo img {
-        width: 110px;
-        height: auto;
-    }
-
-    /* footer menu */
-    .footer-menu {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 12px;
-        row-gap: 9px;
-        margin: 0 0 30px;
-    }
-
-    .footer-menu a {
-        font-size: 11px;
-        white-space: nowrap;
-    }
-
-    /* 주소 + 회사 정보 */
-    .footer-info-row {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .footer-contact {
-        width: 100%;
-        font-size: 10px;
-        line-height: 1.7;
-    }
-
-    .footer-company-info {
-        width: 100%;
-        font-size: 10px;
-        line-height: 1.7;
-        text-align: left;
-    }
-
-    /* 인증 + SNS */
-    .footer-bottom-row {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
-    }
-
-    .footer-cert {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .cert-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .cert-item img {
-        width: 45px;
-        height: auto;
-        flex-shrink: 0;
-    }
-
-    .cert-item > p {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        font-size: 10px;
-        line-height: 1.5;
-    }
-
-    .sns-list {
-        display: flex;
-        gap: 12px;
-    }
-
-    /* copyright */
-    .footer-copyright {
-        font-size: 9px;
-        line-height: 1.5;
-    }
-
+   
 }

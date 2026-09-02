@@ -7,58 +7,65 @@
       <link rel="stylesheet" href="./css/fontello.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/hoteloverview.css">
     <link rel="stylesheet" href="./font/font.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/hoteloverview.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    
 </head>
 <body>
-     <!-- 1. header -->
-   
-     
-    <header class="site-header">
+     <header class="site-header">
         <div class="header-bar">
             <div class="header-inner">
 
                 <!-- header-left -->
                 <div class="header-left">
-                    <a href="#" class="header-logo"><img src="./images/logo/black.png" alt="Haevichi">
+                    <a href="./index.html" class="header-logo"><img src="./images/logo/black.png" alt="Haevichi">
                     </a>
 
-                    <nav class="main-nav" aria-label="주요 메뉴">
+                    <!-- 수정 후 -->
+                    <nav class="main-nav" id="mobile-navigation" aria-label="주요 메뉴">
                         <ul class="main-menu">
 
-                            <li class="main-menu-item">
-                                <a href="offers.html">스페셜 오퍼</a>
-                                <div class="mega-menu offers-mega-menu">
-                                    <ul class="mega-menu-list">
+                            <li class="main-menu-item">            
+                                <a href="./offers.html" class="desktop-main-menu-link">스페셜 오퍼</a>
 
-                                        <!-- offers sub menu 01-->
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="offers-submenu">
+                                    <span>스페셜 오퍼</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu offers-mega-menu" id="offers-submenu">
+                                    <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
-                                            <a href="#" class="mega-menu-title">패키지</a>
+                                            <a href="./offers.html#package" class="mega-menu-title">패키지</a>
                                         </li>
-                                        <!-- offers sub menu 02-->
                                         <li class="mega-menu-group">
-                                            <a href="#" class="mega-menu-title">다이닝</a>
+                                            <a href="./offers.html#dining" class="mega-menu-title">다이닝</a>
                                         </li>
-                                        <!-- offers sub menu 03-->
                                         <li class="mega-menu-group">
-                                            <a href="#" class="mega-menu-title">이벤트</a>
+                                            <a href="./offers.html#event" class="mega-menu-title">이벤트</a>
                                         </li>
-                                        <!-- offers sub menu 04-->
                                         <li class="mega-menu-group">
-                                            <a href="#" class="mega-menu-title">웰니스</a>
+                                            <a href="./offers.html#wellness" class="mega-menu-title">웰니스</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="hoteloverview.html">호텔</a>
-                                <!-- div.mega-menu>ul.mega-menu-list>(li.mega-menu-group>a[href="#"].mega-menu-title+ul.mega-submenu>li*4>a[href="#"])*3 -->
-                                <div class="mega-menu hotel-mega-menu">
-                                    <ul class="mega-menu-list">
+                                <a href="./hoteloverview.html" class="desktop-main-menu-link">호텔</a>
 
-                                        <!-- hotel sub menu 01 -->
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="hotel-submenu">
+                                    <span>호텔</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu hotel-mega-menu" id="hotel-submenu">
+                                    <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">스탠다드</a>
                                             <ul class="mega-submenu">
@@ -68,7 +75,6 @@
                                                 <li><a href="#">온돌</a></li>
                                             </ul>
                                         </li>
-                                        <!-- hotel sub menu 02 -->
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">스위트</a>
                                             <ul class="mega-submenu">
@@ -78,7 +84,6 @@
                                                 <li><a href="#">온돌 스위트</a></li>
                                             </ul>
                                         </li>
-                                        <!-- hotel sub menu 03 -->
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">프리미엄 스위트</a>
                                             <ul class="mega-submenu">
@@ -86,7 +91,6 @@
                                                 <li><a href="#">프레지덴셜 스위트</a></li>
                                             </ul>
                                         </li>
-                                        <!-- hotel sub menu 04 -->
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">특별객실</a>
                                             <ul class="mega-submenu">
@@ -98,11 +102,16 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="resortoverview.html">리조트</a>
-                                <div class="mega-menu resort-mega-menu">
-                                    <ul class="mega-menu-list">
+                                <a href="./resortoverview.html" class="desktop-main-menu-link">리조트</a>
 
-                                        <!-- resort sub menu 01 -->
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="resort-submenu">
+                                    <span>리조트</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu resort-mega-menu" id="resort-submenu">
+                                    <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">스위트</a>
                                             <ul class="mega-submenu">
@@ -111,7 +120,6 @@
                                                 <li><a href="#">팜 스위트</a></li>
                                             </ul>
                                         </li>
-                                        <!-- resort sub menu 02 -->
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">프리미엄 스위트</a>
                                             <ul class="mega-submenu">
@@ -120,7 +128,6 @@
                                                 <li><a href="#">그랜드 스위트</a></li>
                                             </ul>
                                         </li>
-                                        <!-- resort sub menu 03 -->
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">시그니처 스위트</a>
                                             <ul class="mega-submenu">
@@ -129,7 +136,6 @@
                                                 <li><a href="#">시그니처 노을 스위트</a></li>
                                             </ul>
                                         </li>
-                                        <!-- resort sub menu 04 -->
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">특별객실</a>
                                             <ul class="mega-submenu">
@@ -141,10 +147,16 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="dining.html">다이닝</a>
-                                <div class="mega-menu dining-mega-menu">
-                                    <ul class="mega-menu-list">
+                                <a href="./dining.html" class="desktop-main-menu-link">다이닝</a>
 
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="dining-submenu">
+                                    <span>다이닝</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu dining-mega-menu" id="dining-submenu">
+                                    <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">레스토랑</a>
                                             <ul class="mega-submenu">
@@ -155,14 +167,12 @@
                                                 <li><a href="#">하노루</a></li>
                                                 <li><a href="#">다랑쉬</a></li>
                                             </ul>
-
                                         </li>
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">바</a>
                                             <ul class="mega-submenu">
                                                 <li><a href="#">바99</a></li>
                                             </ul>
-
                                         </li>
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">베이커리</a>
@@ -175,11 +185,18 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="wedding_business.html">연회</a>
+                                <a href="./wedding_business.html" class="desktop-main-menu-link">연회</a>
 
-                                <div class="mega-menu wedding-business-mega-menu">
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="wedding-business-submenu">
+                                    <span>연회</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+
+                                <div class="mega-menu wedding-business-mega-menu" id="wedding-business-submenu">
                                     <ul class="mega-menu-list">
-
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">웨딩</a>
                                             <ul class="mega-submenu">
@@ -207,11 +224,17 @@
                             </li>
 
                             <li class="main-menu-item">
-                                <a href="facility.html">부대시설</a>
-                                <!-- div.mega-menu>ul.mega-menu-list>(li.mega-menu-group>a[href="#"].mega-menu-title+ul.mega-submenu>li*7>a[href="#"])*4 -->
-                                <div class="mega-menu facility-mega-menu">
-                                    <ul class="mega-menu-list">
+                                <a href="./facility.html" class="desktop-main-menu-link">부대시설</a>
 
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="facility-submenu">
+                                    <span>부대시설</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+
+                                <div class="mega-menu facility-mega-menu" id="facility-submenu">
+                                    <ul class="mega-menu-list">
                                         <li class="mega-menu-group">
                                             <a href="#" class="mega-menu-title">스파&amp;피트니스</a>
                                             <ul class="mega-submenu">
@@ -249,9 +272,37 @@
                                 </div>
                             </li>
 
-                            <li class="main-menu-item"><a href="membership.html">멤버십</a></li>
+                            <li class="main-menu-item main-menu-item--direct">
+                                <a href="./membership.html">멤버십</a>
+                            </li>
 
                         </ul>
+
+                        <!-- 모바일 사용자 메뉴 -->
+                        <ul class="mobile-utility-menu" aria-label="사용자 메뉴">
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/person.svg" alt="">
+                                    <span>로그인</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/calendar.svg" alt="">
+                                    <span>마이페이지</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/calendar.svg" alt="">
+                                    <span>예약조회</span>
+                                </a>
+                            </li>
+                        </ul>
+
+
                     </nav>
                 </div>
 
@@ -269,7 +320,7 @@
                         <!-- popvoertarget : 어떤 메뉴 제어할지 지정 -->
                         <!-- popovertargetaction : 그 메뉴를 어떻게 열고 닫을지 지정 -->
                         <!-- popovertargetaction="toggle" : popover 클릭할 때마다 열기/닫기 가능하게 -->
-                        <button type="button" class="language-button" popovertarget="language-menu"
+                        <button type="button" class="language-button" aria-label="언어 선택" popovertarget="language-menu"
                             popovertargetaction="toggle">
                             <span class="current-language">KR</span>
                             <span class="language-chevron" aria-hidden="true"></span>
@@ -295,214 +346,285 @@
                     </div>
 
                     <a href="#" class="reservation-button">예약하기</a>
-                </div>
 
+                    <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기"
+                        aria-controls="mobile-navigation" aria-expanded="false">
+                        <img src="./images/icon/menu.svg" alt="" class="mobile-menu-icon mobile-menu-open-icon">
 
-                <!-- mobile header -->
-                <div class="mobile-header">
-
-                    <a href="#" class="mobile-header-logo">
-                        <img src="./images/logo/white.png" alt="Haevichi">
-                    </a>
-
-                    <div class="mobile-header-actions">
-
-                        <a href="#" class="mobile-reservation-button">
-                            예약하기
-                        </a>
-
-                        <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기">
-                            <img src="./images/icon/menu.svg" alt="" class="mobile-menu-icon">
-                        </button>
-
-                    </div>
+                        <img src="./images/icon/close.svg" alt="" class="mobile-menu-icon mobile-menu-close-icon">
+                    </button>
 
                 </div>
 
             </div>
         </div>
 
+        <!-- 모바일 메뉴 바깥 배경 -->
+        <button type="button" class="mobile-menu-backdrop" aria-label="메뉴 닫기" tabindex="-1">
+
+        </button>
+
     </header>
+    
     <hr>
 
     
 
     <!-- 2. main -->
-       <main>
-         <div class="sub-visual">
-            <img src="./images/hoteloverview_section/hoteloverview_main.png" alt="호텔둘러보기 비쥬얼 이미지">
-            <div class="inner">
-                <h1>HOTEL OVERVIEW</h1>
-            </div>
-        </div> 
-        <section class="hotel-detail-wrap">
-            <div class="inner">
-                <div class="title-box">
-                     <section class="room-overview-wrap standard-rooms">
-            <div class="inner">
-                <div class="title-box" data-aos="fade-up">
-                    <h2 class="section-title">Standard Rooms</h2>
-                    <div>
-                        <p>제주의 아름다운 자연을 담은 아늑한 공간에서 편안한 휴식을 경험해 보세요.</p>
-                    </div>
+      <main>
+
+    <!-- Sub Visual -->
+    <div class="sub-visual">
+        <img src="./images/hoteloverview_section/hoteloverview_main.png" alt="호텔 둘러보기 비쥬얼 이미지">
+        <div class="inner">
+            <h1>HOTEL OVERVIEW</h1>
+        </div>
+    </div>
+
+
+    <!-- Standard Rooms -->
+    <section class="room-overview-wrap standard-rooms">
+        <div class="inner">
+
+            <div class="title-box" data-aos="fade-up">
+                <h2 class="section-title">Standard Rooms</h2>
+                <div>
+                    <p>
+                        제주의 아름다운 자연을 담은 아늑한 공간에서 편안한 휴식을 경험해 보세요.
+                    </p>
                 </div>
- 
-                <ul class="room-overview-list">
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/standardroom1.png" alt="수페리어">
-                        </div>
-                        <div class="text-box">
-                            <h3>수페리어</h3>
-                            <p>고요한 어촌이나 민속촌, 멀리 한라산까지 다채로운 전망을 지닌 객실로 <br>
-                                제주의 시간과 계절의 흐름을 오롯이 느끼며 편안한 휴식을 즐길 수 있습니다.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/standardroom2.png" alt="디럭스">
-                        </div>
-                        <div class="text-box">
-                            <h3>디럭스</h3>
-                            <p>계절의 리듬에 따라 물든 녹음과 측면의 바다 전망이 어우러진 풍경을 통해 <br>
-                                제주의 자연이 선사하는 여유와 생동감을 동시에 느낄 수 있는 객실입니다.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/standardroom3.png" alt="이그제큐티브">
-                        </div>
-                        <div class="text-box">
-                            <h3>이그제큐티브</h3>
-                            <p>정면에 펼쳐지는 드넓은 바다 전망과 객실까지 들려오는 파도소리가<br>
-                                일상의 분주함을 밀어내고 기분 좋은 템포로 새로운 영감과 에너지를 채워줍니다.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/standardroom4.png" alt="온돌">
-                        </div>
-                        <div class="text-box">
-                            <h3>온돌</h3>
-                            <p>우리나라 전통 주거 문화인 온돌식 객실로 아늑한 정취와 편안한 휴식을 선사합니다.</p>
-                        </div>
-                    </li>
-                </ul>
             </div>
-        </section>
- 
-        <!-- Suite Rooms -->
-        <section class="room-overview-wrap suite-rooms">
-            <div class="inner">
-                <div class="title-box" data-aos="fade-up">
-                    <h2 class="section-title">Suite Rooms</h2>
-                    <div>
-                        <p>제주의 아름다운 풍경과 넉넉한 공간이 조화를 이루어 <br>더욱 여유로운 휴식을 완성합니다.</p>
+
+            <ul class="room-overview-list">
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/standardroom1.png" alt="수페리어">
                     </div>
-                </div>
- 
-                <ul class="room-overview-list">
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/suiteroom1.png" alt="오션 스위트">
-                        </div>
-                        <div class="text-box">
-                            <h3>오션 스위트</h3>
-                            <p>하늘과 맞닿은 바다 풍경이 눈부시게 펼쳐지는 욕조와 아늑한 침실에서 <br> 꿈결같은 휴식을 경험해보세요.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/suiteroom2.png" alt="킹 스위트">
-                        </div>
-                        <div class="text-box">
-                            <h3>킹 스위트</h3>
-                            <p>아름다운 제주의 풍광이 펼쳐지는 넓은 거실과 침실 공간으로 구성되어 <br>서로의 시간을 존중하고 배려하는 편안한 휴식을 즐길 수 있습니다.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/suiteroom3.png" alt="패밀리 스위트">
-                        </div>
-                        <div class="text-box">
-                            <h3>패밀리 스위트</h3>
-                            <p>푸른 자연 전망을 지닌 넓은 거실과 두 개의 침실로 구성되어 <br>함께 하는 가족 또는 지인들과 보다 편안하고 여유롭게 머물 수 있습니다.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/suiteroom4.png" alt="온돌 스위트">
-                        </div>
-                        <div class="text-box">
-                            <h3>온돌 스위트</h3>
-                            <p>우리나라 전통 주거 문화인 온돌식 객실로 침실 두 개와 마루에 예스러운 아름다움이<br> 고스란히 담겨 마뜻한 정취와 포근한 온기를 느낄 수 있습니다.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
- 
-        <!-- Premium Suite Rooms -->
-        <section class="room-overview-wrap premium-suite-rooms">
-            <div class="inner">
-                <div class="title-box" data-aos="fade-up">
-                    <h2 class="section-title">Premium Suite Rooms</h2>
-                    <div>
-                        <p>제주의 아름다운 풍광과 최고급 인테리어가 어우러진 프리미엄 객실입니다.</p>
+
+                    <div class="text-box">
+                        <h3>수페리어</h3>
+                        <p>
+                            고요한 어촌이나 민속촌, 멀리 한라산까지 다채로운 전망을 지닌 객실로<br>
+                            제주의 시간과 계절의 흐름을 오롯이 느끼며 편안한 휴식을 즐길 수 있습니다.
+                        </p>
                     </div>
-                </div>
- 
-                <ul class="room-overview-list">
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/premium_suiteroom1.png" alt="해비치 / 로얄 스위트">
-                        </div>
-                        <div class="text-box">
-                            <h3>해비치 / 로얄 스위트</h3>
-                            <p>최상층에서 제주의 아름다운 풍광을 감상하며 편안한 휴식과 <br>VIP를 위한 고품격 서비스를 경험할 수 있는 객실입니다.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/premium_suiteroom2.png" alt="프레지덴셜 스위트">
-                        </div>
-                        <div class="text-box">
-                            <h3>프레지덴셜 스위트</h3>
-                            <p>파노라믹 바다 전망이 펼쳐지는 최상위 객실로 두 개의 침실과 집무실,여유로운 거실 및 다이닝룸, <br>사우나 등 품격 있게 조성된 공간에서 해비치만의 프라이빗 서비스를 경험할 수 있습니다.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
- 
-        <!-- Special Suite Room -->
-        <section class="room-overview-wrap special-suite-room">
-            <div class="inner">
-                <div class="title-box" data-aos="fade-up">
-                    <h2 class="section-title">Special Suite Room</h2>
-                    <div>
-                        <p>제주의 자연을 품은 차별화된 공간과 프리미엄 서비스로 <br>특별한 여행의 가치를 더합니다.</p>
+                </li>
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/standardroom2.png" alt="디럭스">
                     </div>
+
+                    <div class="text-box">
+                        <h3>디럭스</h3>
+                        <p>
+                            계절의 리듬에 따라 물든 녹음과 측면의 바다 전망이 어우러진 풍경을 통해<br>
+                            제주의 자연이 선사하는 여유와 생동감을 동시에 느낄 수 있는 객실입니다.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/standardroom3.png" alt="이그제큐티브">
+                    </div>
+
+                    <div class="text-box">
+                        <h3>이그제큐티브</h3>
+                        <p>
+                            정면에 펼쳐지는 드넓은 바다 전망과 객실까지 들려오는 파도소리가<br>
+                            일상의 분주함을 밀어내고 기분 좋은 템포로 새로운 영감과 에너지를 채워줍니다.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/standardroom4.png" alt="온돌">
+                    </div>
+
+                    <div class="text-box">
+                        <h3>온돌</h3>
+                        <p>
+                            우리나라 전통 주거 문화인 온돌식 객실로 아늑한 정취와 편안한 휴식을 선사합니다.
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- Suite Rooms -->
+    <section class="room-overview-wrap suite-rooms">
+        <div class="inner">
+
+            <div class="title-box" data-aos="fade-up">
+                <h2 class="section-title">Suite Rooms</h2>
+                <div>
+                    <p>
+                        제주의 아름다운 풍경과 넉넉한 공간이 조화를 이루어<br>
+                        더욱 여유로운 휴식을 완성합니다.
+                    </p>
                 </div>
- 
-                <ul class="room-overview-list one-col">
-                    <li>
-                        <div class="img-box">
-                            <img src="./images/hoteloverview_section/special_suiteroom1.png" alt="아니스지 스페이스">
-                        </div>
-                        <div class="text-box">
-                            <h3>아니스지 스페이스</h3>
-                            <p>최상층에서 제주의 아름다운 풍광을 감상하며 편안한 휴식과 VIP를 위한 고품격 서비스를 경험할 수 있는 객실입니다.</p>
-                        </div>
-                    </li>
-                </ul>
             </div>
-        </section>
- 
-    </main>
+
+            <ul class="room-overview-list">
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/suiteroom1.png" alt="오션 스위트">
+                    </div>
+
+                    <div class="text-box">
+                        <h3>오션 스위트</h3>
+                        <p>
+                            하늘과 맞닿은 바다 풍경이 눈부시게 펼쳐지는 욕조와 아늑한 침실에서<br>
+                            꿈결같은 휴식을 경험해보세요.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/suiteroom2.png" alt="킹 스위트">
+                    </div>
+
+                    <div class="text-box">
+                        <h3>킹 스위트</h3>
+                        <p>
+                            아름다운 제주의 풍광이 펼쳐지는 넓은 거실과 침실 공간으로 구성되어<br>
+                            서로의 시간을 존중하고 배려하는 편안한 휴식을 즐길 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/suiteroom3.png" alt="패밀리 스위트">
+                    </div>
+
+                    <div class="text-box">
+                        <h3>패밀리 스위트</h3>
+                        <p>
+                            푸른 자연 전망을 지닌 넓은 거실과 두 개의 침실로 구성되어<br>
+                            함께 하는 가족 또는 지인들과 보다 편안하고 여유롭게 머물 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/suiteroom4.png" alt="온돌 스위트">
+                    </div>
+
+                    <div class="text-box">
+                        <h3>온돌 스위트</h3>
+                        <p>
+                            우리나라 전통 주거 문화인 온돌식 객실로 침실 두 개와 마루에 예스러운 아름다움이<br>
+                            고스란히 담겨 따뜻한 정취와 포근한 온기를 느낄 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- Premium Suite Rooms -->
+    <section class="room-overview-wrap premium-suite-rooms">
+        <div class="inner">
+
+            <div class="title-box" data-aos="fade-up">
+                <h2 class="section-title">Premium Suite Rooms</h2>
+                <div>
+                    <p>
+                        제주의 아름다운 풍광과 최고급 인테리어가 어우러진 프리미엄 객실입니다.
+                    </p>
+                </div>
+            </div>
+
+            <ul class="room-overview-list">
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/premium_suiteroom1.png" alt="해비치 / 로얄 스위트">
+                    </div>
+
+                    <div class="text-box">
+                        <h3>해비치 / 로얄 스위트</h3>
+                        <p>
+                            최상층에서 제주의 아름다운 풍광을 감상하며 편안한 휴식과<br>
+                            VIP를 위한 고품격 서비스를 경험할 수 있는 객실입니다.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/premium_suiteroom2.png" alt="프레지덴셜 스위트">
+                    </div>
+
+                    <div class="text-box">
+                        <h3>프레지덴셜 스위트</h3>
+                        <p>
+                            파노라믹 바다 전망이 펼쳐지는 최상위 객실로 두 개의 침실과 집무실,
+                            여유로운 거실 및 다이닝룸,<br>
+                            사우나 등 품격 있게 조성된 공간에서 해비치만의 프라이빗 서비스를 경험할 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- Special Suite Room -->
+    <section class="room-overview-wrap special-suite-room">
+        <div class="inner">
+
+            <div class="title-box" data-aos="fade-up">
+                <h2 class="section-title">Special Suite Room</h2>
+                <div>
+                    <p>
+                        제주의 자연을 품은 차별화된 공간과 프리미엄 서비스로<br>
+                        특별한 여행의 가치를 더합니다.
+                    </p>
+                </div>
+            </div>
+
+            <ul class="room-overview-list one-col">
+
+                <li>
+                    <div class="img-box">
+                        <img src="./images/hoteloverview_section/special_suiteroom1.png" alt="아니스지 스페이스">
+                    </div>
+
+                    <div class="text-box">
+                        <h3>아니스지 스페이스</h3>
+                        <p>
+                            최상층에서 제주의 아름다운 풍광을 감상하며 편안한 휴식과
+                            VIP를 위한 고품격 서비스를 경험할 수 있는 객실입니다.
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+
+</main>
                     
     <!-- 3. footer -->
-    <footer class="site-footer">
+   <footer class="site-footer">
         <div class="footer-inner">
 
             <!-- Footer Top -->
@@ -513,12 +635,12 @@
 
                 <nav class="footer-nav" aria-label="푸터 메뉴">
                     <ul class="footer-menu">
-                        <li><a href="https://www.haevichi.com/corp/ko">해비치소개</a></li>
-                        <li><a href="https://www.haevichi.com/rollinghills/ko/customer/faq">고객센터</a></li>
-                        <li><a href="https://www.haevichi.com/rollinghills/ko/location">오시는 길</a></li>
-                        <li><a href="https://www.haevichi.com/hub/ko/common/policy/20000">해비치약관</a></li>
-                        <li><a href="https://www.haevichi.com/hub/ko/common/privacy/20000">개인정보처리방침</a></li>
-                        <li><a href="https://www.haevichi.com/hub/ko/common/policy/50000">이메일무단수집금지</a></li>
+                        <li><a href="#">해비치소개</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                        <li><a href="#">해비치약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이메일무단수집금지</a></li>
                     </ul>
                 </nav>
             </div>
@@ -615,6 +737,7 @@
 
         </div>
     </footer>
+
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
