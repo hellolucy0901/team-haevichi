@@ -50,7 +50,7 @@ body {
 }
 
 .membership-detail-wrap{
-    padding-top: 50px;
+    padding-top: 200px;
     padding-bottom:200px;
 }
 
@@ -164,8 +164,7 @@ body {
     }
 
     .membership-detail-wrap{
-        margin-top: 50px;
-        padding-bottom: 120px;
+        padding-top: 50px;
     }
 
     .membership-list > li{
@@ -181,7 +180,10 @@ body {
 @media(max-width:1023px){
     body{
         font-size:14px;
-    }    
+    }
+    .membership-detail-wrap{
+        padding-top: 50px;
+    }
     .sub-visual{
         height: 240px;
     }
@@ -220,5 +222,7 @@ body {
     body{
         font-size:12px;
     }
- 
+    .membership-detail-wrap{
+        padding-top: 50px;
+    }
 }
