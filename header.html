@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,7 @@
                 <!-- header-left -->
                 <div class="header-left">
                     <h1><a href="./index.html" class="header-logo">
-                        <img src="./images/logo/black.png" alt="Haevichi"></a>
+                            <img src="./images/logo/black.png" alt="Haevichi"></a>
                     </h1>
 
                     <nav class="main-nav" id="mobile-navigation" aria-label="주요 메뉴">
@@ -194,9 +195,7 @@
                                     <ul class="mega-menu-list">
 
                                         <li class="mega-menu-group">
-                                            <a href="./wedding_business.html#wedding" class="mega-menu-title">
-                                                웨딩
-                                            </a>
+                                            <a href="./wedding_business.html#wedding" class="mega-menu-title">웨딩</a>
 
                                             <ul class="mega-submenu">
                                                 <li>
@@ -407,10 +406,12 @@
     </header>
 
 
-      <script>
+    <script>
         const menuButton = document.querySelector(".mobile-menu-button");
         const mobileNavigation = document.querySelector("#mobile-navigation");
         const submenuButtons = document.querySelectorAll(".mobile-submenu-toggle");
+        const mobileMenuLinks = mobileNavigation.querySelectorAll(
+            'a[href]:not([href="#"])');
         const mobileMenuBackdrop = document.querySelector(".mobile-menu-backdrop");
         const desktopMedia = window.matchMedia("(min-width: 1280px)");
 
@@ -444,7 +445,8 @@
         /* 햄버거·닫기 버튼 */
         menuButton.addEventListener("click", function () {
             const isOpen = mobileNavigation.classList.contains("is-open");
-
+            mobileNavigation.classList.add("is-animated");
+            mobileNavigation.classList.add("is-animated");
             setMobileMenu(!isOpen);
         });
 
@@ -471,6 +473,15 @@
             });
         });
 
+        /* 모바일 메뉴 링크를 선택하면 전체 메뉴 닫기 */
+        mobileMenuLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (!desktopMedia.matches) {
+                    setMobileMenu(false);
+                }
+            });
+        });
+
         /* Escape 키로 전체 메뉴 닫기 */
         document.addEventListener("keydown", function (event) {
             const isMenuOpen =
@@ -485,7 +496,12 @@
         /* 데스크톱 화면으로 전환되면 모바일 메뉴 초기화 */
         desktopMedia.addEventListener("change", function (event) {
             if (event.matches) {
+                mobileNavigation.classList.remove("is-animated");
                 setMobileMenu(false);
             }
         });
     </script>
+
+</body>
+
+</html>
