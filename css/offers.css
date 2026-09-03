@@ -1,5 +1,3 @@
-
-
 /* hero */
 .offers-hero {
     position: relative;
@@ -31,12 +29,13 @@
     color: var(--Neutral-100);
 }
 
+/* section */
 .offers-section {
     margin-top: 200px;
 }
 
 .offers-container {
-    width: 1440px;
+    width: min(1440px, calc(100% - 80px));
     margin: 0 auto;
 }
 
@@ -51,19 +50,18 @@
     color: var(--Neutral-900);
 }
 
+/* list */
 .offers-list {
     display: grid;
-    grid-template-columns: repeat(2, 708px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 24px;
 }
 
-.offers-card {
-    width: 708px;
-}
-
 .offers-card>img {
-    width: 708px;
-    height: 400px;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 708 / 400;
     object-fit: cover;
 }
 
@@ -88,6 +86,7 @@
     color: var(--Neutral-900);
 }
 
+/* button */
 .offers-more {
     width: 146px;
     height: 38px;
@@ -118,6 +117,7 @@
     transform: translateX(4px);
 }
 
+/* section specific */
 .dining-section .offers-list {
     row-gap: 50px;
 }
@@ -130,31 +130,10 @@
     margin-bottom: 200px;
 }
 
+
+
 /* narrow desktop */
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
-
-    .offers-container {
-        width: auto;
-        margin: 0;
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-
-    .offers-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 24px;
-    }
-
-    .offers-card {
-        width: 100%;
-    }
-
-    .offers-card>img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 708 / 400;
-        object-fit: cover;
-    }
+@media screen and (min-width: 1279px) and (max-width: 1442px) {
 
     .offers-hero h1 {
         font-size: 49px;
@@ -167,7 +146,7 @@
 
 
 /* tablet */
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1278.98px) {
 
     /* hero */
     .offers-hero {
@@ -179,12 +158,7 @@
         font-size: 49px;
     }
 
-    .offers-section h2 {
-        font-size: 40px;
-    }
-
-
-    /* offers package */
+    /* section specific */
     .offers-container {
         width: auto;
         margin: 0;
@@ -201,38 +175,19 @@
         margin-bottom: 120px;
     }
 
-    .offers-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 24px;
-    }
-
-    .offers-card {
-        width: 100%;
-    }
-
-    .offers-card>img {
-        width: 100%;
-        height: auto;
-
-        aspect-ratio: 708 / 400;
-
-        object-fit: cover;
-    }
-
-    /* event */
+    /* grid */
     .event-section .offers-list {
         grid-template-columns: 1fr;
         row-gap: 50px;
     }
 
-    /* wellness */
     .wellness-section .offers-list {
         grid-template-columns: 1fr;
     }
 
-    /* typo */
+    /* typography */
     .offers-section h2 {
-        font-size: 46px;
+        font-size: 40px;
     }
 
     .offers-card h3 {
@@ -245,26 +200,25 @@
 
 }
 
+
 /* mobile */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
 
+    /* hero */
+    .offers-hero {
+        height: 200px;
+    }
 
+    .offers-hero h1 {
+        top: calc(50% + 25px);
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    /* section */
     .offers-container {
         padding-left: 20px;
         padding-right: 20px;
-    }
-
-    /* Hotel / Resort : 데스크톱처럼 2열 유지 */
-    .hotel-section .offers-list,
-    .resort-section .offers-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 16px;
-        row-gap: 0;
-    }
-
-    .offers-list {
-        column-gap: 16px;
-        row-gap: 48px;
     }
 
     .offers-section {
@@ -279,48 +233,46 @@
         margin-bottom: 88px;
     }
 
+    /* grid */
+    .offers-list {
+        column-gap: 16px;
+        row-gap: 48px;
+    }
+
+    /* Hotel / Resort : 데스크톱처럼 2열 유지 */
+    .hotel-section .offers-list,
+    .resort-section .offers-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 0;
+    }
+
+    /* card */
     .offers-card {
         display: flex;
         flex-direction: column;
     }
 
-    .offers-card>p {
-        margin-bottom: 28px;
-    }
-
-    .offers-more {
-        margin-top: auto;
-    }
-
-    /* 설명의 길이에 따른 간격 조정 */
-    .event-section .offers-card>p,
-    .wellness-section .offers-card>p {
-        min-height: auto;
-        margin-top: 12px;
-        margin-bottom: 28px;
-    }
-
-    .event-section .offers-more,
-    .wellness-section .offers-more {
-        margin-top: 0;
-    }
-
-
-
-    /* typo */
+    /* typography */
     .offers-section h2 {
         margin-bottom: 28px;
         font-size: 28px;
     }
 
-    /* 모든 섹션 카드 제목 크기 통일 */
     .offers-card h3 {
         margin-top: 16px;
         font-size: 16px;
     }
 
-    .offers-card p {
+    /* Hotel / Resort 2열 카드 제목 영역을 2줄 기준으로 통일 */
+    .hotel-section .offers-card h3,
+    .resort-section .offers-card h3 {
+        line-height: 1.35;
+        min-height: 2.7em;
+    }
+
+    .offers-card>p {
         font-size: 13px;
+        margin-bottom: 28px;
     }
 
     .hotel-section .offers-card>p,
@@ -334,33 +286,35 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
-
         line-clamp: 3;
-
         overflow: hidden;
 
-        /* 기본 높이 */
         min-height: 31px;
-
         margin-top: 12px;
     }
 
-    /* hero */
-    .offers-hero {
-        height: 200px;
+    /* 설명의 길이에 따른 간격 조정 */
+    .event-section .offers-card>p,
+    .wellness-section .offers-card>p {
+        min-height: auto;
+        margin-top: 12px;
+        margin-bottom: 28px;
     }
 
-    .offers-hero h1 {
-        top: calc(50% + 35px);
-        font-size: 38px;
-        font-weight: 700;
+
+    /* button */
+    .offers-more {
+        margin-top: auto;
+    }
+
+    .event-section .offers-more,
+    .wellness-section .offers-more {
+        margin-top: 0;
     }
 }
 
-
 /* small ver. mobile */
-@media screen and (max-width: 480px) {
-
+@media screen and (max-width: 480.98px) {
 
     .offers-container {
         padding-left: 16px;
@@ -375,19 +329,7 @@
         margin-bottom: 72px;
     }
 
-    .offers-section h2 {
-        font-size: clamp(28px, calc(16px + 3.333vw), 32px);
-    }
-
-    /* 2열로 표시되는 카드만 타이틀 두 줄 높이 확보 */
-    .hotel-section .offers-card h3,
-    .resort-section .offers-card h3 {
-        line-height: 1.35;
-        min-height: 2.7em;
-    }
-
     .offers-more {
         width: min(146px, 100%);
     }
-
 }
