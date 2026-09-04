@@ -53,7 +53,7 @@ header {
     position: fixed;
     /* background-color: rgba(0, 0, 255, 0.2); */
     width: 100%;
-    /* padding: 18px 0 0; **/
+    /* padding: 18px 0 0; */
     z-index: 10000;
 }
 
@@ -79,7 +79,7 @@ header:hover .logo {
     display: flex;
     gap: 50px;
     align-items: center;
-
+    
 }
 
 .main-menu {
@@ -225,7 +225,6 @@ header:hover .lang-btn>a::after {
     top: 77px;
     display: none;
 }
-
 /* main */
 /* +===============.swiper================+ */
 /* .swiper {
@@ -249,16 +248,13 @@ header:hover .lang-btn>a::after {
         object-fit: cover;
       } */
 /* +===============.swiper end================+ */
-.main-slider-wrap {
+.main-slider-wrap{
     /* border: 5px solid red; */
     position: relative;
 }
-
-.main-slider-list {}
-
-.main-slider-list>li {}
-
-.main-slider-list>li .text-box {
+.main-slider-list{}
+.main-slider-list>li{}
+.main-slider-list>li .text-box{
     position: absolute;
     left: 50%;
     bottom: 200px;
@@ -267,41 +263,38 @@ header:hover .lang-btn>a::after {
     width: 1440px;
     transform: translateX(-50%);
 }
-
-.main-slider-list>li .text-box>span {}
-
-.main-slider-list>li .text-box>strong {
-    display: block;
-    font-size: 3em;
-    margin: 0.5em 0;
-    font-weight: 500;
+.main-slider-list>li .text-box>span{
 
 }
+.main-slider-list>li .text-box>strong{
+   display: block;
+   font-size: 3em;
+   margin: 0.5em 0;
+   font-weight: 500;
 
-.main-slider-list>li .text-box>.main-slider-more {
+}
+.main-slider-list>li .text-box>.main-slider-more{
     /* border-width: 1px;
     border-color: #fff;
     border-style: solid; */
 }
-
-.main-slider-list>li .text-box>.main-slider-more>a {
-
-    display: inline-block;
-    border: 1.5px solid #fff;
-
-    padding: 8px 12px;
-    /* padding: 12px 52px 12px 20px; */
-    font-size: 14px;
-    /* position: relative; */
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    color: #fff;
+.main-slider-list>li .text-box>.main-slider-more>a{
+   
+   display: inline-block;
+   border: 1.5px solid #fff;
+   
+   padding: 8px 12px;
+   /* padding: 12px 52px 12px 20px; */
+   font-size: 14px;
+   /* position: relative; */
+   display: inline-flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   color: #fff;
 
 }
-
-.main-slider-list>li .text-box>.main-slider-more>a::after {
+.main-slider-list>li .text-box>.main-slider-more>a::after{
     content: "";
     display: block;
     width: 24px;
@@ -314,15 +307,14 @@ header:hover .lang-btn>a::after {
     transform: translateY(-50%); */
 }
 
-.main-slider-list>li .img-box>img {
+.main-slider-list>li .img-box>img{
     width: 100%;
 }
-
 /* reservarion-wrap 너비 1440 겹치게 , 
 반투명50% 가운데아래
 자식을 옆으로 붙이고 붙여서 양쪽정렬
 padding 위아래20 좌우 32*/
-.reservation-wrap {
+.reservation-wrap{
     width: 1440px;
     background: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -338,60 +330,60 @@ padding 위아래20 좌우 32*/
 
 
 /* 자식요소 옆으로 붙이기 48  */
-.reservation-wrap>.re-left {
+.reservation-wrap>.re-left{
     display: flex;
     gap: 3em;
-    line-height: 1.5;
+    line-height:1.5 ;
     font-size: 0.94em;
 
 }
-
 /* 글자 흰색 15px */
-.reservation-wrap>.re-left .re-item-title {
+.reservation-wrap>.re-left .re-item-title{
     color: #fff;
-}
+    }
 
 /* 글자색 Ne 400 15px,아래 선 */
-.reservation-wrap>.re-left .re-data {
-    color: var(--Neutral-400);
-    border-bottom: 1px solid var(--Neutral-200);
-}
+.reservation-wrap>.re-left .re-data{
+    color:var(--Neutral-400) ;
+    border-bottom:1px solid var(--Neutral-200);
+    }
 
-.reservation-wrap>.re-left .select-hotel,
-.reservation-wrap>.re-left .select-date {
-    width: 220px;
-}
+    .reservation-wrap>.re-left .select-hotel,
+    .reservation-wrap>.re-left .select-date{
+        width: 220px;
+    }
 
-
+    
 /* 자식을 옆으로 붙이기 간격20 */
-.reservation-wrap>.re-left>.count-set-wrap {
+.reservation-wrap>.re-left>.count-set-wrap{
     display: flex;
     gap: 20px;
 }
 
-.reservation-wrap>.re-left>.count-set-wrap .re-data {
+.reservation-wrap>.re-left>.count-set-wrap .re-data{
     width: 78px;
 }
 
-.reservation-wrap>.re-left .re-data input {
+.reservation-wrap>.re-left .re-data input{
     background: none;
     border: none;
-    /* font-size: 15px;
+     /* font-size: 15px;
      letter-spacing: -0.5px; */
 }
 
-.reservation-wrap>.re-left .re-data input::placeholder {
+.reservation-wrap>.re-left .re-data input::placeholder{
     color: var(--Neutral-400)
+    
 }
 
-.reservation-popup-wrap {
-    display: none;
+.reservation-popup-wrap{
+    display:none;
 }
 
 /*  */
 /* main */
 /* main 공통영역 */
-section {
+section{
     padding-top: 200px;
 }
 
@@ -413,7 +405,7 @@ section {
     line-height: 1; */
 }
 
-.title-box>div {
+.title-box > div {
     font-size: 0.88em;
     color: var(--Neutral-800);
     /* margin-top: 0; */
@@ -422,7 +414,7 @@ section {
 
 
 
-.title-box>div .more-btn>a {
+.title-box>div .more-btn>a{
     color: var(--Primary-color);
     /* background: url(../images/Icon/Icon/arrow-more.png) no-repeat center; */
     line-height: 1.5;
@@ -432,28 +424,28 @@ section {
 }
 
 /* tab-menu */
-.tab-menu {
+.tab-menu{
     display: flex;
     gap: 2em;
     margin-bottom: 1.5em;
 }
 
-.tab-menu>li>a {
+.tab-menu>li>a{
     color: var(--Neutral-500);
     font-weight: 300;
     font-size: 1.13em;
 }
 
-.tab-menu>.active>a {
+.tab-menu>.active>a{
     color: var(--Neutral-900);
     font-weight: 500;
 }
 
 
-.btn>a {
+.btn>a{
     display: block;
     align-items: center;
-    display: inline-flex;
+   display: inline-flex;
     border: 1px solid var(--Primary-color);
     color: var(--Primary-color);
     padding: 8px 20px;
@@ -462,7 +454,7 @@ section {
 }
 
 
-.btn>a::after {
+.btn>a::after{
     content: "";
     display: block;
     width: 36px;
@@ -473,62 +465,58 @@ section {
 }
 
 
-.btn>a:hover::after {
+.btn>a:hover::after{
     background-position-x: 4px;
 }
 
 
-.btn-pri>a {
+.btn-pri>a{
     background: var(--Primary-color);
     color: #fff;
 }
 
 
-.btn-pri>a::after {
+.btn-pri>a::after{
     background-image: url(../images/icon/arrow_wh.svg);
 }
 
 
-.btn-white>a {
+.btn-white>a{
     color: #fff;
     border-color: #fff;
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255,255,255,0);
 }
 
 
-.btn-white>a:hover {
-    background: rgba(255, 255, 255, 0.3);
+.btn-white>a:hover{
+    background: rgba(255,255,255,0.3);
 }
 
 
-.btn-white>a::after {
+.btn-white>a::after{
     background-image: url(../images/icon/arrow_wh.svg);
 }
-
-.more-btn>a {
+.more-btn>a{
     display: flex;
     /* gap: 4px; */
 
 }
-
-.more-btn>a::after {
+.more-btn>a::after{
     content: "";
     display: block;
     width: 16px;
     height: 19px;
     background-image: url(../images/icon/chev_right_pri.svg);
     background-repeat: no-repeat;
-    background-size: contain;
-    /* 박스 크기에 맞춰 이미지 비율 조정 */
+    background-size: contain;    /* 박스 크기에 맞춰 이미지 비율 조정 */
     background-position: center;
 }
 
 /* offer */
-.offer-list-wrap {
+.offer-list-wrap{
     overflow: hidden;
     /* padding: 0 1em; */
 }
-
 .offer-list {
     /* width 몇개만 보일 건지..
     공식   width calc(100% * 배너개수 / 보고싶은 개수) */
@@ -537,79 +525,56 @@ section {
     gap: 1.5em;
     overflow: hidden;
 }
-
 .offer-list>li {
     /* flex: 1; */
     /* flex:grow shrink basis(기본크기); */
-    flex: 0 0 calc((100% - 3em) / 3)
+    flex:0 0 calc((100% - 3em) / 3)
 }
-
-.offer-list>li .img-box {
-    position: relative;
+.offer-list>li .img-box{
+    position:relative;
 }
-
-.offer-list>li .img-box>.img-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.offer-list>li .img-box>.img-bg{
+    position:absolute;
+    width:100%;
+    height:100%;
     background: rgba(0, 0, 0, 0.5);
-    top: 0;
+    top:0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:center;
+    align-items:center;
     opacity: 0;
-    transition: 0.3s
+    transition:0.3s
 }
-
-<<<<<<< HEAD
 .offer-list>li:focus-within .img-box>.img-bg,
-.offer-list>li:hover .img-box>.img-bg {
-=======
-.offer-list > li .img-box:hover > .img-bg,
-.offer-list > li .img-box:focus-within > .img-bg {
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
+.offer-list>li:hover .img-box>.img-bg{
     opacity: 1;
 }
-
 .offer-list>li .img-box>img {
     /* max-width: none; */
     width: 100%;
 }
-
-<<<<<<< HEAD
-.offer-list>li .img-box>.img-bg>a {
-=======
 .offer-list>li .img-box>.img-bg>a{
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     /* display:block;
     color:#fff;
     border:1px solid #fff;
     padding:4px 30px 4px 10px; */
 }
-
-<<<<<<< HEAD
-.offer-list>li .text-box {
-    padding: 12px 0 0;
-=======
 .offer-list>li .text-box{
     padding:12px 0 0;
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     height: 175px;
-    position: relative;
+    position:relative;
 
 }
-
 .offer-list>li .text-box>h3 {
     font-size: 1.5em;
     color: var(--Neutral-900);
     font-weight: 500;
 }
-
 .offer-list>li .text-box>.offer-kind {
     margin: 12px 0;
     display: flex;
     font-size: 0.88em;
-    gap: 12px;
+    gap:12px;
     font-weight: 400;
 }
 
@@ -622,120 +587,63 @@ section {
 .offer-list>li .text-box>.offer-kind>.kind {
     color: var(--Primary-color)
 }
-
 .offer-list>li .text-box>.offer-kind>.sale {
     color: #fff;
-    background: var(--Primary-color);
+    background: var(--Primary-color);    
 }
-
-<<<<<<< HEAD
-.offer-list>li .text-box>.detail {
-    color: var(--Neutral-700);
-=======
 .offer-list>li .text-box>.detail{
     color:var(--Neutral-700);
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    overflow: hidden;
+    overflow:hidden;
 }
-
-<<<<<<< HEAD
-.offer-list>li .text-box>.period {
-    font-size: 0.88em;
-    color: var(--Neutral-500);
-=======
 .offer-list>li .text-box>.period{
     font-size:0.88em;
     color:var(--Neutral-500);
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     text-decoration: underline;
-    position: absolute;
-    bottom: 0;
+    position : absolute;
+    bottom:0;
 }
-
 /* rooms */
-<<<<<<< HEAD
-.room-type-wrap {}
-
-.room-type-wrap>div {
-=======
 .room-type-wrap{}
-
 .room-type-wrap>div{
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     display: none;
-    position: relative;
+    position:relative;
 }
-
-<<<<<<< HEAD
-.room-type-wrap>.on {
-    display: block;
-}
-
-.room-type-wrap>div>ul {}
-
-.room-type-wrap>div>ul .img-box {}
-
-.room-type-wrap>div>ul .img-box img {
-=======
 .room-type-wrap>.on{
     display: block;
 }
-
 .room-type-wrap>div>ul{}
 .room-type-wrap>div>ul .img-box{}
-
 .room-type-wrap>div>ul .img-box img{
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     width: 100%;
 }
 
-.room-type-wrap>div>ul .text-box {
+.room-type-wrap>div>ul .text-box{
     display: flex;
     padding-top: 3em;
     gap: 100px;
     align-items: center;
 }
-
-<<<<<<< HEAD
-.room-type-wrap>div>ul .text-box>.left {}
-
-.room-type-wrap>div>ul .text-box>.left span {}
-
-.room-type-wrap>div>ul .text-box>.left h3 {
-=======
 .room-type-wrap>div>ul .text-box>.left{}
-.room-type-wrap>div>ul .text-box>.left span{}
 
+.room-type-wrap>div>ul .text-box>.left span{}
 .room-type-wrap>div>ul .text-box>.left h3{
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     font-size: 1.88em;
     font-weight: 600;
 }
-
-.room-type-wrap>div>ul .text-box>.left h3+p {
+.room-type-wrap>div>ul .text-box>.left h3+p{
     max-width: 540px;
     color: var(--Neutral-700);
     margin: 1em 0 2em;
-
+    
 }
-
-<<<<<<< HEAD
-.room-type-wrap>div>ul .text-box>.left>div {
-=======
 .room-type-wrap>div>ul .text-box>.left>div{
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     display: flex;
     gap: 1.5em;
 }
-
-<<<<<<< HEAD
-.room-type-wrap>div>ul .text-box>.right .room-info-list {
-=======
 .room-type-wrap>div>ul .text-box>.right .room-info-list{
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     /* 두개같이 써야됌 */
     display: grid;
     /* fr fraction 수학에서 등분 분수 */
@@ -744,7 +652,7 @@ section {
     row-gap: 2em;
 }
 
-.room-type-wrap>div>ul .text-box>.right .room-info-list>div {
+.room-type-wrap>div>ul .text-box>.right .room-info-list>div{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -753,67 +661,55 @@ section {
 
 /* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용 */
 .swiper-hotelbutton-prev,
-.swiper-hotelbutton-next {
-    position: absolute;
+.swiper-hotelbutton-next{
+    position:absolute;
     width: 58px;
     height: 58px;
     z-index: 1000;
-    top: 30%;
+    top:30%;
 
 }
 
-.swiper-hotelbutton-prev {
+.swiper-hotelbutton-prev{
     left: 24px;
     background-image: url(../images/icon/mainslider-left.svg);
 }
 
-.swiper-hotelbutton-next {
+.swiper-hotelbutton-next{
     right: 24px;
     background-image: url(../images/icon/mainslider-right.svg);
 }
 
 /* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용 */
 .swiper-resortbutton-prev,
-.swiper-resortbutton-next {
-    position: absolute;
+.swiper-resortbutton-next{
+    position:absolute;
     width: 58px;
     height: 58px;
     z-index: 1000;
-    top: 30%;
+    top:30%;
 
 }
 
-.swiper-resortbutton-prev {
+.swiper-resortbutton-prev{
     left: 24px;
     background-image: url(../images/icon/mainslider-left.svg);
 }
 
-.swiper-resortbutton-next {
+.swiper-resortbutton-next{
     right: 24px;
     background-image: url(../images/icon/mainslider-right.svg);
 }
 
 /* dining */
-.dining-list-wrap {
+.dining-list-wrap{
     /* padding: 1em; */
     overflow: hidden;
-<<<<<<< HEAD
-}
-
-.dining-list>li .img-box img {
-    width: 100%;
-}
-
-.dining-list>li .text-box {
-=======
     }
-
 .dining-list>li .img-box img{
     width: 100%;
 }
-
 .dining-list>li .text-box{
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     position: absolute;
     top: 0;
     left: 0;
@@ -833,173 +729,82 @@ section {
     opacity: 0;
     transition: 0.5s;
 }
-
-<<<<<<< HEAD
-.dining-list>.swiper-slide-active .text-box {
-=======
 .dining-list>.swiper-slide-active .text-box{
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     opacity: 1;
 }
 
-.dining-list>li .text-box h3 {
+.dining-list>li .text-box h3{
     font-weight: 600;
     font-size: 1.5em;
 }
-
-<<<<<<< HEAD
-.dining-list>li .text-box h3+p {
-=======
 .dining-list>li .text-box h3+p{
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     font-size: 1em;
     margin: 1.3em 0 1.8em;
     color: var(--Neutral-100);
 }
 
-.dining-list>li .text-box p {
+.dining-list>li .text-box p{
     line-height: 1.3;
 }
 
- .dining-progress-row {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-top: 60px;
-}
-
-.dining-progress-track {
-    flex: 1;
-    height: 2px;
-    background: #d4d4d4;
-    position: relative;
-}
-
-.dining-progress-fill {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 12.5%;
-    height: 2px;
-    background: #176bb0;
-    transition: width 0.3s ease;
-}
-
-.dining-progress-nav {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-}
-
-.dining-progress-arrow {
-    width: 8px;
-    height: 18px;
-    padding: 0;
-    border: 0;
-    background: none;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dining-progress-arrow svg {
-    width: 8px;
-    height: 14px;
-    display: block;
-}
-
-.dining-progress-count {
-    font-size: 12px;
-    font-weight: 500;
-    color: #171717;
-    white-space: nowrap;
-}
-
-
-
 /* facility */
-.facility-list-wrap {
+.facility-list-wrap{
     /* padding: 0 1em; */
-    /* border: 1px solid red; */
-
 }
-
-<<<<<<< HEAD
-.facility-list-wrap>div {
-    display: none;
-}
-
-.facility-list-wrap>.active {
-    display: block;
-}
-
-.facility-list-wrap>div>ul {
-    display: grid;
-    align-content: space-between;
-    gap: 1em;
-    justify-content: space-between;
-    /* border: 2px solid blue; */
-    height: 510px;
-    overflow: hidden;
-}
-
-.facility-list-wrap>div>ul>li:first-child .img-box {
-=======
 .facility-list-wrap > div > ul > li:first-child .img-box {
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     height: 100%;
 }
 
-.facility-list-wrap>div>ul>li:first-child .img-box img {
+.facility-list-wrap > div > ul > li:first-child .img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-<<<<<<< HEAD
-=======
-
 .facility-list-wrap > div {
     display: none;
 }
->>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
 
-.facility-list-wrap>.spa-fitness>ul,
-.facility-list-wrap>.convenience>ul {
-    /* grid-template-columns: 285px 285px 285px 245px 245px; */
-    grid-template-columns: 285fr 285fr 285fr 245fr 245fr;
-
+.facility-list-wrap > .active {
+    display: block;
 }
 
-.facility-list-wrap>.convenience>ul>li:first-child,
-.facility-list-wrap>.spa-fitness>ul>li:first-child {
+.facility-list-wrap > div > ul {
+    display: grid;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.facility-list-wrap > .spa-fitness > ul,
+.facility-list-wrap > .convenience > ul {
+    /* grid-template-columns: 285px 285px 285px 245px 245px; */
+    grid-template-columns: 285fr 285fr 285fr 245fr 245fr;
+    
+}
+
+.facility-list-wrap > .convenience > ul > li:first-child,
+.facility-list-wrap > .spa-fitness > ul > li:first-child {
     grid-column: 1 / 4;
     grid-row: 1 / 3;
 }
 
-.facility-list-wrap>.spa-fitness>ul>li:nth-child(2),
-.facility-list-wrap>.convenience>ul>li:nth-child(2),
-.facility-list-wrap>.convenience>ul>li:nth-child(3) {
+.facility-list-wrap > .spa-fitness > ul > li:nth-child(2),
+.facility-list-wrap > .convenience > ul > li:nth-child(2),
+.facility-list-wrap > .convenience > ul > li:nth-child(3) {
     grid-column: 4 / 6;
 }
 
-.facility-list-wrap>.kids>ul {
+.facility-list-wrap > .kids > ul {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.facility-list-wrap>.kids>ul .img-box{
-    
+.facility-list-wrap > .gallery > ul {
 }
-.facility-list-wrap>.gallery>ul {}
 
-.facility-list-wrap>div>ul>li {
+.facility-list-wrap > div > ul > li {
     position: relative;
 }
 
-.facility-list-wrap>div>ul>li .text-box {
+.facility-list-wrap > div > ul > li .text-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -1026,14 +831,14 @@ section {
     font-weight: 700;
 }
 
-.facility-list-wrap>div>ul>li .text-box .detail {
+.facility-list-wrap > div > ul > li .text-box .detail {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
 
-.facility-list-wrap>div>ul>li .img-box>img {
+.facility-list-wrap > div > ul > li .img-box > img {
     width: 100%;
 }
 
@@ -1041,51 +846,50 @@ section {
 
 /* concierge */
 
-.concierge-list-wrap {
+.concierge-list-wrap{
     /* padding: 0 1em; */
 }
 
-.concierge-wrap .title-box {
+.concierge-wrap .title-box{
     /* margin-bottom: 30px; */
 }
-
-.concierge-wrap {
+.concierge-wrap{
     /* min-height: 700px; */
-
+    
 }
 
 
-.concierge-list-wrap {
+.concierge-list-wrap{
     position: relative;
-
+   
 }
 
-.concierge-list-wrap>div {
+.concierge-list-wrap>div{
     position: absolute;
     display: none;
     width: 100%;
 }
 
-.concierge-list-wrap>.on {
-    display: block;
-    position: relative;
+.concierge-list-wrap>.on{
+     display: block;
+     position: relative;
 }
 
-.concierge-list-wrap>div>ul {
+.concierge-list-wrap>div>ul{
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
 }
 
-.concierge-list-wrap>div>ul>li {
+.concierge-list-wrap>div>ul>li{
     flex: 0 0 calc((100% - 48px) / 3);
     border: 1px solid var(--Neutral-300);
     padding: 2.5em;
 }
 
-.concierge-list-wrap>div>ul>li h3 {}
+.concierge-list-wrap>div>ul>li h3{}
 
-.concierge-list-wrap>div>ul>li h3+p {
+.concierge-list-wrap>div>ul>li h3+p{
     font-size: 14px;
     color: var(--Neutral-700);
     margin: 10px 0 24px;
@@ -1098,7 +902,6 @@ section {
     background: #C5DFF4;
     margin-top: 10em;
 }
-
 .membership-wrap>.inner {
     display: flex;
     justify-content: space-between;
@@ -1107,12 +910,12 @@ section {
 .membership-wrap .title-box {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1em;
+    gap:1em;
     margin-bottom: 0;
-}
+    }
 
-.membership-wrap .title-box>.section-title {
-    font-family: "Pretendard", sans-serif;
+.membership-wrap .title-box>.section-title{
+    font-family: "Pretendard",sans-serif;
     text-transform: capitalize;
     font-weight: 400;
 }
@@ -1120,14 +923,13 @@ section {
 
 
 .membership-wrap .title-box>p {}
-
 .membership-wrap .title-box>div {
-    display: flex;
-    gap: 1.5em;
+   display: flex;
+   gap: 1.5em;
 
 }
 
-.membership-card {
+.membership-card{
     display: flex;
     gap: 1.5em;
 
@@ -1225,62 +1027,49 @@ footer {
 }
 
 @media screen and (max-width:1440px) {
-    .main-slider-list>li .text-box {
+    .main-slider-list>li .text-box{
         width: 100%;
         bottom: 10%;
         padding: 1em;
-
+        
     }
-
-    .reservation-wrap {
+    .reservation-wrap{
         width: 100%;
     }
-
-    .facility-list-wrap>div>ul {
-        height: 34vw
-    }
-
+    
 }
-
 /* 아이패드 */
-@media screen and (max-width:1279px) {
-    body {
+@media screen and (max-width:1279px){
+    body{
         font-size: 14px;
-
+        
     }
-
-    .inner {
+    .inner{
         padding: 1.5em;
     }
-
-    .header-inner {
+    .header-inner{
         padding: 1em;
     }
-
-    .header-inner>div {
+    .header-inner>div{
         gap: 1em;
     }
-
     /* 제거하기 */
-    .gnb-list {
+    .gnb-list{
         display: none;
     }
-
-    #main-nav {
+    #main-nav{
         position: fixed;
         right: -100%;
-        background: rgba(255, 255, 255, 0.8);
+        background:rgba(255, 255, 255, 0.8);
         width: 100%;
         height: 100vh;
         top: 0;
         padding: 1em 1.5em;
     }
-
-    .main-menu {
+    .main-menu{
         display: block;
     }
-
-    .main-menu>li>a {
+    .main-menu>li>a{
         padding: 2em 0;
         border-bottom: 1px solid var(--Neutral-300);
         color: var(--Neutral-900);
@@ -1288,53 +1077,45 @@ footer {
         justify-content: space-between;
         align-items: center;
     }
-
-    .main-menu>li>a::after {
+     .main-menu>li>a::after{
         content: "\f004";
-        font-family: "fontello";
+         font-family: "fontello";
         font-size: 0.7em;
         /* width: 24px;
         height: 24px; */
-    }
-
-    .main-menu>li:hover>a::after,
-    .main-menu>li.active>a::after {
-        content: "\f005";
-    }
-
-    .depth2 {
+     }
+     .main-menu>li:hover>a::after,
+     .main-menu>li.active>a::after{
+        content:"\f005";
+     }
+    .depth2{
         position: static;
         display: none;
         text-indent: 2.4em;
     }
-
-    .depth2>li {
+    .depth2>li{
         width: 100%;
     }
-
-    .main-menu>li:hover .depth2 {
+    .main-menu>li:hover .depth2{
         display: block;
     }
-
-    .depth3 {
+    .depth3{
         display: none;
         text-indent: 4em;
     }
-
     /* 보여주기 */
-    .ham-btn {
+    .ham-btn{
         display: block;
         width: 32px;
-
+       
     }
-
     .m-header,
-    .m-gnb-list {
+    .m-gnb-list{
         display: flex;
         justify-content: space-between;
         color: var(--Neutral-900);
     }
-
+     
     .m-header .m-logo img {
         filter: invert();
         width: 100px;
@@ -1432,7 +1213,7 @@ footer {
     .btn>a {
         padding: 4px 0px 4px 12px;
     }
-
+    
 
     .main-slider-list>li .img-box {
         height: 100vh;
@@ -1441,10 +1222,6 @@ footer {
     .main-slider-list>li .img-box>img {
         height: 100%;
         object-fit: cover;
-    }
-
-    .facility-list-wrap>div>ul {
-        height: auto;
     }
 
     .facility-list-wrap>.spa-fitness>ul,
@@ -1490,90 +1267,77 @@ footer {
         flex-direction: column;
         gap: 1em;
     }
-
-    .membership-card>li {
+    .membership-card>li{
         flex: 1;
     }
-
-    .membership-card>li:first-child>a {}
-
-    .membership-card>li:last-child>a {}
-
-    .membership-card>li>a img {
+    .membership-card>li:first-child>a{}
+    .membership-card>li:last-child>a{}
+    .membership-card>li>a img{
         width: 100%;
     }
-
+    
 }
-
 @media screen and (max-width:480px) {
-
     /* header */
-    .logo {
+    .logo{
         width: 100px;
     }
-
     /* main */
-    .main-slider-list>li .img-box {}
+    .main-slider-list>li .img-box{
 
+    }
     /* .offer */
-    .offer-list>li {
+    .offer-list>li{
         flex: 0 0 calc((100% - 2em) / 2);
     }
-
-    .room-type-wrap>div>ul .text-box .right {
+    .room-type-wrap>div>ul .text-box .right{
         display: none;
     }
-
-    .room-type-wrap>div>ul>.text-box>.left h3 {
+    .room-type-wrap>div>ul> .text-box> .left h3{
         font-size: 1.5em;
     }
-
     /* footer */
-    footer {
+    footer{
         padding: 4em 1em 4em 1em;
     }
-
-    .footer-logo {
+    
+    .footer-logo{
         width: 140px;
     }
-
-    .footer-menu {
+    .footer-menu{
         flex-wrap: wrap;
         column-gap: 1em;
         row-gap: 1em;
         font-size: 14px;
     }
-
-    .address-wrap {
+    .address-wrap{
         flex-direction: column;
         font-size: 12px;
     }
-
-    .address-wrap .address-right {
+    .address-wrap .address-right{
         text-align: left;
     }
-
-    .ks-family-wrap {}
-
-    .ks-family-wrap .family-site>li {
-        width: 20%;
+     .ks-family-wrap {
+     
+        
     }
-
-    .ks-family-wrap .family-site>li>a {
-        width: 100%;
-    }
-
-    .ks-family-wrap {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .copy-sns-wrap {
+.ks-family-wrap .family-site>li{
+    width: 20%;
+}
+.ks-family-wrap .family-site>li>a {
+    width: 100%;
+}
+.ks-family-wrap{
+    display: flex;
+    flex-direction: column;
+}
+  
+  .copy-sns-wrap {
         flex-direction: column;
         gap: 1em;
     }
 
-    .copy-sns-wrap>.sns-list {
+    .copy-sns-wrap > .sns-list {
         display: none;
     }
 
