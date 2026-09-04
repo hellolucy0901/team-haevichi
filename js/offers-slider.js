@@ -47,9 +47,7 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
         ".offers-section .offer-progress-fill"
     );
 
-    /*
-     * 페이지 번호, 프로그래스바, 버튼 상태 갱신
-     */
+    /* 페이지 번호, 프로그래스바, 버튼 상태 갱신 */
     function updateOfferControls(swiper) {
         const totalPages = Math.max(
             swiper.snapGrid.length,
@@ -125,8 +123,8 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
         direction: "horizontal",
 
         speed: 600,
-        loop: false,
-        rewind: true,
+        loop: true,
+        rewind: false,
         watchOverflow: true,
         grabCursor: true,
 
