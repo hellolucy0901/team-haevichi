@@ -379,9 +379,9 @@ padding 위아래20 좌우 32*/
 
 
 
-.reservation-popup-wrap{
+/* .reservation-popup-wrap{
 display: none;
-} 
+}  */
 
 
 .date-popup,
@@ -389,7 +389,11 @@ display: none;
     display: none; 
 }  
 /* ===== hotel-popup 호텔/리조트 선택 팝업 ===== */
-
+.reservation-wrap>div>div>.pop{
+    left:0;
+    bottom:80px;
+    position:absolute;
+}
 .hotel-popup {
     width: 276px;
     height: 213px;
@@ -398,6 +402,7 @@ display: none;
     background: #fff;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     overflow: hidden;
+    display: none;
 }
  
 .hotel-popup .close-btn {
@@ -450,6 +455,14 @@ display: none;
     background: var(--Primary-Subtle-color);
     font-weight: 600;
 }
+/* .hotel-popup .btn-list:first-of-type .popup-btn.on{
+    background: var(--Primary-Subtle-color);
+    font-weight: 600;}*/
+
+   .hotel-popup .btn-list:first-of-type .popup-btn.on{
+    background: var(--Primary-Subtle-color);
+    font-weight: 600;
+}
 
 /* 선택완료 버튼 영역 */
 .hotel-popup .btn-list:last-of-type {
@@ -469,6 +482,8 @@ display: none;
     border: none;
     cursor: pointer;
 }
+
+
 /*  */
 /* main */
 /* main 공통영역 */
