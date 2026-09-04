@@ -35,8 +35,10 @@
 }
 
 .offers-container {
-    width: min(1440px, calc(100% - 80px));
+    width: 100%;
+    max-width: var(--inner-width);
     margin: 0 auto;
+    padding: 0 1em;
 }
 
 .offers-section h2 {
