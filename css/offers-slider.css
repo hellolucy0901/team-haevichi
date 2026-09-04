@@ -199,9 +199,10 @@
     .offer-slider-footer {
         margin-top: 24px;
 
-        /* 프로그래스바와 페이지 컨트롤을 2줄로 배치 */
-        grid-template-columns: 1fr;
-        gap: 12px;
+       /* 모바일에서도 프로그래스바와 페이지네이션을 한 줄로 유지 */
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+}
     }
 
     /* 프로그래스바는 가로 전체 너비 사용 */
