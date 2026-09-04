@@ -103,31 +103,19 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
             );
         }
 
-        /*
-         * 첫 페이지 이전 버튼 비활성화
-         */
-        if (offerEdgePrevButton) {
-            offerEdgePrevButton.disabled =
-                swiper.isBeginning;
-        }
 
-        if (offerControlPrevButton) {
-            offerControlPrevButton.disabled =
-                swiper.isBeginning;
-        }
+        const navigationDisabled = swiper.isLocked;
 
-        /*
-         * 마지막 페이지 다음 버튼 비활성화
-         */
-        if (offerEdgeNextButton) {
-            offerEdgeNextButton.disabled =
-                swiper.isEnd;
-        }
-
-        if (offerControlNextButton) {
-            offerControlNextButton.disabled =
-                swiper.isEnd;
-        }
+        [
+            offerEdgePrevButton,
+            offerEdgeNextButton,
+            offerControlPrevButton,
+            offerControlNextButton,
+        ].forEach(function (button) {
+            if (button) {
+                button.disabled = navigationDisabled;
+            }
+        });
     }
 
     /*
@@ -138,6 +126,7 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
 
         speed: 600,
         loop: false,
+        rewind: true,
         watchOverflow: true,
         grabCursor: true,
 

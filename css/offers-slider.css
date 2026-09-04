@@ -1,5 +1,8 @@
 .offer-list-wrap {
     position: relative;
+    z-index: 1;
+    isolation: isolate;
+
     width: 100%;
     overflow: hidden;
 }
@@ -23,7 +26,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    z-index: 10;
+    z-index: 2;
 
     width: 52px;
     padding: 0;
@@ -41,15 +44,21 @@
     right: 0;
 }
 
-.offer-edge-button:focus-visible {
-    outline: 2px solid var(--Primary-color);
-    outline-offset: -2px;
-}
-
 /* 비활성 버튼이 카드 클릭을 가리지 않도록 처리 */
 .offer-edge-button:disabled,
 .offer-edge-button.swiper-button-disabled {
     pointer-events: none;
+}
+
+.offer-slider-button:focus-visible {
+    outline: 2px solid var(--Primary-color);
+    outline-offset: -2px;
+}
+
+/* 투명 가장자리 버튼은 키보드 대상에서 제외했으므로 아웃라인 제거 */
+.offer-edge-button:focus,
+.offer-edge-button:focus-visible {
+    outline: none;
 }
 
 /* 480px 이하에서는 터치 드래그 사용 */
@@ -61,8 +70,14 @@
 
 /* 슬러이더 컨트롤 영역 : 프로그레스바 + 페이지네이션 */
 .offer-slider-footer {
+    position: relative;
+    z-index: 2;
+
     width: 100%;
-    margin-top: 32px;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 48px;
 
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;

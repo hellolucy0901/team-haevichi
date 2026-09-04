@@ -262,48 +262,58 @@
 
                 </ul>
 
+
                 <!-- 보이지 않는 좌우 슬라이드 클릭 영역 -->
-                <button type="button" class="offer-edge-button offer-edge-button--prev" aria-label="이전 오퍼 보기">
+                <button type="button" class="offer-edge-button offer-edge-button--prev" aria-label="이전 오퍼 보기"
+                    tabindex="-1">
                 </button>
 
-                <button type="button" class="offer-edge-button offer-edge-button--next" aria-label="다음 오퍼 보기">
+                <button type="button" class="offer-edge-button offer-edge-button--next" aria-label="다음 오퍼 보기"
+                    tabindex="-1">
                 </button>
 
             </div>
-            <button type="button" class="offer-edge-button offer-edge-button--next" aria-label="다음 오퍼 보기">
-            </button>
+            <!-- /.offer-list-wrap -->
+
+            <!-- 오퍼 슬라이더 하단 컨트롤 -->
+            <div class="offer-slider-footer">
+
+                <!-- 프로그래스바 -->
+                <div class="offer-progress" role="progressbar" aria-label="오퍼 슬라이드 진행률" aria-valuemin="1"
+                    aria-valuemax="1" aria-valuenow="1">
+
+                    <span class="offer-progress-fill"></span>
+                </div>
+
+                <!-- 이전·페이지 번호·다음 -->
+                <div class="offer-pagination" role="group" aria-label="오퍼 슬라이드 페이지 이동">
+
+                    <button type="button" class="offer-control-button offer-control-button--prev"
+                        aria-label="이전 오퍼 페이지">
+
+                        <span class="offer-control-chevron" aria-hidden="true">
+                        </span>
+                    </button>
+
+                    <p class="offer-page-status" aria-live="polite">
+                        <span class="offer-page-current">1</span>
+                        <span class="offer-page-divider" aria-hidden="true">/</span>
+                        <span class="offer-page-total">1</span>
+                    </p>
+
+                    <button type="button" class="offer-control-button offer-control-button--next"
+                        aria-label="다음 오퍼 페이지">
+
+                        <span class="offer-control-chevron" aria-hidden="true">
+                        </span>
+                    </button>
+
+                </div>
+            </div>
+            <!-- /.offer-slider-footer -->
 
         </div>
-
-        <!-- 오퍼 슬라이더 하단 컨트롤 -->
-        <div class="offer-slider-footer">
-
-            <!-- 프로그래스바 -->
-            <div class="offer-progress" role="progressbar" aria-label="오퍼 슬라이드 진행률" aria-valuemin="1" aria-valuemax="1"
-                aria-valuenow="1">
-
-                <span class="offer-progress-fill"></span>
-            </div>
-
-            <!-- 이전·페이지 번호·다음 -->
-            <div class="offer-pagination" role="group" aria-label="오퍼 슬라이드 페이지 이동">
-
-                <button type="button" class="offer-control-button offer-control-button--prev" aria-label="이전 오퍼 페이지">
-                    <span class="offer-control-chevron" aria-hidden="true"></span>
-                </button>
-
-                <p class="offer-page-status" aria-live="polite">
-                    <span class="offer-page-current">1</span>
-                    <span class="offer-page-divider" aria-hidden="true">/</span>
-                    <span class="offer-page-total">1</span>
-                </p>
-
-                <button type="button" class="offer-control-button offer-control-button--next" aria-label="다음 오퍼 페이지">
-                    <span class="offer-control-chevron" aria-hidden="true"></span>
-                </button>
-
-            </div>
-        </div>
+        <!-- /.inner -->
 
     </section>
 
