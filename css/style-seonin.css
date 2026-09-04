@@ -376,9 +376,113 @@ padding 위아래20 좌우 32*/
     
 }
 
-.reservation-popup-wrap{
-    display:none;
+
+
+
+/* .reservation-popup-wrap{
+display: none;
+}  */
+
+
+.date-popup,
+.room-popup {
+    display: none; 
+}  
+/* ===== hotel-popup 호텔/리조트 선택 팝업 ===== */
+.reservation-wrap>div>div>.pop{
+    left:0;
+    bottom:80px;
+    position:absolute;
 }
+.hotel-popup {
+    width: 276px;
+    height: 213px;
+    flex-direction: column;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    display: none;
+}
+ 
+.hotel-popup .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 19px;
+    height: 19px;
+    background-image: url("../images/icon/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+ 
+.hotel-popup .popup-title {
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--Neutral-500);
+    border-bottom: 1px solid var(--Primary-Subtle-color);
+}
+
+/* 해비치 호텔 / 해비치 리조트 선택 목록 */
+
+.hotel-popup .btn-list:first-of-type {
+    flex: 1;
+}
+ 
+.hotel-popup .btn-list:first-of-type > li {
+    border-bottom: 1px solid var(--Primary-Subtle-color);
+}
+ 
+.hotel-popup .btn-list:first-of-type .popup-btn {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: var(--Neutral-900);
+    cursor: pointer;
+}
+ 
+/* 현재 선택된 항목 표시 (클릭 시 JS에서 .on 클래스를 토글해주는 걸 전제로 함) */
+.hotel-popup .popup-btn.on {
+    background: var(--Primary-Subtle-color);
+    font-weight: 600;
+}
+/* .hotel-popup .btn-list:first-of-type .popup-btn.on{
+    background: var(--Primary-Subtle-color);
+    font-weight: 600;}*/
+
+   .hotel-popup .btn-list:first-of-type .popup-btn.on{
+    background: var(--Primary-Subtle-color);
+    font-weight: 600;
+}
+
+/* 선택완료 버튼 영역 */
+.hotel-popup .btn-list:last-of-type {
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px;
+}
+ 
+.hotel-popup .select-btn {
+    display: block;
+    width: 110px;
+    height: 36px;
+    background: var(--Primary-color);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
 
 /*  */
 /* main */
