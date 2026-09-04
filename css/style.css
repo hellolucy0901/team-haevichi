@@ -545,31 +545,37 @@ section{
     opacity: 0;
     transition:0.3s
 }
-.offer-list>li:focus-within .img-box>.img-bg,
-.offer-list>li:hover .img-box>.img-bg{
+
+.offer-list > li .img-box:hover > .img-bg,
+.offer-list > li .img-box:focus-within > .img-bg {
     opacity: 1;
 }
+
 .offer-list>li .img-box>img {
     /* max-width: none; */
     width: 100%;
 }
+
 .offer-list>li .img-box>.img-bg>a{
     /* display:block;
     color:#fff;
     border:1px solid #fff;
     padding:4px 30px 4px 10px; */
 }
+
 .offer-list>li .text-box{
     padding:12px 0 0;
     height: 175px;
     position:relative;
 
 }
+
 .offer-list>li .text-box>h3 {
     font-size: 1.5em;
     color: var(--Neutral-900);
     font-weight: 500;
 }
+
 .offer-list>li .text-box>.offer-kind {
     margin: 12px 0;
     display: flex;
@@ -587,10 +593,12 @@ section{
 .offer-list>li .text-box>.offer-kind>.kind {
     color: var(--Primary-color)
 }
+
 .offer-list>li .text-box>.offer-kind>.sale {
     color: #fff;
     background: var(--Primary-color);    
 }
+
 .offer-list>li .text-box>.detail{
     color:var(--Neutral-700);
     display: -webkit-box;
@@ -598,6 +606,7 @@ section{
     -webkit-line-clamp: 2;
     overflow:hidden;
 }
+
 .offer-list>li .text-box>.period{
     font-size:0.88em;
     color:var(--Neutral-500);
@@ -605,17 +614,22 @@ section{
     position : absolute;
     bottom:0;
 }
+
 /* rooms */
 .room-type-wrap{}
+
 .room-type-wrap>div{
     display: none;
     position:relative;
 }
+
 .room-type-wrap>.on{
     display: block;
 }
+
 .room-type-wrap>div>ul{}
 .room-type-wrap>div>ul .img-box{}
+
 .room-type-wrap>div>ul .img-box img{
     width: 100%;
 }
@@ -626,9 +640,10 @@ section{
     gap: 100px;
     align-items: center;
 }
-.room-type-wrap>div>ul .text-box>.left{}
 
+.room-type-wrap>div>ul .text-box>.left{}
 .room-type-wrap>div>ul .text-box>.left span{}
+
 .room-type-wrap>div>ul .text-box>.left h3{
     font-size: 1.88em;
     font-weight: 600;
@@ -639,10 +654,12 @@ section{
     margin: 1em 0 2em;
     
 }
+
 .room-type-wrap>div>ul .text-box>.left>div{
     display: flex;
     gap: 1.5em;
 }
+
 .room-type-wrap>div>ul .text-box>.right .room-info-list{
     /* 두개같이 써야됌 */
     display: grid;
@@ -706,9 +723,11 @@ section{
     /* padding: 1em; */
     overflow: hidden;
     }
+
 .dining-list>li .img-box img{
     width: 100%;
 }
+
 .dining-list>li .text-box{
     position: absolute;
     top: 0;
@@ -729,6 +748,7 @@ section{
     opacity: 0;
     transition: 0.5s;
 }
+
 .dining-list>.swiper-slide-active .text-box{
     opacity: 1;
 }
@@ -737,6 +757,7 @@ section{
     font-weight: 600;
     font-size: 1.5em;
 }
+
 .dining-list>li .text-box h3+p{
     font-size: 1em;
     margin: 1.3em 0 1.8em;
@@ -751,6 +772,7 @@ section{
 .facility-list-wrap{
     /* padding: 0 1em; */
 }
+
 .facility-list-wrap > div > ul > li:first-child .img-box {
     height: 100%;
 }
@@ -760,6 +782,7 @@ section{
     height: 100%;
     object-fit: cover;
 }
+
 .facility-list-wrap > div {
     display: none;
 }
