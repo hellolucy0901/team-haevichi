@@ -371,7 +371,7 @@ body.menu-open {
 
 
 /* narrow desktop */
-@media screen and (min-width: 1279px) and (max-width: 1442px) {
+@media screen and (min-width: 1280px) and (max-width: 1442px) {
 
     .header-inner {
         width: calc(100% - 80px);
@@ -417,7 +417,7 @@ body.menu-open {
 
 
 /* tablet */
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1280px) {
 
     .site-header {
         height: 60px;
