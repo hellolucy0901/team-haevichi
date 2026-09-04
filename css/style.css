@@ -561,8 +561,13 @@ section {
     transition: 0.3s
 }
 
+<<<<<<< HEAD
 .offer-list>li:focus-within .img-box>.img-bg,
 .offer-list>li:hover .img-box>.img-bg {
+=======
+.offer-list > li .img-box:hover > .img-bg,
+.offer-list > li .img-box:focus-within > .img-bg {
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     opacity: 1;
 }
 
@@ -571,15 +576,24 @@ section {
     width: 100%;
 }
 
+<<<<<<< HEAD
 .offer-list>li .img-box>.img-bg>a {
+=======
+.offer-list>li .img-box>.img-bg>a{
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     /* display:block;
     color:#fff;
     border:1px solid #fff;
     padding:4px 30px 4px 10px; */
 }
 
+<<<<<<< HEAD
 .offer-list>li .text-box {
     padding: 12px 0 0;
+=======
+.offer-list>li .text-box{
+    padding:12px 0 0;
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     height: 175px;
     position: relative;
 
@@ -614,30 +628,48 @@ section {
     background: var(--Primary-color);
 }
 
+<<<<<<< HEAD
 .offer-list>li .text-box>.detail {
     color: var(--Neutral-700);
+=======
+.offer-list>li .text-box>.detail{
+    color:var(--Neutral-700);
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
 
+<<<<<<< HEAD
 .offer-list>li .text-box>.period {
     font-size: 0.88em;
     color: var(--Neutral-500);
+=======
+.offer-list>li .text-box>.period{
+    font-size:0.88em;
+    color:var(--Neutral-500);
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     text-decoration: underline;
     position: absolute;
     bottom: 0;
 }
 
 /* rooms */
+<<<<<<< HEAD
 .room-type-wrap {}
 
 .room-type-wrap>div {
+=======
+.room-type-wrap{}
+
+.room-type-wrap>div{
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     display: none;
     position: relative;
 }
 
+<<<<<<< HEAD
 .room-type-wrap>.on {
     display: block;
 }
@@ -647,6 +679,16 @@ section {
 .room-type-wrap>div>ul .img-box {}
 
 .room-type-wrap>div>ul .img-box img {
+=======
+.room-type-wrap>.on{
+    display: block;
+}
+
+.room-type-wrap>div>ul{}
+.room-type-wrap>div>ul .img-box{}
+
+.room-type-wrap>div>ul .img-box img{
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     width: 100%;
 }
 
@@ -657,11 +699,18 @@ section {
     align-items: center;
 }
 
+<<<<<<< HEAD
 .room-type-wrap>div>ul .text-box>.left {}
 
 .room-type-wrap>div>ul .text-box>.left span {}
 
 .room-type-wrap>div>ul .text-box>.left h3 {
+=======
+.room-type-wrap>div>ul .text-box>.left{}
+.room-type-wrap>div>ul .text-box>.left span{}
+
+.room-type-wrap>div>ul .text-box>.left h3{
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     font-size: 1.88em;
     font-weight: 600;
 }
@@ -673,12 +722,20 @@ section {
 
 }
 
+<<<<<<< HEAD
 .room-type-wrap>div>ul .text-box>.left>div {
+=======
+.room-type-wrap>div>ul .text-box>.left>div{
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     display: flex;
     gap: 1.5em;
 }
 
+<<<<<<< HEAD
 .room-type-wrap>div>ul .text-box>.right .room-info-list {
+=======
+.room-type-wrap>div>ul .text-box>.right .room-info-list{
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     /* 두개같이 써야됌 */
     display: grid;
     /* fr fraction 수학에서 등분 분수 */
@@ -740,6 +797,7 @@ section {
 .dining-list-wrap {
     /* padding: 1em; */
     overflow: hidden;
+<<<<<<< HEAD
 }
 
 .dining-list>li .img-box img {
@@ -747,6 +805,15 @@ section {
 }
 
 .dining-list>li .text-box {
+=======
+    }
+
+.dining-list>li .img-box img{
+    width: 100%;
+}
+
+.dining-list>li .text-box{
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     position: absolute;
     top: 0;
     left: 0;
@@ -767,7 +834,11 @@ section {
     transition: 0.5s;
 }
 
+<<<<<<< HEAD
 .dining-list>.swiper-slide-active .text-box {
+=======
+.dining-list>.swiper-slide-active .text-box{
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     opacity: 1;
 }
 
@@ -776,7 +847,11 @@ section {
     font-size: 1.5em;
 }
 
+<<<<<<< HEAD
 .dining-list>li .text-box h3+p {
+=======
+.dining-list>li .text-box h3+p{
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     font-size: 1em;
     margin: 1.3em 0 1.8em;
     color: var(--Neutral-100);
@@ -786,6 +861,66 @@ section {
     line-height: 1.3;
 }
 
+ .dining-progress-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.dining-progress-track {
+    flex: 1;
+    height: 2px;
+    background: #d4d4d4;
+    position: relative;
+}
+
+.dining-progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12.5%;
+    height: 2px;
+    background: #176bb0;
+    transition: width 0.3s ease;
+}
+
+.dining-progress-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.dining-progress-arrow {
+    width: 8px;
+    height: 18px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dining-progress-arrow svg {
+    width: 8px;
+    height: 14px;
+    display: block;
+}
+
+.dining-progress-count {
+    font-size: 12px;
+    font-weight: 500;
+    color: #171717;
+    white-space: nowrap;
+}
+
+
+
 /* facility */
 .facility-list-wrap {
     /* padding: 0 1em; */
@@ -793,6 +928,7 @@ section {
 
 }
 
+<<<<<<< HEAD
 .facility-list-wrap>div {
     display: none;
 }
@@ -812,6 +948,9 @@ section {
 }
 
 .facility-list-wrap>div>ul>li:first-child .img-box {
+=======
+.facility-list-wrap > div > ul > li:first-child .img-box {
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
     height: 100%;
 }
 
@@ -820,6 +959,13 @@ section {
     height: 100%;
     object-fit: cover;
 }
+<<<<<<< HEAD
+=======
+
+.facility-list-wrap > div {
+    display: none;
+}
+>>>>>>> 67a581e2c4905ae8f46ea82a30a06c3c73782d48
 
 .facility-list-wrap>.spa-fitness>ul,
 .facility-list-wrap>.convenience>ul {
