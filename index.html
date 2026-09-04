@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/offers-slider.css">
     <link rel="stylesheet" href="./font/font.css">
 
 </head>
@@ -20,223 +21,615 @@
         <a href="#main">본문 바로가기</a>
     </div>
     <!-- 1. header -->
-    <header>
-        <div class="sub-bg"></div>
-        <div class="header-inner">
+    <header class="site-header">
+        <div class="header-bar">
+            <div class="header-inner">
+
+                <!-- header-left -->
+                <div class="header-left">
+                    <h1><a href="./index.html" class="header-logo">
+                            <img src="./images/logo/black.png" alt="Haevichi"></a>
+                    </h1>
+
+                    <nav class="main-nav" id="mobile-navigation" aria-label="주요 메뉴">
+                        <ul class="main-menu">
+
+                            <li class="main-menu-item">
+                                <a href="./offers.html" class="desktop-main-menu-link">스페셜 오퍼</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="offers-submenu">
+                                    <span>스페셜 오퍼</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu offers-mega-menu" id="offers-submenu">
+                                    <ul class="mega-menu-list">
+                                        <li class="mega-menu-group">
+                                            <a href="./offers.html#package" class="mega-menu-title">패키지</a>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="./offers.html#dining" class="mega-menu-title">다이닝</a>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="./offers.html#event" class="mega-menu-title">이벤트</a>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="./offers.html#wellness" class="mega-menu-title">웰니스</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="main-menu-item">
+
+                                <a href="./hoteloverview.html" class="desktop-main-menu-link">
+                                    호텔
+                                </a>
 
 
-            <div class="header-left">
-                <h1 class="logo"><a href="#"><img src="./images/logo/white.png" alt="haevichi logo"></a></h1>
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="hotel-submenu">
 
-                <nav id="main-nav" aria-label="주요메뉴">
-                    <div class="m-header">
-                        <button type="button" class="close-btn" aria-label="메뉴닫기">
-                            <i aria-hidden="true" class="icon-close_32"></i>
-                        </button>
-                        <h1 class="m-logo"><a href="#">
-                                <img src="./images/logo/white.png" alt="haevichi logo"></a></h1>
-                        <p class="re-right"><button class="btn btn-pri">예약하기</button></p>
-                    </div>
-                    <ul class="main-menu">
-                        <li>
-                            <a href="offers.html">스페셜 오퍼</a>
-                            <ul class="depth2">
-                                <li><a href="#">패키지</a></li>
-                                <li><a href="#">다이닝</a></li>
-                                <li><a href="#">이벤트</a></li>
-                                <li><a href="#">웰니스</a></li>
-                            </ul>
-                        <li>
-                        <li>
-                            <a href="hoteloverview.html">호텔</a>
-                            <!-- ul.depth2>li*4>a[href="#"]+ul.depth3>li*7>a[href="#"] -->
-                            <ul class="depth2">
-                                <li>
-                                    <a href="#">스탠다드</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">수페리어</a></li>
-                                        <li><a href="#">디럭스</a></li>
-                                        <li><a href="#">이그제큐티브</a></li>
-                                        <li><a href="#">온돌</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">스위트</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">오션 스위트</a></li>
-                                        <li><a href="#">패밀리 스위트</a></li>
-                                        <li><a href="#">킹 스위트</a></li>
-                                        <li><a href="#">온돌 스위트</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">프리미엄 스위트</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">해비치/로얄 스위트</a></li>
-                                        <li><a href="#">프레지덴셜 스위트</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">특별객실</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">아니스지 스페이스</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="resortoverview.html">리조트</a>
-                            <ul class="depth2">
-                                <li>
-                                    <a href="#">스위트</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">주니어 스위트</a></li>
-                                        <li><a href="#">오션 스위트</a></li>
-                                        <li><a href="#">팜 스위트</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">프리미엄 스위트</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">주니어스위트 테라스</a></li>
-                                        <li><a href="#">클래식 스위트</a></li>
-                                        <li><a href="#">그랜드 스위트</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">시그니처 스위트</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">시그니처 돌 스위트</a></li>
-                                        <li><a href="#">시그니처 바람 스위트</a></li>
-                                        <li><a href="#">시그니처 노을 스위트</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">특별객실</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">마스터 스위트</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="dining.html">다이닝</a>
-                            <ul class="depth2">
-                                <li>
-                                    <a href="#">레스토랑</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">밀리우</a></li>
-                                        <li><a href="#">메르&amp;테르</a></li>
-                                        <li><a href="#">섬모라</a></li>
-                                        <li><a href="#">이디</a></li>
-                                        <li><a href="#">하노루</a></li>
-                                        <li><a href="#">다랑쉬</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">바</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">바99</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">베이커리</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">마고</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="wedding_business.html">연회</a>
-                            <ul class="depth2">
-                                <li><a href="#">웨딩</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">실내 웨딩</a></li>
-                                        <li><a href="#">실외 웨딩</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">비즈니스</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">그랜드볼룸</a></li>
-                                        <li><a href="#">크리스탈홀</a></li>
-                                        <li><a href="#">다이아몬드홀</a></li>
-                                        <li><a href="#">소규모 미팅</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">케이터링</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">케이터링 서비스</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="facility.html">부대시설</a>
-                            <ul class="depth2">
-                                <li>
-                                    <a href="#">스파&amp;피트니스 </a>
-                                    <ul class="depth3">
-                                        <li><a href="#">트윈 풀 (실내)</a></li>
-                                        <li><a href="#">트윈 풀 (실외)</a></li>
-                                        <li><a href="#">더 써드풀 (실외)</a></li>
-                                        <li><a href="#">사우나</a></li>
-                                        <li><a href="#">스파</a></li>
-                                        <li><a href="#">피트니스 센터</a></li>
-                                        <li><a href="#">테니스코트</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">편의시설</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">마리</a></li>
-                                        <li><a href="#">비즈니스 센터</a></li>
-                                        <li><a href="#">편의점</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">키즈시설</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">놀멍</a></li>
-                                        <li><a href="#">엔터네인먼트 존</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">갤러리</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="membership.html">멤버십</a>
+                                    <span>호텔</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
 
-                        </li>
-                    </ul>
-                    <div class="m-gnb-list">
-                        <li><a href="#"><img src="./images/icon/person.svg" alt=""><span>로그인</span></a></li>
-                        <li><a href="#"><img src="./images/icon/calendar.svg" alt=""><span>마이페이지</span></a></li>
-                        <li><a href="#"><img src="./images/icon/calendar.svg" alt=""><span>예약조회</span></a></li>
-                    </div>
-                </nav>
-            </div>
-            <div class="header-right">
-                <ul class="gnb-list">
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">마이페이지</a></li>
-                    <li><a href="#">예약조회</a></li>
-                    <li class="lang-btn">
-                        <a href="#">
-                            <span>KR</span>
-                        </a>
-                        <ul class="lang-list">
-                            <li><a href="#">EN</a></li>
-                            <li><a href="#">KR</a></li>
+                                </button>
+
+
+                                <div class="mega-menu hotel-mega-menu" id="hotel-submenu">
+
+                                    <ul class="mega-menu-list">
+
+
+                                        <!-- 스탠다드 -->
+                                        <li class="mega-menu-group">
+
+                                            <a href="./hoteloverview.html#standard" class="mega-menu-title">
+                                                스탠다드
+                                            </a>
+
+                                            <ul class="mega-submenu">
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#superior">
+                                                        수페리어
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#deluxe">
+                                                        디럭스
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#executive">
+                                                        이그제큐티브
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#ondol">
+                                                        온돌
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+
+                                        <!-- 스위트 -->
+                                        <li class="mega-menu-group">
+
+                                            <a href="./hoteloverview.html#suite" class="mega-menu-title">
+                                                스위트
+                                            </a>
+
+                                            <ul class="mega-submenu">
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#ocean-suite">
+                                                        오션 스위트
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#family-suite">
+                                                        패밀리 스위트
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#king-suite">
+                                                        킹 스위트
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#ondol-suite">
+                                                        온돌 스위트
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+
+                                        <!-- 프리미엄 스위트 -->
+                                        <li class="mega-menu-group">
+
+                                            <a href="./hoteloverview.html#premium-suite" class="mega-menu-title">
+                                                프리미엄 스위트
+                                            </a>
+
+                                            <ul class="mega-submenu">
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#haevichi-royal-suite">
+                                                        해비치/로얄 스위트
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#presidential-suite">
+                                                        프레지덴셜 스위트
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+
+                                        <!-- 특별객실 -->
+                                        <li class="mega-menu-group">
+
+                                            <a href="./hoteloverview.html#special" class="mega-menu-title">
+                                                특별객실
+                                            </a>
+
+                                            <ul class="mega-submenu">
+
+                                                <li>
+                                                    <a href="./hoteloverview.html#anise-space">
+                                                        아니스지 스페이스
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+
+                                    </ul>
+
+                                </div>
+
+                            </li>
+
+
+
+                            <!-- 리조트 -->
+
+                            <li class="main-menu-item">
+
+                                <a href="./resortoverview.html" class="desktop-main-menu-link">
+                                    리조트
+                                </a>
+
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="resort-submenu">
+
+                                    <span>리조트</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+
+                                </button>
+
+
+                                <div class="mega-menu resort-mega-menu" id="resort-submenu">
+
+                                    <ul class="mega-menu-list">
+
+
+                                        <!-- 스위트 -->
+                                        <li class="mega-menu-group">
+
+                                            <a href="./resortoverview.html#suite" class="mega-menu-title">
+                                                스위트
+                                            </a>
+
+                                            <ul class="mega-submenu">
+
+                                                <li>
+                                                    <a href="./resortoverview.html#junior-suite">
+                                                        주니어 스위트
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./resortoverview.html#ocean-suite">
+                                                        오션 스위트
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./resortoverview.html#palm-suite">
+                                                        팜 스위트
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+
+                                        <!-- 프리미엄 스위트 -->
+                                        <li class="mega-menu-group">
+
+                                            <a href="./resortoverview.html#premium-suite" class="mega-menu-title">
+                                                프리미엄 스위트
+                                            </a>
+
+                                            <ul class="mega-submenu">
+
+                                                <li>
+                                                    <a href="./resortoverview.html#junior-suite-terrace">
+                                                        주니어 스위트 테라스
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./resortoverview.html#classic-suite">
+                                                        클래식 스위트
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./resortoverview.html#grand-suite">
+                                                        그랜드 스위트
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+
+                                        <!-- 시그니처 스위트 -->
+                                        <li class="mega-menu-group">
+
+                                            <a href="./resortoverview.html#signature-suites" class="mega-menu-title">
+                                                시그니처 스위트
+                                            </a>
+
+                                            <ul class="mega-submenu">
+
+                                                <li>
+                                                    <a href="./resortoverview.html#signature-stone">
+                                                        시그니처 돌 스위트
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./resortoverview.html#signature-wind">
+                                                        시그니처 바람 스위트
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./resortoverview.html#signature-sunset">
+                                                        시그니처 노을 스위트
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+
+                                        <!-- 특별객실 -->
+                                        <li class="mega-menu-group">
+
+                                            <a href="./resortoverview.html#special-room" class="mega-menu-title">
+                                                특별객실
+                                            </a>
+
+                                            <ul class="mega-submenu">
+
+                                                <li>
+                                                    <a href="./resortoverview.html#master-suite">
+                                                        마스터 스위트
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+
+                                    </ul>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="main-menu-item">
+                                <a href="./dining.html" class="desktop-main-menu-link">다이닝</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="dining-submenu">
+                                    <span>다이닝</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu dining-mega-menu" id="dining-submenu">
+                                    <ul class="mega-menu-list">
+
+                                        <!-- 레스토랑 -->
+                                        <li class="mega-menu-group">
+                                            <a href="./dining.html#restaurant" class="mega-menu-title">레스토랑</a>
+
+                                            <ul class="mega-submenu">
+                                                <li><a href="./dining.html#milliou">밀리우</a></li>
+                                                <li><a href="./dining.html#mer-et-terre">메르 &amp; 테르</a></li>
+                                                <li><a href="./dining.html#seommora">섬모라</a></li>
+                                                <li><a href="./dining.html#edi">이디</a></li>
+                                                <li><a href="./dining.html#hanoru">하노루</a></li>
+                                                <li><a href="./dining.html#darangshi">다랑쉬</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <!-- 바 -->
+                                        <li class="mega-menu-group">
+                                            <a href="./dining.html#bakery-bar" class="mega-menu-title">바</a>
+
+                                            <ul class="mega-submenu">
+                                                <li><a href="./dining.html#bar99">바99</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <!-- 베이커리 -->
+                                        <li class="mega-menu-group">
+                                            <a href="./dining.html#bakery-bar" class="mega-menu-title">베이커리</a>
+
+                                            <ul class="mega-submenu">
+                                                <li><a href="./dining.html#mago">마고</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            <li class="main-menu-item">
+                                <a href="./wedding_business.html" class="desktop-main-menu-link">연회</a>
+
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="wedding-business-submenu">
+                                    <span>연회</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+
+                                <div class="mega-menu wedding-business-mega-menu" id="wedding-business-submenu">
+
+                                    <ul class="mega-menu-list">
+
+                                        <li class="mega-menu-group">
+                                            <a href="./wedding_business.html#wedding" class="mega-menu-title">웨딩</a>
+
+                                            <ul class="mega-submenu">
+                                                <li>
+                                                    <a href="./wedding_business.html#indoor-wedding">
+                                                        실내 웨딩
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./wedding_business.html#outdoor-wedding">
+                                                        실외 웨딩
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="mega-menu-group">
+                                            <a href="./wedding_business.html#business" class="mega-menu-title">
+                                                비즈니스
+                                            </a>
+
+                                            <ul class="mega-submenu">
+                                                <li>
+                                                    <a href="./wedding_business.html#grand-ballroom">
+                                                        그랜드볼룸
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./wedding_business.html#crystal-hall">
+                                                        크리스탈홀
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./wedding_business.html#diamond-hall">
+                                                        다이아몬드홀
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="./wedding_business.html#small-meeting">
+                                                        소규모 미팅
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="mega-menu-group">
+                                            <a href="./wedding_business.html#catering-service" class="mega-menu-title">
+                                                케이터링
+                                            </a>
+
+                                            <ul class="mega-submenu">
+                                                <li>
+                                                    <a href="./wedding_business.html#catering-service">
+                                                        케이터링 서비스
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="main-menu-item">
+                                <a href="./facility.html" class="desktop-main-menu-link">부대시설</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="facility-submenu">
+                                    <span>부대시설</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+
+                                <div class="mega-menu facility-mega-menu" id="facility-submenu">
+                                    <ul class="mega-menu-list">
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">스파&amp;피트니스</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">트윈 풀 (실내)</a></li>
+                                                <li><a href="#">트윈 풀 (야외)</a></li>
+                                                <li><a href="#">더 써드 풀 (야외)</a></li>
+                                                <li><a href="#">사우나</a></li>
+                                                <li><a href="#">스파</a></li>
+                                                <li><a href="#">피트니스센터</a></li>
+                                                <li><a href="#">테니스코트</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">편의시설</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">마리</a></li>
+                                                <li><a href="#">비즈니스 센터</a></li>
+                                                <li><a href="#">편의점</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">키즈시설</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">놀멍</a></li>
+                                                <li><a href="#">엔터테인먼트 존</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">갤러리</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">갤러리존</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="main-menu-item main-menu-item--direct">
+                                <a href="./membership.html">멤버십</a>
+                            </li>
+
                         </ul>
-                    </li>
-                </ul>
-                <div class="re-right"><button>예약하기</button></div>
-                <button type="button" class="ham-btn"><img src="./images/icon/menu.svg" alt=""></button>
+
+                        <!-- 모바일 사용자 메뉴 -->
+                        <ul class="mobile-utility-menu" aria-label="사용자 메뉴">
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/person.svg" alt="">
+                                    <span>로그인</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/calendar.svg" alt="">
+                                    <span>마이페이지</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/calendar.svg" alt="">
+                                    <span>예약조회</span>
+                                </a>
+                            </li>
+                        </ul>
+
+
+                    </nav>
+                </div>
+
+                <!-- header-right -->
+                <div class="header-right">
+                    <nav class="utility-nav" aria-label="사용자 메뉴">
+                        <ul class="utility-menu">
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">마이페이지</a></li>
+                            <li><a href="#">예약조회</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="language-selector">
+                        <!-- popvoertarget : 어떤 메뉴 제어할지 지정 -->
+                        <!-- popovertargetaction : 그 메뉴를 어떻게 열고 닫을지 지정 -->
+                        <!-- popovertargetaction="toggle" : popover 클릭할 때마다 열기/닫기 가능하게 -->
+                        <button type="button" class="language-button" aria-label="언어 선택" popovertarget="language-menu"
+                            popovertargetaction="toggle">
+                            <span class="current-language">KR</span>
+                            <span class="language-chevron" aria-hidden="true"></span>
+                        </button>
+
+                        <ul class="language-menu" id="language-menu" popover>
+                            <li>
+                                <!-- popovertargetaction="hide" : 옵션 클릭 후 드롭다운 닫게 만들기  -->
+                                <button type="button" class="language-option" popovertarget="language-menu"
+                                    popovertargetaction="hide">
+                                    KR
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="language-option" popovertarget="language-menu"
+                                    popovertargetaction="hide">
+                                    EN
+                                </button>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <a href="#" class="reservation-button">예약하기</a>
+
+                    <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기"
+                        aria-controls="mobile-navigation" aria-expanded="false">
+                        <img src="./images/icon/menu.svg" alt="" class="mobile-menu-icon mobile-menu-open-icon">
+
+                        <img src="./images/icon/close.svg" alt="" class="mobile-menu-icon mobile-menu-close-icon">
+                    </button>
+
+                </div>
+
             </div>
         </div>
+
+        <!-- 모바일 메뉴 바깥 배경 -->
+        <button type="button" class="mobile-menu-backdrop" aria-label="메뉴 닫기" tabindex="-1">
+        </button>
+
     </header>
     <hr>
 
@@ -388,25 +781,24 @@
 
         </div>
         <hr>
-        <!-- section*6>div.inner>title-box>h2.section-title+div>p+p.more-btn -->
-        <section>
+        <!-- offers -->
+        <section class="offers-section" aria-labelledby="offers-title">
             <div class="inner">
                 <div class="title-box" data-aos="fade-up">
-                    <h2 class="section-title">OFFER</h2>
-
+                    <h2 id="offers-title" class="section-title">OFFER</h2>
                     <div>
                         <p>다양한 혜택과 함께 특별한 휴식을 완성해 보세요.</p>
                         <p class="more-btn">
-                            <a href="#">오퍼 전체보기</a>
-
+                            <a href="./offers.html">오퍼 전체보기</a>
                         </p>
                     </div>
                 </div>
 
-                <div class="offer-list-wrap">
-                    <ul class="offer-list">
+                <div class="offer-list-wrap swiper" aria-label="오퍼 카드 슬라이더">
+                    <ul class="offer-list swiper-wrapper">
 
-                        <li>
+                        <!-- card 01 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/hotel1.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -415,15 +807,18 @@
                             </div>
                             <div class="text-box">
                                 <h3>Stay Cool, Stay Pool</h3>
-                                <p class="offer-kind"><span class="kind">호텔</span>
-                                    <span class="sale">20%할인</span>
+                                <p class="offer-kind">
+                                    <span class="kind">호텔</span>
+                                    <span class="kind">패키지</span>
+                                    <span class="kind">최대 20% 할인</span>
                                 </p>
                                 <p class="detail">맥주 TOGO + 수영장 + 카바나 + 웰니스프로그램</p>
                                 <p class="period">2026.07.06 ~ 2026.08.31</p>
                             </div>
                         </li>
 
-                        <li>
+                        <!-- card 02 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/hotel2.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -432,15 +827,18 @@
                             </div>
                             <div class="text-box">
                                 <h3>Essential Stay</h3>
-                                <p class="offer-kind"><span class="kind">호텔</span>
-                                    <span class="sale">커피특전</span>
+                                <p class="offer-kind">
+                                    <span class="kind">호텔</span>
+                                    <span class="kind">커피 특전</span>
+                                    <span class="kind">최대 20% 할인</span>
                                 </p>
                                 <p class="detail">Room Only / Bed &amp; Breakfast 최대 20% 할인</p>
                                 <p class="period">2026.01.01 ~ 2026.12.31</p>
                             </div>
                         </li>
 
-                        <li>
+                        <!-- card 03 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/resort1.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -449,15 +847,18 @@
                             </div>
                             <div class="text-box">
                                 <h3>Stay Cool, Stay Pool</h3>
-                                <p class="offer-kind"><span class="kind">리조트</span>
-                                    <span class="sale">20%할인</span>
+                                <p class="offer-kind">
+                                    <span class="kind">리조트</span>
+                                    <span class="kind">패키지</span>
+                                    <span class="kind">최대 20% 할인</span>
                                 </p>
                                 <p class="detail">맥주 TOGO + 수영장 + 카바나 + 웰니스프로그램</p>
                                 <p class="period">2026.07.06 ~ 2026.08.31</p>
                             </div>
                         </li>
 
-                        <li>
+                        <!-- card 04 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/resort2.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -466,15 +867,18 @@
                             </div>
                             <div class="text-box">
                                 <h3>Essential Stay</h3>
-                                <p class="offer-kind"><span class="kind">리조트</span>
-                                    <span class="sale">커피특전</span>
+                                <p class="offer-kind">
+                                    <span class="kind">리조트</span>
+                                    <span class="kind">커피 특전</span>
+                                    <span class="kind">최대 20% 할인</span>
                                 </p>
                                 <p class="detail">Room Only / Bed &amp; Breakfast 최대 20% 할인</p>
                                 <p class="period">2026.01.01 ~ 2026.12.31</p>
                             </div>
                         </li>
 
-                        <li>
+                        <!-- card 05 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/dining1.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -483,13 +887,18 @@
                             </div>
                             <div class="text-box">
                                 <h3>Afternoon Tea set</h3>
-                                <p class="offer-kind"><span class="kind">다이닝</span></p>
-                                <p class="detail">프랑스 프리미엄 티 브랜드 '다만 프레르'와 제주 애플망고를 활용한 6가지 감성 디저트로 여유로운 오후를 선사합니다.</p>
+                                <p class="offer-kind">
+                                    <span class="kind">다이닝</span>
+                                    <span class="kind">이디</span>
+                                </p>
+                                <p class="detail">프랑스 프리미엄 티 브랜드 '다만 프레르'와 제주 애플망고를 활용한 6가지 감성 디저트로 여유로운 오후를 선사합니다.
+                                </p>
                                 <p class="period">2026.06.01 ~ 2026.08.31</p>
                             </div>
                         </li>
 
-                        <li>
+                        <!-- card 06 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/dining2.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -498,13 +907,17 @@
                             </div>
                             <div class="text-box">
                                 <h3>제주의 숲과 바다칵테일</h3>
-                                <p class="offer-kind"><span class="kind">바</span></p>
+                                <p class="offer-kind">
+                                    <span class="kind">다이닝</span>
+                                    <span class="kind">바 99</span>
+                                </p>
                                 <p class="detail">제주의 울창한 숲과 푸르른 바다의 깊이를 한 잔에 담은 여름 칵테일 2종</p>
                                 <p class="period">2026.06.01 ~ 2026.08.31</p>
                             </div>
                         </li>
 
-                        <li>
+                        <!-- card 07 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/dining3.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -513,13 +926,17 @@
                             </div>
                             <div class="text-box">
                                 <h3>제주 애플망고 빙수</h3>
-                                <p class="offer-kind"><span class="kind">다이닝</span></p>
+                                <p class="offer-kind">
+                                    <span class="kind">다이닝</span>
+                                    <span class="kind">이디</span>
+                                </p>
                                 <p class="detail">부드러운 우유 얼음 위에 제주 애플망고를 풍성하게 올려 완성한 시그니처 여름 빙수</p>
                                 <p class="period">2026.06.01 ~ 2026.08.31</p>
                             </div>
                         </li>
 
-                        <li>
+                        <!-- card 08 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/dining4.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -528,13 +945,18 @@
                             </div>
                             <div class="text-box">
                                 <h3>제주 애플망고 컬렉션</h3>
-                                <p class="offer-kind"><span class="kind">다이닝</span></p>
+                                <p class="offer-kind">
+                                    <span class="kind">다이닝</span>
+                                    <span class="kind">마고</span>
+
+                                </p>
                                 <p class="detail">제주 애플망고 생과의 시원함과 달콤함을 담아낸 3종 메뉴를 마고에서 만나보세요.</p>
                                 <p class="period">2026.06.01 ~ 2026.08.31</p>
                             </div>
                         </li>
 
-                        <li>
+                        <!-- card 09 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/event1.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -543,43 +965,17 @@
                             </div>
                             <div class="text-box">
                                 <h3>Fill Your Summer</h3>
-                                <p class="offer-kind"><span class="kind">이벤트</span></p>
+                                <p class="offer-kind">
+                                    <span class="kind">오프라인</span>
+                                    <span class="kind">이벤트</span>
+                                </p>
                                 <p class="detail">해비치의 햇살과 물결 사이, 다섯 개의 조각으로 채우는 여름</p>
                                 <p class="period">2026.07.03 ~ 2026.08.31</p>
                             </div>
                         </li>
 
-                        <li>
-                            <div class="img-box">
-                                <img src="./images/offers/event2.png" alt="">
-                                <div class="img-bg btn btn-white">
-                                    <a href="#">자세히 보기</a>
-                                </div>
-                            </div>
-                            <div class="text-box">
-                                <h3>현대자동차 / 기아 멤버십 특전</h3>
-                                <p class="offer-kind"><span class="kind">이벤트</span></p>
-                                <p class="detail">현대자동차, 기아 멤버십 가입고객 프로모션</p>
-                                <p class="period">2026.01.01 ~ 2026.12.31</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="img-box">
-                                <img src="./images/offers/wellness1.png" alt="">
-                                <div class="img-bg btn btn-white">
-                                    <a href="#">자세히 보기</a>
-                                </div>
-                            </div>
-                            <div class="text-box">
-                                <h3>웰니스 프로그램</h3>
-                                <p class="offer-kind"><span class="kind">웰니스</span></p>
-                                <p class="detail">제주의 아름답고 평화로운 자연 속에서 몸과 마음을 재충전하는 시간을 가져보세요.</p>
-                                <p class="period">2026.07.16 ~ 2030.12.31</p>
-                            </div>
-                        </li>
-
-                        <li>
+                        <!-- card 10 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/event3.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -594,11 +990,99 @@
                             </div>
                         </li>
 
-                    </ul>
-                </div>
-            </div>
-        </section>
+                        <!-- card 11 -->
+                        <li class="swiper-slide">
+                            <div class="img-box">
+                                <img src="./images/offers/event2.png" alt="">
+                                <div class="img-bg btn btn-white">
+                                    <a href="#">자세히 보기</a>
+                                </div>
+                            </div>
+                            <div class="text-box">
+                                <h3>현대자동차 / 기아 멤버십 특전</h3>
+                                <p class="offer-kind">
+                                    <span class="kind">이벤트</span>
+                                </p>
+                                <p class="detail">현대자동차, 기아 멤버십 가입고객 프로모션</p>
+                                <p class="period">2026.01.01 ~ 2026.12.31</p>
+                            </div>
+                        </li>
 
+                        <!-- card 12 -->
+                        <li class="swiper-slide">
+                            <div class="img-box">
+                                <img src="./images/offers/wellness1.png" alt="">
+                                <div class="img-bg btn btn-white">
+                                    <a href="#">자세히 보기</a>
+                                </div>
+                            </div>
+                            <div class="text-box">
+                                <h3>웰니스 프로그램</h3>
+                                <p class="offer-kind">
+                                    <span class="kind">호텔</span>
+                                    <span class="kind">리조트</span>
+                                </p>
+                                <p class="detail">제주의 아름답고 평화로운 자연 속에서 몸과 마음을 재충전하는 시간을 가져보세요.</p>
+                                <p class="period">2026.07.16 ~ 2030.12.31</p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <!-- 보이지 않는 좌우 슬라이드 클릭 영역 -->
+                    <button type="button" class="offer-edge-button offer-edge-button--prev" aria-label="이전 오퍼 보기"
+                        tabindex="-1">
+                    </button>
+
+                    <button type="button" class="offer-edge-button offer-edge-button--next" aria-label="다음 오퍼 보기"
+                        tabindex="-1">
+                    </button>
+
+                </div>
+                <!-- /.offer-list-wrap -->
+
+                <!-- 오퍼 슬라이더 하단 컨트롤러 -->
+                <div class="offer-slider-footer">
+
+                    <!-- 프로그래스바 -->
+                    <div class="offer-progress" role="progressbar" aria-label="오퍼 슬라이드 진행률" aria-valuemin="1"
+                        aria-valuemax="1" aria-valuenow="1">
+
+                        <span class="offer-progress-fill"></span>
+                    </div>
+
+                    <!-- 이전·페이지 번호·다음 -->
+                    <div class="offer-pagination" role="group" aria-label="오퍼 슬라이드 페이지 이동">
+
+                        <button type="button" class="offer-control-button offer-control-button--prev"
+                            aria-label="이전 오퍼 페이지">
+
+                            <span class="offer-control-chevron" aria-hidden="true">
+                            </span>
+                        </button>
+
+                        <p class="offer-page-status" aria-live="polite">
+                            <span class="offer-page-current">1</span>
+                            <span class="offer-page-divider" aria-hidden="true">/</span>
+                            <span class="offer-page-total">1</span>
+                        </p>
+
+                        <button type="button" class="offer-control-button offer-control-button--next"
+                            aria-label="다음 오퍼 페이지">
+
+                            <span class="offer-control-chevron" aria-hidden="true">
+                            </span>
+                        </button>
+
+                    </div>
+                </div>
+                <!-- /.offer-slider-footer -->
+
+            </div>
+            <!-- /.inner -->
+
+        </section>
+        <!-- rooms -->
         <section class="rooms-wrap">
             <div class="inner">
                 <div class="title-box" data-aos="fade-up">
@@ -828,10 +1312,7 @@
 
             </div>
         </section>
-
-
-
-
+        <!-- dining -->
         <section class="dining-wrap">
     <div class="inner">
 
@@ -1327,8 +1808,7 @@
                 </div>
             </div>
         </section>
-
-
+        <!-- concierge -->
         <section class="concierge-wrap">
             <div class="inner">
                 <div class="title-box" data-aos="fade-up">
@@ -1435,11 +1915,7 @@
                 </div>
             </div>
         </section>
-
-
-
-
-
+        <!-- membership -->
         <section class="membership-wrap">
             <div class="inner">
 
@@ -1547,6 +2023,8 @@
             </div>
         </div>
     </footer>
+
+
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 
@@ -1652,7 +2130,7 @@
 
 
     <!-- header -->
-      <script>
+    <script>
         const menuButton = document.querySelector(".mobile-menu-button");
         const mobileNavigation = document.querySelector("#mobile-navigation");
         const submenuButtons = document.querySelectorAll(".mobile-submenu-toggle");
@@ -1817,7 +2295,7 @@
 
     </script>
 
-</body>
+    <script src="./js/offers-slider.js"></script>
 </body>
 
 </html>
