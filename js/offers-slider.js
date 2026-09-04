@@ -47,20 +47,23 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
         ".offers-section .offer-progress-fill"
     );
 
-    /*
-     * 페이지 번호, 프로그래스바, 버튼 상태 갱신
-     */
+    /* 페이지 번호, 프로그래스바, 버튼 상태 갱신 */
     function updateOfferControls(swiper) {
+        const totalSlides =
+            offerSliderElement.querySelectorAll(".swiper-slide").length;
+
+        const slidesPerGroup =
+            Number(swiper.params.slidesPerGroup) || 1;
+
         const totalPages = Math.max(
-            swiper.snapGrid.length,
+            Math.ceil(totalSlides / slidesPerGroup),
             1
         );
 
         const currentPage = Math.min(
-            swiper.snapIndex + 1,
+            Math.floor(swiper.realIndex / slidesPerGroup) + 1,
             totalPages
         );
-
         const progressPercentage =
             (currentPage / totalPages) * 100;
 
@@ -125,8 +128,8 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
         direction: "horizontal",
 
         speed: 600,
-        loop: false,
-        rewind: true,
+        loop: true,
+        rewind: false,
         watchOverflow: true,
         grabCursor: true,
 
@@ -198,7 +201,7 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
                 updateOfferControls(swiper);
             },
 
-            snapIndexChange(swiper) {
+            slideChange(swiper) {
                 updateOfferControls(swiper);
             },
 
