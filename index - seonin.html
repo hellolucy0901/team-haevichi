@@ -10,9 +10,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-seonin.css">
     <link rel="stylesheet" href="./font/font.css">
-
+    <script defer src="./js/main.js"></script>
 </head>
 
 <body>
@@ -20,23 +20,22 @@
         <a href="#main">본문 바로가기</a>
     </div>
     <!-- 1. header -->
-
     <header>
         <div class="sub-bg"></div>
         <div class="header-inner">
-                
+
 
             <div class="header-left">
                 <h1 class="logo"><a href="#"><img src="./images/logo/white.png" alt="haevichi logo"></a></h1>
-                
+
                 <nav id="main-nav" aria-label="주요메뉴">
                     <div class="m-header">
-                    <button type="button" class="close-btn" aria-label="메뉴닫기">
-                    <i aria-hidden="true" class="icon-close_32"></i>
-                    </button>
-                     <h1 class="m-logo"><a href="#">
-                    <img src="./images/logo/white.png" alt="haevichi logo"></a></h1>
-                    <p class="re-right"><button class="btn btn-pri">예약하기</button></p>
+                        <button type="button" class="close-btn" aria-label="메뉴닫기">
+                            <i aria-hidden="true" class="icon-close_32"></i>
+                        </button>
+                        <h1 class="m-logo"><a href="#">
+                                <img src="./images/logo/white.png" alt="haevichi logo"></a></h1>
+                        <p class="re-right"><button class="btn btn-pri">예약하기</button></p>
                     </div>
                     <ul class="main-menu">
                         <li>
@@ -287,68 +286,57 @@
             <div class="reservation-wrap inner">
                 <div class="re-left">
                     <!-- div*6>p.re-item-title+p.re-data -->
-                    <div>
+                   <div class="hotel-resort-popup">
                         <p class="re-item-title">호텔/리조트</p>
-                        <p class="re-data select-hotel"><a href="#">호텔/리조트 선택</a></p>
+                        <p class="re-data select-hotel" value="hotel"><a href="#">해비치 호텔 제주</a></p>
+                        <div class="hotel-popup pop">
+                            <button type="button" class="close-btn" aria-label="닫기"></button>
+                            <h2 class="popup-title">호텔/리조트</h2>
+                            <ul class="btn-list">
+                                <li><button value="hotel" class="popup-btn hotel-btn on">해비치 호텔 제주</button></li>
+                                <li><button value="resort" class="popup-btn resort-btn">해비치 리조트 제주</button></li>
+                            </ul>
+                            <ul class="btn-list">
+                                <li><button class="popup-btn select-btn">선택완료</button></li>
+                            </ul>
+                        </div>
                     </div>
                     <div>
                         <p class="re-item-title">체크인/체크아웃</p>
-                        <p class="re-data select-date"><a href="#">체크인/체크아웃 날짜 선택</a></p>
-                    </div>
-                   <div class="count-set-wrap">
-
-    <div>
-        <p class="re-item-title">객실</p>
-        <p class="re-data select-room"><span>1</span></p>
-    </div>
-
-    <div>
-        <p class="re-item-title">성인</p>
-        <p class="re-data select-adult"><span>2</span></p>
-    </div>
-
-    <div>
-        <p class="re-item-title">어린이</p>
-        <p class="re-data select-child"><span>1</span></p>
-    </div>
-
-</div>
-                    <div>
-                        <p class="re-item-title">프로모션코드</p>
-                        <p class="re-data">
-                            <input type="text" id="promo-code" placeholder="프로모션코드 입력" aria-label="프로모션코드">
-                        </p>
-                    </div>
-                </div>
-                <div class="re-right"><button>예약하기</button></div>
-                <div class="reservation-popup-wrap">
-                    <div class="hotel-popup">
-                        <h2 class="popup-title">호텔/리조트</h2>
-                        <div>
-                            <button>Haevichi Hotel Jeju</button>
-                            <ul class="hotel-resort-list">
-                                <li><a href="#">Haevichi Hotel Jeju</a></li>
-                                <li><a href="#">Haevichi Resort Jeju</a></li>
-                                <li><a href="#">Rollinghills Hotel</a></li>
-                            </ul>
+                        <p class="re-data select-date"><a href="#">2026.9.24 (목) - 2026.9.29 (화)</a></p>
+                        <div class="date-popup pop">
+                        <button type="button" class="close-btn" aria-label="닫기"></button>
+                        <div class="popup-title">
+                            <div class="check-in"><span>체크인</span><strong>2026.9.24 (목)</strong></div>
+                            <div class="check-out"><span>체크아웃</span><strong>2026.9.29 (화)</strong></div>
                         </div>
-                        <ul class="btn-list">
-                            <li><button class="popup-btn cancle-btn">취소</button></li>
-                            <li><button class="popup-btn select-btn">날짜선택</button></li>
-                        </ul>
-                    </div>
-                    <div class="date-popup">
-                        <h2 class="popup-title">체크인/체크아웃</h2>
                         <div>여기는 달력들어감</div>
                         <ul class="btn-list">
-                            <li><button class="popup-btn cancle-btn">취소</button></li>
-                            <li><button class="popup-btn select-btn">인원선택</button></li>
+                            <li><button class="popup-btn select-btn">선택완료</button></li>
                         </ul>
+                        </div>
                     </div>
-                    <div class="room-popup">
+                    <div class="count-set-wrap">
+
+                        <div>
+                            <p class="re-item-title">객실</p>
+                            <p class="re-data select-room"><span>1</span></p>
+                        </div>
+
+                        <div>
+                            <p class="re-item-title">성인</p>
+                            <p class="re-data select-adult"><span>2</span></p>
+                        </div>
+
+                        <div>
+                            <p class="re-item-title">어린이</p>
+                            <p class="re-data select-child"><span>1</span></p>
+                        </div>
+                        <div class="room-popup pop">
+                        <button type="button" class="close-btn" aria-label="닫기"></button>
                         <h2 class="popup-title">객실/인원</h2>
                         <div class="room-add-wrap">
-                            <button>객실추가</button>
+                            <button type="button" class="add-room-btn">객실추가</button>
                             <ul class="select-room-list">
                                 <li class="addRoom">
                                     <p>객실1</p>
@@ -379,35 +367,44 @@
                                 </label>
                             </div>
                             <ul class="btn-list">
-                                <li><button class="popup-btn cancle-btn">취소</button></li>
-                                <li><button class="popup-btn select-btn">완료</button></li>
+                                <li><button class="popup-btn select-btn">선택완료</button></li>
                             </ul>
                         </div>
                     </div>
+                    </div>
+                    <div>
+                        <p class="re-item-title">프로모션코드</p>
+                        <p class="re-data">
+                            <input type="text" id="promo-code" placeholder="프로모션코드 입력" aria-label="프로모션코드">
+                        </p>
+                    </div>
                 </div>
+                <div class="re-right"><button>예약하기</button></div>
+              <!-- <div class="reservation-popup-wrap">
+  
+                </div>-->
             </div>
 
         </div>
         <hr>
-        <!-- section*6>div.inner>title-box>h2.section-title+div>p+p.more-btn -->
-        <section>
+        <!-- offers -->
+        <section class="offers-section" aria-labelledby="offers-title">
             <div class="inner">
                 <div class="title-box" data-aos="fade-up">
-                    <h2 class="section-title">OFFER</h2>
-
+                    <h2 id="offers-title" class="section-title">OFFER</h2>
                     <div>
                         <p>다양한 혜택과 함께 특별한 휴식을 완성해 보세요.</p>
                         <p class="more-btn">
-                            <a href="#">오퍼 전체보기</a>
-
+                            <a href="./offers.html">오퍼 전체보기</a>
                         </p>
                     </div>
                 </div>
 
-                <div class="offer-list-wrap">
-                    <ul class="offer-list">
+                <div class="offer-list-wrap swiper" aria-label="오퍼 카드 슬라이더">
+                    <ul class="offer-list swiper-wrapper">
 
-                        <li>
+                        <!-- card 01 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/hotel1.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -416,8 +413,10 @@
                             </div>
                             <div class="text-box">
                                 <h3>Stay Cool, Stay Pool</h3>
-                                <p class="offer-kind"><span class="kind">호텔</span>
-                                    <span class="sale">20%할인</span>
+                                <p class="offer-kind">
+                                    <span class="kind">호텔</span>
+                                    <span class="kind">패키지</span>
+                                    <span class="kind">최대 20% 할인</span>
                                 </p>
                                 <p class="detail">맥주 TOGO + 수영장 + 카바나 + 웰니스프로그램</p>
                                 <p class="period">2026.07.06 ~ 2026.08.31</p>
@@ -450,15 +449,18 @@
                             </div>
                             <div class="text-box">
                                 <h3>Stay Cool, Stay Pool</h3>
-                                <p class="offer-kind"><span class="kind">리조트</span>
-                                    <span class="sale">20%할인</span>
+                                <p class="offer-kind">
+                                    <span class="kind">리조트</span>
+                                    <span class="kind">패키지</span>
+                                    <span class="kind">최대 20% 할인</span>
                                 </p>
                                 <p class="detail">맥주 TOGO + 수영장 + 카바나 + 웰니스프로그램</p>
                                 <p class="period">2026.07.06 ~ 2026.08.31</p>
                             </div>
                         </li>
 
-                        <li>
+                        <!-- card 04 -->
+                        <li class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/offers/resort2.png" alt="">
                                 <div class="img-bg btn btn-white">
@@ -499,7 +501,10 @@
                             </div>
                             <div class="text-box">
                                 <h3>제주의 숲과 바다칵테일</h3>
-                                <p class="offer-kind"><span class="kind">바</span></p>
+                                <p class="offer-kind">
+                                    <span class="kind">다이닝</span>
+                                    <span class="kind">바 99</span>
+                                </p>
                                 <p class="detail">제주의 울창한 숲과 푸르른 바다의 깊이를 한 잔에 담은 여름 칵테일 2종</p>
                                 <p class="period">2026.06.01 ~ 2026.08.31</p>
                             </div>
@@ -552,7 +557,7 @@
 
                         <li>
                             <div class="img-box">
-                                <img src="./images/offers/event2.png" alt="">
+                                <img src="./images/offers/event3.png" alt="">
                                 <div class="img-bg btn btn-white">
                                     <a href="#">자세히 보기</a>
                                 </div>
@@ -716,8 +721,8 @@
 
                     </ul>
 
-                    <div class="swiper-hotelbutton-prev"></div>
-                    <div class="swiper-hotelbutton-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
 
                 </div>
 
@@ -822,18 +827,15 @@
 
                     </ul>
 
-                    <div class="swiper-resortbutton-prev"></div>
-                    <div class="swiper-resortbutton-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
 
                 </div>
 
             </div>
         </section>
-
-
-
-
-        <section>
+        <!-- dining -->
+        <section class="dining-wrap">
             <div class="inner">
                 <div class="title-box" data-aos="fade-up">
                     <h2 class="section-title">DINING</h2>
@@ -957,7 +959,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- facility -->
         <section class="facility-wrap">
             <div class="inner">
                 <div class="title-box" data-aos="fade-up">
@@ -980,8 +982,7 @@
                         <ul>
 
                             <li>
-                                <div class="img-box"><img src="./images/facility/fitness1.png"
-                                        alt="더 써드 풀 (야외)"></div>
+                                <div class="img-box"><img src="./images/facility/fitness1.png" alt="더 써드 풀 (야외)"></div>
                                 <div class="text-box">
                                     <h3>더 써드 풀 (야외)</h3>
                                     <p class="detail">바다와 맞닿은 고요한 수면 위에서,
@@ -1099,8 +1100,7 @@
                 </div>
             </div>
         </section>
-
-
+        <!-- concierge -->
         <section class="concierge-wrap">
             <div class="inner">
                 <div class="title-box" data-aos="fade-up">
@@ -1207,11 +1207,7 @@
                 </div>
             </div>
         </section>
-
-
-
-
-
+        <!-- membership -->
         <section class="membership-wrap">
             <div class="inner">
 
@@ -1250,18 +1246,18 @@
     <hr>
 
     <!-- 3. footer -->
-     <footer>
+    <footer>
         <div class="inner">
             <p class="footer-logo"><img src="./images/logo/white.png" alt="haevichi logo"></p>
             <!-- ul.footer-menu>li*8>a[href="#"] -->
             <ul class="footer-menu">
-                 <li><a href="https://www.haevichi.com/corp/ko">해비치소개</a></li>
-                        <li><a href="https://www.haevichi.com/rollinghills/ko/customer/faq">고객센터</a></li>
-                        <li><a href="https://www.haevichi.com/rollinghills/ko/location">오시는 길</a></li>
-                        <li><a href="https://www.haevichi.com/hub/ko/common/policy/20000">해비치약관</a></li>
-                        <li><a href="https://www.haevichi.com/hub/ko/common/privacy/20000">개인정보처리방침</a></li>
-                        <li><a href="https://www.haevichi.com/hub/ko/common/policy/50000">이메일무단수집금지</a></li>
-                    </ul>
+                <li><a href="https://www.haevichi.com/corp/ko">해비치소개</a></li>
+                <li><a href="https://www.haevichi.com/rollinghills/ko/customer/faq">고객센터</a></li>
+                <li><a href="https://www.haevichi.com/rollinghills/ko/location">오시는 길</a></li>
+                <li><a href="https://www.haevichi.com/hub/ko/common/policy/20000">해비치약관</a></li>
+                <li><a href="https://www.haevichi.com/hub/ko/common/privacy/20000">개인정보처리방침</a></li>
+                <li><a href="https://www.haevichi.com/hub/ko/common/policy/50000">이메일무단수집금지</a></li>
+            </ul>
             </ul>
             <div class="address-wrap">
                 <div class="address-left">
@@ -1319,6 +1315,8 @@
             </div>
         </div>
     </footer>
+
+
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 
@@ -1349,8 +1347,8 @@
             speed: 1500,
             loop: true,
             navigation: {
-                nextEl: '.room-type-hotel .swiper-hotelbutton-next',
-                prevEl: '.room-type-hotel .swiper-hotelbutton-prev',
+                nextEl: '.room-type-hotel .swiper-button-next',
+                prevEl: '.room-type-hotel .swiper-button-prev',
             },
             fadeEffect: {
                 crossFade: true
@@ -1362,8 +1360,8 @@
             speed: 1500,
             loop: true,
             navigation: {
-                nextEl: '.room-type-resort .swiper-resortbutton-next',
-                prevEl: '.room-type-resort .swiper-resortbutton-prev',
+                nextEl: '.room-type-resort .swiper-button-next',
+                prevEl: '.room-type-resort .swiper-button-prev',
             },
             fadeEffect: {
                 crossFade: true
@@ -1395,6 +1393,8 @@
 
 
     </script>
+
+    
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -1403,6 +1403,9 @@
             duration: 1400,
         });
     </script>
+
+ 
+    <script src="./js/offers-slider.js"></script>
 </body>
 
 </html>
