@@ -2,6 +2,7 @@
 //호텔/리조트 선택 팝업창
 let selectHotelBtn = document.querySelector(".select-hotel a");//클릭할 영역
 let hotelPop = document.querySelector(".hotel-popup");//열릴 팝업
+let roomPop = do
 let closeBtn = hotelPop.querySelector(".close-btn"); // 닫기 버튼
 const hotelBtns = document.querySelectorAll(".hotel-popup .btn-list:first-of-type .popup-btn");
 const selectCompleteBtn = hotelPop.querySelector(".select-btn"); // 선택완료 버튼
