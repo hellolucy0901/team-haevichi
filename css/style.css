@@ -884,13 +884,13 @@ section{
     공식   width calc(100% * 배너개수 / 보고싶은 개수) */
     /* width: calc(100% * 12 / 3); */
     display: flex;
-    gap: 1.5em;
-    overflow: hidden;
+    /* gap: 1.5em;
+    overflow: hidden; */
 }
 .offer-list>li {
     /* flex: 1; */
     /* flex:grow shrink basis(기본크기); */
-    flex:0 0 calc((100% - 3em) / 3)
+    /* flex:0 0 calc((100% - 3em) / 3) */
 }
 .offer-list>li .img-box{
     position:relative;
@@ -1768,7 +1768,7 @@ footer {
     }
     /* .offer */
     .offer-list>li{
-        flex: 0 0 calc((100% - 2em) / 2);
+        /* flex: 0 0 calc((100% - 2em) / 2); */
     }
     .room-type-wrap>div>ul .text-box .right{
         display: none;
