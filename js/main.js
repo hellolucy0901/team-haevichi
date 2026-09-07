@@ -3,8 +3,6 @@
 let selectHotelBtn = document.querySelector(".select-hotel a");//클릭할 영역
 let selectDateBtn = document.querySelector(".select-date a");   // 체크인/체크아웃 클릭 영역
 
-
-
 let roomPopup = document.querySelector('.room-popup');//객실/성인/어린이 열릴 팝업
 let hotelPop = document.querySelector(".hotel-popup");//호텔/리조트 열릴 팝업
 let datePop = document.querySelector(".date-popup");//날짜 선택 열릴 팝업
@@ -15,6 +13,7 @@ const roomTemplate = roomList?.querySelector('.addRoom')?.cloneNode(true); // �
 const roomCountDisplay = document.querySelector('.re-data.select-room span'); // 예약바에 표시되는 객실 수 (1 → 2)
 const adultTotalDisplay = document.querySelector('.re-data.select-adult span'); // 예약바에 표시되는 성인 총 인원수
 const childTotalDisplay = document.querySelector('.re-data.select-child span'); // 예약바에 표시되는 어린이 총 인원수
+const bookBtn = document.querySelector('.reservation-wrap .re-right button'); // 예약바의 '예약하기' 버튼 (헤더/모바일메뉴의 동명 버튼과 구분)
 let roomCount = roomList ? roomList.querySelectorAll('.addRoom').length : 1;
 
 // 객실, 성인, 어린이 타겟 영역 (각 영역 전체 클릭 또는 .re-data 클릭)
@@ -35,9 +34,17 @@ const selectCompleteBtn = hotelPop.querySelector(".select-btn"); // 선택완료
 const targetP = document.querySelector(".re-data.select-hotel");  // value 속성이 변경될 p 태그
 const targetA = targetP.querySelector("a");                       // 화면 텍스트가 변경될 a 태그
 
+// ★ [신규] 모든 팝업을 열기 전에 다른 팝업들을 닫아주는 통합 함수
+const closeAllPopups = () => {
+    if (hotelPop) hotelPop.style.display = "none";
+    if (datePop) datePop.style.display = "none";
+    if (roomPopup) roomPopup.style.display = "none";
+};
+
 // 1. 호텔/리조트 선택 팝업창 열기
 selectHotelBtn.addEventListener("click", (e) => {
     e.preventDefault(); // a 태그의 기본 스크롤 이동 동작 방지
+    closeAllPopups();   // 다른 팝업 닫기
     hotelPop.style.display = "flex";
 });
 
@@ -66,6 +73,8 @@ hotelBtns.forEach(btn => {
 // 4. 날짜 선택 열릴 팝업 팝업창 열기
 selectDateBtn.addEventListener("click", (e) => {
     e.preventDefault(); // a 태그의 기본 스크롤 이동 동작 방지
+    closeAllPopups();   // 다른 팝업 닫기
+    datePop.style.left = "300px"; // 날짜 팝업 left 위치 지정
     datePop.style.display = "flex";
 });
 
@@ -74,133 +83,190 @@ closedateBtn.addEventListener("click", () => {
     datePop.style.display = "none";
 });
 
-closedateBtn.addEventListener("click", () => {
-    datePop.style.display = "none";
+// 5. 객실/성인/어린이 팝업 닫기
+closeroomBtn?.addEventListener("click", () => {
+    roomPopup.style.display = "none";
+});
+
+// 5-1. 객실/인원 팝업 선택완료 버튼 클릭 이벤트 (팝업 닫기)
+selectBtn?.addEventListener("click", () => {
+    roomPopup.style.display = "none";
 });
 
 // 6. 객실/성인/어린이 팝업 열기 함수
-    const openRoomPopup = () => {
-        if (roomPopup) {
-            roomPopup.style.display = 'block';
-        }
-    };
+const openRoomPopup = () => {
+    if (roomPopup) {
+        closeAllPopups(); // 다른 팝업 닫기
+        roomPopup.style.left = "550px"; // 객실 팝업 left 위치 지정
+        roomPopup.style.display = 'block';
+    }
+};
 
-    // 6-1. 모든 객실의 성인/어린이 인원수를 합산해서 예약바에 반영하는 함수
-    const updateTotalGuestCounts = () => {
-        let adultTotal = 0;
-        let childTotal = 0;
+// 6-1. 모든 객실의 성인/어린이 인원수를 합산해서 예약바에 반영하는 함수
+const updateTotalGuestCounts = () => {
+    let adultTotal = 0;
+    let childTotal = 0;
 
-        roomList?.querySelectorAll('.addRoom').forEach(room => {
-            room.querySelectorAll('.item-list > div').forEach(group => {
-                const isChild = group.querySelector('strong')?.textContent.trim() === '어린이';
-                const count = parseInt(group.querySelector('.count-wrap span')?.textContent, 10) || 0;
-                if (isChild) {
-                    childTotal += count;
-                } else {
-                    adultTotal += count;
-                }
-            });
+    roomList?.querySelectorAll('.addRoom').forEach(room => {
+        room.querySelectorAll('.item-list > div').forEach(group => {
+            const isChild = group.querySelector('strong')?.textContent.trim() === '어린이';
+            const count = parseInt(group.querySelector('.count-wrap span')?.textContent, 10) || 0;
+            if (isChild) {
+                childTotal += count;
+            } else {
+                adultTotal += count;
+            }
         });
-
-        if (adultTotalDisplay) adultTotalDisplay.textContent = adultTotal;
-        if (childTotalDisplay) childTotalDisplay.textContent = childTotal;
-    };
-
-    updateTotalGuestCounts(); // 페이지 로드 시 초기값 기준으로 한 번 계산
-    
-    [roomTrigger, adultTrigger, childTrigger].forEach(trigger => {
-        if (trigger) {
-            trigger.style.cursor = 'pointer'; // 마우스 커서 포인터 스타일 추가
-            trigger.addEventListener('click', (e) => {
-                e.stopPropagation(); // Event Bubbling 방지
-                openRoomPopup();
-            });
-        }
     });
 
-//7. 호텔 선택완료 버튼 클릭 이벤트 (p태그 value/텍스트 반영 & 팝업 닫기)
+    if (adultTotalDisplay) adultTotalDisplay.textContent = adultTotal;
+    if (childTotalDisplay) childTotalDisplay.textContent = childTotal;
+};
+
+updateTotalGuestCounts(); // 페이지 로드 시 초기값 기준으로 한 번 계산
+
+// 6-2. -버튼이 최소값(성인 1, 어린이 0)일 때 색상을 Neutral-200으로 변경하는 함수
+const updateMinusButtonColor = (countWrap) => {
+    const minusBtn = countWrap.querySelector('button:first-of-type'); // - 버튼
+    const count = parseInt(countWrap.querySelector('span')?.textContent, 10) || 0;
+    const isChild = countWrap.parentElement.querySelector('strong')?.textContent.trim() === '어린이';
+    const minCount = isChild ? 0 : 1; // 어린이 최소 0명 / 성인 최소 1명
+
+    minusBtn.style.color = count <= minCount ? 'var(--Neutral-200)' : ''; // 최소값이면 회색, 아니면 기본색 복원
+};
+
+// 6-3. 특정 객실 카드 안의 성인/어린이 -버튼 상태를 모두 갱신하는 함수 (내부적으로 6-5에서 재사용)
+// 6-4. +버튼이 최대값(성인/어린이 모두 2명)일 때 색상을 Neutral-200으로 변경하는 함수
+const updatePlusButtonColor = (countWrap) => {
+    const plusBtn = countWrap.querySelector('button:last-of-type'); // + 버튼
+    const count = parseInt(countWrap.querySelector('span')?.textContent, 10) || 0;
+    const maxCount = 2; // 성인/어린이 모두 최대 2명
+
+    plusBtn.style.color = count >= maxCount ? 'var(--Neutral-200)' : ''; // 최대값이면 회색, 아니면 기본색 복원
+};
+
+// 6-5. 특정 객실 카드 안의 성인/어린이 -버튼/+버튼 상태를 모두 갱신하는 함수
+const updateCounterButtonsInRoom = (room) => {
+    room?.querySelectorAll('.count-wrap').forEach(countWrap => {
+        updateMinusButtonColor(countWrap);
+        updatePlusButtonColor(countWrap);
+    });
+};
+
+// 페이지 로드 시 기존 객실1의 -버튼/+버튼 상태도 초기화
+roomList?.querySelectorAll('.addRoom').forEach(updateCounterButtonsInRoom);
+
+[roomTrigger, adultTrigger, childTrigger].forEach(trigger => {
+    if (trigger) {
+        trigger.style.cursor = 'pointer'; // 마우스 커서 포인터 스타일 추가
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Event Bubbling 방지
+            openRoomPopup();
+        });
+    }
+});
+
+// 7. 호텔 선택완료 버튼 클릭 이벤트 (p태그 value/텍스트 반영 & 날짜 팝업 열기)
 selectCompleteBtn.addEventListener("click", () => {
-    hotelPop.style.display = "none"; // 1. 호텔 팝업 닫기
-    datePop.style.display = "flex";  // 2. 날짜 팝업 열기
+    closeAllPopups();            // 모든 팝업 일단 닫기
+    datePop.style.left = "300px"; // 날짜 팝업 left 위치 지정
+    datePop.style.display = "flex"; // 날짜 팝업만 열기
 });
 
 // 8. 날짜 선택 팝업 선택완료 버튼 클릭 이벤트 (날짜 팝업 닫기 & 객실 팝업 열기)
 dateSelectBtn.addEventListener("click", () => {
-    datePop.style.display = "none"; // 1. 날짜 팝업 닫기
-    openRoomPopup();                // 2. 객실/인원 팝업 열기
+    openRoomPopup(); // openRoomPopup 함수 내부에서 closeAllPopups()를 호출해 자동 교체됨
 });
 
 // 9. 객실추가/삭제 토글 버튼 (버튼 하나가 상태에 따라 '+ 객실추가' ↔ '- 객실삭제'로 전환)
-// ※ '-' 아이콘은 style-seonin.css에 .add-room-btn.is-delete::before 규칙으로 추가되어 있어야 합니다.
 addRoomBtn?.addEventListener('click', () => {
     if (roomCount === 1) {
         // ------- 객실 추가 -------
-        if (!roomTemplate) return; // 복제할 원본 템플릿이 없으면 중단
+        if (!roomTemplate) return;
 
-        roomCount++; // 1) 객실 번호 1 증가
+        roomCount++;
 
-        const newRoom = roomTemplate.cloneNode(true); // 2) 원본 템플릿(객실1) 복제
-        newRoom.querySelector('p').textContent = `객실${roomCount}`; // 3) 객실 번호 텍스트 변경
+        const newRoom = roomTemplate.cloneNode(true);
+        newRoom.querySelector('p').textContent = `객실${roomCount}`;
 
-        // 4) 복제된 카드의 성인/어린이 인원수 기본값 설정
         const counts = newRoom.querySelectorAll('.count-wrap span');
-        counts[0].textContent = '2'; // 성인 기본값
-        counts[1].textContent = '0'; // 어린이 기본값
+        counts[0].textContent = '2';
+        counts[1].textContent = '0';
 
-        roomList.prepend(newRoom); // 5) 새 객실 카드를 리스트 맨 위에 추가
-        roomPopup?.classList.add('is-expanded'); // 6) 팝업 높이 확장
+        roomList.prepend(newRoom);
+        roomPopup?.classList.add('is-expanded');
 
-        // 7) 버튼을 '객실삭제' 상태로 전환
+        updateCounterButtonsInRoom(newRoom);
+
         addRoomBtn.textContent = '객실삭제';
         addRoomBtn.classList.add('is-delete');
 
-        // 8) 예약바의 객실 수 표시(1 → 2) 갱신
         if (roomCountDisplay) roomCountDisplay.textContent = roomCount;
-
-        // 9) 예약바의 성인/어린이 총 인원수 갱신 (새로 추가된 객실 인원 포함)
         updateTotalGuestCounts();
     } else {
         // ------- 객실 삭제 -------
-        const topRoom = roomList?.querySelector('.addRoom'); // 가장 최근 추가된(맨 위) 객실 카드
-        topRoom?.remove(); // 1) 객실 카드 제거
+        const topRoom = roomList?.querySelector('.addRoom');
+        topRoom?.remove();
 
-        roomCount--; // 2) 객실 개수 감소
+        roomCount--;
 
-        roomPopup?.classList.remove('is-expanded'); // 3) 팝업 원래 크기로 복원
+        roomPopup?.classList.remove('is-expanded');
 
-        // 4) 버튼을 다시 '객실추가' 상태로 전환
         addRoomBtn.textContent = '객실추가';
         addRoomBtn.classList.remove('is-delete');
 
-        // 5) 예약바의 객실 수 표시(2 → 1) 갱신
         if (roomCountDisplay) roomCountDisplay.textContent = roomCount;
-
-        // 6) 예약바의 성인/어린이 총 인원수 갱신 (삭제된 객실 인원 제외)
         updateTotalGuestCounts();
     }
 });
 
-// 10. 객실별 성인/어린이 인원수 +/- 버튼 (이벤트 위임: 객실1은 물론, 나중에 복제되는 객실2에도 자동 적용)
+// 10. 객실별 성인/어린이 인원수 +/- 버튼
 roomList?.addEventListener('click', (e) => {
-    const countBtn = e.target.closest('.count-wrap button'); // 클릭된 게 +/- 버튼인지 확인
+    const countBtn = e.target.closest('.count-wrap button');
     if (!countBtn) return;
 
-    const countWrap = countBtn.closest('.count-wrap'); // 해당 인원수 카운터 영역
+    const countWrap = countBtn.closest('.count-wrap');
     const countSpan = countWrap.querySelector('span');
-    let count = parseInt(countSpan.textContent, 10); // 현재 인원수
+    let count = parseInt(countSpan.textContent, 10);
 
-    // 성인/어린이 구분 (같은 그룹 안의 <strong> 텍스트로 판별)
     const isChild = countWrap.parentElement.querySelector('strong')?.textContent.trim() === '어린이';
-    const MIN_COUNT = isChild ? 0 : 1; // 어린이는 0명, 성인은 1명까지 감소 가능
-    const MAX_COUNT = 2;               // 성인/어린이 모두 최대 2명까지 증가 가능
+    const MIN_COUNT = isChild ? 0 : 1;
+    const MAX_COUNT = 2;
 
     if (countBtn.textContent.trim() === '+') {
-        if (count < MAX_COUNT) count++; // 최대 인원 이하일 때만 증가
+        if (count < MAX_COUNT) count++;
     } else {
-        if (count > MIN_COUNT) count--; // 최소 인원 초과일 때만 감소
+        if (count > MIN_COUNT) count--;
     }
 
-    countSpan.textContent = count; // 변경된 인원수 반영
+    countSpan.textContent = count;
 
-    updateTotalGuestCounts(); // 예약바의 성인/어린이 총 인원수 갱신
+    updateMinusButtonColor(countWrap);
+    updatePlusButtonColor(countWrap);
+    updateTotalGuestCounts();
+});
+
+// 11. 예약하기 버튼 클릭 이벤트
+bookBtn?.addEventListener('click', () => {
+    const rooms = [...(roomList?.querySelectorAll('.addRoom') ?? [])].map(room => {
+        const groups = room.querySelectorAll('.item-list > div');
+        return {
+            객실: room.querySelector('p')?.textContent,
+            성인: groups[0]?.querySelector('.count-wrap span')?.textContent,
+            어린이: groups[1]?.querySelector('.count-wrap span')?.textContent
+        };
+    });
+
+    const reservationInfo = {
+        '호텔/리조트': targetA?.textContent,
+        '호텔/리조트 값': targetP?.getAttribute('value'),
+        '체크인/체크아웃': document.querySelector('.re-data.select-date a')?.textContent,
+        '객실 수': roomCountDisplay?.textContent,
+        '성인 총 인원': adultTotalDisplay?.textContent,
+        '어린이 총 인원': childTotalDisplay?.textContent,
+        '객실별 인원': rooms,
+        '프로모션코드': document.querySelector('#promo-code')?.value
+    };
+
+    console.log('예약하기 클릭 - 선택된 값:', reservationInfo);
 });
