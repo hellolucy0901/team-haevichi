@@ -382,17 +382,280 @@ padding 위아래20 좌우 32*/
 /* .reservation-popup-wrap{
 display: none;
 }  */
-
-
-.date-popup,
+/* ==================================================
+   .room-popup (객실/인원 선택 팝업)
+   ================================================== */
+/* 1. 기본 팝업 설정 (기본 크기: 510px * 268px) */
 .room-popup {
-    display: none; 
-}  
+    display: none; /* 기본 숨김 (JS open 시 flex 또는 display 조절) */
+    position: absolute;
+    left: 0;
+    width: 510px;
+    height: 268px; /* 기본 팝업 높이 */
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 24px 28px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: height 0.3s ease; /* 높이 변화 애니메이션 */
+}
+
+/* 2. 객실이 추가되어 active 또는 is-expanded 클래스가 추가되었을 때 (크기: 510px * 319px) */
+.room-popup.is-expanded,
+.room-popup.active {
+    height: 319px;
+}
+
+/* 닫기 버튼 (X) */
+.room-popup .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 20px;
+    height: 20px;
+    background: url("../images/icon/close.svg") no-repeat center / contain;
+    border: none;
+    cursor: pointer;
+}
+
+/* 타이틀: 객실 / 인원 */
+.room-popup .popup-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--Neutral-500);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--Primary-Subtle-color);
+    margin-bottom: 20px;
+}
+
+/* 객실추가 버튼 및 컨테이너 */
+.room-add-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+/* '+ 객실추가' 우측 배치 버튼 (구분선 위, 객실 리스트 앞) */
+.room-add-wrap .add-room-btn {
+    align-self: flex-end;
+    margin-bottom: 18px;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--Neutral-900);
+    cursor: pointer;
+}
+
+.room-add-wrap .add-room-btn::before {
+    content: "+ ";
+}
+
+/* 객실삭제 상태일 때 아이콘 전환 */
+.room-add-wrap .add-room-btn.is-delete::before {
+    content: "− ";
+}
+
+/* 객실 리스트 (최대 2개까지 세로 스크롤 없이 표시 가능한 영역) */
+.select-room-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1px solid var(--Primary-Subtle-color); /* '+ 객실추가' 아래 구분선 */
+    padding-top: 20px;
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+/* 각 객실 행 (객실1, 객실2 ...) */
+.select-room-list .addRoom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-room-list .addRoom > p {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--Neutral-900);
+    min-width: 60px;
+}
+
+/* 성인 / 어린이 인원 수량 조절부 */
+.select-room-list .item-list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.select-room-list .item-list > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.select-room-list .item-list strong {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--Neutral-700);
+}
+
+/* + / - 수량 버튼 카운터 박스 */
+.count-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--Neutral-300);
+}
+
+.count-wrap button {
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border: none;
+    font-size: 16px;
+    color: var(--Neutral-600);
+    cursor: pointer;
+}
+
+.count-wrap button:hover {
+    background: var(--Neutral-100);
+}
+
+.count-wrap span {
+    display: inline-block;
+    width: 36px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 1px solid var(--Neutral-300);
+    border-right: 1px solid var(--Neutral-300);
+    line-height: 32px;
+}
+
+/* 하단 안내 문구 (좌: 빨간 경고 / 우: 회색 안내, 한 줄 배치) */
+.room-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--Neutral-500);
+    line-height: 1.4;
+}
+
+.room-detail p:first-child {
+    color: #d92b2b; /* 빨간색 경고 문구 */
+    font-weight: 500;
+}
+
+/* 하단 선택완료 버튼 */
+.room-popup .btn-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.room-popup .select-btn {
+    width: 120px;
+    height: 36px;
+    background-color: var(--Primary-color);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.room-popup .select-btn:hover {
+    background-color: var(--Primary-Hover-color);
+}
+/* ==================================================
+   .date-popup (날짜 선택 팝업)
+   ================================================== */
 /* ===== hotel-popup 호텔/리조트 선택 팝업 ===== */
 .reservation-wrap>div>div>.pop{
     left:0;
     bottom:80px;
     position:absolute;
+}
+/* ===== date-popup 체크인/체크아웃 날짜 선택 팝업 ===== */
+.date-popup {
+    display: none; /* 기본 상태: 숨김 */
+    width: 644px;
+    height: 426px;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 32px 36px 28px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+}
+/* 닫기 버튼 (우측 상단 X) */
+.date-popup .close-btn {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/icon/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+/* 상단 헤더 영역 (체크인/체크아웃 날짜 표시) */
+.date-popup .popup-title {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--Primary-Subtle-color);
+}
+
+.date-popup .popup-title .check-in,
+.date-popup .popup-title .check-out {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.date-popup .popup-title span {
+    font-size: 13px;
+    color: var(--Neutral-400);
+    font-weight: 400;
+}
+
+.date-popup .popup-title strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--Neutral-900);
+}
+
+/* 하단 버튼 영역 (우측 하단 정렬) */
+.date-popup .btn-list {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.date-popup .select-btn {
+    width: 130px;
+    height: 44px;
+    background-color: var(--Primary-Hover-color); /* 이미지상의 짙은 블루 톤 */
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.date-popup .select-btn:hover {
+    background-color: var(--Primary-Pressed-color);
 }
 .hotel-popup {
     width: 276px;
@@ -482,7 +745,6 @@ display: none;
     border: none;
     cursor: pointer;
 }
-
 
 /*  */
 /* main */
