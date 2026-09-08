@@ -283,6 +283,14 @@
                     </li>
                 </ul>
             </div>
+                    <div class="main-slider-control">
+                <button type="button" class="slider-prev" aria-label="이전 슬라이드">Prev</button>
+                <div class="slider-progress" role="progressbar" aria-label="슬라이드 진행률" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <span class="slider-progress-bar"></span>
+                </div>
+                <button type="button" class="slider-next" aria-label="다음 슬라이드">Next</button>
+            </div> 
             <div class="reservation-wrap inner">
                 <div class="re-left">
                     <!-- div*6>p.re-item-title+p.re-data -->
@@ -307,8 +315,8 @@
                         <div class="date-popup pop">
                             <button type="button" class="close-btn" aria-label="닫기"></button>
                             <div class="popup-title">
-                                <div class="check-in"><span>체크인</span><strong>2026.9.24 (목)</strong></div>
-                                <div class="check-out"><span>체크아웃</span><strong>2026.9.29 (화)</strong></div>
+                                <div class="check-in"><span>체크인</span>2026.9.24 (목)</div>
+                                <div class="check-out"><span>체크아웃</span>2026.9.29 (화)</div>
                             </div>
                             <div>여기는 달력들어감</div>
                             <ul class="btn-list">
@@ -714,8 +722,8 @@
 
                     </ul>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-hotelbutton-prev"></div>
+                    <div class="swiper-hotelbutton-next"></div>
 
                 </div>
 
@@ -820,8 +828,8 @@
 
                     </ul>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-resortbutton-prev"></div>
+                    <div class="swiper-resortbutton-next"></div>
 
                 </div>
 
@@ -1315,7 +1323,7 @@
 
     <!-- Initialize Swiper -->
     <script>
-        var mainSwiper = new Swiper('.main-slider', {
+      var mainSwiper = new Swiper('.main-slider', {
             effect: 'fade',
             speed: 2500,
             loop: true,
@@ -1326,22 +1334,87 @@
             },
 
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.main-slider-control .slider-next',
+                prevEl: '.main-slider-control .slider-prev',
             },
 
             fadeEffect: {
                 crossFade: true
             },
+
+            on: {
+                autoplayTimeLeft: function (s, time, progress) {
+                    var bar = document.querySelector('.main-slider-control .slider-progress-bar');
+                    if (!bar) return;
+                    // progress: 1(시작) -> 0(끝) 이므로 반대로 채워지도록 계산
+                    var percent = (1 - progress) * 100;
+                    bar.style.width = percent + '%';
+                },
+            },
         });
+
+        // "about Haevichi" 태그(.main-slider-more) 바로 아래에
+        // Prev / Progress bar / Next 컨트롤을 항상 붙여주는 함수.
+        //
+        // resize/load 이벤트나 ResizeObserver에 기대는 방식은 devtools
+        // 기기 툴바 전환처럼 이벤트 발생 타이밍이 브라우저/상황마다 달라지는
+        // 환경에서 100% 보장이 안 된다. 그래서 매 프레임(requestAnimationFrame)마다
+        // 위치를 계속 재계산하는 상시 동기화 방식으로 변경 — 이벤트를 "감지"하는 게
+        // 아니라 애초에 항상 맞는 위치를 유지시키므로 어떤 타이밍 이슈도 발생할 수 없다.
+        (function () {
+            var wrap = document.querySelector('.main-slider-wrap');
+            var control = document.querySelector('.main-slider-control');
+            if (!wrap || !control) return;
+
+            var GAP = 32; // 태그와 컨트롤 사이 간격(px). 디자인에 맞게 조정 가능
+            var lastLeft = null;
+            var lastTop = null;
+
+            function getAnchor() {
+                // 현재 활성 슬라이드의 태그를 기준으로 맞춘다 (없으면 첫 번째 슬라이드)
+                return document.querySelector('.swiper-slide-active .main-slider-more')
+                    || document.querySelector('.main-slider-more');
+            }
+
+            function syncPosition() {
+                var anchor = getAnchor();
+
+                if (anchor) {
+                    var wrapRect = wrap.getBoundingClientRect();
+                    var anchorRect = anchor.getBoundingClientRect();
+
+                    // 레이아웃이 아직 안 잡혀 크기가 0이면 이번 프레임은 건너뛰고
+                    // 다음 프레임에 다시 시도한다 (0,0 같은 잘못된 좌표로 고정되는 것 방지).
+                    if (anchorRect.width > 0 || anchorRect.height > 0) {
+                        var left = Math.round(anchorRect.left - wrapRect.left);
+                        var top = Math.round((anchorRect.bottom - wrapRect.top) + GAP);
+
+                        // 값이 실제로 바뀔 때만 DOM에 반영해 불필요한 리플로우를 줄인다.
+                        if (left !== lastLeft || top !== lastTop) {
+                            control.style.left = left + 'px';
+                            control.style.top = top + 'px';
+                            lastLeft = left;
+                            lastTop = top;
+                        }
+                        if (!control.classList.contains('is-positioned')) {
+                            control.classList.add('is-positioned');
+                        }
+                    }
+                }
+
+                requestAnimationFrame(syncPosition);
+            }
+
+            requestAnimationFrame(syncPosition);
+        })();
 
         var hotelSwiper = new Swiper('.room-type-hotel', {
             effect: 'fade',
             speed: 1500,
             loop: true,
             navigation: {
-                nextEl: '.room-type-hotel .swiper-button-next',
-                prevEl: '.room-type-hotel .swiper-button-prev',
+                nextEl: '.room-type-hotel .swiper-hotelbutton-next',
+                prevEl: '.room-type-hotel .swiper-hotelbutton-prev',
             },
             fadeEffect: {
                 crossFade: true
@@ -1353,8 +1426,8 @@
             speed: 1500,
             loop: true,
             navigation: {
-                nextEl: '.room-type-resort .swiper-button-next',
-                prevEl: '.room-type-resort .swiper-button-prev',
+                nextEl: '.room-type-resort .swiper-resortbutton-next',
+                prevEl: '.room-type-resort .swiper-resortbutton-prev',
             },
             fadeEffect: {
                 crossFade: true

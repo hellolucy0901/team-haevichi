@@ -310,6 +310,61 @@ header:hover .lang-btn>a::after {
 .main-slider-list>li .img-box>img{
     width: 100%;
 }
+/* main-slider-control : Prev / Progress bar / Next
+   progress bar size : 246.54px x 4.71px (디자인 기준)
+   위치(top/left)는 js에서 "about Haevichi" 태그(.main-slider-more) 바로 아래로
+   실측해서 지정합니다. (창 크기와 상관없이 항상 태그 밑에 붙음) */
+.main-slider-control{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+    /* js에서 top/left 값을 계산하기 전, 깜빡임 방지용 */
+    visibility: hidden;
+}
+
+.main-slider-control.is-positioned{
+    visibility: visible;
+}
+
+.main-slider-control>.slider-prev,
+.main-slider-control>.slider-next{
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.main-slider-control>.slider-prev:hover,
+.main-slider-control>.slider-next:hover{
+    opacity: 1;
+}
+
+.main-slider-control>.slider-progress{
+    position: relative;
+    width: 246.54px;
+    height: 4.71px;
+    background: rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.main-slider-control>.slider-progress>.slider-progress-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #fff;
+}
 /* reservarion-wrap 너비 1440 겹치게 , 
 반투명50% 가운데아래
 자식을 옆으로 붙이고 붙여서 양쪽정렬
@@ -385,6 +440,33 @@ display: none;
 /* ==================================================
    .room-popup (객실/인원 선택 팝업)
    ================================================== */
+.reservation-wrap .select-btn:hover{
+    background-color: var(--Primary-Pressed-color);
+}
+
+.reservation-wrap .select-btn{
+    width: 110px;
+    height: 36px;
+    background-color: var(--Primary-color); /* 이미지상의 짙은 블루 톤 */
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.reservation-wrap .close-btn{
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 19px;
+    height: 19px;
+    background: url("../images/icon/close.svg") no-repeat center / contain;
+    border: none;
+    cursor: pointer;
+}
+/*팝업 공통사항*/
 /* 1. 기본 팝업 설정 (기본 크기: 510px * 268px) */
 .room-popup {
     display: none; /* 기본 숨김 (JS open 시 flex 또는 display 조절) */
@@ -393,7 +475,7 @@ display: none;
     width: 510px;
     background: #ffffff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    padding: 24px 28px 20px;
+    padding: 24px 28px 12px;
     box-sizing: border-box;
     z-index: 1000;
     transition: height 0.3s ease; /* 높이 변화 애니메이션 */
@@ -402,25 +484,13 @@ display: none;
 /* 2. 객실이 추가되어 active 또는 is-expanded 클래스가 추가되었을 때 (크기: 510px * 319px) */
 .room-popup.is-expanded,
 .room-popup.active {
-    height: 319px;
-}
-
-/* 닫기 버튼 (X) */
-.room-popup .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 24px;
-    width: 20px;
-    height: 20px;
-    background: url("../images/icon/close.svg") no-repeat center / contain;
-    border: none;
-    cursor: pointer;
+    height: auto;
 }
 
 /* 타이틀: 객실 / 인원 */
 .room-popup .popup-title {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     color: var(--Neutral-500);
     padding-bottom: 20px;
     border-bottom: 1px solid var(--Primary-Subtle-color);
@@ -439,7 +509,7 @@ display: none;
     margin-bottom: 18px;
     background: transparent;
     border: none;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--Neutral-900);
     cursor: pointer;
@@ -473,8 +543,8 @@ display: none;
 }
 
 .select-room-list .addRoom > p {
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 500;
     color: var(--Neutral-900);
     min-width: 60px;
 }
@@ -550,24 +620,9 @@ display: none;
 .room-popup .btn-list {
     display: flex;
     justify-content: center;
-    margin-top: 22px;
+    margin-top:12px;
 }
 
-.room-popup .select-btn {
-    width: 120px;
-    height: 36px;
-    background-color: var(--Primary-color);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.room-popup .select-btn:hover {
-    background-color: var(--Primary-Hover-color);
-}
 /* ==================================================
    .date-popup (날짜 선택 팝업)
    ================================================== */
@@ -584,26 +639,11 @@ display: none;
     left: 0;
     background: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    padding: 32px 36px 28px;
+    padding: 32px 36px 0px;
     box-sizing: border-box;
     flex-direction: column;
     justify-content: space-between;
     z-index: 1000;
-}
-/* 닫기 버튼 (우측 상단 X) */
-.date-popup .close-btn {
-    position: absolute;
-    top: 24px;
-    right: 28px;
-    width: 20px;
-    height: 20px;
-    background-image: url("../images/icon/close.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
 }
 /* 상단 헤더 영역 (체크인/체크아웃 날짜 표시) */
 .date-popup .popup-title {
@@ -617,6 +657,8 @@ display: none;
 .date-popup .popup-title .check-out {
     display: flex;
     flex-direction: column;
+    font-size:16px;
+    font-weight: 500;
     gap: 4px;
 }
 
@@ -626,35 +668,14 @@ display: none;
     font-weight: 400;
 }
 
-.date-popup .popup-title strong {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--Neutral-900);
-}
-
 /* 하단 버튼 영역 (우측 하단 정렬) */
 .date-popup .btn-list {
     display: flex;
-    justify-content: flex-end;
-    margin: 0;
+    justify-content: center;
+    margin: 12px;
     padding: 0;
 }
 
-.date-popup .select-btn {
-    width: 130px;
-    height: 44px;
-    background-color: var(--Primary-Hover-color); /* 이미지상의 짙은 블루 톤 */
-    color: #fff;
-    font-size: 15px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.date-popup .select-btn:hover {
-    background-color: var(--Primary-Pressed-color);
-}
 .hotel-popup {
     width: 276px;
     flex-direction: column;
@@ -665,26 +686,10 @@ display: none;
     display: none;
 }
  
-.hotel-popup .close-btn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 19px;
-    height: 19px;
-    background-image: url("../images/icon/close.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
- 
 .hotel-popup .popup-title {
     padding: 16px;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     color: var(--Neutral-500);
     border-bottom: 1px solid var(--Primary-Subtle-color);
 }
@@ -705,7 +710,8 @@ display: none;
     height: 50px;
     background: none;
     border: none;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 16px;
     color: var(--Neutral-900);
     cursor: pointer;
 }
@@ -721,7 +727,7 @@ display: none;
 
    .hotel-popup .btn-list:first-of-type .popup-btn.on{
     background: var(--Primary-Subtle-color);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* 선택완료 버튼 영역 */
@@ -731,18 +737,6 @@ display: none;
     padding: 12px 16px;
 }
  
-.hotel-popup .select-btn {
-    display: block;
-    width: 110px;
-    height: 36px;
-    background: var(--Primary-color);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-}
-
 /*  */
 /* main */
 /* main 공통영역 */
@@ -1023,11 +1017,19 @@ section{
 }
 
 /* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용 */
+/* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용
+   58px 고정값이라 화면(카드/이미지)은 작아지는데 버튼만 항상 그대로라
+   화면 크기별로 상대적인 비율이 들쭉날쭉해 보이는 문제가 있었음.
+   vw 기준 clamp로 화면 폭에 비례해서 자연스럽게 줄어들도록 변경
+   (최소 32px ~ 최대 58px, 1440px 기준 58px 유지) */
 .swiper-hotelbutton-prev,
 .swiper-hotelbutton-next{
     position:absolute;
-    width: 58px;
-    height: 58px;
+    width: clamp(32px, 4.03vw, 58px);
+    height: clamp(32px, 4.03vw, 58px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     z-index: 1000;
     top:30%;
 
@@ -1043,12 +1045,16 @@ section{
     background-image: url(../images/icon/mainslider-right.svg);
 }
 
-/* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용 */
+/* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용
+   hotel 버튼과 동일하게 vw 기준 clamp로 화면 폭에 비례하도록 변경 */
 .swiper-resortbutton-prev,
 .swiper-resortbutton-next{
     position:absolute;
-    width: 58px;
-    height: 58px;
+    width: clamp(32px, 4.03vw, 58px);
+    height: clamp(32px, 4.03vw, 58px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     z-index: 1000;
     top:30%;
 
@@ -1392,7 +1398,12 @@ footer {
 @media screen and (max-width:1440px) {
     .main-slider-list>li .text-box{
         width: 100%;
-        bottom: 10%;
+        /* 10% 였던 값이 이미지 높이가 줄어들수록 함께 줄어들어
+           예약바(reservation-wrap)와 겹치는 문제가 있었음.
+           고정 px는 화면 폭이 바뀔 때마다 값을 다시 맞춰야 해서
+           뷰포트 너비(vw) 기준 clamp로 변경 (최소 120px ~ 최대 150px 사이에서
+           1440px 기준 10.4vw 비율로 스케일) */
+        bottom: clamp(120px, 10.4vw, 150px);
         padding: 1em;
         
     }
@@ -1403,6 +1414,11 @@ footer {
 }
 /* 아이패드 */
 @media screen and (max-width:1279px){
+    /* 이 구간부터는 reservation-wrap(예약바)이 display:none 처리되어
+       겹칠 위험이 없으므로 text-box를 좀 더 아래로 내려도 됨 */
+    .main-slider-list>li .text-box{
+        bottom: clamp(24px, 6vw, 70px);
+    }
     body{
         font-size: 14px;
         
@@ -1586,6 +1602,16 @@ footer {
         height: 100%;
         object-fit: cover;
     }
+
+    /* 이 구간부터 위 .img-box가 100vh(화면 전체 높이)가 되면서,
+       1279px 구간에서 쓰던 작은 bottom 값(clamp(24px,6vw,70px))을 그대로
+       물려받으면 문구/버튼이 화면 맨 아래로 훅 내려가 보이는 문제가 있었음.
+       컨테이너 높이가 곧 100vh이므로 vh 단위로 잡아 화면 높이에 비례하게 수정. */
+    .main-slider-list>li .text-box {
+        bottom: clamp(60px, 12vh, 140px);
+    }
+
+     
 
     .facility-list-wrap>.spa-fitness>ul,
     .facility-list-wrap>.Convenience>ul {
