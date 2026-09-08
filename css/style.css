@@ -933,8 +933,8 @@ section {
     transition: 0.3s
 }
 
-.offer-list>li:focus-within .img-box>.img-bg,
-.offer-list>li:hover .img-box>.img-bg {
+.offer-list>li .img-box:hover>.img-bg,
+.offer-list>li .img-box:focus-within>.img-bg {
     opacity: 1;
 }
 
@@ -987,10 +987,10 @@ section {
     color: var(--Primary-color)
 }
 
-.offer-list>li .text-box>.offer-kind>.sale {
+/* .offer-list>li .text-box>.offer-kind>.sale {
     color: #fff;
     background: var(--Primary-color);
-}
+} */
 
 .offer-list>li .text-box>.detail {
     color: var(--Neutral-700);
