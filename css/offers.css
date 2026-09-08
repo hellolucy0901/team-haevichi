@@ -35,10 +35,8 @@
 }
 
 .offers-container {
-    width: 100%;
-    max-width: var(--inner-width);
+    width: min(var(--inner-width), calc(100% - 32px));
     margin: 0 auto;
-    padding: 0 1em;
 }
 
 .offers-section h2 {
@@ -135,7 +133,7 @@
 
 
 /* narrow desktop */
-@media screen and (min-width: 1279px) and (max-width: 1442px) {
+@media screen and (min-width: 1280px) and (max-width: 1442px) {
 
     .offers-hero h1 {
         font-size: 49px;
@@ -148,7 +146,7 @@
 
 
 /* tablet */
-@media screen and (max-width: 1278.98px) {
+@media screen and (max-width: 1279px) {
 
     /* hero */
     .offers-hero {
@@ -162,11 +160,8 @@
 
     /* section specific */
     .offers-container {
-        width: auto;
-        margin: 0;
-
-        padding-left: 32px;
-        padding-right: 32px;
+        width: calc(100% - 42px);
+        margin: 0 auto;
     }
 
     .offers-section {
@@ -204,7 +199,7 @@
 
 
 /* mobile */
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 767px) {
 
     /* hero */
     .offers-hero {
@@ -219,8 +214,7 @@
 
     /* section */
     .offers-container {
-        padding-left: 20px;
-        padding-right: 20px;
+        width: calc(100% - 36px);
     }
 
     .offers-section {
@@ -316,11 +310,10 @@
 }
 
 /* small ver. mobile */
-@media screen and (max-width: 480.98px) {
+@media screen and (max-width: 480px) {
 
     .offers-container {
-        padding-left: 16px;
-        padding-right: 16px;
+        width: calc(100% - 36px);
     }
 
     .offers-section {
