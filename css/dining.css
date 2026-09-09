@@ -118,7 +118,8 @@ body {
    DINING
 ================================================== */
 
-.dining-section,.dining-wrap {
+.dining-section,
+.dining-wrap {
     padding-top: 200px;
 }
 
@@ -149,9 +150,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 60px;
-
+margin-top: 20px;
     padding-bottom: 0;
 }
+
 
 
 /* Bakery & Bar 시작 전 */
@@ -632,6 +634,11 @@ body {
         padding: 100px 0;
     }
 
+    .dining-section,
+.dining-wrap {
+    padding-top: 80px;
+}
+
     .dining-wrap .title-box .section-title {
         font-size: 32px;
         font-weight: 500;
@@ -847,6 +854,7 @@ body {
         gap: 25px;
     }
 
+  
 
     /* ------------------------------------------
        CARD
@@ -1137,9 +1145,11 @@ body {
         font-size: 25px;
     }
 
+    
 
-    .dining-wrap {
-        padding: 70px 0;
+
+      .dining-wrap {
+        padding: 30px 0 60px;
     }
 
     .dining-wrap .title-box .section-title {
