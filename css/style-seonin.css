@@ -1016,12 +1016,6 @@ section{
 
 }
 
-/* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용 */
-/* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용
-   58px 고정값이라 화면(카드/이미지)은 작아지는데 버튼만 항상 그대로라
-   화면 크기별로 상대적인 비율이 들쭉날쭉해 보이는 문제가 있었음.
-   vw 기준 clamp로 화면 폭에 비례해서 자연스럽게 줄어들도록 변경
-   (최소 32px ~ 최대 58px, 1440px 기준 58px 유지) */
 .swiper-hotelbutton-prev,
 .swiper-hotelbutton-next{
     position:absolute;
@@ -1031,22 +1025,20 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1000;
-    top:30%;
+    transform: translateY(-50%);
 
 }
 
 .swiper-hotelbutton-prev{
-    left: 24px;
+    left: clamp(8px, 1.67vw, 24px);
     background-image: url(../images/icon/mainslider-left.svg);
 }
 
 .swiper-hotelbutton-next{
-    right: 24px;
+    right: clamp(8px, 1.67vw, 24px);
     background-image: url(../images/icon/mainslider-right.svg);
 }
 
-/* rooms 슬라이더 이전/다음 버튼 - 준비된 SVG 아이콘 통째로 사용
-   hotel 버튼과 동일하게 vw 기준 clamp로 화면 폭에 비례하도록 변경 */
 .swiper-resortbutton-prev,
 .swiper-resortbutton-next{
     position:absolute;
@@ -1056,20 +1048,19 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1000;
-    top:30%;
+    transform: translateY(-50%);
 
 }
 
 .swiper-resortbutton-prev{
-    left: 24px;
+    left: clamp(8px, 1.67vw, 24px);
     background-image: url(../images/icon/mainslider-left.svg);
 }
 
 .swiper-resortbutton-next{
-    right: 24px;
+    right: clamp(8px, 1.67vw, 24px);
     background-image: url(../images/icon/mainslider-right.svg);
 }
-
 /* dining */
 .dining-list-wrap{
     /* padding: 1em; */
