@@ -12,8 +12,11 @@ body {
 }
 
 
+/* ============================================================
+   PC
+============================================================ */
 
-/* pc 에서 숨기기 */
+/* PC 에서 숨기기 */
 .ham-btn,
 .m-header,
 .m-gnb-list {
@@ -21,27 +24,37 @@ body {
 }
 
 
-/* main 공통영역 */
+/* ============================================================
+   MAIN 공통영역
+============================================================ */
+
 section {
     padding-top: 200px;
 }
 
 
-/* tab-menu */
+/* ============================================================
+   TAB MENU
+============================================================ */
+
 .tab-menu {
     display: flex;
     gap: 2em;
     margin-bottom: 1.5em;
 }
 
-
-.tab-menu>li>a {
+.tab-menu > li > a {
     color: var(--Neutral-500);
     font-weight: 300;
     font-size: 1.13em;
 }
 
-.btn>a {
+
+/* ============================================================
+   BUTTON
+============================================================ */
+
+.btn > a {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -51,8 +64,7 @@ section {
     transition: 0.3s;
 }
 
-
-.btn>a::after {
+.btn > a::after {
     content: "";
     display: block;
     width: 36px;
@@ -62,46 +74,39 @@ section {
     transition: 0.3s;
 }
 
-
-.btn>a:hover::after {
+.btn > a:hover::after {
     background-position-x: 4px;
 }
 
-
-.btn-pri>a {
+.btn-pri > a {
     background: var(--Primary-color);
     color: #fff;
 }
 
-
-.btn-pri>a::after {
+.btn-pri > a::after {
     background-image: url(../images/icon/arrow_wh.svg);
 }
 
-
-.btn-white>a {
+.btn-white > a {
     color: #fff;
     border-color: #fff;
     background: rgba(255, 255, 255, 0);
 }
 
-
-.btn-white>a:hover {
+.btn-white > a:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 
-
-.btn-white>a::after {
+.btn-white > a::after {
     background-image: url(../images/icon/arrow_wh.svg);
 }
 
-.more-btn>a {
+.more-btn > a {
     display: flex;
     gap: 4px;
-
 }
 
-.more-btn>a::after {
+.more-btn > a::after {
     content: "";
     display: block;
     width: 8px;
@@ -109,18 +114,22 @@ section {
     background: url(../images/icon/arrow_pri.svg);
 }
 
+
 /* ============================================================
-   HERO (1920 x 600 / 헤더와 겹치는 시작점)
+   HERO
+   1920 x 600
 ============================================================ */
+
 .hero {
     position: relative;
     width: 100%;
     height: 600px;
     overflow: hidden;
     padding-top: 0;
-    /* ↑ 위쪽 공통 section { padding-top:200px } 규칙 무효화.
-       .hero 도 <section> 태그라서 안 넣으면 실제 높이가
-       600px + 200px = 800px 이 되어 중앙정렬이 어긋남 */
+    /*
+        <section>에도 공통으로 padding-top: 200px이 적용되기 때문에
+        HERO에서는 padding-top을 0으로 설정
+    */
 }
 
 .hero img {
@@ -135,6 +144,7 @@ section {
     position: absolute;
     inset: 0;
     background-color: var(--Neutral-800);
+
     /* 이미지 로드 전 자리 */
     background-image: url(../images/facility_section/facility_main.png);
     background-size: cover;
@@ -146,33 +156,54 @@ section {
     inset: 0;
 }
 
-/* 화면 크기와 무관하게 항상 정중앙을 유지하는 값 —
-   반응형에서 절대 건드리지 않습니다. */
+
+/* ============================================================
+   HERO TITLE
+============================================================ */
+
+/*
+    PC 기본값
+
+    중요:
+    .hero__title은 여기에서 한 번만 선언합니다.
+    기존에 아래쪽에 있던 중복 .hero__title은 삭제했습니다.
+*/
+
 .hero__title {
     position: absolute;
-    top: 50%;
+    top: calc(50% + 15px);
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3.5em;
+
+    font-size: 56px;
+    font-weight: 800;
+    font-family: "Minion Pro", serif;
+
     text-align: center;
     white-space: nowrap;
     color: var(--Neutral-100);
-    font-family: "Minion Pro";
+
+    margin: 0;
 }
 
 
 /* ============================================================
    FACILITY SECTIONS
 ============================================================ */
+
 .facility-section:last-child {
     padding-bottom: 200px;
 }
+
+
+/* ============================================================
+   SECTION HEAD
+============================================================ */
 
 .section-head {
     text-align: left;
     margin-bottom: 0;
 }
-
 
 .section-head__title {
     font-size: 42px;
@@ -183,15 +214,17 @@ section {
 
 .section-head__desc {
     margin: 0;
-    font-family: "pretendard";
+    font-family: "Pretendard", sans-serif;
     font-size: 1.13em;
     line-height: 1.6;
     color: var(--Neutral-900);
 }
 
 
+/* ============================================================
+   IMAGE GROUP
+============================================================ */
 
-/* ---------- 이미지 그룹 ---------- */
 .image-group {
     margin-top: 40px;
     display: flex;
@@ -222,33 +255,37 @@ section {
     flex: 1 1 var(--img-width-half);
 }
 
-.img-box>img {
+.img-box > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.hero__title {
-    font-size: 2.5em;
-    position: absolute;
-    top: calc(50% + 35px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
+/* ============================================================
+   FACILITY CARD OVERLAY
+============================================================ */
 
 .facility-card__overlay {
     position: absolute;
     inset: 0;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
     padding: 0 64px;
+
     background: rgba(0, 0, 0, 0.55);
     color: #fff;
+
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
 }
 
 .facility-card:hover .facility-card__overlay {
@@ -274,12 +311,18 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+
     margin-top: 20px;
     padding: 8px 18px;
+
     border: 1px solid #fff;
     color: #fff;
+
     font-size: 13px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
 .facility-card__btn:hover {
@@ -295,31 +338,31 @@ section {
     transform: translateX(3px);
 }
 
+
 /* ============================================================
-   반응형 - 아이패드
+   반응형 - 아이패드 / 태블릿
+   1279px 이하
 ============================================================ */
-@media screen and (max-width:1279px) {
+
+@media screen and (max-width: 1279px) {
+
+    /* HERO */
     .hero {
         height: 400px;
     }
 
     .hero__title {
         font-size: 2.5em;
-        position: absolute;
         top: calc(50% + 25px);
-        left: 50%;
-        transform: translate(-50%, -50%);
     }
 
-    /* body {
-        font-size: 14px;
-    } */
 
-    .header-inner>div {
+    /* HEADER */
+    .header-inner > div {
         gap: 1em;
     }
 
-    /* 제거하기 */
+    /* PC GNB 제거 */
     .gnb-list {
         display: none;
     }
@@ -327,35 +370,40 @@ section {
     #main-nav {
         position: fixed;
         right: -100%;
-        background: rgba(255, 255, 255, 0.8);
+        top: 0;
+
         width: 100%;
         height: 100vh;
-        top: 0;
+
         padding: 1em 1.5em;
+
+        background: rgba(255, 255, 255, 0.8);
     }
 
     .main-menu {
         display: block;
     }
 
-    .main-menu>li>a {
+    .main-menu > li > a {
         padding: 1em 0;
+
         border-bottom: 1px solid var(--Neutral-300);
+
         color: var(--Neutral-900);
+
         display: flex;
         justify-content: space-between;
         align-items: center;
-
     }
 
-    .main-menu>li>a::after {
-        content: '\e800';
+    .main-menu > li > a::after {
+        content: "\e800";
         font-family: "fontello";
         font-size: 0.7em;
     }
 
-    .main-menu>li:hover>a::after,
-    .main-menu>li:active>a::after {
+    .main-menu > li:hover > a::after,
+    .main-menu > li:active > a::after {
         content: "\e801";
     }
 
@@ -363,14 +411,13 @@ section {
         position: static;
         display: none;
         text-indent: 2.4em;
-
     }
 
-    .depth2>li {
+    .depth2 > li {
         width: 100%;
     }
 
-    .main-menu>li:hover .depth2 {
+    .main-menu > li:hover .depth2 {
         display: block;
     }
 
@@ -379,7 +426,8 @@ section {
         text-indent: 4em;
     }
 
-    /* 보여주기 */
+
+    /* 모바일 메뉴 버튼 보여주기 */
     .ham-btn {
         display: block;
         width: 32px;
@@ -406,16 +454,18 @@ section {
         margin-top: 2em;
     }
 
-    .m-gnb-list>li>a {
+    .m-gnb-list > li > a {
         display: flex;
         gap: 0.5em;
         align-items: center;
     }
 
-    .m-gnb-list>li>a img {
+    .m-gnb-list > li > a img {
         width: 2em;
     }
 
+
+    /* FACILITY */
     .facility-section {
         padding-top: 50px;
     }
@@ -430,23 +480,34 @@ section {
     }
 }
 
+
 /* ============================================================
    반응형 - 모바일
+   767px 이하
 ============================================================ */
-@media screen and (max-width:767px) {
 
+@media screen and (max-width: 767px) {
 
+    /* HERO */
     .hero {
         height: 200px;
     }
 
+    .hero__title {
+        font-size: 2em;
+        top: 50%;
+    }
+
+
+    /* FACILITY CARD */
     .facility-card__desc {
         font-size: 11px;
         max-width: 260px;
+
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        /* 몇 줄까지 보여줄지 */
         -webkit-box-orient: vertical;
+
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -457,51 +518,44 @@ section {
         font-size: 11px;
     }
 
-    /* 공통사항 */
-    .btn>a {
-        padding: 4px 0px 4px 12px;
+
+    /* 공통 버튼 */
+    .btn > a {
+        padding: 4px 0 4px 12px;
     }
 
-    .hero__overlay+.inner {
+
+    /* HERO 아래 여백 */
+    .hero__overlay + .inner {
         margin-top: 50px;
     }
 }
 
+
 /* ============================================================
    반응형 - 작은 모바일
+   480px 이하
 ============================================================ */
-@media screen and (max-width:480px) {
 
-    /* header */
+@media screen and (max-width: 480px) {
+
+    /* HEADER */
     .logo {
         width: 100px;
     }
 
-    /* main */
+
+    /* MAIN */
     .address-wrap .address-right {
         text-align: left;
     }
 
-    .ks-family-wrap>p img {
+    .ks-family-wrap > p img {
         width: 80%;
         height: auto;
     }
 
-    .copy-sns-wrap>.sns-list {
+    .copy-sns-wrap > .sns-list {
         display: none;
     }
-
-    /* .section-head__title {
-        font-size: 3.5em;
-        font-weight: 600;
-        margin: 0 0 12px;
-        font-family: "Minion Pro", serif;
-    } */
-
-    /* .hero__title {
-        font-size: 3.5em;
-        font-weight: 700;
-        white-space: normal;
-        width: 90%;
-    } */
 }
