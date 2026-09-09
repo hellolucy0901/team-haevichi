@@ -6,7 +6,7 @@
     --Primary-Pressed-color: #104876;
     --Primary-Subtle-color: #DCECF8;
 
-    --Neutral-100: #f2f2f2;
+    --Neutral-100: #fff;
     --Neutral-200: #e5e5e5;
     --Neutral-300: #d4d4d4;
     --Neutral-400: #a3a3a3;
@@ -18,13 +18,12 @@
 
     /* layout */
     --inner-width: 1440px;
-
-    /* spacing */
-
-    /* border */
-
-    /* transition */
 }
+
+
+/* ==================================================
+   기본
+================================================== */
 
 
 body {
@@ -35,187 +34,471 @@ body {
 
 .inner {
     max-width: var(--inner-width);
-    /* background-color: rgba(255, 0, 0, 0.1); */
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 2em;
 }
 
 
-/* pc 에서 숨기기 */
-.ham-btn,
-.m-header,
-.m-gnb-list {
-    display: none;
-}
 
-/* header */
-header {
+
+.site-header {
     position: fixed;
-    /* background-color: rgba(0, 0, 255, 0.2); */
+    top: 0;
+    left: 0;
+
     width: 100%;
-    /* padding: 18px 0 0; */
-    z-index: 10000;
+    height: 88px;
+    background: transparent;
+    z-index: 1000;
 }
 
-header:hover {
-    background: #fff;
+.header-bar {
+    position: relative;
+    width: 100%;
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 0.5px solid transparent;
+     background: transparent; /* 추가 */
+}
+
+
+.site-header:has(.main-menu-item:hover > .mega-menu) .header-bar,
+.site-header:has(.main-menu-item:focus-within > .mega-menu) .header-bar {
+    background: var(--Neutral-100);
+    border-bottom-color: var(--Neutral-400);
+}
+
+.site-header:has(.main-menu-item:hover > .mega-menu) .main-menu-item > a,
+.site-header:has(.main-menu-item:focus-within > .mega-menu) .main-menu-item > a {
+    color: var(--Neutral-900);
+}
+
+.site-header:has(.main-menu-item:hover > .mega-menu) .utility-menu a,
+.site-header:has(.main-menu-item:focus-within > .mega-menu) .utility-menu a {
+    color: var(--Neutral-900);
+}
+
+.site-header:has(.main-menu-item:hover > .mega-menu) .language-button,
+.site-header:has(.main-menu-item:focus-within > .mega-menu) .language-button {
+    color: var(--Neutral-900);
 }
 
 .header-inner {
-    max-width: 1720px;
+    box-sizing: border-box;
+
+    width: calc(100% - 160px);
+    max-width: 1760px;
+    height: 52px;
     margin: 0 auto;
+    padding: 0;
+
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    padding: 0 1em;
 }
 
-header:hover .logo {
-    filter: invert();
-}
-
-.header-inner>div {
+.header-left {
     display: flex;
-    gap: 50px;
     align-items: center;
+    gap: 48px;
+}
 
+.header-logo {
+    display: block;
+    flex-shrink: 0;
+     transform: translateY(2px);
+}
+
+.header-logo img {
+    width: 154px;
+    height: 33px;
+    
+}
+
+.site-header:has(.main-menu-item:hover > .mega-menu) .header-logo img,
+.site-header:has(.main-menu-item:focus-within > .mega-menu) .header-logo img {
+    filter: invert();
+
+}
+
+/* main-nav */
+.main-nav {
+    height: 88px;
 }
 
 .main-menu {
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: 24px;
-    position: relative;
+    gap: 32px;
 }
 
-.main-menu>li {
-    /* background: pink; */
+.main-menu-item {
+    height: 100%;
 }
 
-.main-menu>li>a {
+.main-menu-item:hover>.mega-menu,
+.main-menu-item:focus-within>.mega-menu {
     display: block;
-    padding: 28px 8px;
-    font-size: 1.13em;
+}
+
+.main-menu-item>a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
     font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #fff;
+    white-space: nowrap;
 }
 
-header:hover .main-menu>li>a {
-    color: var(--Neutral-900);
-}
-
-.main-menu>li:hover .depth2 {
-    display: flex;
-}
-
-.depth2 {
-    display: none;
-    background: #fff;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 77px;
-    line-height: 2;
-    padding: 1.13em 0;
-    /* display: flex; */
-}
-
-.depth2>li {
-    width: 25%;
-}
-
-.depth2>li>a {
-    color: var(--Neutral-900);
-}
-
-.depth3>li>a {
+.main-menu-item:hover>a,
+.main-menu-item:focus-within>a {
+    font-weight: 700;
     color: var(--Neutral-400);
-    font-size: 0.88em;
 }
 
-.gnb-list {
+.mega-menu {
+    position: absolute;
+    top: 88px;
+    left: 0;
+
+    width: 100%;
+    min-height: 68px;
+    height: auto;
+
+    padding-top: 30px;
+    padding-left: max(282px,
+            calc((100% - 1760px) / 2 + 202px));
+    padding-right: 0;
+    padding-bottom: 30px;
+
+    background: var(--Neutral-100);
+    z-index: 1001;
+
+    display: none;
+}
+
+.mega-menu-list {
     display: flex;
-    gap: 2em;
-    font-size: 14px;
+    align-items: flex-start;
+    gap: 21px;
 }
 
-header:hover .gnb-list>li>a {
+.mega-menu-group {
+    width: 150px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.mega-menu-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16.5px;
+    letter-spacing: 0;
+    color: var(--Neutral-900);
+    white-space: nowrap;
+}
+
+.mega-menu-title:hover,
+.mega-menu-title:focus-visible {
+    color: var(--Neutral-400);
+}
+
+.mega-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.mega-submenu a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.5px;
+    letter-spacing: 0;
+    color: #a3a3a3;
+    white-space: nowrap;
+}
+
+.mega-submenu a:hover,
+.mega-submenu a:focus-visible {
+    color: var(--Neutral-800);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.utility-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.utility-menu a {
+    display: flex;
+    align-items: center;
+
+    padding: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.utility-menu a:hover,
+.utility-menu a:focus-visible {
+    font-weight: 600;
     color: var(--Neutral-900);
 }
 
-header:hover .gnb-list>li>a>span {}
+/* =========================
+   KR / EN 영역
+========================= */
 
-.lang-btn {
+.language-selector {
     position: relative;
+    width: 76px;
+    height: 36px;
+    margin-left: 16px;
 }
 
-.lang-btn>a {
-    display: block;
-    padding-right: 24px;
+
+/* KR 버튼 */
+.language-button {
+    width: 76px;
+    height: 36px;
+    padding: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+
+    /* 기본 = 흰색 */
+    color: #fff;
+
+    anchor-name: --language-trigger;
 }
 
-.lang-btn>a::after {
-    content: "";
-    display: block;
+
+/* 화살표 */
+.language-chevron {
     width: 20px;
     height: 20px;
-    background: url(../images/icon/chev_down_bk.svg);
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+    flex-shrink: 0;
+
+    background-image: url("../images/icon/chev_down_wt.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+/* =========================
+   언어 선택 메뉴
+========================= */
+
+.language-menu {
+    position: fixed;
+    position-anchor: --language-trigger;
+
+    inset: auto;
+    margin: 0;
+
+    top: anchor(bottom);
+    left: anchor(left);
+    right: auto;
+    bottom: auto;
+
+    width: 76px;
+    height: 52px;
+    padding: 0;
+
+    background: var(--Neutral-100);
+    border: 0;
+    outline: 1px solid var(--Neutral-300);
+
+    overflow: hidden;
+}
+
+
+.language-menu li {
+    width: 100%;
+    height: 26px;
+}
+
+
+.language-option {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--Neutral-100);
+    color: var(--Neutral-900);
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+
+    cursor: pointer;
+    
+}
+
+
+/* EN / KR 옵션에 마우스 올렸을 때 */
+.language-option:hover,
+.language-option:focus-visible {
+    background: var(--Primary-color);
+    color: var(--Neutral-100);
+}
+
+
+/* =========================
+   KR 버튼 호버
+========================= */
+
+/* 메뉴가 닫혀 있을 때 KR에 호버
+   → KR 검정 */
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover {
+    color: #000;
+}
+
+
+/* 메뉴가 닫혀 있을 때 KR에 호버
+   → 아래 화살표 검정 */
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover .language-chevron {
+    background-image: url("../images/icon/chev_down_bk.svg");
+}
+
+
+/* =========================
+   언어 메뉴가 열렸을 때
+========================= */
+
+/* KR 검정 */
+.language-selector:has(.language-menu:popover-open) .language-button {
+    color: var(--Neutral-900);
+}
+
+
+/* 위쪽 화살표 검정 */
+.language-selector:has(.language-menu:popover-open) .language-chevron {
+    background-image: url("../images/icon/chev_up_bk.svg");
+}
+
+
+.site-header.scrolled .header-bar {
+    background: var(--Neutral-100);
+    border-bottom-color: var(--Neutral-400);
+}
+
+.site-header.scrolled .main-menu-item > a {
+    color: var(--Neutral-900);
+}
+
+.site-header.scrolled .utility-menu a {
+    color: var(--Neutral-900);
+}
+
+.site-header.scrolled .language-button {
+    color: var(--Neutral-900);
+}
+
+.site-header.scrolled .language-chevron {
+    background-image: url("../images/icon/chev_down_bk.svg");
+}
+
+.site-header.scrolled .header-logo img {
     filter: invert(1);
 }
 
-.lang-btn:hover>a::after {
-    filter: invert(0);
-    transform: rotate(180deg) translateY(50%);
+/* =========================
+   예약하기
+========================= */
+
+.reservation-button {
+    width: 200px;
+    height: 50px;
+    margin-left: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--Primary-color);
+    color: var(--Neutral-100);
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+
+    white-space: nowrap;
 }
 
-header:hover .lang-btn>a::after {
-    filter: invert(0);
+
+/* 예약하기 호버 */
+.reservation-button:hover,
+.reservation-button:focus-visible {
+    background: var(--Primary-Hover-color);
 }
 
-.lang-btn>a span {
-    /* color: #000; */
-}
 
-.lang-btn .lang-list {
-    position: absolute;
-    background: #fff;
-    color: var(--Neutral-900);
-    width: 100%;
-    text-align: center;
+/* 데스크톱에서 햄버거 버튼 숨김 */
+.mobile-menu-button {
     display: none;
 }
 
+.mobile-submenu-toggle,
+.mobile-utility-menu,
+.mobile-menu-close-icon {
+    display: none;
+}
 
-.lang-btn .lang-list>li a {
+.mobile-menu-backdrop {
+    display: none;
+}
+
+/* 메뉴가 열리면 햄버거 아이콘 숨김 */
+.mobile-menu-button[aria-expanded="true"] .mobile-menu-open-icon {
+    display: none;
+}
+
+/* 메뉴가 열리면 닫기 아이콘 표시 */
+.mobile-menu-button[aria-expanded="true"] .mobile-menu-close-icon {
     display: block;
-    padding: 4px 0;
 }
 
-
-.lang-btn .lang-list>li a:hover {
-    background: var(--Primary-color);
-    color: #fff;
+body.menu-open {
+    overflow: hidden;
 }
 
-
-.lang-btn:hover .lang-list {
-    display: block;
-}
-
-
-.lang-btn:hover>a {}
-
-.re-right>button {
-    /* display: none; */
-    background: var(--Primary-color);
-    color: #fff;
-    padding: 8px clamp(12px, 3vw, 64px);
-    font-size: 1.25em;
-}
 
 .sub-bg {
     background: #fff;
@@ -317,7 +600,57 @@ header:hover .lang-btn>a::after {
 .main-slider-list>li .img-box>img {
     width: 100%;
 }
+.main-slider-control{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+    /* js에서 top/left 값을 계산하기 전, 깜빡임 방지용 */
+    visibility: hidden;
+}
 
+.main-slider-control.is-positioned{
+    visibility: visible;
+}
+
+.main-slider-control>.slider-prev,
+.main-slider-control>.slider-next{
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.main-slider-control>.slider-prev:hover,
+.main-slider-control>.slider-next:hover{
+    opacity: 1;
+}
+
+.main-slider-control>.slider-progress{
+    position: relative;
+    width: 246.54px;
+    height: 4.71px;
+    background: rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.main-slider-control>.slider-progress>.slider-progress-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #fff;
+}
 /* reservarion-wrap 너비 1440 겹치게 , 
 반투명50% 가운데아래
 자식을 옆으로 붙이고 붙여서 양쪽정렬
@@ -1786,6 +2119,14 @@ footer {
     .main-slider-list>li .img-box>img {
         height: 100%;
         object-fit: cover;
+    }
+
+        /* 이 구간부터 위 .img-box가 100vh(화면 전체 높이)가 되면서,
+       1279px 구간에서 쓰던 작은 bottom 값(clamp(24px,6vw,70px))을 그대로
+       물려받으면 문구/버튼이 화면 맨 아래로 훅 내려가 보이는 문제가 있었음.
+       컨테이너 높이가 곧 100vh이므로 vh 단위로 잡아 화면 높이에 비례하게 수정. */
+    .main-slider-list>li .text-box {
+        bottom: clamp(60px, 12vh, 140px);
     }
 
     .facility-list-wrap>.spa-fitness>ul,
