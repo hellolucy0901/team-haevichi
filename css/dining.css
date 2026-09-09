@@ -150,7 +150,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 60px;
-margin-top: 20px;
+    margin-top: 20px;
     padding-bottom: 0;
 }
 
@@ -486,7 +486,7 @@ margin-top: 20px;
     }
 
     .sub-visual h1 {
-        font-size: 2.7em;
+        font-size: 3em;
     }
 
     .sub-visual .inner h2 {
@@ -576,7 +576,8 @@ margin-top: 20px;
     }
 
     .title-box .section-title {
-        font-size: 2em;
+        font-size: 3em !important;
+        font-weight: 300 !important;
     }
 
 
@@ -638,11 +639,6 @@ margin-top: 20px;
 .dining-wrap {
     padding-top: 80px;
 }
-
-    .dining-wrap .title-box .section-title {
-        font-size: 32px;
-        font-weight: 500;
-    }
 
 
     /* ==================================================
@@ -817,7 +813,7 @@ margin-top: 20px;
     }
 
     .sub-visual .inner h1 {
-        font-size: 30px;
+        font-size: 4em;
         top: 20px;
     }
 
@@ -833,11 +829,6 @@ margin-top: 20px;
 
     .dining-wrap .title-box {
         margin-bottom: 30px;
-    }
-
-    .dining-wrap .title-box .section-title {
-        font-size: 34px;
-        margin-bottom: 10px;
     }
 
     .dining-wrap .title-box p {
@@ -1054,10 +1045,6 @@ margin-top: 20px;
         margin-bottom: 25px;
     }
 
-    .dining-wrap .title-box .section-title {
-        font-size: 28px;
-    }
-
     .dining-wrap .title-box p {
         font-size: 13px;
         line-height: 1.6;
@@ -1134,26 +1121,21 @@ margin-top: 20px;
     }
 
     .sub-visual {
-        height: 160px;
+        height: 200px;
     }
 
     .sub-visual > img {
-        height: 160px;
+        height: 200px;
     }
 
     .sub-visual .inner h1 {
-        font-size: 25px;
+        font-size: 35px;
     }
 
     
 
-
       .dining-wrap {
         padding: 30px 0 60px;
-    }
-
-    .dining-wrap .title-box .section-title {
-        font-size: 26px;
     }
 
 
