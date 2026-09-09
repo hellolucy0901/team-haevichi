@@ -2025,6 +2025,328 @@ footer {
         width: 2em;
     }
 
+     .site-header {
+        height: 60px;
+    }
+
+    .header-bar {
+        width: 100%;
+        height: 60px;
+        border-bottom: 0;
+    }
+
+    .header-inner {
+
+        width: 100%;
+        max-width: none;
+        height: 100%;
+
+        margin: 0;
+        padding-inline: 32px;
+    }
+
+    .header-logo img {
+        width: 120px;
+        height: auto;
+    }
+
+    .utility-nav,
+    .language-selector {
+        display: none;
+    }
+
+    /* 예약 버튼과 햄버거 버튼 영역 */
+    .header-right {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 20px;
+    }
+
+    .reservation-button {
+        width: 180px;
+        height: 46px;
+        margin-left: 0;
+
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .mobile-menu-button {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 44px;
+
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .mobile-menu-icon {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+    }
+
+    /* 기존 데스크톱 내비게이션을 모바일 메뉴로 전환 */
+    .main-nav {
+        box-sizing: border-box;
+
+        position: fixed;
+        top: 60px;
+        right: 0;
+
+        width: min(560px, 100%);
+        height: calc(100dvh - 60px);
+        padding: 24px 32px 32px;
+
+        display: flex;
+        flex-direction: column;
+
+        background: var(--Neutral-100);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        transform: translateX(100%);
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: none;
+        z-index: 999;
+    }
+
+    .main-nav.is-open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* 사용자가 메뉴를 조작했을 때만 애니메이션 활성화 */
+    .main-nav.is-animated {
+        transition:
+            transform 0.3s ease,
+            visibility 0s linear 0.3s;
+    }
+
+    /* 메뉴가 열릴 때 visibility는 즉시 활성화 */
+    .main-nav.is-animated.is-open {
+        transition:
+            transform 0.3s ease,
+            visibility 0s;
+    }
+
+    /* 모바일 메뉴 뒤의 반투명 배경 */
+    .mobile-menu-backdrop {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+
+        background: rgb(0 0 0 / 35%);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 998;
+    }
+
+    /* 전체 메뉴가 열렸을 때 백드롭 표시 */
+    body.menu-open .mobile-menu-backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .main-menu {
+        display: block;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .main-menu-item {
+        height: auto;
+    }
+
+    /* 모바일에서는 데스크톱용 메인메뉴 링크 숨김 */
+    .main-menu-item>.desktop-main-menu-link {
+        display: none;
+    }
+
+    /* 모바일 메인메뉴 토글 버튼 */
+    .mobile-submenu-toggle {
+        width: 100%;
+        min-height: 64px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--Neutral-300);
+
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--Neutral-900);
+
+        cursor: pointer;
+    }
+
+    /* 서브메뉴가 없는 멤버십 */
+    .main-menu-item--direct>a {
+        width: 100%;
+        height: auto;
+        min-height: 64px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+
+        border-bottom: 1px solid var(--Neutral-300);
+
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--Neutral-900);
+    }
+
+    /* 메인메뉴 오른쪽 화살표 */
+    .mobile-submenu-chevron {
+        width: 8px;
+        height: 8px;
+        margin-right: 4px;
+        flex-shrink: 0;
+
+        border-right: 1.5px solid var(--Neutral-900);
+        border-bottom: 1.5px solid var(--Neutral-900);
+
+        transform: rotate(45deg);
+        transition: transform 0.2s ease;
+    }
+
+    .mobile-submenu-toggle[aria-expanded="true"] .mobile-submenu-chevron {
+        transform: rotate(225deg);
+    }
+
+    /* 모바일에서는 hover로 서브메뉴가 열리지 않게 함 */
+    .main-menu-item:hover>.mega-menu,
+    .main-menu-item:focus-within>.mega-menu {
+        display: none;
+    }
+
+    /* JavaScript로 선택된 메뉴는 항상 표시 */
+    .main-menu-item.is-expanded>.mega-menu,
+    .main-menu-item.is-expanded:hover>.mega-menu,
+    .main-menu-item.is-expanded:focus-within>.mega-menu {
+        display: block;
+    }
+
+      /* 햄버거 메뉴가 열렸을 때 */
+    body.menu-open .site-header,
+    body.menu-open .header-bar {
+        background: #fff;
+    }
+
+    /* 햄버거 메뉴가 열렸을 때 로고 반전 */
+    body.menu-open .header-logo img {
+        filter: invert(1);
+    }
+
+    /* 모바일 서브메뉴 */
+    .mega-menu {
+        box-sizing: border-box;
+        position: static;
+
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        padding: 20px 24px;
+
+        background: var(--Neutral-100);
+        box-shadow: none;
+    }
+
+    .mega-menu-list {
+        display: block;
+    }
+
+    .mega-menu-group {
+        width: 100%;
+        margin-bottom: 24px;
+        gap: 12px;
+    }
+
+    .mega-menu-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .mega-menu-title {
+        display: block;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--Neutral-900);
+        white-space: normal;
+    }
+
+    .mega-submenu {
+        gap: 12px;
+        padding-left: 20px;
+    }
+
+    .mega-submenu a {
+        font-size: 14px;
+        line-height: 22px;
+        white-space: normal;
+    }
+
+    /* 모바일 메뉴 하단 사용자 메뉴 */
+    .mobile-utility-menu {
+        margin-top: auto;
+        padding-top: 48px;
+        flex-shrink: 0;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .mobile-utility-menu a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--Neutral-900);
+        white-space: nowrap;
+    }
+
+    .mobile-utility-menu img {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+
     /* header main-menu */
     /* reservation 안의 고정값 해결 */
     .reservation-wrap {
@@ -2083,6 +2405,64 @@ footer {
     }
 
     /* 공통사항 */
+    .site-header,
+    .header-bar {
+        height: 50px;
+    }
+
+    .header-inner {
+        padding-inline: 20px;
+    }
+
+    .reservation-button {
+        width: 80px;
+    }
+
+    .header-right {
+        gap: 16px;
+    }
+
+    .main-nav {
+        top: 50px;
+        height: calc(100dvh - 50px);
+        padding-inline: 20px;
+    }
+
+    .mobile-menu-backdrop {
+        top: 50px;
+    }
+
+    /* 모바일 메인메뉴 크기 */
+    .mobile-submenu-toggle,
+    .main-menu-item--direct>a {
+        min-height: 56px;
+        padding: 16px 0;
+
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* 모바일 서브메뉴 안쪽 여백 */
+    .mega-menu {
+        padding: 18px 20px;
+    }
+
+    /* 모바일 하단 사용자 메뉴 */
+    .mobile-utility-menu {
+        padding-top: 40px;
+    }
+
+    .mobile-utility-menu a {
+        gap: 6px;
+
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .mobile-utility-menu img {
+        width: 20px;
+        height: 20px;
+    }
 
     .offer-list>li .text-box>.offer-kind {
         margin: 10px 0;
@@ -2195,6 +2575,35 @@ footer {
 @media screen and (max-width:480px) {
 
     /* header */
+     .header-inner {
+        padding-inline: 16px;
+    }
+
+    .header-logo img {
+        width: clamp(84px, 25vw, 120px);
+        height: auto;
+    }
+
+    .reservation-button {
+        height: 44px;
+        flex-shrink: 0;
+        font-size: clamp(14px, calc(8px + 1.667vw), 16px);
+    }
+
+    .mobile-menu-button {
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+    }
+
+    .mobile-menu-icon {
+        width: clamp(24px, calc(12px + 3.333vw), 28px);
+        height: auto;
+    }
+
+    .main-nav {
+        padding-inline: 16px;
+    }
     .logo {
         width: 100px;
     }
