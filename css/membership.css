@@ -5,9 +5,13 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center;  ← 제거 */
 }
 
+.sub-visual .inner {
+    width: 100%;
+    text-align: center;   /* 박스가 아니라 '글자'만 가운데 정렬 */
+}
 .sub-visual img {
     position: absolute;
     inset: 0;
@@ -68,9 +72,8 @@ body {
 
 .inner {
     max-width: var(--inner-width);
-    /* background-color: rgba(255, 0, 0, 0.1); */
     margin: 0 auto;
-    padding: 0 2em;
+    padding: 0 2em;   /* → padding: 0 1em; 으로 수정 */
 }
 
 .membership-detail-wrap{
@@ -182,6 +185,9 @@ body {
 @media (max-width:1279px){
     body{
         font-size:14px;
+    }
+    .inner{
+        padding: 1.5em;
     }
     .sub-visual{
         height: 360px;
