@@ -15,22 +15,48 @@
             })
         }
 
-        /* 전체 모바일 메뉴 열기·닫기 */
-        function setMobileMenu(open) {
-            mobileNavigation.classList.toggle("is-open", open)
-            document.body.classList.toggle("menu-open", open)
+    setMobileMenu(!isOpen);
+});
 
-            menuButton.setAttribute("aria-expanded", String(open));
-            menuButton.setAttribute(
-                "aria-label",
-                open ? "전체 메뉴 닫기" : "전체 메뉴 열기"
+/* 메뉴 바깥 배경을 클릭하면 전체 메뉴 닫기 */
+mobileMenuBackdrop.addEventListener("click", function () {
+    setMobileMenu(false);
+});
+
+/* 메인메뉴 아코디언 */
+submenuButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        const menuItem =
+            button.closest(".main-menu-item");
+
+        const isExpanded =
+            button.getAttribute("aria-expanded") === "true";
+
+        /* 먼저 다른 서브메뉴를 모두 닫음 */
+        closeAllSubmenus();
+
+        /* 클릭한 메뉴가 닫혀 있었을 때만 열기 */
+        if (!isExpanded) {
+            button.setAttribute(
+                "aria-expanded",
+                "true"
             );
 
-            /* 전체 메뉴를 닫으면 열려 있던 서브메뉴도 초기화 */
-            if (!open) {
-                closeAllSubmenus()
-            }
+            menuItem.classList.add("is-expanded");
         }
+    });
+});
+
+/* Escape 키로 전체 메뉴 닫기 */
+document.addEventListener("keydown", function (event) {
+    const isMenuOpen =
+        mobileNavigation.classList.contains("is-open");
+
+    if (event.key === "Escape" && isMenuOpen) {
+        setMobileMenu(false);
+        menuButton.focus();
+    }
+});
 
         /* 햄버거·닫기 버튼 */
         menuButton.addEventListener("click", function () {
