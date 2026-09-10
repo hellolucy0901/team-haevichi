@@ -61,7 +61,8 @@ body {
     align-items: center;
 
     border-bottom: 0.5px solid transparent;
-     background: transparent; /* 추가 */
+    background: transparent;
+    /* 추가 */
 }
 
 
@@ -71,8 +72,8 @@ body {
     border-bottom-color: var(--Neutral-400);
 }
 
-.site-header:has(.main-menu-item:hover > .mega-menu) .main-menu-item > a,
-.site-header:has(.main-menu-item:focus-within > .mega-menu) .main-menu-item > a {
+.site-header:has(.main-menu-item:hover > .mega-menu) .main-menu-item>a,
+.site-header:has(.main-menu-item:focus-within > .mega-menu) .main-menu-item>a {
     color: var(--Neutral-900);
 }
 
@@ -109,13 +110,13 @@ body {
 .header-logo {
     display: block;
     flex-shrink: 0;
-     transform: translateY(2px);
+    transform: translateY(2px);
 }
 
 .header-logo img {
     width: 154px;
     height: 33px;
-    
+
 }
 
 .site-header:has(.main-menu-item:hover > .mega-menu) .header-logo img,
@@ -367,7 +368,7 @@ body {
     letter-spacing: 0.01em;
 
     cursor: pointer;
-    
+
 }
 
 
@@ -418,7 +419,7 @@ body {
     border-bottom-color: var(--Neutral-400);
 }
 
-.site-header.scrolled .main-menu-item > a {
+.site-header.scrolled .main-menu-item>a {
     color: var(--Neutral-900);
 }
 
@@ -600,7 +601,8 @@ body.menu-open {
 .main-slider-list>li .img-box>img {
     width: 100%;
 }
-.main-slider-control{
+
+.main-slider-control {
     position: absolute;
     top: 0;
     left: 0;
@@ -613,12 +615,12 @@ body.menu-open {
     visibility: hidden;
 }
 
-.main-slider-control.is-positioned{
+.main-slider-control.is-positioned {
     visibility: visible;
 }
 
 .main-slider-control>.slider-prev,
-.main-slider-control>.slider-next{
+.main-slider-control>.slider-next {
     background: none;
     border: none;
     padding: 0;
@@ -631,11 +633,11 @@ body.menu-open {
 }
 
 .main-slider-control>.slider-prev:hover,
-.main-slider-control>.slider-next:hover{
+.main-slider-control>.slider-next:hover {
     opacity: 1;
 }
 
-.main-slider-control>.slider-progress{
+.main-slider-control>.slider-progress {
     position: relative;
     width: 246.54px;
     height: 4.71px;
@@ -643,7 +645,7 @@ body.menu-open {
     overflow: hidden;
 }
 
-.main-slider-control>.slider-progress>.slider-progress-bar{
+.main-slider-control>.slider-progress>.slider-progress-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -651,6 +653,7 @@ body.menu-open {
     width: 0%;
     background: #fff;
 }
+
 /* reservarion-wrap 너비 1440 겹치게 , 
 반투명50% 가운데아래
 자식을 옆으로 붙이고 붙여서 양쪽정렬
@@ -1406,8 +1409,8 @@ section {
 }
 
 .swiper-hotelbutton-prev,
-.swiper-hotelbutton-next{
-    position:absolute;
+.swiper-hotelbutton-next {
+    position: absolute;
     width: clamp(32px, 4.03vw, 58px);
     height: clamp(32px, 4.03vw, 58px);
     background-size: contain;
@@ -1418,19 +1421,19 @@ section {
 
 }
 
-.swiper-hotelbutton-prev{
+.swiper-hotelbutton-prev {
     left: clamp(8px, 1.67vw, 24px);
     background-image: url(../images/icon/mainslider-left.svg);
 }
 
-.swiper-hotelbutton-next{
+.swiper-hotelbutton-next {
     right: clamp(8px, 1.67vw, 24px);
     background-image: url(../images/icon/mainslider-right.svg);
 }
 
 .swiper-resortbutton-prev,
-.swiper-resortbutton-next{
-    position:absolute;
+.swiper-resortbutton-next {
+    position: absolute;
     width: clamp(32px, 4.03vw, 58px);
     height: clamp(32px, 4.03vw, 58px);
     background-size: contain;
@@ -1441,12 +1444,12 @@ section {
 
 }
 
-.swiper-resortbutton-prev{
+.swiper-resortbutton-prev {
     left: clamp(8px, 1.67vw, 24px);
     background-image: url(../images/icon/mainslider-left.svg);
 }
 
-.swiper-resortbutton-next{
+.swiper-resortbutton-next {
     right: clamp(8px, 1.67vw, 24px);
     background-image: url(../images/icon/mainslider-right.svg);
 }
@@ -2029,7 +2032,7 @@ footer {
         width: 2em;
     }
 
-     .site-header {
+    .site-header {
         height: 60px;
     }
 
@@ -2261,7 +2264,7 @@ footer {
         display: block;
     }
 
-      /* 햄버거 메뉴가 열렸을 때 */
+    /* 햄버거 메뉴가 열렸을 때 */
     body.menu-open .site-header,
     body.menu-open .header-bar {
         background: #fff;
@@ -2505,7 +2508,7 @@ footer {
         object-fit: cover;
     }
 
-        /* 이 구간부터 위 .img-box가 100vh(화면 전체 높이)가 되면서,
+    /* 이 구간부터 위 .img-box가 100vh(화면 전체 높이)가 되면서,
        1279px 구간에서 쓰던 작은 bottom 값(clamp(24px,6vw,70px))을 그대로
        물려받으면 문구/버튼이 화면 맨 아래로 훅 내려가 보이는 문제가 있었음.
        컨테이너 높이가 곧 100vh이므로 vh 단위로 잡아 화면 높이에 비례하게 수정. */
@@ -2579,7 +2582,7 @@ footer {
 @media screen and (max-width:480px) {
 
     /* header */
-     .header-inner {
+    .header-inner {
         padding-inline: 16px;
     }
 
@@ -2608,6 +2611,7 @@ footer {
     .main-nav {
         padding-inline: 16px;
     }
+
     .logo {
         width: 100px;
     }
@@ -2701,5 +2705,233 @@ footer {
     .copy-sns-wrap>.sns-list {
         display: none;
     }
+}
 
+/* 플로팅 버튼 */
+.top-button {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    padding: 0;
+
+    color: var(--Primary-color, #1a5fa1);
+    background-color: #fff;
+    border: 1px solid rgba(26, 95, 161, 0.1);
+    border-radius: 50%;
+
+    box-shadow:
+        0 8px 24px rgba(23, 23, 23, 0.16),
+        0 2px 6px rgba(23, 23, 23, 0.1);
+
+    font-family: inherit;
+    appearance: none;
+    cursor: pointer;
+
+    /* 처음에는 숨김 */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px);
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* 스크롤을 300px 이상 내리면 적용 */
+.top-button.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* 원 중앙 TOP 글자 */
+.top-button-text {
+    color: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+/* 마우스 호버 */
+.top-button:hover {
+    color: #fff;
+    background-color: var(--Primary-color, #1a5fa1);
+
+    box-shadow:
+        0 10px 28px rgba(26, 95, 161, 0.25),
+        0 3px 8px rgba(23, 23, 23, 0.14);
+
+    transform: translateY(-3px);
+}
+
+/* 클릭 */
+.top-button:active {
+    transform: translateY(0) scale(0.96);
+}
+
+/* 키보드 포커스 */
+.top-button:focus-visible {
+    outline: 2px solid var(--Primary-color, #1a5fa1);
+    outline-offset: 5px;
+}
+
+/* 태블릿 */
+@media (max-width: 1279px) {
+    .top-button {
+        right: 24px;
+        bottom: 24px;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+    .top-button {
+        right: 16px;
+        bottom: 20px;
+
+        width: 48px;
+        height: 48px;
+    }
+
+    .top-button-text {
+        font-size: 11px;
+    }
+}
+
+/* 모션 최소화 설정 */
+@media (prefers-reduced-motion: reduce) {
+    .top-button {
+        transition: none;
+    }
+}
+/* 플로팅 버튼 */
+.top-button {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    padding: 0;
+
+    color: var(--Primary-color, #1a5fa1);
+    background-color: #fff;
+    border: 1px solid rgba(26, 95, 161, 0.1);
+    border-radius: 50%;
+
+    box-shadow:
+        0 8px 24px rgba(23, 23, 23, 0.16),
+        0 2px 6px rgba(23, 23, 23, 0.1);
+
+    font-family: inherit;
+    appearance: none;
+    cursor: pointer;
+
+    /* 처음에는 숨김 */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px);
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* 스크롤을 300px 이상 내리면 적용 */
+.top-button.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* 원 중앙 TOP 글자 */
+.top-button-text {
+    color: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+/* 마우스 호버 */
+.top-button:hover {
+    color: #fff;
+    background-color: var(--Primary-color, #1a5fa1);
+
+    box-shadow:
+        0 10px 28px rgba(26, 95, 161, 0.25),
+        0 3px 8px rgba(23, 23, 23, 0.14);
+
+    transform: translateY(-3px);
+}
+
+/* 클릭 */
+.top-button:active {
+    transform: translateY(0) scale(0.96);
+}
+
+/* 키보드 포커스 */
+.top-button:focus-visible {
+    outline: 2px solid var(--Primary-color, #1a5fa1);
+    outline-offset: 5px;
+}
+
+/* 태블릿 */
+@media (max-width: 1279px) {
+    .top-button {
+        right: 24px;
+        bottom: 24px;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+    .top-button {
+        right: 16px;
+        bottom: 20px;
+
+        width: 48px;
+        height: 48px;
+    }
+
+    .top-button-text {
+        font-size: 11px;
+    }
+}
+
+/* 모션 최소화 설정 */
+@media (prefers-reduced-motion: reduce) {
+    .top-button {
+        transition: none;
+    }
 }
