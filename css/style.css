@@ -575,6 +575,7 @@ body.menu-open {
 }
 
 
+
 .main-slider-list>li::after {
     content: "";
     position: absolute;

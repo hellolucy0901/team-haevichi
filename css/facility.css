@@ -588,6 +588,7 @@ h1, h2, h3, p { margin: 0; }
         margin-bottom: clamp(5px, 1.4vw, 12px);
     }
 
+    
     .facility-card__desc {
         max-width: 85%;
         font-size: clamp(8px, 1.35vw, 13px);
