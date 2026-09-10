@@ -78,36 +78,48 @@ body {
     position: absolute;
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.4);
 
     z-index: -1;
 }
 
 .sub-visual h1 {
-    font-family: "Minion Pro Bold Condensed", serif;
+    /* font-family: "Minion Pro Bold Condensed", serif;
     font-size: 3.5em;
     letter-spacing: 0.06em;
     color: #fff;
     text-transform: uppercase;
-
     position: relative;
-    top: 30px;
+    top: 30px; */
+    position: absolute;
+    top: calc(50% + 15px);
+    left: 50%;
+    transform:translate(-50%,-50%);
+
+    font-size: 56px;
+    font-weight: 800;
+    font-family: "Minion Pro", serif;
+
+    text-align: center;
+    white-space: nowrap;
+    color: var(--Neutral-100);
+    letter-spacing: 0.05em;
 }
 
 .sub-visual .inner h2 {
     color: #fff;
     font-size: 42px;
     letter-spacing: 4px;
-    font-family: "MinionPro", serif;
+     font-family: "Minion Pro", serif;
+      font-weight: 600;
+
 }
 
 .sub-visual .text-box {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,8 +147,8 @@ body {
     font-family: "Minion Pro", serif;
 }
 
-.dining-wrap .title-box p {
-    font-size: 16px;
+.dining-section .title-box p {
+    font-size: 16px !important;
     color: var(--Neutral-900);
     line-height: 1.6;
 }
@@ -369,10 +381,13 @@ body {
         font-size: 3em;
     }
 
-    .sub-visual .inner h2 {
+      .sub-visual .inner h2 {
         font-size: 36px;
+        font-family: "Minion Pro", serif;
+      font-weight: 600;
     }
 
+ 
     
 
 
@@ -388,7 +403,7 @@ body {
 
 .dining-section .title-box .section-title {
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 600 !important;
     margin-bottom: 12px;
     font-family: "Minion Pro", serif;
 }
@@ -446,10 +461,11 @@ body {
     .dining-list > li .text-box h3 {
         font-size: 23px;
         margin-bottom: 10px;
+        
     }
 
     .dining-list > li .text-box p {
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1.6;
     }
 
@@ -507,6 +523,7 @@ body {
 
     .dining-wrap .title-box .section-title {
         font-size: 38px;
+        
     }
 
 
@@ -577,7 +594,7 @@ body {
 
     .title-box .section-title {
         font-size: 3em !important;
-        font-weight: 300 !important;
+        font-weight: 400 !important;
     }
 
 
@@ -775,6 +792,7 @@ body {
     .dining-list > li .text-box p {
         font-size: 14px;
         line-height: 1.5;
+        font-weight: 600;
     }
 
 }
@@ -834,6 +852,7 @@ body {
     .dining-wrap .title-box p {
         font-size: 14px;
         line-height: 1.6;
+        
     }
 
 
@@ -1048,6 +1067,7 @@ body {
     .dining-wrap .title-box p {
         font-size: 13px;
         line-height: 1.6;
+        
     }
 
 
@@ -1104,6 +1124,7 @@ body {
     .dining-list > li .text-box p {
         font-size: 12px;
         line-height: 1.45;
+         font-weight: 600;
     }
 
 }
@@ -1153,7 +1174,7 @@ body {
     }
 
     .dining-list > li .text-box p {
-        font-size: 11px;
+        font-size: 12px;
     }
 
 }
