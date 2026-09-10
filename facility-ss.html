@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/fontello.css">
-    
+
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/facility-ss.css">
     <link rel="stylesheet" href="./css/footer.css">
@@ -26,7 +26,6 @@
                     <a href="./index.html" class="header-logo"><img src="./images/logo/black.png" alt="Haevichi">
                     </a>
 
-                    <!-- 수정 후 -->
                     <nav class="main-nav" id="mobile-navigation" aria-label="주요 메뉴">
                         <ul class="main-menu">
 
@@ -189,13 +188,11 @@
                             <li class="main-menu-item">
                                 <a href="./wedding_business.html" class="desktop-main-menu-link">연회</a>
 
-
                                 <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
                                     aria-controls="wedding-business-submenu">
                                     <span>연회</span>
                                     <span class="mobile-submenu-chevron" aria-hidden="true"></span>
                                 </button>
-
 
                                 <div class="mega-menu wedding-business-mega-menu" id="wedding-business-submenu">
                                     <ul class="mega-menu-list">
@@ -233,7 +230,6 @@
                                     <span>부대시설</span>
                                     <span class="mobile-submenu-chevron" aria-hidden="true"></span>
                                 </button>
-
 
                                 <div class="mega-menu facility-mega-menu" id="facility-submenu">
                                     <ul class="mega-menu-list">
@@ -319,9 +315,6 @@
                     </nav>
 
                     <div class="language-selector">
-                        <!-- popvoertarget : 어떤 메뉴 제어할지 지정 -->
-                        <!-- popovertargetaction : 그 메뉴를 어떻게 열고 닫을지 지정 -->
-                        <!-- popovertargetaction="toggle" : popover 클릭할 때마다 열기/닫기 가능하게 -->
                         <button type="button" class="language-button" aria-label="언어 선택" popovertarget="language-menu"
                             popovertargetaction="toggle">
                             <span class="current-language">KR</span>
@@ -330,7 +323,6 @@
 
                         <ul class="language-menu" id="language-menu" popover>
                             <li>
-                                <!-- popovertargetaction="hide" : 옵션 클릭 후 드롭다운 닫게 만들기  -->
                                 <button type="button" class="language-option" popovertarget="language-menu"
                                     popovertargetaction="hide">
                                     KR
@@ -368,292 +360,418 @@
 
     </header>
 
-</body>
+    <main id="main" class="detail-main">
 
-</html>
-
-<!-- ================= header 영역 (별도 파일에서 include) ================= -->
-<!-- <header>...</header> -->
-
-<main id="main" class="detail-main">
-
-    <!-- 1. 히어로 -->
-    <section class="detail-hero-wrap">
-        <div class="img-box">
-            <img src="./images/facility_section/hero.png" alt="Twin Pool 야외 전경">
-        </div>
-    </section>
-
-    <div class="inner detail-inner">
-
-        <!-- 2. 타이틀 & 설명 -->
-        <div class="detail-title-wrap">
-            <h2 class="detail-title">Twin Pool</h2>
-            <p class="detail-subtitle">트윈 풀(실내)</p>
-            <p class="detail-desc">유아용 풀과 자쿠지, 실내외 수영장이 연결된 수문으로 더욱 편리하고 여유로운 스위밍을 즐겨보세요.</p>
-        </div>
-
-        <!-- 3. 이용 정보 아이콘 -->
-        <ul class="detail-meta-list">
-            <li>
-                <img src="./images/facility_section/icon/Vector-1.svg" alt="">
-                <div>
-                    <strong>14:00 ~ 22:00</strong>
-                </div>
-            </li>
-            <li>
-                <img src="./images/icon/nokids.svg" alt="">
-                <div>
-                    <strong>노키즈 존</strong>
-                    <span>자세한 내용은 안전규정에 상세</span>
-                </div>
-            </li>
-            <li>
-                <img src="./images/icon/calendar.svg" alt="">
-                <div>
-                    <strong>6/29, 9/28, 10/26</strong>
-                    <span>7월, 8월 정기휴장 미진행</span>
-                </div>
-            </li>
-        </ul>
-
-        <!-- 4. 슬라이드 이미지 4장 -->
-        <div class="detail-slider-wrap">
-            <div class="detail-slider swiper">
-                <ul class="swiper-wrapper">
-                    <li class="swiper-slide">
-                        <img src="./images/facility_section/sld1.png" alt="Twin Pool 실내 전경 1">
-                    </li>
-                    <li class="swiper-slide">
-                        <img src="./images/facility_section/sld2.png" alt="Twin Pool 실내 전경 2">
-                    </li>
-                    <li class="swiper-slide">
-                        <img src="./images/facility_section/sld3.png" alt="Twin Pool 실내 전경 3">
-                    </li>
-                    <li class="swiper-slide">
-                        <img src="./images/facility_section/sld4.png" alt="Twin Pool 실내 전경 4">
-                    </li>
-                </ul>
+        <!-- 1. 히어로 -->
+        <section class="detail-hero-wrap">
+            <div class="img-box">
+                <img src="./images/facility_section/hero.png" alt="Twin Pool 야외 전경">
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
+        </section>
 
-        <!-- 5. 호버 줌인 이미지 3장 -->
-        <ul class="detail-zoom-list">
-            <li>
-                <div class="img-box">
-                    <img src="./images/facility_section/hover1.png" alt="Twin Pool 상세 이미지 1">
-                </div>
-            </li>
-            <li>
-                <div class="img-box">
-                    <img src="./images/facility_section/hover2.png" alt="Twin Pool 상세 이미지 2">
-                </div>
-            </li>
-            <li>
-                <div class="img-box">
-                    <img src="./images/facility_section/hover3.png" alt="Twin Pool 상세 이미지 3">
-                </div>
-            </li>
-        </ul>
+        <div class="inner detail-inner">
 
-        <!-- 6. 이용안내 -->
-        <div class="detail-guide-wrap">
-            <h3 class="detail-section-title">이용안내</h3>
+            <!-- 2. 타이틀 & 설명 -->
+            <div class="detail-title-wrap">
+                <h2 class="detail-title">Twin Pool</h2>
+                <p class="detail-subtitle">트윈 풀(실내)</p>
+                <p class="detail-desc">유아용 풀과 자쿠지, 실내외 수영장이 연결된 수문으로 더욱 편리하고 여유로운 스위밍을 즐겨보세요.</p>
+            </div>
 
-            <div class="detail-guide-list">
-                <div class="detail-guide-left">
-                    <dl>
-                        <dt>위치</dt>
-                        <dd>윈터가든 1층</dd>
-                    </dl>
-                    <dl>
-                        <dt>기간</dt>
-                        <dd>5/1(목) ~ 10/31(금)</dd>
-                    </dl>
-                    <dl>
-                        <dt>시간</dt>
-                        <dd>06:30 ~ 22:00</dd>
-                    </dl>
-
-                    <ul class="detail-notice-list">
-                        <li>조용하고 여유로운 휴식을 위한 공간으로 운영됩니다.</li>
-                        <li>공간의 분위기 유지를 위해 서로를 배려하는 이용을 부탁드립니다.</li>
-                        <li>기상 상황에 따라 야외 수영장 이용이 제한될 수 있습니다.</li>
+            <!-- 4. 슬라이드 이미지 4장 : 한 번에 1장씩 -->
+            <div class="detail-slider-wrap">
+                <div class="detail-slider swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <img src="./images/facility_section/sld1.png" alt="Twin Pool 실내 전경 1">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="./images/facility_section/sld2.png" alt="Twin Pool 실내 전경 2">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="./images/facility_section/sld3.png" alt="Twin Pool 실내 전경 3">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="./images/facility_section/sld4.png" alt="Twin Pool 실내 전경 4">
+                        </li>
                     </ul>
                 </div>
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
+            </div>
 
-                <div class="detail-guide-right">
-                    <h4>이용요금</h4>
+            <!-- 3. 이용 정보 아이콘 (슬라이드 아래로 이동) -->
+            <ul class="detail-meta-list">
+                <li>
+                    <img src="./images/Group 283.svg" alt="">
+                    <div>
+                        <strong>14:00 ~ 22:00</strong>
+                    </div>
+                </li>
+                <li>
+                    <img src="./images/Group 284.svg" alt="">
+                    <div>
+                        <strong>노키즈 존</strong>
+                        <span>자세한 내용은 안전규정에 상세</span>
+                    </div>
+                </li>
+                <li>
+                    <img src="./images/icon/calendar.svg" alt="">
+                    <div>
+                        <strong>6/29, 9/28, 10/26</strong>
+                        <span>7월, 8월 정기휴장 미진행</span>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- 5. 호버 줌인 이미지 3장 : 왼쪽 큰 사진 1장 + 오른쪽 2장 -->
+            <ul class="detail-zoom-list">
+                <li>
+                    <div class="img-box">
+                        <img src="./images/facility_section/hover1.png" alt="Twin Pool 상세 이미지 1">
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box">
+                        <img src="./images/facility_section/hover2.png" alt="Twin Pool 상세 이미지 2">
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box">
+                        <img src="./images/facility_section/hover3.png" alt="Twin Pool 상세 이미지 3">
+                    </div>
+                </li>
+            </ul>
+
+            <!-- 6. 이용안내 -->
+            <div class="detail-guide-wrap">
+                <h3 class="detail-section-title">이용안내</h3>
+
+                <div class="detail-guide-list">
+                    <div class="detail-guide-left">
+                        <dl>
+                            <dt>위치</dt>
+                            <dd>윈터가든 1층</dd>
+                        </dl>
+                        <dl>
+                            <dt>기간</dt>
+                            <dd>5/1(목) ~ 10/31(금)</dd>
+                        </dl>
+                        <dl>
+                            <dt>시간</dt>
+                            <dd>06:30 ~ 22:00</dd>
+                        </dl>
+
+                        <ul class="detail-notice-list">
+                            <li>조용하고 여유로운 휴식을 위한 공간으로 운영됩니다.</li>
+                            <li>공간의 분위기 유지를 위해 서로를 배려하는 이용을 부탁드립니다.</li>
+                            <li>기상 상황에 따라 야외 수영장 이용이 제한될 수 있습니다.</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-guide-right">
+                        <h4>이용요금</h4>
+                        <ul>
+                            <li>호텔 &amp; 리조트 투숙객 무료</li>
+                            <li>용품 대여료 : 래쉬가드 KRW 15,000, 수영복 KRW 8,000, 수영모 KRW 3,000, 수경 KRW 3,000</li>
+                            <li>무료 대여 : 킥판, 아동용 퍼들점퍼(8kg~15kg), 아동용 구명조끼(10kg~30kg)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6-1. 메뉴 & 음료 -->
+            <div class="detail-menu-wrap">
+                <div class="detail-menu-col">
+                    <div class="detail-menu-col-head">
+                        <h4>Menu</h4>
+                        <span>(₩)</span>
+                    </div>
+                    <div class="detail-menu-grid">
+                        <div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>후라이드 치킨 & 감자튀김</strong>
+                                    <span>Fried Chicken with French Fries</span>
+                                    <em>닭고기: 국내산</em>
+                                </div>
+                                <div class="detail-menu-item-price">45,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>해비치 시그니처 버거</strong>
+                                    <span>Haevichi Signature Burger</span>
+                                    <em>소고기: 국내산(한우) / 베이컨(돼지고기): 외국산</em>
+                                </div>
+                                <div class="detail-menu-item-price">35,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>볼로네제</strong>
+                                    <span>Bolognese</span>
+                                    <em>소고기: 미국산, 호주산(섞음) / 돼지고기, 육수(닭뼈): 국내산</em>
+                                </div>
+                                <div class="detail-menu-item-price">29,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>새우 볶음밥</strong>
+                                    <span>Shrimp Fried Rice</span>
+                                    <em>쌀: 국내산</em>
+                                </div>
+                                <div class="detail-menu-item-price">25,000</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>흑돼지 짜장면</strong>
+                                    <span>Black Pork Jajangmyeon</span>
+                                    <em>돼지고기: 국내산</em>
+                                </div>
+                                <div class="detail-menu-item-price">24,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>폴드포크 랩 & 감자튀김</strong>
+                                    <span>Pulled Pork Wrap with French Fries</span>
+                                    <em>돼지고기: 미국산</em>
+                                </div>
+                                <div class="detail-menu-item-price">21,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>국물떡볶이</strong>
+                                    <span>Soup Tteokbokki</span>
+                                </div>
+                                <div class="detail-menu-item-price">17,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>츄러스</strong>
+                                    <span>Churros</span>
+                                </div>
+                                <div class="detail-menu-item-price">12,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-menu-col">
+                    <div class="detail-menu-col-head">
+                        <h4>Beverage</h4>
+                        <span>(₩)</span>
+                    </div>
+                    <div class="detail-menu-grid">
+                        <div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>해비치 위트비어</strong>
+                                    <span>Haevichi Wheat Beer (Draft)</span>
+                                </div>
+                                <div class="detail-menu-item-price">15,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>제주누보 (논알콜)</strong>
+                                    <span>Jeju Nouveau (Non-alcoholic / Can)</span>
+                                </div>
+                                <div class="detail-menu-item-price">10,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>누보망고 (논알콜)</strong>
+                                    <span>Nouveau Mango (Non-alcoholic / Can)</span>
+                                </div>
+                                <div class="detail-menu-item-price">10,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>착즙 오렌지주스</strong>
+                                    <span>Fresh Orange Juice</span>
+                                </div>
+                                <div class="detail-menu-item-price">10,000</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>아메리카노 (Hot / Ice)</strong>
+                                    <span>Americano (Hot / Ice)</span>
+                                </div>
+                                <div class="detail-menu-item-price">6,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>콜라 / 스프라이트</strong>
+                                    <span>Coke / Sprite (Can)</span>
+                                </div>
+                                <div class="detail-menu-item-price">7,000</div>
+                            </div>
+                            <div class="detail-menu-item">
+                                <div class="detail-menu-item-name">
+                                    <strong>삼다수</strong>
+                                    <span>Samdasoo</span>
+                                </div>
+                                <div class="detail-menu-item-price">1,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. 이용규정 -->
+            <div class="detail-rule-wrap">
+                <div class="detail-rule-item">
+                    <h4>안전규정</h4>
                     <ul>
-                        <li>호텔 &amp; 리조트 투숙객 무료</li>
-                        <li>용품 대여료 : 래쉬가드 KRW 15,000, 수영복 KRW 8,000, 수영모 KRW 3,000, 수경 KRW 3,000</li>
-                        <li>무료 대여 : 킥판, 아동용 퍼들점퍼(8kg~15kg), 아동용 구명조끼(10kg~30kg)</li>
+                        <li>귀중품 및 신발은 분실 방지를 위해 락커에 보관</li>
+                        <li>소지품 분실 및 훼손에 대한 책임은 본인에게 있음</li>
+                    </ul>
+                </div>
+                <div class="detail-rule-item">
+                    <h4>제한품목</h4>
+                    <ul>
+                        <li>지름 1M 이상의 대형 튜브, 장난감 물총, 스노클, 오리발</li>
+                        <li>유리 및 금속 등 날카롭거나 깨질 수 있는 물건</li>
+                    </ul>
+                </div>
+                <div class="detail-rule-item">
+                    <h4>복장규정</h4>
+                    <ul>
+                        <li>수영복 또는 래쉬가드 착용 필수(면 티셔츠 또는 면바지 착용 불가)</li>
+                        <li>신체에 문신이 있는 경우 노출되지 않도록 래쉬가드 착용 필수</li>
                     </ul>
                 </div>
             </div>
-        </div>
 
-        <!-- 7. 이용규정 -->
-        <div class="detail-rule-wrap">
-            <div class="detail-rule-item">
-                <h4>안전규정</h4>
-                <ul>
-                    <li>귀중품 및 신발은 분실 방지를 위해 락커에 보관</li>
-                    <li>소지품 분실 및 훼손에 대한 책임은 본인에게 있음</li>
-                </ul>
-            </div>
-            <div class="detail-rule-item">
-                <h4>제한품목</h4>
-                <ul>
-                    <li>지름 1M 이상의 대형 튜브, 장난감 물총, 스노클, 오리발</li>
-                    <li>유리 및 금속 등 날카롭거나 깨질 수 있는 물건</li>
-                </ul>
-            </div>
-            <div class="detail-rule-item">
-                <h4>복장규정</h4>
-                <ul>
-                    <li>수영복 또는 래쉬가드 착용 필수(면 티셔츠 또는 면바지 착용 불가)</li>
-                    <li>신체에 문신이 있는 경우 노출되지 않도록 래쉬가드 착용 필수</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 8. 문의하기 버튼 -->
-        <p class="detail-btn-wrap btn btn-pri">
-            <a href="#">문의하기</a>
-        </p>
-
-    </div>
-</main>
-
-<!-- ================= footer 영역 (별도 파일에서 include) ================= -->
-<!-- <footer>...</footer> -->
-<!-- footer -->
-<footer class="site-footer">
-    <div class="footer-inner">
-
-        <!-- Footer Top -->
-        <div class="footer-top">
-            <a href="#" class="footer-logo">
-                <img src="./images/logo/white.png" alt="해비치">
-            </a>
-
-            <nav class="footer-nav" aria-label="푸터 메뉴">
-                <ul class="footer-menu">
-                    <li><a href="#">해비치소개</a></li>
-                    <li><a href="#">고객센터</a></li>
-                    <li><a href="#">오시는 길</a></li>
-                    <li><a href="#">해비치약관</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">이메일무단수집금지</a></li>
-                </ul>
-            </nav>
-        </div>
-
-
-        <!-- Contact + Company Info -->
-        <div class="footer-info-row">
-            <address class="footer-contact">
-                <!-- 장식용 아이콘이므로 대체 텍스트를 비움 -->
-                <!-- | 디자인용 구분자를 접근성을 고려해 사용하면 스크린리더가 읽지 않음 -->
-                <p>
-                    <img src="./images/icon/location_wh.svg" alt="">
-                    <a href="#">제주특별자치도 서귀포시 성산읍 해비치로 136</a>
-                </p>
-
-                <p>
-                    <img src="./images/icon/phone_wh.svg" alt="">
-                    <a href="tel:0647808000">064-780-8000</a>
-                    <span aria-hidden="true">|</span>
-                    <span>예약</span>
-                    <a href="tel:15881234">1588-1234</a>
-                </p>
-
-                <p>
-                    <img src="./images/icon/envelope_wh.svg" alt="">
-                    <a href="mailto:info@haevichi.com">
-                        info@haevichi.com
-                    </a>
-                </p>
-            </address>
-
-            <div class="footer-company-info">
-                <p>해비치호텔앤드리조트 주식회사</p>
-                <p>사업자등록번호 : 616-81-27929</p>
-                <p>통신판매신고번호 : 제주남원 00040호 대표이사 황규석</p>
-            </div>
+            <!-- 8. 문의하기 버튼 -->
+            <p class="detail-btn-wrap btn btn-pri">
+                <a href="#">문의하기</a>
+            </p>
 
         </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <a href="#" class="footer-logo">
+                    <img src="./images/logo/white.png" alt="해비치">
+                </a>
+
+                <nav class="footer-nav" aria-label="푸터 메뉴">
+                    <ul class="footer-menu">
+                        <li><a href="#">해비치소개</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                        <li><a href="#">해비치약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이메일무단수집금지</a></li>
+                    </ul>
+                </nav>
+            </div>
 
 
-        <!-- Certification + SNS -->
-        <div class="footer-bottom-row">
-
-            <div class="footer-cert">
-
-                <div class="cert-item">
-                    <img src="./images/footer/ks_sqi.jpg" alt="">
-                    <p><span>한국 서비스 품질 지수</span>
-                        <span>(KS-SQI) 수상</span>
-                    </p>
-                </div>
-
-                <div class="cert-item">
-                    <img src="./images/footer/greenkey.jpg" alt="">
+            <!-- Contact + Company Info -->
+            <div class="footer-info-row">
+                <address class="footer-contact">
                     <p>
-                        <span>국제 친환경 인증 프로그램</span>
-                        <span>그린 키 (Green Key) 획득</span>
+                        <img src="./images/icon/location_wh.svg" alt="">
+                        <a href="#">제주특별자치도 서귀포시 성산읍 해비치로 136</a>
                     </p>
+
+                    <p>
+                        <img src="./images/icon/phone_wh.svg" alt="">
+                        <a href="tel:0647808000">064-780-8000</a>
+                        <span aria-hidden="true">|</span>
+                        <span>예약</span>
+                        <a href="tel:15881234">1588-1234</a>
+                    </p>
+
+                    <p>
+                        <img src="./images/icon/envelope_wh.svg" alt="">
+                        <a href="mailto:info@haevichi.com">
+                            info@haevichi.com
+                        </a>
+                    </p>
+                </address>
+
+                <div class="footer-company-info">
+                    <p>해비치호텔앤드리조트 주식회사</p>
+                    <p>사업자등록번호 : 616-81-27929</p>
+                    <p>통신판매신고번호 : 제주남원 00040호 대표이사 황규석</p>
                 </div>
 
             </div>
 
-            <nav class="sns" aria-label="소셜 미디어">
-                <ul class="sns-list">
-                    <!-- target="_blank" 새 창 만들때 사용하는 보안코드 -->
 
-                    <li>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <img src="./images/icon/insta_wh.svg" alt="인스타그램">
-                        </a>
-                    </li>
+            <!-- Certification + SNS -->
+            <div class="footer-bottom-row">
 
-                    <li>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <img src="./images/icon/facebook_wh.svg" alt="페이스북">
-                        </a>
-                    </li>
+                <div class="footer-cert">
 
-                    <li>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <img src="./images/icon/youtube_wh.svg" alt="유튜브">
-                        </a>
-                    </li>
+                    <div class="cert-item">
+                        <img src="./images/footer/ks_sqi.jpg" alt="">
+                        <p><span>한국 서비스 품질 지수</span>
+                            <span>(KS-SQI) 수상</span>
+                        </p>
+                    </div>
 
-                </ul>
-            </nav>
+                    <div class="cert-item">
+                        <img src="./images/footer/greenkey.jpg" alt="">
+                        <p>
+                            <span>국제 친환경 인증 프로그램</span>
+                            <span>그린 키 (Green Key) 획득</span>
+                        </p>
+                    </div>
+
+                </div>
+
+                <nav class="sns" aria-label="소셜 미디어">
+                    <ul class="sns-list">
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./images/icon/insta_wh.svg" alt="인스타그램">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./images/icon/facebook_wh.svg" alt="페이스북">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./images/icon/youtube_wh.svg" alt="유튜브">
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+
+
+            <p class="footer-copyright">
+                COPYRIGHT 2018 Haevichi hotels &amp; resorts Co. LTD. All Right Reserved
+            </p>
 
         </div>
+    </footer>
 
-
-        <p class="footer-copyright">
-            COPYRIGHT 2018 Haevichi hotels &amp; resorts Co. LTD. All Right Reserved
-        </p>
-
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-<script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script>
         const menuButton = document.querySelector(".mobile-menu-button");
         const mobileNavigation = document.querySelector("#mobile-navigation");
         const submenuButtons = document.querySelectorAll(".mobile-submenu-toggle");
         const mobileMenuBackdrop = document.querySelector(".mobile-menu-backdrop");
         const desktopMedia = window.matchMedia("(min-width: 1280px)");
 
-        /* 열려 있는 모든 서브메뉴 닫기 */
         function closeAllSubmenus() {
             submenuButtons.forEach(function (button) {
                 const menuItem = button.closest(".main-menu-item");
@@ -663,7 +781,6 @@
             });
         }
 
-        /* 전체 모바일 메뉴 열기·닫기 */
         function setMobileMenu(open) {
             mobileNavigation.classList.toggle("is-open", open);
             document.body.classList.toggle("menu-open", open);
@@ -674,35 +791,29 @@
                 open ? "전체 메뉴 닫기" : "전체 메뉴 열기"
             );
 
-            /* 전체 메뉴를 닫으면 열려 있던 서브메뉴도 초기화 */
             if (!open) {
                 closeAllSubmenus();
             }
         }
 
-        /* 햄버거·닫기 버튼 */
         menuButton.addEventListener("click", function () {
             const isOpen = mobileNavigation.classList.contains("is-open");
 
             setMobileMenu(!isOpen);
         });
 
-        /* 메뉴 바깥 배경을 클릭하면 전체 메뉴 닫기 */
         mobileMenuBackdrop.addEventListener("click", function () {
             setMobileMenu(false);
         });
 
-        /* 메인메뉴 아코디언 */
         submenuButtons.forEach(function (button) {
             button.addEventListener("click", function () {
                 const menuItem = button.closest(".main-menu-item");
                 const isExpanded =
                     button.getAttribute("aria-expanded") === "true";
 
-                /* 먼저 다른 서브메뉴를 모두 닫음 */
                 closeAllSubmenus();
 
-                /* 클릭한 메뉴가 닫혀 있었을 때만 열기 */
                 if (!isExpanded) {
                     button.setAttribute("aria-expanded", "true");
                     menuItem.classList.add("is-expanded");
@@ -710,7 +821,6 @@
             });
         });
 
-        /* Escape 키로 전체 메뉴 닫기 */
         document.addEventListener("keydown", function (event) {
             const isMenuOpen =
                 mobileNavigation.classList.contains("is-open");
@@ -721,7 +831,6 @@
             }
         });
 
-        /* 데스크톱 화면으로 전환되면 모바일 메뉴 초기화 */
         desktopMedia.addEventListener("change", function (event) {
             if (event.matches) {
                 setMobileMenu(false);
@@ -729,29 +838,17 @@
         });
     </script>
 
-<script>
-    var detailSwiper = new Swiper('.detail-slider', {
-        slidesPerView: 1.2,
-        spaceBetween: 16,
-        loop: true,
-        navigation: {
-            nextEl: '.detail-slider-wrap .swiper-button-next',
-            prevEl: '.detail-slider-wrap .swiper-button-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2.2,
-                spaceBetween: 20,
+    <script>
+        var detailSwiper = new Swiper('.detail-slider', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            navigation: {
+                nextEl: '.detail-slider-wrap .swiper-button-next',
+                prevEl: '.detail-slider-wrap .swiper-button-prev',
             },
-            1279: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-            },
-        },
-    });
-
-    
-</script>
+        });
+    </script>
 </body>
 
 </html>

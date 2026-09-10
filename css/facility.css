@@ -4,6 +4,20 @@ body {
     color: #171717;
 }
 
+/* 공통 초기화 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 .inner {
     max-width: var(--inner-width);
     /* background-color: rgba(255, 0, 0, 0.1); */
@@ -123,7 +137,7 @@ section {
 .hero {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: clamp(280px, 31.25vw, 600px);
     overflow: hidden;
     padding-top: 0;
     /*
@@ -169,24 +183,6 @@ section {
     .hero__title은 여기에서 한 번만 선언합니다.
     기존에 아래쪽에 있던 중복 .hero__title은 삭제했습니다.
 */
-
-.hero__title {
-    position: absolute;
-    top: calc(50% + 15px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 56px;
-    font-weight: 800;
-    font-family: "Minion Pro", serif;
-
-    text-align: center;
-    white-space: nowrap;
-    color: var(--Neutral-100);
-
-    margin: 0;
-}
-
 
 /* ============================================================
    FACILITY SECTIONS
@@ -345,18 +341,46 @@ section {
    1279px 이하
 ============================================================ */
 
+
+/* HERO TITLE */
+.hero__title {
+    position: absolute;
+    top: calc(50% + 44px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Minion Pro', serif;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: var(--Neutral-100);
+    margin: 0;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 1279px) {
+    .hero__title {
+        top: calc(50% + 30px);
+        font-size: 49px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hero__title {
+        top: calc(50% + 25px);
+        font-size: 32px;
+        font-weight: 600;
+    }
+}
+
+h1, h2, h3, p { margin: 0; }
+
 @media screen and (max-width: 1279px) {
 
     /* HERO */
     .hero {
-        height: 400px;
+        height: clamp(300px, 31.25vw, 400px);
     }
-
-    .hero__title {
-        font-size: 2.5em;
-        top: calc(50% + 25px);
-    }
-
 
     /* HEADER */
     .header-inner > div {
@@ -485,50 +509,115 @@ section {
 /* ============================================================
    반응형 - 모바일
    767px 이하
+   PC 레이아웃 비율을 유지하면서 자연스럽게 축소
 ============================================================ */
 
 @media screen and (max-width: 767px) {
 
     /* HERO */
     .hero {
-        height: 200px;
+        height: 280px;
+        aspect-ratio: auto;
     }
 
-   .hero__title { 
-        font-size: 2em; 
-        top: calc(50% + 25px); 
-    } 
+    /* FACILITY SECTION */
+    .facility-section {
+        padding-top: 80px;
+    }
 
+    .inner {
+        padding: 0 16px;
+    }
 
-    /* FACILITY CARD */
+    /* SECTION TITLE */
+    .section-head__title {
+        font-size: clamp(28px, 5vw, 42px);
+        margin-bottom: 8px;
+    }
+
+    .section-head__desc {
+        font-size: clamp(13px, 2.2vw, 18px);
+        line-height: 1.5;
+    }
+
+    /* IMAGE GROUP */
+    .image-group {
+        margin-top: 28px;
+        gap: 12px;
+    }
+
+    /* PC의 1:1 / 2:1 구조를 모바일에서도 그대로 유지 */
+    .image-row {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .img-box {
+        height: auto;
+        aspect-ratio: 710 / 392;
+    }
+
+    .img-box--full {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 1440 / 392;
+    }
+
+    .img-box--half {
+        width: auto;
+        max-width: none;
+        flex: 1 1 0;
+        aspect-ratio: 710 / 392;
+    }
+
+    /* IMAGE */
+    .img-box > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* OVERLAY */
+    .facility-card__overlay {
+        padding: 0 clamp(16px, 5vw, 64px);
+    }
+
+    .facility-card__title {
+        font-size: clamp(14px, 2.5vw, 20px);
+        margin-bottom: clamp(5px, 1.4vw, 12px);
+    }
+
+    
     .facility-card__desc {
-        font-size: 11px;
-        max-width: 260px;
+        max-width: 85%;
+        font-size: clamp(8px, 1.35vw, 13px);
+        line-height: 1.4;
+        margin-bottom: 7px;
 
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
-
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    .facility-card__btn {
-        padding: 4px 10px;
-        margin-top: 10px;
-        font-size: 11px;
-    }
-
-
-    /* 공통 버튼 */
+    /* BUTTON */
     .btn > a {
-        padding: 4px 0 4px 12px;
+        padding: 3px 7px;
+        font-size: clamp(8px, 1.25vw, 11px);
     }
 
+    .btn > a::after {
+        width: 18px;
+        height: 14px;
+        background-size: contain;
+    }
 
-    /* HERO 아래 여백 */
-    .hero__overlay + .inner {
-        margin-top: 50px;
+    /* 모바일에서 터치할 때도 오버레이를 확인할 수 있도록 유지 */
+    .facility-card:active .facility-card__overlay {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -540,11 +629,16 @@ section {
 
 @media screen and (max-width: 480px) {
 
+    /* HERO
+       모바일에서도 헤더에 묻히지 않도록 최소 높이 유지 */
+    .hero {
+        height: 240px;
+    }
+
     /* HEADER */
     .logo {
         width: 100px;
     }
-
 
     /* MAIN */
     .address-wrap .address-right {
@@ -559,119 +653,44 @@ section {
     .copy-sns-wrap > .sns-list {
         display: none;
     }
-}
 
-/* 플로팅 버튼 */
-.top-button {
-    position: fixed;
-    right: 40px;
-    bottom: 40px;
-    z-index: 3000;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 56px;
-    height: 56px;
-    margin: 0;
-    padding: 0;
-
-    color: var(--Primary-color, #1a5fa1);
-    background-color: #fff;
-    border: 1px solid rgba(26, 95, 161, 0.1);
-    border-radius: 50%;
-
-    box-shadow:
-        0 8px 24px rgba(23, 23, 23, 0.16),
-        0 2px 6px rgba(23, 23, 23, 0.1);
-
-    font-family: inherit;
-    appearance: none;
-    cursor: pointer;
-
-    /* 처음에는 숨김 */
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(12px);
-
-    transition:
-        color 0.25s ease,
-        background-color 0.25s ease,
-        box-shadow 0.25s ease,
-        opacity 0.3s ease,
-        visibility 0.3s ease,
-        transform 0.3s ease;
-}
-
-/* 스크롤을 300px 이상 내리면 적용 */
-.top-button.is-visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-/* 원 중앙 TOP 글자 */
-.top-button-text {
-    color: inherit;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-}
-
-/* 마우스 호버 */
-.top-button:hover {
-    color: #fff;
-    background-color: var(--Primary-color, #1a5fa1);
-
-    box-shadow:
-        0 10px 28px rgba(26, 95, 161, 0.25),
-        0 3px 8px rgba(23, 23, 23, 0.14);
-
-    transform: translateY(-3px);
-}
-
-/* 클릭 */
-.top-button:active {
-    transform: translateY(0) scale(0.96);
-}
-
-/* 키보드 포커스 */
-.top-button:focus-visible {
-    outline: 2px solid var(--Primary-color, #1a5fa1);
-    outline-offset: 5px;
-}
-
-/* 태블릿 */
-@media (max-width: 1279px) {
-    .top-button {
-        right: 24px;
-        bottom: 24px;
-    }
-}
-
-/* 모바일 */
-@media (max-width: 767px) {
-    .top-button {
-        right: 16px;
-        bottom: 20px;
-
-        width: 48px;
-        height: 48px;
+    /* FACILITY */
+    .facility-section {
+        padding-top: 60px;
     }
 
-    .top-button-text {
-        font-size: 11px;
+    .image-group {
+        margin-top: 22px;
+        gap: 8px;
     }
-}
 
-/* 모션 최소화 설정 */
-@media (prefers-reduced-motion: reduce) {
-    .top-button {
-        transition: none;
+    .image-row {
+        gap: 8px;
+    }
+
+     .facility-card__overlay {
+        padding: 0 12px;
+    }
+
+    .facility-card__title {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .facility-card__desc {
+        font-size: 9px;
+        line-height: 1.35;
+        -webkit-line-clamp: 2;
+        margin-bottom: 5px;
+    }
+
+    .btn > a {
+        padding: 3px 6px;
+        font-size: 8px;
+    }
+
+    .btn > a::after {
+        width: 16px;
+        height: 12px;
     }
 }
