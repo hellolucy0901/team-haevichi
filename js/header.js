@@ -1,5 +1,4 @@
-<!-- header -->
-    <script>
+
         const menuButton = document.querySelector(".mobile-menu-button");
         const mobileNavigation = document.querySelector("#mobile-navigation");
         const submenuButtons = document.querySelectorAll(".mobile-submenu-toggle");
@@ -80,4 +79,4 @@
                 setMobileMenu(false);
             }
         });
-    </script>
+

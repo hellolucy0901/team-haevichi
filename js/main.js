@@ -298,6 +298,4 @@ bookBtn?.addEventListener('click', () => {
 
     console.log('예약하기 클릭 - 선택된 값:', reservationInfo);
 
-    // 예약 완료 알림창 출력
-    alert('예약이 완료되었습니다.');
 });
