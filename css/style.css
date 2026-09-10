@@ -1326,8 +1326,10 @@ section {
 }
 .room-type-wrap>div>ul .img-box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
-
 .room-type-wrap>div>ul .text-box {
     display: flex;
     padding-top: 3em;
