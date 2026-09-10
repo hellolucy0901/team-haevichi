@@ -780,11 +780,16 @@ section{
     /* padding-right: 300px; */
 }
 
+
 /* tab-menu */
 .tab-menu{
     display: flex;
     gap: 2em;
     margin-bottom: 1.5em;
+}
+
+.room-tab-menu{
+    margin-bottom: 24px;
 }
 
 .tab-menu>li>a{
@@ -962,6 +967,9 @@ section{
     position : absolute;
     bottom:0;
 }
+.rooms-wrap > .inner {
+    padding-bottom: 0;
+}
 /* rooms */
 .room-type-wrap{}
 .room-type-wrap>div{
@@ -1023,6 +1031,21 @@ section{
     align-items: center;
     gap: 10px;
 
+}
+
+.swiper-hotelbutton-prev,
+.swiper-hotelbutton-next,
+.swiper-resortbutton-prev,
+.swiper-resortbutton-next {
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.swiper-hotelbutton-prev:hover,
+.swiper-hotelbutton-next:hover,
+.swiper-resortbutton-prev:hover,
+.swiper-resortbutton-next:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .swiper-hotelbutton-prev,
