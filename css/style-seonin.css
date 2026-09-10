@@ -780,11 +780,16 @@ section{
     /* padding-right: 300px; */
 }
 
+
 /* tab-menu */
 .tab-menu{
     display: flex;
     gap: 2em;
     margin-bottom: 1.5em;
+}
+
+.room-tab-menu{
+    margin-bottom: 24px;
 }
 
 .tab-menu>li>a{
@@ -961,6 +966,9 @@ section{
     text-decoration: underline;
     position : absolute;
     bottom:0;
+}
+.rooms-wrap > .inner {
+    padding-bottom: 0;
 }
 /* rooms */
 .room-type-wrap{}
