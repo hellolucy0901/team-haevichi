@@ -780,11 +780,16 @@ section{
     /* padding-right: 300px; */
 }
 
+
 /* tab-menu */
 .tab-menu{
     display: flex;
     gap: 2em;
     margin-bottom: 1.5em;
+}
+
+.room-tab-menu{
+    margin-bottom: 24px;
 }
 
 .tab-menu>li>a{
@@ -962,6 +967,9 @@ section{
     position : absolute;
     bottom:0;
 }
+.rooms-wrap > .inner {
+    padding-bottom: 0;
+}
 /* rooms */
 .room-type-wrap{}
 .room-type-wrap>div{
@@ -972,9 +980,18 @@ section{
     display: block;
 }
 .room-type-wrap>div>ul{}
-.room-type-wrap>div>ul .img-box{}
-.room-type-wrap>div>ul .img-box img{
+.room-type-wrap>div>ul .img-box {
+    position: relative;
     width: 100%;
+    aspect-ratio: 21 / 6;  /* 추천 */
+    overflow: hidden;
+}
+
+.room-type-wrap>div>ul .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .room-type-wrap>div>ul .text-box{
@@ -1017,6 +1034,21 @@ section{
 }
 
 .swiper-hotelbutton-prev,
+.swiper-hotelbutton-next,
+.swiper-resortbutton-prev,
+.swiper-resortbutton-next {
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.swiper-hotelbutton-prev:hover,
+.swiper-hotelbutton-next:hover,
+.swiper-resortbutton-prev:hover,
+.swiper-resortbutton-next:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.swiper-hotelbutton-prev,
 .swiper-hotelbutton-next{
     position:absolute;
     width: clamp(32px, 4.03vw, 58px);
@@ -1026,6 +1058,7 @@ section{
     background-position: center;
     z-index: 1000;
     transform: translateY(-50%);
+    cursor: pointer;  
 
 }
 
@@ -1049,6 +1082,7 @@ section{
     background-position: center;
     z-index: 1000;
     transform: translateY(-50%);
+    cursor: pointer;   
 
 }
 
