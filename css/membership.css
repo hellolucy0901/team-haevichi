@@ -273,4 +273,8 @@ body {
         font-size: 13px;
         line-height: 1.6;
     }
+    .sub-visual h1{ 
+    font-size: 32px; 
+    top: calc(50% + 25px);
+}
 }
