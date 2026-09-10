@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/offers-slider.css">
     <link rel="stylesheet" href="./font/font.css">
     <script defer src="./js/main.js"></script>
+    <script defer src="./js/top-fl-btn.js"></script>
 </head>
 
 <body>
@@ -41,12 +42,7 @@
                     <nav class="main-nav" id="mobile-navigation" aria-label="주요 메뉴">
 
                         <ul class="main-menu">
-
-
-                            <!-- ======================================================
-                                 스페셜 오퍼
-                            ======================================================= -->
-
+                            <!-- 오퍼 -->
                             <li class="main-menu-item">
 
                                 <a href="./offers.html" class="desktop-main-menu-link">
@@ -97,11 +93,7 @@
                             </li>
 
 
-
-                            <!-- ======================================================
-                                 호텔
-                            ======================================================= -->
-
+                            <!-- 호텔 -->
                             <li class="main-menu-item">
 
                                 <a href="./hoteloverview.html" class="desktop-main-menu-link">
@@ -252,11 +244,7 @@
                             </li>
 
 
-
-                            <!-- ======================================================
-                                 리조트
-                            ======================================================= -->
-
+                            <!-- 리조트 -->
                             <li class="main-menu-item">
 
                                 <a href="./resortoverview.html" class="desktop-main-menu-link">
@@ -401,10 +389,7 @@
                             </li>
 
 
-
-                            <!-- ======================================================
-                                 다이닝
-                            ======================================================= -->
+                            <!-- 다이닝 -->
 
                             <li class="main-menu-item">
 
@@ -2288,16 +2273,29 @@
             </p>
 
         </div>
+
+
     </footer>
+
+    </footer>
+
+    <!-- 페이지 상단 이동 버튼 -->
+    <button type="button" id="topButton" class="top-button" aria-label="페이지 상단으로 이동" aria-hidden="true">
+        <span class="top-button-text" aria-hidden="true">
+            TOP
+        </span>
+    </button>
+
 
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 
 
-    <!-- =========================
-     언어 선택
-========================= -->
+    <!--언어선택 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
