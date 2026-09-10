@@ -34,14 +34,16 @@
 }
 
 .sub-visual h1 {
-    font-family: "Minion Pro Bold Condensed", serif;
+    position: absolute;
+    top: calc(50% + 15px);
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-family: "Minion Pro", serif;
     font-size: 56px;
-    letter-spacing: 0.06em;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
     color: #fff;
-    text-transform: uppercase;
-
-    position: relative;
-    top: 30px;
 }
 
 .sub-visual .inner h2 {
