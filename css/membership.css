@@ -35,7 +35,7 @@
 
 .sub-visual h1 {
     font-family: "Minion Pro Bold Condensed", serif;
-    font-size: 3.5em;
+    font-size: 56px;
     letter-spacing: 0.06em;
     color: #fff;
     text-transform: uppercase;
@@ -88,7 +88,7 @@ body {
 
 
 .membership-detail-wrap .title-box p{
-    font-size: 1.38em;
+    font-size: 18px;
     color:var(--Neutral-700);
     line-height: 1.6;
 }
@@ -190,11 +190,17 @@ body {
         padding: 1.5em;
     }
     .sub-visual{
-        height: 360px;
+        height: 500px;
+    }
+    .sub-visual h1{
+        font-size: 49px;
     }
 
     .membership-detail-wrap{
         padding-top: 50px;
+    }
+    .membership-detail-wrap .section-title{
+        font-size: 40px;
     }
 
     .membership-list > li{
@@ -213,9 +219,6 @@ body {
     }
     .membership-detail-wrap{
         padding-top: 50px;
-    }
-    .sub-visual{
-        height: 240px;
     }
 
     .membership-list li{
@@ -254,5 +257,18 @@ body {
     }
     .membership-detail-wrap{
         padding-top: 50px;
+    }
+    .sub-visual{
+        height: 200px;
+    }
+    .sub-visual h1{
+        font-size: 32px;
+    }
+    .membership-detail-wrap .section-title{
+        font-size: 28px;
+    }
+    .membership-detail-wrap .title-box p{
+        font-size: 13px;
+        line-height: 1.6;
     }
 }
