@@ -985,6 +985,14 @@
                     </li>
                 </ul>
             </div>
+            <div class="main-slider-control">
+                <button type="button" class="slider-prev" aria-label="이전 슬라이드">Prev</button>
+                <div class="slider-progress" role="progressbar" aria-label="슬라이드 진행률" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <span class="slider-progress-bar"></span>
+                </div>
+                <button type="button" class="slider-next" aria-label="다음 슬라이드">Next</button>
+            </div>
             <div class="reservation-wrap inner">
                 <div class="re-left">
                     <!-- div*6>p.re-item-title+p.re-data -->
@@ -2361,7 +2369,6 @@
 
 <!-- Initialize Swiper -->
 <script>
-    // main
        var mainSwiper = new Swiper('.main-slider', {
             effect: 'fade',
             speed: 2500,
@@ -2447,6 +2454,44 @@
             requestAnimationFrame(syncPosition);
         })();
 
+function centerSliderButtons(imgBox, prevBtn, nextBtn){
+    if(!imgBox || !prevBtn || !nextBtn) return;
+
+    const height = imgBox.offsetHeight;
+    if(height === 0) return; // 아직 안 보이는 상태(탭 미활성 등) → 갱신 보류, 이전 값 유지
+
+    const centerY = height / 2;
+    prevBtn.style.top = centerY + 'px';
+    nextBtn.style.top = centerY + 'px';
+}
+
+function setupSliderButtonObserver(wrapSelector, prevSelector, nextSelector){
+    const wrap = document.querySelector(wrapSelector);
+    const prevBtn = document.querySelector(prevSelector);
+    const nextBtn = document.querySelector(nextSelector);
+    if(!wrap || !prevBtn || !nextBtn) return;
+
+    const update = () => {
+        const activeImgBox = wrap.querySelector('.swiper-slide-active .img-box')
+            || wrap.querySelector('.img-box');
+        centerSliderButtons(activeImgBox, prevBtn, nextBtn);
+    };
+
+    // 이 컨테이너 안의 모든 img-box 크기 변화를 감시
+    const ro = new ResizeObserver(update);
+    wrap.querySelectorAll('.img-box').forEach(box => ro.observe(box));
+
+    update(); // 최초 1회 즉시 시도
+
+    return update;
+}
+
+const updateResortButtons = setupSliderButtonObserver(
+    '.room-type-resort', '.swiper-resortbutton-prev', '.swiper-resortbutton-next'
+);
+const updateHotelButtons = setupSliderButtonObserver(
+    '.room-type-hotel', '.swiper-hotelbutton-prev', '.swiper-hotelbutton-next'
+);
         var hotelSwiper = new Swiper('.room-type-hotel', {
             effect: 'fade',
             speed: 1500,
@@ -2458,6 +2503,10 @@
             fadeEffect: {
                 crossFade: true
             },
+    on: {
+        init: () => updateHotelButtons && updateHotelButtons(),
+        slideChangeTransitionEnd: () => updateHotelButtons && updateHotelButtons(),
+    }
         });
 
         var resortSwiper = new Swiper('.room-type-resort', {
@@ -2471,6 +2520,10 @@
             fadeEffect: {
                 crossFade: true
             },
+           on: {
+        init: () => updateResortButtons && updateResortButtons(),
+        slideChangeTransitionEnd: () => updateResortButtons && updateResortButtons(),
+    }
         });
     // dining
     var diningSwiper = new Swiper('.dining-list-wrap', {
@@ -2591,18 +2644,21 @@
 
             tab.addEventListener("click", function (e) {
                 e.preventDefault();
-
+                // 모든 탭 active 제거
                 roomTabs.forEach((item) => {
                     item.classList.remove("active");
                 });
-
+                // 클릭한 탭 active
                 tab.classList.add("active");
-
                 roomContents.forEach((content) => {
                     content.classList.remove("on");
                 });
-
+                // 클릭한 탭과 같은 순서의 콘텐츠 보여주기
                 roomContents[index].classList.add("on");
+                requestAnimationFrame(() => {
+                updateResortButtons && updateResortButtons();
+                updateHotelButtons && updateHotelButtons();
+                });
             });
         });
 
