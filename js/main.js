@@ -298,4 +298,5 @@ bookBtn?.addEventListener('click', () => {
 
     console.log('예약하기 클릭 - 선택된 값:', reservationInfo);
 
+    
 });
