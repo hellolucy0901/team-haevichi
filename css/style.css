@@ -1317,10 +1317,13 @@ section {
     display: block;
 }
 
-.room-type-wrap>div>ul {}
-
-.room-type-wrap>div>ul .img-box {}
-
+.room-type-wrap>div>ul{}
+.room-type-wrap>div>ul .img-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 21 / 6;  /* 추천 */
+    overflow: hidden;
+}
 .room-type-wrap>div>ul .img-box img {
     width: 100%;
 }
