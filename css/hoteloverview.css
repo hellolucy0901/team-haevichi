@@ -373,9 +373,10 @@ body {
     line-height: 1.2; 
     letter-spacing: 0.04em; 
     
-    position: relative;
-    top: 30px;
-    
+    position: absolute;
+    top: calc(50% + 25px);
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
