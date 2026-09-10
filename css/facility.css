@@ -151,9 +151,10 @@ section {
     background-position: center;
 }
 
-.hero__overlay {
-    position: absolute;
-    inset: 0;
+.hero__overlay { 
+    position: absolute; 
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.3);
 }
 
 
@@ -493,10 +494,10 @@ section {
         height: 200px;
     }
 
-    .hero__title {
-        font-size: 2em;
-        top: 50%;
-    }
+   .hero__title { 
+        font-size: 2em; 
+        top: calc(50% + 25px); 
+    } 
 
 
     /* FACILITY CARD */
