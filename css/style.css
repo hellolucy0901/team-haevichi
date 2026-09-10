@@ -1370,6 +1370,21 @@ section {
 }
 
 .swiper-hotelbutton-prev,
+.swiper-hotelbutton-next,
+.swiper-resortbutton-prev,
+.swiper-resortbutton-next {
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.swiper-hotelbutton-prev:hover,
+.swiper-hotelbutton-next:hover,
+.swiper-resortbutton-prev:hover,
+.swiper-resortbutton-next:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.swiper-hotelbutton-prev,
 .swiper-hotelbutton-next {
     position: absolute;
     width: clamp(32px, 4.03vw, 58px);
