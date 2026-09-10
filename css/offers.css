@@ -15,19 +15,37 @@
     object-fit: cover;
 }
 
-.offers-hero h1 {
+/* hero 전체 딤드 */
+.offers-hero::before {
+    content: "";
     position: absolute;
-    top: calc(50% + 44px);
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
 
-    font-family: 'Minion Pro', serif;
+    background: rgba(0, 0, 0, 0.25);
+
+    z-index: 1;
+}
+
+
+.offers-hero h1 {
+
+    position: absolute;
+    top: calc(50% + 15px);
+    left: 50%;
+    transform:translate(-50%,-50%);
+
     font-size: 56px;
     font-weight: 800;
-    line-height: normal;
-    letter-spacing: 0.01em;
+    font-family: "Minion Pro", serif;
+
+    text-align: center;
+    white-space: nowrap;
     color: var(--Neutral-100);
+    letter-spacing: 0.05em;
+    z-index: 2;
 }
+
+
 
 /* section */
 .offers-section {
