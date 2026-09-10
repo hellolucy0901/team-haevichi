@@ -10,7 +10,7 @@
 }
 
 .content-container {
-    width: min(1440px, calc(100% - 80px));
+    width: min(1440px, calc(100% - 32px));
     margin: 0 auto;
 }
 
@@ -54,7 +54,7 @@
     flex-direction: column;
     gap: 11px;
 
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 .section-heading h2 {
     font-family: 'Minion Pro', serif;
@@ -224,7 +224,7 @@
 
 
 /* narrow desktop */
-@media screen and (min-width: 1279px) and (max-width: 1442px) {
+@media screen and (min-width: 1280px) and (max-width: 1442px) {
 
     .wedding-business-hero h1 {
         font-size: 49px;
@@ -232,10 +232,10 @@
 }
 
 /* tablet */
-@media screen and (max-width: 1278.98px) {
+@media screen and (max-width: 1279px) {
 
     .content-container {
-        width: calc(100% - 60px);
+        width: calc(100% - 40px);
     }
 
     .wedding-business-hero {
@@ -279,14 +279,14 @@
 }
 
 /* mobile */
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 767px) {
 
     .wedding-business-hero+.content-section {
         margin-top: 50px;
     }
 
     .content-container {
-        width: calc(100% - 40px);
+        width: calc(100% - 36px);
     }
 
     .wedding-business-hero {
@@ -383,11 +383,7 @@
 }
 
 /* small ver. mobile */
-@media screen and (max-width: 480.98px) {
-
-    .content-container {
-        width: calc(100% - 32px);
-    }
+@media screen and (max-width: 480px) {
 
     .content-section {
         margin-top: 85px;
